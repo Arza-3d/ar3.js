@@ -221,7 +221,7 @@ img{border-radius: 6px}
     font-size:90px; font-weight:100; border-left:solid orange thick; margin-top:20px; margin-bottom:0; margin-right:3.6%;
     display:block; padding-left:15px; padding-top:28px;
     /*background-image:url(../../media/image/gambarLatar/latarJudul.png);*/
-    background-image:url(https://image.ibb.co/jGF34Q/latar_Judul.png);
+    background-image:url('https://image.ibb.co/jGF34Q/latar_Judul.png');
     background-attachment:fixed; border-right:solid #ddd thin}
 .ar3 > header h4{
     margin-left:0; text-align:left; margin-top:0; margin-right:3.6%; border-top-left-radius:0; padding-left:20px;
