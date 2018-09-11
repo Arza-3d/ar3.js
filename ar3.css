@@ -1,61 +1,18 @@
-
-
-a{text-decoration:none}
-a,
-a:link{color:rgb(225,150,50)}
-a:visited{color:rgb(200,120,0)}
-a:hover{color:rgb(255,180,0)}
-a:active{color:rgb(255,200,0)}
-
-/*##########
-# Blogspot #
-##########*/
-/*
-div#main{margin: auto}
-div.footer-outer {background-color:#222}
-h2.date-header > span {background-color: #555; color: #ddd}
-    div.content-inner {padding:0;margin:auto}
-h3.post-title.entry-title {
-    font-size:90px;font-weight:100;border-left:solid orange thick;margin-left:15px;margin-top:20px;margin-bottom:0;margin-right:3.6%;display:block;
-    padding-left:15px;padding-top: 28px;background-attachment:fixed;border-right:solid #ddd thin;
-    background-image:url("https://image.ibb.co/jGF34Q/latar_Judul.png");
-}
-h3.post-title.entry-title + h4{
-    text-align:left;margin-top:0;margin-right:3.6%;border-top-left-radius:0;padding-left:20px;
-    border-left:solid orange thick;border-bottom:solid orange 2px;border-bottom-left-radius:12px;border-top-right-radius:0;
-    border-bottom-right-radius:0;margin-left: 15px;background-color:#222}
-
-#comments {border: rgb(102, 102, 102) 1.5px solid; border-radius: 6px; width: 90%; margin:auto; padding: 20px}
-
-.comment-thread > ol > li {border: solid thin grey; padding-left: 8px; margin-bottom: 2px !important; border-radius: 4px}
-.comment-thread > ol > li:nth-child(odd) {background-color: #F5F5F5}
-.comment-thread > ol > li:nth-child(even) {background-color: #E5E5E5}
-
-.content{
-    margin: 0 !important;
-    padding:0 !important;
-    width: auto !important;
-    border: 0px solid #000
-}
-.content-outer,
-.content-fauxcolumn-outer,
-.region-inner{max-width:none !important; min-width:0 !important}
-
-div.widget.LinkList li a{background-color:#222; display:inline-block; color:rgb(200,120,0); border-left: none !important;border-right: black thin solid !important}
-div.widget.LinkList li a:visited{color:rgb(200,120,0)}
-div.widget.LinkList li a:hover{color:#fff !important;background-color:#ff5722 !important; transition:color 0.5s ease-in, background-color 0.3s}
-div.widget.LinkList ul{background-color:#222; padding-left:10px; padding-right:10px; border-right: none !important; border-left: none !important}
-*/
-
-
-/*#############
-# SET DEFAULT #
-#############*/
+/*################
+# SET DEFAULT TAG#
+################*/
+a{text-decoration:none}
+a,
+a:link{color:rgb(225,150,50)}
+a:visited{color:rgb(200,120,0)}
+a:hover{color:rgb(255,180,0)}
+a:active{color:rgb(255,200,0)}
 body{margin:0 !important;padding:0 !important}
 code{background-color:#eee; border:#ccc thin solid; padding: 2px 4px; display: inline-block; text-indent: 0; border-radius: 3px}
 html{overflow-x: hidden}
 img{border-radius: 6px}
-ul, ol {line-height: 180%}
+ul,
+ol {line-height: 180%}
 
 /*###########
 # AR3 CLASS # CLASS
