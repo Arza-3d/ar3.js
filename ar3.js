@@ -268,6 +268,16 @@
         }
     };
 
+    //###########
+    // <header> #
+    //###########
+    (function() {
+      // in case I forget to put mobile scale, create mobile scale automatically
+      if ($('#mobile-scale-ar3' != null)) {
+        $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
+      }
+    })();
+
     //#########
     // <main> #
     //#########
