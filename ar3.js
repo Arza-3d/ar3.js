@@ -1512,7 +1512,7 @@
                 (function() {
 
                   function dynamicHeader() {
-                    var topLimit = ElemX.topY($main[0]);
+                    var topLimit = ElemX.topY($main[0]) - $('#nav-ar3').innerHeight();
                     if (scrolltop() < topLimit) {
                       $('#nav-ar3').css({'position': 'fixed', 'top' : 0});
                     } else if (scrolltop() > topLimit){
