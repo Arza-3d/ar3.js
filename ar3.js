@@ -1508,7 +1508,30 @@
                 document.addEventListener('resize', dynamicAside);
                 document.addEventListener('scroll', dynamicAside);
 
+                // set dynamic header for ar3header
+                (function() {
+                  var topLimit = ElemX.topY($main[0]);
+                  function dynamicHeader() {
+                    if (scrolltop() < topLimit) {
+                      $('#nav-ar3').css({'position': 'fixed', 'top' : 0});
+                    } else if (scrolltop() > topLimit){
+                      $('#nav-ar3').css({'position': 'absolute', 'top': topLimit + 'px'});
+                    }
+                  }
+                  dynamicHeader();
+
+                  document.addEventListener('click', dynamicHeader);
+                  document.addEventListener('resize', dynamicHeader);
+                  document.addEventListener('scroll', dynamicHeader);
+                })();
+
             })();
+
+            // TEST HEADER
+            // add scroll header function
+
+
+
 
         })();
 
