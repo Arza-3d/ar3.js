@@ -1510,8 +1510,9 @@
 
                 // set dynamic header for ar3header
                 (function() {
-                  var topLimit = ElemX.topY($main[0]);
+
                   function dynamicHeader() {
+                    var topLimit = ElemX.topY($main[0]);
                     if (scrolltop() < topLimit) {
                       $('#nav-ar3').css({'position': 'fixed', 'top' : 0});
                     } else if (scrolltop() > topLimit){
