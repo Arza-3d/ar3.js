@@ -1512,11 +1512,12 @@
                 (function() {
 
                   function dynamicHeader() {
-                    var topLimit = ElemX.topY($main[0]) - $('#nav-ar3').innerHeight();
+                    var $nav = $('#nav-ar3'),
+                      topLimit = ElemX.topY($main[0]) - $nav.innerHeight() - 15;
                     if (scrolltop() < topLimit) {
-                      $('#nav-ar3').css({'position': 'fixed', 'top' : 0});
+                      $nav.css({'position': 'fixed', 'top' : 0});
                     } else if (scrolltop() > topLimit){
-                      $('#nav-ar3').css({'position': 'absolute', 'top': topLimit + 'px'});
+                      $nav.css({'position': 'absolute', 'top': topLimit + 'px'});
                     }
                   }
                   dynamicHeader();
