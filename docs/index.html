@@ -157,7 +157,7 @@
                 <div class="">
                   <!-- HTML generated using hilite.me -->
 
-                  <pre style="margin: 0; line-height: 125%;background: #202020; "><span style="color: #999999; font-style: italic">//##############################################</span>
+                  <pre style="background: #202020;margin: 0; line-height: 125%"><span style="color: #999999; font-style: italic">//##############################################</span>
                   <span style="color: #999999; font-style: italic">// variable outside .tab-r3 functionality      #</span>
                   <span style="color: #999999; font-style: italic">// to make sure element will not be construct  #</span>
                   <span style="color: #999999; font-style: italic">// if it is already construct                  #</span>
@@ -179,26 +179,9 @@
                       <span style="color: #999999; font-style: italic">// &lt;div&gt;2nd # access div content</span>
                       <span style="color: #999999; font-style: italic">//###########</span>
                       <span style="color: #d0d0d0">(</span><span style="color: #6ab825; font-weight: bold">function</span><span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span>
-
-                          <span style="color: #999999; font-style: italic">//########</span>
-                          <span style="color: #999999; font-style: italic">// &lt;div&gt; # Create ID for every div content</span>
-                          <span style="color: #999999; font-style: italic">//########</span>
-                          <span style="color: #d0d0d0">(</span><span style="color: #6ab825; font-weight: bold">function</span><span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span>
-                              <span style="color: #6ab825; font-weight: bold">for</span> <span style="color: #d0d0d0">(i</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span> <span style="color: #d0d0d0">i</span> <span style="color: #d0d0d0">&lt;</span> <span style="color: #d0d0d0">divContentL;</span> <span style="color: #d0d0d0">i++)</span> <span style="color: #d0d0d0">{</span>
-                                  <span style="color: #d0d0d0">$($divContent[i]).attr(</span><span style="color: #ed9d13">&#39;id&#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;r3_tab_content_&#39;</span><span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">i);</span>
-                              <span style="color: #d0d0d0">}</span>
-                          <span style="color: #d0d0d0">})();</span>
-
-                          <span style="color: #999999; font-style: italic">//######</span>
-                          <span style="color: #999999; font-style: italic">// &lt;a&gt; # attach click function in div content (additional functionality)</span>
-                          <span style="color: #999999; font-style: italic">//######</span>
-                          <span style="color: #d0d0d0">$div2.find(</span><span style="color: #ed9d13">&#39;div.relative-container-r3 &gt; a&#39;</span><span style="color: #d0d0d0">).click(</span><span style="color: #6ab825; font-weight: bold">function</span><span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span>
-                              <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">n</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">$(</span><span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">).attr(</span><span style="color: #ed9d13">&#39;data-tab-a&#39;</span><span style="color: #d0d0d0">);</span>
-                              <span style="color: #d0d0d0">$(</span><span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">).parents(</span><span style="color: #ed9d13">&#39;.tab-r3&#39;</span><span style="color: #d0d0d0">)</span>
-                                <span style="color: #d0d0d0">.children(</span><span style="color: #ed9d13">&#39;div:first-child&#39;</span><span style="color: #d0d0d0">)</span>
-                                <span style="color: #d0d0d0">.children(</span><span style="color: #ed9d13">&#39;a:nth-of-type(&#39;</span><span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">n</span> <span style="color: #d0d0d0">+</span><span style="color: #ed9d13">&#39;)&#39;</span><span style="color: #d0d0d0">).click();</span>
-                          <span style="color: #d0d0d0">});</span>
-
+                          <span style="color: #6ab825; font-weight: bold">for</span> <span style="color: #d0d0d0">(i</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span> <span style="color: #d0d0d0">i</span> <span style="color: #d0d0d0">&lt;</span> <span style="color: #d0d0d0">divContentL;</span> <span style="color: #d0d0d0">i++)</span> <span style="color: #d0d0d0">{</span>
+                              <span style="color: #d0d0d0">$($divContent[i]).attr(</span><span style="color: #ed9d13">&#39;id&#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;r3_tab_content_&#39;</span><span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">i);</span>
+                          <span style="color: #d0d0d0">}</span>
                       <span style="color: #d0d0d0">})();</span>
 
                       <span style="color: #999999; font-style: italic">//###########</span>
@@ -251,6 +234,7 @@
                   <span style="color: #999999; font-style: italic">//############################################## check</span>
                   <span style="color: #d0d0d0">$ar3.addClass(</span><span style="color: #ed9d13">&#39;no_more_new_element&#39;</span><span style="color: #d0d0d0">);</span>
                   </pre>
+
 
 
                 </div>
