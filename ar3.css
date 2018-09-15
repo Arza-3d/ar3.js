@@ -2,7 +2,6 @@
 # SET DEFAULT TAG#
 ################*/
 a{text-decoration:none}
-a,
 a:link{color:rgb(225,150,50)}
 a:visited{color:rgb(200,120,0)}
 a:hover{color:rgb(255,180,0)}
@@ -17,8 +16,9 @@ ol {line-height: 180%}
 /*###########
 # AR3 CLASS # CLASS
 ###########*/
-.ar3{position:relative !important; font:11px Tahoma, arial, sans-serif; letter-spacing: 0.02em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;
-    -webkit-font-kerning:normal !important; font-kerning:normal !important} @media print{
+.ar3{position:relative !important; font:11px Tahoma, arial, sans-serif; letter-spacing: 0.02em;
+  -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;
+  -webkit-font-kerning:normal !important; font-kerning:normal !important} @media print{
 .ar3{font:12px "Times New Roman"}
 }
 .code-r3{font:11px Consolas,monospace !important; white-space:pre !important}
@@ -74,7 +74,6 @@ ol {line-height: 180%}
 .ar3 *:target{color:orange; transition:color 1s ease-in-out, background-color 1s ease-in-out}
 
 .ar3 a{text-decoration:none}
-.ar3 a,
 .ar3 a:link{color:rgb(225,150,50)}
 .ar3 a:visited{color:rgb(200,120,0)}
 .ar3 a:hover{color:rgb(255,180,0)}
@@ -402,10 +401,8 @@ aside nav > .r3-accordion{left:16px}
 /*##########
 # AR3 TAB  # SCRIPTED
 ##########*/
-.ar3 .tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%}
+.ar3 .tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%; border-radius:8px; border:solid thin grey}
 .ar3 .tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold}
-.ar3 .tab-r3{border-radius:8px; border:solid thin grey}
-.ar3 .tab-r3 > div:nth-child(2) > div:target{color:black}
 .ar3 .tab-r3 > div:first-child{background-color:#2c3236; border-radius:8px 8px 0 0}
 .ar3 .tab-r3 > div:first-child > *{display:inline-block; border-radius:4px 4px 0 0; padding:7px 6px; margin:0}
 .ar3 .tab-r3 > div:first-child  a{transition:color 0.4s ease-in, background-color 0.4s ease-out}
@@ -414,6 +411,7 @@ aside nav > .r3-accordion{left:16px}
 .ar3 .tab-r3 > div:first-child > *:last-child{border-top-right-radius:8px}
 .ar3 .tab-r3 > div:first-child > a:hover{color:#fff; background-color:#ff5722}
 .ar3 .tab-r3 > div:first-child > a.r3-active:hover{color:#000}
+.ar3 .tab-r3 > div:nth-child(2) > div:target{color:black}
 .ar3 .tab-r3 > div:nth-child(2) > div{padding:6px; display:none}
 .ar3 .tab-r3 > div:nth-child(2) > div:first-child{display:block}
 
