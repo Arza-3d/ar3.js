@@ -2,6 +2,7 @@
 # SET DEFAULT TAG#
 ################*/
 a{text-decoration:none}
+a,
 a:link{color:rgb(225,150,50)}
 a:visited{color:rgb(200,120,0)}
 a:hover{color:rgb(255,180,0)}
