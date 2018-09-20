@@ -1,4 +1,5 @@
-//ar3-short-code.js
+// ar3-short-code.js
+// required jQuery
 // create <button>
 if (!$('body').hasClass('r3-short-code_done')) {
     $('pre + pre').css('display', 'none')
