@@ -374,11 +374,11 @@ tr.blank-r3 > td,
 /*###############
 # AR3 ACCORDION # SCRIPTED
 ###############*/
-aside span.r3-accordion{float:left; position:relative; left:8px; top:2px; cursor:pointer}
+aside span.r3-accordion{float:left; position:relative; left:8px; top:2px; cursor:pointer; background-color:rgba(0,0,0,0)}
 aside span.r3-accordion + a{padding-left:10px}
 aside > nav + .r3-accordion{top:12px}
 aside nav > .r3-accordion{left:16px}
-.r3-code-accordion{font-size:11px; cursor:pointer; background-color:rgba(0,0,0,0.05); border:grey thin solid; border-radius:4px; color:rgba(0,0,0,0.6); display:block}
+.r3-short-code{font-size:11px; cursor:pointer; background-color:rgba(0,0,0,0.05); border:grey thin solid; border-radius:4px; color:rgba(0,0,0,0.6); display:block}
 .r3-accordion:before{ content:'\02795'; font-size:8px; color:#F1F1F1; margin-right:3px; margin-left:-6px}
 .r3-accordion.r3-active:before{content:'\2796'}
 .r3-accordion.w3-khakiAR:before{color:#000}
@@ -403,27 +403,18 @@ aside nav > .r3-accordion{left:16px}
 ##########*/
 .ar3 .tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%; border-radius:8px; border:solid thin grey}
 .ar3 .tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold}
-.ar3 .tab-r3 > div:first-child{border-radius:8px 8px 0 0}
+/*.ar3 .tab-r3 > div:first-child{border-radius:8px 8px 0 0}*/
 .ar3 .tab-r3 > div:first-child{background-color:#535353}
   .ar3 table .tab-r3 > div:first-child{background-color:#747474} /* for example inside table has color that is lighter*/
 .ar3 .tab-r3 > div:first-child > *{display:inline-block; border-radius:4px 4px 0 0; padding:7px 6px; margin:0}
-.ar3 .tab-r3 > div:first-child > a{transition:color 0.4s ease-in, background-color 0.4s ease-out; cursor:pointer}
-/*
-a:link{color:rgb(225,150,50)}
-a:visited{color:rgb(200,120,0)}
-a:hover{color:rgb(255,180,0)}
-a:active{color:rgb(255,200,0)}
-*/
+.ar3 .tab-r3 > div:first-child > a{transition:color 0.4s ease-in, background-color 0.4s ease-out;
+  font-weight: bold; cursor:pointer}
 .ar3 .tab-r3 > div:first-child > span{color:white}
 .ar3 .tab-r3 > div:first-child > *:first-child{border-top-left-radius:8px}
 .ar3 .tab-r3 > div:first-child > *:last-child{border-top-right-radius:8px}
-/*.ar3 .tab-r3 > div:first-child > a:visited{color:rgb(200,120,0)}*/
 .ar3 .tab-r3 > div:first-child > a:hover{color:#fff; background-color:#ff5722}
-/*.ar3 .tab-r3 > div:first-child > a.r3-active{color:rgb(200,160,100)}*/
-
-
-
 .ar3 .tab-r3 > div:first-child > a.r3-active:hover{color:#000}
+.ar3 .tab-r3 > div:nth-child(2) {background-color: #fff}
 .ar3 .tab-r3 > div:nth-child(2) > div:target{color:black}
 .ar3 .tab-r3 > div:nth-child(2) > div{padding:6px; display:none}
 .ar3 .tab-r3 > div:nth-child(2) > div:first-child{display:block}

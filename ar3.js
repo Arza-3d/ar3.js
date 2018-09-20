@@ -451,14 +451,12 @@
                         var a = 'a[href="#'+ this.id +'"]';
                         $(a).addClass('w3-deep-orange');
                         $(a).parent().prev('a').addClass('w3-khaki').css('font-weight', 'bold');
-                        $(a).parent().prev().prev('.r3-accordion').addClass('w3-khaki').css('font-weight', 'bold');
                     });
 
                     $h3.mouseleave(function() {
                         var a = 'a[href="#'+ this.id +'"]';
                         $(a).removeClass('w3-deep-orange');
                         $(a).parent().prev('a').removeClass('w3-khaki').css('font-weight', 'lighter');
-                        $(a).parent().prev().prev('.r3-accordion').removeClass('w3-khaki').css('font-weight', 'lighter');
                     });
                 })();
 
@@ -571,15 +569,13 @@
             $section.mouseenter(function() {
                 var a = 'a[href="#'+ this.previousElementSibling.id +'"]';
                 $(a).addClass('w3-deep-orange');
-                $(a).parent().prev('a').addClass('w3-khaki').css('font-weight', 'bold')
-                .prev('.r3-accordion').addClass('w3-khaki').css('font-weight', 'bold');
+                $(a).parent().prev('a').addClass('w3-khaki').css('font-weight', 'bold');
             });
 
             $section.mouseleave(function() {
                 var $a = $('a[href="#'+ this.previousElementSibling.id +'"]');
                 $a.removeClass('w3-deep-orange');
-                $a.parent().prev('a').removeClass('w3-khaki').css('font-weight', 'lighter')
-                .prev('.r3-accordion').removeClass('w3-khaki').css('font-weight', 'lighter');
+                $a.parent().prev('a').removeClass('w3-khaki').css('font-weight', 'lighter');
 
                 $('.ar3 aside').children('nav')
                       .children('nav')
@@ -1313,20 +1309,20 @@
                     var $pre = $div.find('pre + pre');
                     $pre.css('display', 'none')
                         .prev().css('margin-bottom','3px')
-                        .after('<button class="r3-code-accordion">'+
+                        .after('<button class="r3-short-code">'+
                         textA +'</button>');
                 }
             })();
 
             //#############################
-            // <button>.r3-code-accordion # ATTACH EVENT
+            // <button>.r3-short-code # ATTACH EVENT
             //#############################
             (function() {
                 var textB = (lang) ?
                     'persingkat kode' :
                     'short code';
 
-                $div.find('button.r3-code-accordion').click(function() {
+                $div.find('button.r3-short-code').click(function() {
                     if ($(this).hasClass('r3-active')) {
                         this.innerHTML= textA;
                         $(this).prev().delay(300).toggle(600);
