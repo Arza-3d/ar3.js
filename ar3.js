@@ -333,7 +333,9 @@
                 //######
                 $div2.find('div.relative-container-r3 > a').click(function() {
                     var n = $(this).attr('data-tab-a');
-                    $(this).parents('div.tab-r3').children('div:first-child').children('a:nth-of-type('+ n +')').click();
+                    $(this).parents('div.tab-r3')
+                        .children('div:first-child')
+                        .children('a:nth-of-type('+ n +')').click();
                 });
 
             })();
@@ -352,7 +354,7 @@
                     if (newElement) {
                         for (i = 0; i < divContentL; i++) {
                             var id = $($divContent[i]).attr('id');
-                            $a[i].setAttribute('href', '#'+id);
+                            $a[i].setAttribute('data-tab-r3', id);
                         }
                     }
                 })();
@@ -370,11 +372,13 @@
                 // <a> # ATTACH EVENT
                 //######
                 $a.click(function() {
-                    var id = this.href.slice(this.href.indexOf('#') + 1, this.href.length);
-                    $(this).siblings().removeClass('r3-active');
-                    $(this).addClass('r3-active');
-                    $('#'+id).siblings().fadeOut(400);
-                    $('#'+id).delay(401).fadeIn();
+                    if (!$(this).hasClass('r3-active')) {
+                        var id = $(this).attr('data-tab-r3');
+                        $(this).siblings().removeClass('r3-active');
+                        $(this).addClass('r3-active');
+                        $('#'+id).siblings().fadeOut(400);
+                        $('#'+id).delay(401).fadeIn();
+                    }
                 });
 
             })();

@@ -111,7 +111,6 @@ ol {line-height: 180%}
     padding:1px 10px; font: 90% Consolas,monospace; color:#fff; background-color:#333;
     background-image:linear-gradient(rgb(130,130,130), rgb(20,20,20) 85%, black); border-radius:3px;
     -webkit-box-shadow:inset 0 -1px 0 rgba(0,0,0,.25); box-shadow:inset 0 -1px 0 rgba(0,0,0,.25); line-height:1.7em}
-/*.ar3 mark{color:red; background-color: yellow; font-weight: bold}*/
 .ar3 p{line-height: 18px}
 .ar3 pre{
     color:#333; background-color:#f5f5f5; border:1px solid #ccc; border-radius:4px;
@@ -157,14 +156,14 @@ ol {line-height: 180%}
 
 .ar3 > aside > * >  nav + a{margin-top:4px}
 .ar3 > aside > nav{border:1px solid #999; background-color:#bbb}
-.ar3 > aside > nav a{margin:2px 0 2px 8px; display:block; padding:2px 0 2px 7px; background-color:#222}
+.ar3 > aside > nav a{margin:2px 0 2px 8px; display:block; padding:2px 0 2px 7px}
 .ar3 > aside > a + a,
     .ar3 > aside > nav + a ,
     .ar3 > aside > nav + .r3-accordion + a
 {margin-top:10px}
 .ar3 > aside > nav nav{margin:2px 0 2px 8px; border-bottom:solid thin black; border-left:thin grey solid; border-bottom-left-radius:4px}
 .ar3 > aside *:not(h3){transition:background-color 0.4s ease-in-out,color 0.4s ease-in-out}
-.ar3 > aside a{display:block; background-color:#222222; padding:3px 0 3px 8px}
+.ar3 > aside a{display:block; background-color:#363636; padding:3px 0 3px 8px}
 .ar3 > aside a:hover{color:#fff !important;background-color:#ff5722 !important; transition:color 0.5s ease-in, background-color 0.3s}
 .ar3 > aside h3{
     text-align:left; font-family:sans-serif; background-color:inherit; color:black; font-weight:bold;
@@ -404,13 +403,26 @@ aside nav > .r3-accordion{left:16px}
 ##########*/
 .ar3 .tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%; border-radius:8px; border:solid thin grey}
 .ar3 .tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold}
-.ar3 .tab-r3 > div:first-child{background-color:#2c3236; border-radius:8px 8px 0 0}
+.ar3 .tab-r3 > div:first-child{border-radius:8px 8px 0 0}
+.ar3 .tab-r3 > div:first-child{background-color:#535353}
+  .ar3 table .tab-r3 > div:first-child{background-color:#747474} /* for example inside table has color that is lighter*/
 .ar3 .tab-r3 > div:first-child > *{display:inline-block; border-radius:4px 4px 0 0; padding:7px 6px; margin:0}
-.ar3 .tab-r3 > div:first-child  a{transition:color 0.4s ease-in, background-color 0.4s ease-out}
+.ar3 .tab-r3 > div:first-child > a{transition:color 0.4s ease-in, background-color 0.4s ease-out; cursor:pointer}
+/*
+a:link{color:rgb(225,150,50)}
+a:visited{color:rgb(200,120,0)}
+a:hover{color:rgb(255,180,0)}
+a:active{color:rgb(255,200,0)}
+*/
 .ar3 .tab-r3 > div:first-child > span{color:white}
 .ar3 .tab-r3 > div:first-child > *:first-child{border-top-left-radius:8px}
 .ar3 .tab-r3 > div:first-child > *:last-child{border-top-right-radius:8px}
+/*.ar3 .tab-r3 > div:first-child > a:visited{color:rgb(200,120,0)}*/
 .ar3 .tab-r3 > div:first-child > a:hover{color:#fff; background-color:#ff5722}
+/*.ar3 .tab-r3 > div:first-child > a.r3-active{color:rgb(200,160,100)}*/
+
+
+
 .ar3 .tab-r3 > div:first-child > a.r3-active:hover{color:#000}
 .ar3 .tab-r3 > div:nth-child(2) > div:target{color:black}
 .ar3 .tab-r3 > div:nth-child(2) > div{padding:6px; display:none}
