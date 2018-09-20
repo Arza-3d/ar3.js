@@ -1,4 +1,4 @@
-(function( {
+(function() {
     'use strict';
     var newElement = !$('body').hasClass('r3-tab_done');
 
