@@ -401,14 +401,17 @@ aside nav > .r3-accordion{left:16px}
 /*##########
 # AR3 TAB  # SCRIPTED
 ##########*/
+
+/* tab-r3 functionality*/
+.ar3 .tab-r3 > div:nth-child(2) > div{display:none}
+.ar3 .tab-r3 > div:nth-child(2) > div:first-child{display:block}
+
+/* tab-r3 style*/
 .ar3 .tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%; border-radius:8px; border:solid thin grey}
 .ar3 .tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold}
-/*.ar3 .tab-r3 > nav{border-radius:8px 8px 0 0}*/
 .ar3 .tab-r3 > nav{background-color:#535353}
-  .ar3 table .tab-r3 > nav{background-color:#747474} /* for example inside table has color that is lighter*/
 .ar3 .tab-r3 > nav > *{display:inline-block; border-radius:4px 4px 0 0; padding:7px 6px; margin:0}
-.ar3 .tab-r3 > nav > a{transition:color 0.4s ease-in, background-color 0.4s ease-out;
-  font-weight: bold; cursor:pointer}
+.ar3 .tab-r3 > nav > a{transition:color 0.4s ease-in, background-color 0.4s ease-out;font-weight: bold; cursor:pointer}
 .ar3 .tab-r3 > nav > span{color:white}
 .ar3 .tab-r3 > nav > *:first-child{border-top-left-radius:8px}
 .ar3 .tab-r3 > nav > *:last-child{border-top-right-radius:8px}
@@ -416,8 +419,10 @@ aside nav > .r3-accordion{left:16px}
 .ar3 .tab-r3 > nav > a.r3-active:hover{color:#000}
 .ar3 .tab-r3 > div:nth-child(2) {background-color: #fff}
 .ar3 .tab-r3 > div:nth-child(2) > div:target{color:black}
-.ar3 .tab-r3 > div:nth-child(2) > div{padding:6px; display:none}
-.ar3 .tab-r3 > div:nth-child(2) > div:first-child{display:block}
+.ar3 .tab-r3 > div:nth-child(2) > div{padding:6px}
+
+/* tab-r3 special case for example inside table has color that is lighter*/
+.ar3 table .tab-r3 > nav{background-color:#747474}
 
 /*##########
 # W3 CLASS # IMPORTED from w3.css

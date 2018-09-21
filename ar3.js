@@ -305,7 +305,7 @@
             $div.find('div.flex-r3 > div + b').before('<hr>');
         }
 
-		    //###############
+         //###############
         // <div>.tab-r3 #
         //###############
         (function() {
@@ -346,8 +346,8 @@
             // <div>1st #
             //###########
             (function() {
-                var $div1 = $tabGroup.children('nav'),
-                    $a = $div1.children('a');
+                var $nav = $tabGroup.children('nav'),
+                    $a = $nav.children('a');
 
                 //######
                 // <a> # CREATE HREF
@@ -362,11 +362,11 @@
                 })();
 
                 //##################
-                // <a>:first-child # ADD CLASS
+                // <a>:first-child # by default first content will be seen
                 //##################
                 (function() {
                     if (newElement) {
-                        $div1.children('a:first-child').addClass('r3-active');
+                        $nav.children('a:first-child').addClass('r3-active');
                     }
                 })();
 
@@ -397,16 +397,16 @@
         //########
         (function() {
             if (newElement) {
-				var $img = $div.find('img');
-				for (i = 0; i < $img.length; i++) {
-					var $relContainer = $($img[i]).parent('div.relative-container-r3');
+                var $img = $div.find('img');
+                for (i = 0; i < $img.length; i++) {
+                    var $relContainer = $($img[i]).parent('div.relative-container-r3');
 
-					if ($relContainer.length > 0) {
-						$relContainer.addClass('r3-slider');
-					} else {
-					    $($img[i]).wrap('<div class="r3-slider">');
-					}
-				}
+                    if ($relContainer.length > 0) {
+                        $relContainer.addClass('r3-slider');
+                    } else {
+                        $($img[i]).wrap('<div class="r3-slider">');
+                    }
+                }
             }
         })();
 
@@ -888,7 +888,7 @@
                                                     //####################
                                                     if (exr[l] !== '') {
                                                         exr[l] = (ret === 'string') ? '<span class="r3-string"><span class="comment-r3">"</span>'+ exr[l] +
-														'<span class="comment-r3">"</span></span>': exr[l];
+                                                        '<span class="comment-r3">"</span></span>': exr[l];
 
                                                         exr[l] = (ret === 'boolean') ? StrX.tag(exr[l], '', 'r3-boolean'): exr[l];
                                                         exr[l] = (ret === 'number') ? StrX.tag(exr[l], '', 'r3-number'): exr[l];
@@ -896,10 +896,10 @@
                                                             exr[l] = exr[l].split(',');
 
                                                             exr[l] = exr[l].join('</span><span class="comment-r3">"</span>,'+
-															'<span class="comment-r3">"</span><span class="r3-string">');
+                                                            '<span class="comment-r3">"</span><span class="r3-string">');
 
                                                             exr[l] = '[<span class="comment-r3">"</span><span class="r3-string">' + exr[l] +
-															'</span><span class="comment-r3">"</span>]';
+                                                            '</span><span class="comment-r3">"</span>]';
                                                         }
                                                         exr[l] = StrX.tag(exr[l], 'pre');
                                                     }
@@ -1489,19 +1489,19 @@
                         $aside.addClass('r3-dynamic-before')
                               .removeClass('r3-dynamic-on')
                               .removeClass('r3-dynamic-after');
-						            $asideDummy.addClass('hide-r3');
+                                    $asideDummy.addClass('hide-r3');
 
                     } else if (scrolltop() < bottomLimit) {
                         $aside.removeClass('r3-dynamic-before')
                               .addClass('r3-dynamic-on')
                               .removeClass('r3-dynamic-after');
-						            $asideDummy.removeClass('hide-r3');
+                                    $asideDummy.removeClass('hide-r3');
 
                     } else {
                         $aside.removeClass('r3-dynamic-before')
                               .removeClass('r3-dynamic-on')
                               .addClass('r3-dynamic-after');
-						            $asideDummy.removeClass('hide-r3');
+                                    $asideDummy.removeClass('hide-r3');
                     }
                 }
                 dynamicAside();
