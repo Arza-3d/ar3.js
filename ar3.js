@@ -305,7 +305,7 @@
             $div.find('div.flex-r3 > div + b').before('<hr>');
         }
 
-		    //###############
+		//###############
         // <div>.tab-r3 #
         //###############
         (function() {
@@ -344,7 +344,7 @@
             // <div>1st #
             //###########
             (function() {
-                var $div1 = $tabGroup.children('div:first-child'),
+                var $div1 = $tabGroup.children('nav'),
                     $a = $div1.children('a');
 
                 //######

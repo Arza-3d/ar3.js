@@ -8,8 +8,8 @@
     (function() {
 
         var $tabGroup = $('.tab-r3'),
-            $div2 = $tabGroup.children('div:nth-child(2)'),
-            $divContent = $div2.children('div'),
+            $tabContents = $tabGroup.children('div:nth-child(2)'),
+            $divContent = $tabContents.children('div'),
             divContentL = $divContent.length;
 
         //###########
@@ -27,8 +27,9 @@
         // <div>1st #
         //###########
         (function() {
-            let $div1 = $tabGroup.children('div:first-child'),
-                $a = $div1.children('a');
+            let $nav = $tabGroup.children('nav:first-child'),
+                $a = $nav.children('a');//,
+                //$a = $div1.children('a');
 
             //######
             // <a> # create href attribute to <a>
@@ -47,7 +48,7 @@
             //##################
             (function() {
                 if (newElement) {
-                    $div1.children('a:first-child').addClass('r3-active');
+                    $nav.children('a:first-child').addClass('r3-active');
                 }
             })();
 

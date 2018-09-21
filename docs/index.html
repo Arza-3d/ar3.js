@@ -92,10 +92,10 @@
                 <tr>
                   <td>
                     <div class="tab-r3">
-                      <div>
+                      <nav>
                         <a>tab 1</a>
                         <a>tab 2</a>
-                      </div>
+                      </nav>
                       <div>
                         <div>
                           <p>example 1</p>
@@ -113,11 +113,11 @@
                 <tr>
                   <td>
                     <div class="tab-r3">
-                      <div>
+                      <nav>
                         <a>tab 1</a>
                         <span> + </span><!-- Optional separation -->
                         <a>tab 2</a>
-                      </div>
+                      </nav>
                       <div>
                         <div>
                           <p>example 1</p>
@@ -141,11 +141,11 @@
             <p>This are the basic <code>js</code> and <code>css</code> code of the functionality:</p>
 
             <div class="tab-r3">
-              <div>
+              <nav>
                 <a>javaScript</a>
                 <span>+</span>
                 <a>CSS</a>
-              </div>
+              </nav>
               <div>
                 <div id="tabr3jsex1">
                 </div>
@@ -176,11 +176,11 @@
                   <tr>
                     <td>
                       <div class="tab-r3">
-                        <div>
+                        <nav>
                             <a>2<sup>nd</sup> jump ready button</a>
                             <span>+</span>
                             <a>jump button</a>
-                        </div>
+                        </nav>
                         <div>
                           <div>
                             <div class="relative-container-r3">
@@ -206,11 +206,11 @@
               </script>
               <p>Here is the code that is added to make that box link functionality on top of that image</p>
               <div class="tab-r3">
-                  <div>
+                  <nav>
                       <a>javaScript</a>
                       <span>+</span>
                       <a>CSS</a>
-                  </div>
+                  </nav>
                   <div>
                       <div id="tabr3jsex3"></div>
                       <div id="tabr3cssex84">
@@ -248,17 +248,17 @@
               </table>
               <p>So here is the javaScript</p>
                 <div class="tab-r3">
-                  <div class="">
+                  <nav>
                     <a>jQuery</a>
                     <span>+</span>
                     <a>CSS</a>
-                  </div>
-                  <div class="">
-                    <div class="">
+                  </nav>
+                  <div>
+                    <div>
                       <pre><span class="comment-r3">// create &lt;button&gt;</span> <br>if (!$('body').hasClass('r3_done')) { <br>    $('<mark>pre + pre</mark>').css('display', 'none') <br>        .before('<mark>&lt;button class="<span class="red-r3">r3-short-code</span>"&gt;'</mark>+ <br>        <mark>'show all code&lt;/button&gt;</mark>'); <br>} <br>$('body').addClass('r3_done'); <br> <br><span class="comment-r3">// attach event</span> <br>$('.r3-short-code').click(function() { <br>    if ($(this).hasClass('<u>r3-active</u>')) { <br>        this.innerHTML= 'show all code'; <br>        $(this).prev().delay(300).toggle(600); <br>        $(this).next().toggle(300); <br>    } else { <br>        this.innerHTML= 'short code'; <br>        $(this).prev().toggle(300); <br>        $(this).next().delay(300).toggle(600); <br>    } <br>    $(this).toggleClass('<u>r3-active</u>'); <br>});</pre>
                       <pre>var $ar3 = $('body'), <br>    newElement = !$ar3.hasClass('no_more_new_element'); <br>var isIndo = $ar3.attr('lang') === 'id'; <br> <br>//############# <br>// &lt;pre&gt;&lt;pre&gt; # <br>//############# <br>(function() { <br>    var textA = (isIndo) ? <br>        'perlihatkan seluruh kode' : <br>        'show all code'; <br> <br>    //############# <br>    // &lt;pre&gt;&lt;pre&gt; # SET ACCORDION <br>    //############# <br>    (function() { <br>        if (newElement && !$ar3.hasClass('no-auto-pre')) { <br>            var $pre = $ar3.find('pre + pre'); <br>            $pre.css('display', 'none') <br>                .prev().css('margin-bottom','3px') <br>                .after('&lt;button class="r3-code-accordion"&gt;'+ <br>                textA +'&lt;/button&gt;'); <br>        } <br>    })(); <br> <br>    //############################# <br>    // &lt;button&gt;.r3-code-accordion # ATTACH EVENT <br>    //############################# <br>    (function() { <br>        var textB = (isIndo) ? <br>            'persingkat kode' : <br>            'short code'; <br> <br>        $ar3.find('button.r3-code-accordion').click(function() { <br>            if ($(this).hasClass('r3-active')) { <br>                this.innerHTML= textA; <br>                $(this).prev().delay(300).toggle(600); <br>                $(this).next().toggle(300); <br>            } else { <br>                this.innerHTML= textB; <br>                $(this).prev().toggle(300); <br>                $(this).next().delay(300).toggle(600); <br>            } <br>            $(this).toggleClass('r3-active'); <br>        }); <br>    })(); <br>})();</pre>
                     </div>
-                    <div class="">
+                    <div>
 
                     </div>
                   </div>
