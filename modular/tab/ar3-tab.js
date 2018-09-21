@@ -17,7 +17,7 @@
         //###########
         (function() {
             if (newElement) {
-                for (i = 0; i < divContentL; i++) {
+                for (let i = 0; i < divContentL; i++) {
                     $($divContent[i]).attr('id', 'r3_tab_content_'+ i);
                 }
             }
