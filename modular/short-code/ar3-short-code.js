@@ -3,9 +3,10 @@
 // create <button>
 (function() {
     'use strict';
+    var newElement = !$('body').hasClass('r3-short-code_done');
+
     var shortCode = 'short code',
-        showAllCode = 'show all code',
-        newElement = !$('body').hasClass('r3-short-code_done');
+        showAllCode = 'show all code';
 
     if (newElement) {
         $('pre + pre').css('display', 'none')
