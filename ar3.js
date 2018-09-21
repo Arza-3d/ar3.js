@@ -305,7 +305,7 @@
             $div.find('div.flex-r3 > div + b').before('<hr>');
         }
 
-		//###############
+		    //###############
         // <div>.tab-r3 #
         //###############
         (function() {
@@ -323,8 +323,10 @@
                 // <div> # CREATE ID
                 //########
                 (function() {
-                    for (i = 0; i < divContentL; i++) {
-                        $($divContent[i]).attr('id', 'r3_tab_content_'+ i);
+                    if (newElement) {
+                        for (i = 0; i < divContentL; i++) {
+                            $($divContent[i]).attr('id', 'r3_tab_content_'+ i);
+                        }
                     }
                 })();
 
