@@ -27,7 +27,7 @@
         // <div>1st #
         //###########
         (function() {
-            var $div1 = $tabGroup.children('div:first-child'),
+            let $div1 = $tabGroup.children('div:first-child'),
                 $a = $div1.children('a');
 
             //######
@@ -35,8 +35,8 @@
             //######
             (function() {
                 if (newElement) {
-                    for (i = 0; i < divContentL; i++) {
-                        var id = $($divContent[i]).attr('id');
+                    for (let i = 0; i < divContentL; i++) {
+                        let id = $($divContent[i]).attr('id');
                         $a[i].setAttribute('href', '#'+id);
                     }
                 }
