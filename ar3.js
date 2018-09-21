@@ -387,11 +387,6 @@
 
         })();
 
-        //######
-        // <i> #
-        //######
-        $div.find('i').attr('lang','en');
-
         //########
         // <img> #
         //########
@@ -1295,51 +1290,6 @@
 
         })();
 
-        //#############
-        // <pre><pre> #
-        //#############
-        (function() {
-            var textA = (lang) ?
-                'perlihatkan seluruh kode' :
-                'show all code';
-
-            //#############
-            // <pre><pre> # SET ACCORDION
-            //#############
-            (function() {
-                if (newElement && !$ar3.hasClass('no-auto-pre')) {
-                    var $pre = $div.find('pre + pre');
-                    $pre.css('display', 'none')
-                        .prev().css('margin-bottom','3px')
-                        .after('<button class="r3-short-code">'+
-                        textA +'</button>');
-                }
-            })();
-
-            //#############################
-            // <button>.r3-short-code # ATTACH EVENT
-            //#############################
-            (function() {
-                var textB = (lang) ?
-                    'persingkat kode' :
-                    'short code';
-
-                $div.find('button.r3-short-code').click(function() {
-                    if ($(this).hasClass('r3-active')) {
-                        this.innerHTML= textA;
-                        $(this).prev().delay(300).toggle(600);
-                        $(this).next().toggle(300);
-                    } else {
-                        this.innerHTML= textB;
-                        $(this).prev().toggle(300);
-                        $(this).next().delay(300).toggle(600);
-                    }
-                    $(this).toggleClass('r3-active');
-                });
-            })();
-
-        })();
-
         //##########
         // <video> # ADD ATTR
         //##########
@@ -1478,7 +1428,7 @@
 
                 $ar3.children('div.r3-aside-replacement').remove();
                 $aside.before('<div class="r3-aside-replacement"> </div>');
-                var $asideDummy = $('.ar3 > div.r3-aside-replacement');
+                var $asideDummy = $('.ar3 > .r3-aside-replacement');
 
                 function dynamicAside() {
                     var topLimit = ElemX.topY($main[0]),
@@ -1512,31 +1462,22 @@
 
                 // set dynamic header for ar3header
                 (function() {
-
-                  function dynamicHeader() {
-                    var $nav = $('#nav-ar3'),
-                      topLimit = ElemX.topY($main[0]) - $nav.innerHeight() - 15;
-                    if (scrolltop() < topLimit) {
-                      $nav.css({'position': 'fixed', 'top' : 0});
-                    } else if (scrolltop() > topLimit){
-                      $nav.css({'position': 'absolute', 'top': topLimit + 'px'});
+                    function dynamicHeader() {
+                        var $nav = $('#nav-ar3'),
+                            topLimit = ElemX.topY($main[0]) - $nav.innerHeight() - 15;
+                        if (scrolltop() < topLimit) {
+                            $nav.css({'position': 'fixed', 'top' : 0});
+                        } else if (scrolltop() > topLimit){
+                            $nav.css({'position': 'absolute', 'top': topLimit + 'px'});
+                        }
                     }
-                  }
                   dynamicHeader();
 
                   document.addEventListener('click', dynamicHeader);
                   document.addEventListener('resize', dynamicHeader);
                   document.addEventListener('scroll', dynamicHeader);
                 })();
-
             })();
-
-            // TEST HEADER
-            // add scroll header function
-
-
-
-
         })();
 
         //##############################
@@ -1651,6 +1592,50 @@
         })();
 
     })();
+
+    //#############
+    // <pre><pre> # accordion-r3
+    //#############
+    // puting this outside so i can use dynamicAside(); during click event
+    (function() {
+        // set text inside button based on language
+        var showAllCode, shortCode;
+        if (lang) {
+            showAllCode = 'perlihatkan seluruh kode';
+            shortCode = 'persingkat kode';
+        } else {
+            showAllCode = 'show all code';
+            shortCode = 'short code';
+        }
+
+        // create the button
+        if (newElement) {
+            $('pre + pre').css('display', 'none')
+                .prev().css('margin-bottom','3px')
+                .after('<button class="r3-short-code">'+
+                showAllCode +'</button>');
+        }
+
+        (function() {
+            $('.r3-short-code').click(function() {
+                if ($(this).hasClass('r3-active')) {
+                    this.innerHTML= shortCode;
+                    $(this).prev().delay(300).toggle(600);
+                    $(this).next().toggle(300);
+                } else {
+                    this.innerHTML= showAllCode;
+                    $(this).prev().toggle(300);
+                    $(this).next().delay(300).toggle(600);
+                }
+                $(this).toggleClass('r3-active');
+            });
+        })();
+    })();
+
+    //######
+    // <i> # trivial-r3
+    //######
+    $('i').attr('lang','en');
 
     //######################
     // No more new element #
