@@ -335,8 +335,8 @@
                 //######
                 $div2.find('div.relative-container-r3 > a').click(function() {
                     var n = $(this).attr('data-tab-a');
-                    $(this).parents('div.tab-r3')
-                        .children('div:first-child')
+                    $(this).parents('.tab-r3')
+                        .children('nav:first-child')
                         .children('a:nth-of-type('+ n +')').click();
                 });
 
@@ -1599,36 +1599,68 @@
     // puting this outside so i can use dynamicAside(); during click event
     (function() {
         // set text inside button based on language
-        var showAllCode, shortCode;
+        var longCode, shortCode;
         if (lang) {
-            showAllCode = 'perlihatkan seluruh kode';
+            longCode = 'perlihatkan seluruh kode';
             shortCode = 'persingkat kode';
         } else {
-            showAllCode = 'show all code';
+            longCode = 'show all code';
             shortCode = 'short code';
         }
 
-        // create the button
-        if (newElement) {
-            $('pre + pre').css('display', 'none')
-                .prev().css('margin-bottom','3px')
-                .after('<button class="r3-short-code">'+
-                showAllCode +'</button>');
-        }
+        function changeText(controlElement) {
+            let newShortCode = $(controlElement).attr('data-short-code-r3'),
+                newLongCode = $(controlElement).attr('data-long-code-r3');
 
+            if (newShortCode !== undefined) {shortCode = newShortCode;}
+            if (newLongCode !== undefined) {longCode = newLongCode;}
+        }
+        changeText('body');
+
+        // create the button
         (function() {
-            $('.r3-short-code').click(function() {
-                if ($(this).hasClass('r3-active')) {
-                    this.innerHTML= shortCode;
-                    $(this).prev().delay(300).toggle(600);
-                    $(this).next().toggle(300);
-                } else {
-                    this.innerHTML= showAllCode;
-                    $(this).prev().toggle(300);
-                    $(this).next().delay(300).toggle(600);
+            if (newElement) {
+                let $pre = $('pre + pre'),
+                    preL = $pre.length,
+                    newLongCode,
+                    newShortCode,
+                    currentLongCode,
+                    currentShortCode;
+                for (i = 0; i < preL ;i++) {
+                    newLongCode = $($pre[i]).attr('data-long-code-r3');
+                    newShortCode = $($pre[i]).attr('data-short-code-r3');
+                    if (newLongCode != undefined) {
+                        currentLongCode = newLongCode;
+                        currentShortCode = newShortCode;
+                    } else {
+                        currentLongCode = longCode;
+                        currentShortCode = shortCode;
+                    }
+
+                    // create button
+                    $($pre[i]).css('display', 'none')
+                        .prev().css('margin-bottom','3px')
+                        .after('<button class="r3-short-code r3-active">'+
+                        currentLongCode +'</button>');
+
+                    (function() {
+                        let currentShortCodeA = currentShortCode,
+                            currentLongCodeA = currentLongCode;
+                        $($pre[i]).prev('.r3-short-code').click(function() {
+                            if ($(this).hasClass('r3-active')) {
+                                this.innerHTML= currentShortCodeA;
+                                $(this).prev().delay(300).toggle(600);
+                                $(this).next().toggle(300);
+                            } else {
+                                this.innerHTML= currentLongCodeA;
+                                $(this).prev().toggle(300);
+                                $(this).next().delay(300).toggle(600);
+                            }
+                            $(this).toggleClass('r3-active');
+                        });
+                    })();
                 }
-                $(this).toggleClass('r3-active');
-            });
+            }
         })();
     })();
 

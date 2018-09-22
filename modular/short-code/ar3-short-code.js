@@ -6,7 +6,7 @@
     var newElement = !$('body').hasClass('r3-short-code_done');
 
     var shortCode = 'short code',
-        showAllCode = 'show all code';
+        longCode = 'show all code';
 
     if (newElement) {
         $('pre + pre').css('display', 'none')
@@ -15,7 +15,7 @@
 
     $('.r3-short-code').click(function() {
         if ($(this).hasClass('r3-active')) {
-            this.innerHTML= showAllCode;
+            this.innerHTML= longCode;
             $(this).prev().delay(300).toggle(600);
             $(this).next().toggle(300);
         } else {
