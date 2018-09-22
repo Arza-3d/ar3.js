@@ -4,7 +4,7 @@
         $ar3 = $('.ar3'),
         $main = $ar3.children('main'),
         newElement = !$ar3.hasClass('no_more_new_element'),
-        lang = $ar3.attr('lang') === 'id',
+        isIndo = $ar3.attr('lang') == 'id',
         $div = $main.children('div'),
         $h2 = $div.children('h2'),
         $h3 = $div.children('h3'),
@@ -1599,20 +1599,14 @@
     // puting this outside so i can use dynamicAside(); during click event
     (function() {
         // set text inside button based on language
-        let longCode, shortCode;
-        if (lang) {
-            longCode = 'perlihatkan seluruh kode';
-            shortCode = 'persingkat kode';
-        } else {
-            longCode = 'show all code';
-            shortCode = 'short code';
-        }
+        let text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
+            text2 = isIndo ? 'persingkat kode' : 'short code';
 
         {
-            let newShortCode = $('body').attr('data-short-code-r3'),
-                newLongCode = $('body').attr('data-long-code-r3');
-            if (newShortCode !== undefined) {shortCode = newShortCode;}
-            if (newLongCode !== undefined) {longCode = newLongCode;}
+            let newText1 = $('body').attr('data-short-code-r3-text1'),
+                newText2 = $('body').attr('data-short-code-r3-text2');
+            if (newText1 !== undefined) {text1 = newText1;}
+            if (newText2 !== undefined) {text2 = newText2;}
         }
 
         // create the button
@@ -1620,37 +1614,37 @@
             if (newElement) {
                 let $pre = $('pre + pre'),
                     preL = $pre.length,
-                    newLongCode,
-                    newShortCode,
-                    currentLongCode,
-                    currentShortCode;
+                    newText2,
+                    newText1,
+                    newerText1,
+                    newerText2;
                 for (i = 0; i < preL ;i++) {
-                    newLongCode = $($pre[i]).attr('data-long-code-r3');
-                    newShortCode = $($pre[i]).attr('data-short-code-r3');
-                    if (newLongCode != undefined) {
-                        currentLongCode = newLongCode;
-                        currentShortCode = newShortCode;
+                    newText1 = $($pre[i]).attr('data-short-code-r3-text1');
+                    newText2 = $($pre[i]).attr('data-short-code-r3-text2');
+                    if (newText2 != undefined) {
+                        newerText1 = newText1;
+                        newerText2 = newText2;
                     } else {
-                        currentLongCode = longCode;
-                        currentShortCode = shortCode;
+                        newerText1 = text1;
+                        newerText2 = text2;
                     }
 
                     // create button
                     $($pre[i]).css('display', 'none')
                         .prev().css('margin-bottom','3px')
                         .after('<button class="r3-short-code r3-active">'+
-                        currentLongCode +'</button>');
+                        newerText1 +'</button>');
 
                     (function() {
-                        let currentShortCodeA = currentShortCode,
-                            currentLongCodeA = currentLongCode;
+                        let newestText1 = newerText1,
+                            newestText2 = newerText2;
                         $($pre[i]).prev('.r3-short-code').click(function() {
                             if ($(this).hasClass('r3-active')) {
-                                this.innerHTML= currentShortCodeA;
+                                this.innerHTML= newestText2;
                                 $(this).prev().delay(300).toggle(600);
                                 $(this).next().toggle(300);
                             } else {
-                                this.innerHTML= currentLongCodeA;
+                                this.innerHTML= newestText1;
                                 $(this).prev().toggle(300);
                                 $(this).next().delay(300).toggle(600);
                             }
