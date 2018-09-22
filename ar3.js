@@ -1599,7 +1599,7 @@
     // puting this outside so i can use dynamicAside(); during click event
     (function() {
         // set text inside button based on language
-        var longCode, shortCode;
+        let longCode, shortCode;
         if (lang) {
             longCode = 'perlihatkan seluruh kode';
             shortCode = 'persingkat kode';
@@ -1608,14 +1608,12 @@
             shortCode = 'short code';
         }
 
-        function changeText(controlElement) {
-            let newShortCode = $(controlElement).attr('data-short-code-r3'),
-                newLongCode = $(controlElement).attr('data-long-code-r3');
-
+        {
+            let newShortCode = $('body').attr('data-short-code-r3'),
+                newLongCode = $('body').attr('data-long-code-r3');
             if (newShortCode !== undefined) {shortCode = newShortCode;}
             if (newLongCode !== undefined) {longCode = newLongCode;}
         }
-        changeText('body');
 
         // create the button
         (function() {

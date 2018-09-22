@@ -3,9 +3,10 @@
 // create <button>
 (function() {
     'use strict';
-    var newElement = !$('body').hasClass('r3-short-code_done');
+    let constructNote = 'r3-short-code_done',
+        newElement = !$('body').hasClass(constructNote);
 
-    var shortCode = 'short code',
+    let shortCode = 'short code',
         longCode = 'show all code';
 
     if (newElement) {
@@ -26,5 +27,5 @@
         $(this).toggleClass('r3-active');
     });
 
-    $('body').addClass('r3-short-code_done');
+    $('body').addClass(constructNote);
 })();
