@@ -10,6 +10,12 @@
         text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
         text2 = isIndo ? 'persingkat kode' : 'short code';
 
+    // overriding default text
+    var newText1 = $('body').attr('data-short-code-r3-text1'),
+        newText2 = $('body').attr('data-short-code-r3-text2');
+    if (newText1 !== undefined) {text1 = newText1;}
+    if (newText2 !== undefined) {text2 = newText2;}
+
     if (newElement) {
         $('pre + pre').css('display', 'none')
             .before('<button class="r3-short-code r3-active">'+ text1 + '</button>');

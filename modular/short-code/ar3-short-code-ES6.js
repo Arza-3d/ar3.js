@@ -13,11 +13,11 @@
 
         $('.r3-short-code').click(function() {
             if ($(this).hasClass('r3-active')) {
-                this.innerHTML= text1;
+                this.innerHTML= text2;
                 $(this).prev().delay(300).toggle(600);
                 $(this).next().toggle(300);
             } else {
-                this.innerHTML= text2;
+                this.innerHTML= text1;
                 $(this).prev().toggle(300);
                 $(this).next().delay(300).toggle(600);
             }
