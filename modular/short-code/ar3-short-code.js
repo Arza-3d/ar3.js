@@ -3,24 +3,24 @@
 // create <button>
 (function() {
     'use strict';
-    let constructNote = 'r3-short-code_done',
+    var constructNote = 'r3-short-code_done',
         newElement = !$('body').hasClass(constructNote);
 
-    let shortCode = 'short code',
-        longCode = 'show all code';
+    var text1 = 'show all code',
+        text2 = 'short code';
 
     if (newElement) {
         $('pre + pre').css('display', 'none')
-            .before('<button class="r3-short-code">'+ shortCode + '</button>');
+            .before('<button class="r3-short-code r3-active">'+ text1 + '</button>');
     }
 
     $('.r3-short-code').click(function() {
         if ($(this).hasClass('r3-active')) {
-            this.innerHTML= longCode;
+            this.innerHTML= text2;
             $(this).prev().delay(300).toggle(600);
             $(this).next().toggle(300);
         } else {
-            this.innerHTML= shortCode;
+            this.innerHTML= text1;
             $(this).prev().toggle(300);
             $(this).next().delay(300).toggle(600);
         }

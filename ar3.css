@@ -35,7 +35,8 @@ ol {line-height: 180%}
 
 .blue-r3{color:blue} .green-r3{color:green} .magenta-r3{color:magenta} .orange-r3{color:orange}
 .purple-r3{color:purple} .red-r3{color:red} .yellow-r3{color:yellow}
-.comment-r3{color:rgba(0,0,0,0.3); font-style: italic;}
+.comment-r3{color:rgba(0,0,0,0.25); font-style: italic;}
+.grey-r3{color:#888}
 
 .r3-slider{overflow:auto}
 .r3-slider + .r3-slider{margin-top:15px}
