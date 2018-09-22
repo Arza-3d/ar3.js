@@ -3,8 +3,10 @@
         isConstructed = $('body').hasClass(constructNote);
 
     {// the main construction of short code
-        let text1 = 'show all code',
-            text2 = 'short code';
+        // change button text between Indonesia or English based on language that is used
+        let isIndo = $('body').attr('lang') == 'id';
+        let text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
+            text2 = isIndo ? 'persingkat kode' : 'short code';
 
         if (!isConstructed) {
             $('pre + pre').css('display', 'none')

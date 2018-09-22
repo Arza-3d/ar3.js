@@ -6,8 +6,9 @@
     var constructNote = 'r3-short-code_done',
         newElement = !$('body').hasClass(constructNote);
 
-    var text1 = 'show all code',
-        text2 = 'short code';
+    var isIndo = $('body').attr('lang') == 'id';
+    var text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
+        text2 = isIndo ? 'persingkat kode' : 'short code';
 
     if (newElement) {
         $('pre + pre').css('display', 'none')
