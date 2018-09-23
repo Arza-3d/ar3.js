@@ -4,7 +4,7 @@
 (function() {
     'use strict';
     var constructNote = 'r3-short-code_done',
-        newElement = !$('body').hasClass(constructNote);
+        isConstructed = $('body').hasClass(constructNote);
 
     var isIndo = $('body').attr('lang') == 'id',
         text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
@@ -17,7 +17,9 @@
     if (newText2 !== undefined) {text2 = newText2;}
 
     var $pre = $('pre + pre');
+    if (!isConstructed) {
         $pre.css('display', 'none');
+    }
 
     for (var i = 0; i < $pre.length; i++) {
         (function() {
@@ -26,8 +28,10 @@
                 newestText1 = (newerText1 === undefined) ? newText1 : newerText1,
                 newestText2 = (newerText2 === undefined) ? newText2 : newerText2;
 
-            $($pre[i]).before('<button class="r3-short-code r3-active">'+
-                newestText1 + '</button>');
+            if (!isConstructed) {
+                $($pre[i]).before('<button class="r3-short-code r3-active">'+
+                    newestText1 + '</button>');
+            }
 
             $($pre[i]).prev().click(function() {
                 if ($(this).hasClass('r3-active')) {

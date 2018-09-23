@@ -4,7 +4,7 @@
 (function() {
     'use strict';
     var constructNote = 'r3-short-code_done',
-        newElement = !$('body').hasClass(constructNote);
+        isConstructed = $('body').hasClass(constructNote);
 
     var isIndo = $('body').attr('lang') == 'id',
         text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
@@ -16,7 +16,7 @@
     if (newText1 !== undefined) {text1 = newText1;}
     if (newText2 !== undefined) {text2 = newText2;}
 
-    if (newElement) {
+    if (!isConstructed) {
         $('pre + pre').css('display', 'none')
             .before('<button class="r3-short-code r3-active">'+ text1 + '</button>');
     }
