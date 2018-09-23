@@ -1614,8 +1614,8 @@
             if (newElement) {
                 let $pre = $('pre + pre'),
                     preL = $pre.length,
-                    newText2,
                     newText1,
+                    newText2,
                     newerText1,
                     newerText2;
                 for (i = 0; i < preL ;i++) {
