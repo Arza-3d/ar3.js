@@ -1,5 +1,5 @@
 {// ar3-short-code
-    let constructNote = 'r3-short-code_done',
+    const constructNote = 'r3-short-code_done',
         isConstructed = $('body').hasClass(constructNote);
 
     {// the main construction of short code

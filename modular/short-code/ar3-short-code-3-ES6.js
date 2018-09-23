@@ -1,14 +1,14 @@
 {// ar3-short-code
-    let constructNote = 'r3-short-code_done',
+    const constructNote = 'r3-short-code_done',
         isConstructed = $('body').hasClass(constructNote);
 
     {
-        let isIndo = $('body').attr('lang') == 'id',
-            text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
+        const isIndo = $('body').attr('lang') == 'id';
+        let text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
             text2 = isIndo ? 'persingkat kode' : 'short code';
 
         // overriding default text
-        let newText1 = $('body').attr('data-short-code-r3-text1'),
+        const newText1 = $('body').attr('data-short-code-r3-text1'),
             newText2 = $('body').attr('data-short-code-r3-text2');
         if (newText1 !== undefined) {text1 = newText1;}
         if (newText2 !== undefined) {text2 = newText2;}
