@@ -257,8 +257,16 @@
 
           <h3>short code (3rd update)</h3>
           <section>
-            <p>So there are some cases when I wanna change the text in a button to specific things, differs from the rest of the short code button.</p>
+            <p>So there are some cases when I wanna change the text in a button to specific things, differs from the rest of the short code button. Here is the link
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-3-ES6.js">javaScript ES6</a>, or this is the
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-3.js">javaScript ES5</a>.</p>
             <pre>let newText1 = $('body').attr('<mark>data-short-code-r3-text1</mark>'), <br>    newText2 = $('body').attr('<mark>data-short-code-r3-text2</mark>'); <br>if (newText1 !== undefined) {text1 = newText1;} <br>if (newText2 !== undefined) {text2 = newText2;}</pre>
+            <pre><span class="grey-r3">{<span class="comment-r3">// ar3-short-code</span> <br>    let constructNote = 'r3-short-code_done', <br>        isConstructed = $('body').hasClass(constructNote); <br> <br>    { <br>        let isIndo = $('body').attr('lang') == 'id', <br>            text1 = isIndo ? 'tunjukkan semua kode' : 'show all code', <br>            text2 = isIndo ? 'persingkat kode' : 'short code'; <br>            </span> <br>        <span class="comment-r3">// overriding default text</span> <br>        let newText1 = $('<mark>body</mark>').attr('<mark>data-short-code-r3-text1</mark>'), <br>            newText2 = $('<mark>body</mark>').attr('<mark>data-short-code-r3-text2</mark>'); <br>        if (newText1 !== undefined) {text1 = newText1;} <br>        if (newText2 !== undefined) {text2 = newText2;} <br>        <span class="grey-r3"> <br>        if (!isConstructed) { <br>            $('pre + pre').css('display', 'none') <br>                .before('&gt;button class="r3-short-code r3-active"&lt;'+ text1 + '&gt;/button&lt;'); <br>        } <br> <br>        $('.r3-short-code').click(function() { <br>            if ($(this).hasClass('r3-active')) { <br>                this.innerHTML= text2; <br>                $(this).prev().delay(300).toggle(600); <br>                $(this).next().toggle(300); <br>            } else { <br>                this.innerHTML= text1; <br>                $(this).prev().toggle(300); <br>                $(this).next().delay(300).toggle(600); <br>            } <br>            $(this).toggleClass('r3-active'); <br>        }); <br>    } <br> <br>    $('body').addClass(constructNote); <br>}</span> <br></pre>
+          </section>
+
+          <h3>short code (4th update)</h3>
+          <section>
+            <p>The last override is in case I wanna change the button text unique to the individual <code>&lt;pre&gt;</code> that is targeted.</p>
           </section>
         </div>
         <div>
