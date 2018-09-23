@@ -1,35 +1,44 @@
-{// ar3-short-code
+{
     let constructNote = 'r3-short-code_done',
         isConstructed = $('body').hasClass(constructNote);
 
-    {
-        let isIndo = $('body').attr('lang') == 'id',
-            text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
-            text2 = isIndo ? 'persingkat kode' : 'short code';
+    let isIndo = $('body').attr('lang') == 'id',
+        text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
+        text2 = isIndo ? 'persingkat kode' : 'short code';
 
-        // overriding default text
-        let newText1 = $('body').attr('data-short-code-r3-text1'),
-            newText2 = $('body').attr('data-short-code-r3-text2');
-        if (newText1 !== undefined) {text1 = newText1;}
-        if (newText2 !== undefined) {text2 = newText2;}
+    let newText1 = $('body').attr('data-short-code-r3-text1'),
+        newText2 = $('body').attr('data-short-code-r3-text2');
+    if (newText1 !== undefined) {text1 = newText1;}
+    if (newText2 !== undefined) {text2 = newText2;}
 
-        if (!isConstructed) {
-            $('pre + pre').css('display', 'none')
-                .before('<button class="r3-short-code r3-active">'+ text1 + '</button>');
-        }
+    let $pre = $('pre + pre');
+    if (!isConstructed) {$pre.css('display', 'none');}
 
-        $('.r3-short-code').click(function() {
-            if ($(this).hasClass('r3-active')) {
-                this.innerHTML= text2;
-                $(this).prev().delay(300).toggle(600);
-                $(this).next().toggle(300);
-            } else {
-                this.innerHTML= text1;
-                $(this).prev().toggle(300);
-                $(this).next().delay(300).toggle(600);
+    for (let i = 0; i < $pre.length; i++) {
+        {
+            let newerText1 = $($pre[i]).attr('data-r3-text1'),
+                newerText2 = $($pre[i]).attr('data-r3-text2'),
+                newestText1 = (newerText1 === undefined) ? newText1 : newerText1,
+                newestText2 = (newerText2 === undefined) ? newText2 : newerText2;
+
+            if (!isConstructed) {
+                $($pre[i]).before('<button class="r3-short-code r3-active">'+
+                    newestText1 + '</button>');
             }
-            $(this).toggleClass('r3-active');
-        });
+
+            $($pre[i]).prev().click(function() {
+                if ($(this).hasClass('r3-active')) {
+                    this.innerHTML= newestText2;
+                    $(this).prev().delay(300).toggle(600);
+                    $(this).next().toggle(300);
+                } else {
+                    this.innerHTML= newestText1;
+                    $(this).prev().toggle(300);
+                    $(this).next().delay(300).toggle(600);
+                }
+                $(this).toggleClass('r3-active');
+            });
+        }
     }
 
     $('body').addClass(constructNote);

@@ -4,12 +4,12 @@
 (function() {
     'use strict';
     var constructNote = 'r3-short-code_done',
-        newElement = !$('body').hasClass(constructNote);
+        isConstructed = $('body').hasClass(constructNote);
 
     var text1 = 'show all code',
         text2 = 'short code';
 
-    if (newElement) {
+    if (!isConstructed) {
         $('pre + pre').css('display', 'none')
             .before('<button class="r3-short-code r3-active">'+ text1 + '</button>');
     }

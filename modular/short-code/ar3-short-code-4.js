@@ -17,9 +17,7 @@
     if (newText2 !== undefined) {text2 = newText2;}
 
     var $pre = $('pre + pre');
-    if (!isConstructed) {
-        $pre.css('display', 'none');
-    }
+    if (!isConstructed) {$pre.css('display', 'none');}
 
     for (var i = 0; i < $pre.length; i++) {
         (function() {
