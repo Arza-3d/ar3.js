@@ -8,7 +8,7 @@
             text2 = isIndo ? 'persingkat kode' : 'short code';
 
         // overriding default text
-        const newText1 = $('body').attr('data-short-code-r3-text1'),
+        let newText1 = $('body').attr('data-short-code-r3-text1'),
             newText2 = $('body').attr('data-short-code-r3-text2');
         if (newText1 !== undefined) {text1 = newText1;}
         if (newText2 !== undefined) {text2 = newText2;}
