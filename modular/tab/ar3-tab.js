@@ -62,9 +62,7 @@
                 $('#'+id).siblings().fadeOut(400);
                 $('#'+id).delay(401).fadeIn();
             });
-
         })();
-
     })();
 
     $('body').addClass('r3-tab_done');
