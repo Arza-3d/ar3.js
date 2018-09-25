@@ -13,65 +13,57 @@
   </head>
   <body data-short-code-r3-text1="tunjukkan kodenya" data-short-code-r3-text2="simpan kodenya">
     <script src="D:\DOC\GITHUB\ar3js\ar3header.js"></script>
+    <header>
+      <h1>ar3.js ar3.css</h1>
+      <h4>....</h4>
+      <p>
+        The reason why I am making this <code>js</code> &amp; <code>css</code> files, is to <mark>help me take notes for my</mark> game development <mark>study</mark>. I am learning Unreal Engine 4, and they are using visual scripting, which means I need to take lot of huge screenshot of the visual script during my study. I was gonna make study notes in <code>pdf</code>, but I didn't think it will work well, and if I just scatter it in <code>jpg</code> it will be a mess...
+      </p>
+      <p>
+        So my solution is to take study notes in <code>html</code> and make my own <code>js</code> &amp; <code>css</code> that fit my criteria of good study notes.
+        <br>
+        My preferences for good study notes are...
+      </p>
+      <ul>
+        <li>Contain lot information in a page, just like books</li>
+        <li>Small readable font, instead of big fonts</li>
+        <li>Hidable element, cause I don't like long scroll</li>
+        <li>Plus you can embed video in <code>html</code> notes</li>
+      </ul>
+      <p>Since my script that was meant to help me take study notes, getting bigger and bigger, and it's kinda getting messy, I need to make the documentation for the script. <u>So this page will be documentation of <code><b>ar3</b>.js</code> and <code><b>ar3</b>.css</code>.</u></p>
+    </header>
     <div class="ar3">
 
-      <header>
-        <h1>ar3.js ar3.css</h1>
-        <h4>....</h4>
-        <p>
-          The reason why I am making this <code>js</code> &amp; <code>css</code> files, is to <mark>help me take notes for my</mark> game development <mark>study</mark>. I am learning Unreal Engine 4, and they are using visual scripting, which means I need to take lot of huge screenshot of the visual script during my study. I was gonna make study notes in <code>pdf</code>, but I didn't think it will work well, and if I just scatter it in <code>jpg</code> it will be a mess...
-        </p>
-        <p>
-          So my solution is to take study notes in <code>html</code> and make my own <code>js</code> &amp; <code>css</code> that fit my criteria of good study notes.
-          <br>
-          My preferences for good study notes are...
-        </p>
-        <ul>
-          <li>Contain lot information in a page, just like books</li>
-          <li>Small readable font, instead of big fonts</li>
-          <li>Hidable element, cause I don't like long scroll</li>
-          <li>Plus you can embed video in <code>html</code> notes</li>
-        </ul>
-        <p>Since my script that was meant to help me take study notes, getting bigger and bigger, and it's kinda getting messy, I need to make the documentation for the script. <u>So this page will be documentation of <code><b>ar3</b>.js</code> and <code><b>ar3</b>.css</code>.</u></p>
-      </header>
+
 
       <main>
         <div data-title="construction">
-          <h2>construction phase</h2>
+          <h2>Automate trivial things</h2>
           <p>
             Construction phase only will be done once, at the start of web load, and that's it. If people download the page and open the offline version than the construction will not be executed.
           </p>
-          <h3>inside header</h3>
+
+          <h3>scaled for mobile device</h3>
           <section>
-            <p>Make sure the page is scaled for mobile device.</p>
-            <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre>
-          </section>
-        </div>
-        <div>
-          <h2>.....h2</h2>
-          <h3>...h3</h3>
-          <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Make sure the page is scaled for mobile device:</p>
+            <pre>$('header').append('&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;');</pre>
           </section>
 
-          <h3>2nd</h3>
+          <h3>every &lt;i&gt; tags are english</h3>
           <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </section>
-        </div>
-        <div>
-          <h2>table</h2>
-
-          <h3>filter table</h3>
-          <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Make sure the <code>&lt;i&gt;</code> is english:</p>
+            <pre>$('i').attr('lang', 'en');</pre>
           </section>
 
-          <h3>construct table from JSON data</h3>
+          <h3>every &lt;video&gt; tags have control</h3>
           <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Make sure every videos have control:</p>
+            <pre>$('video').attr('controls');</pre>
+          </section>
+
+          <h3>every outside link open new tab</h3>
+          <section>
+            <pre>$("a[href^='http']").attr('target', '_blank');</pre>
           </section>
         </div>
         <div data-title="accordions">
@@ -227,26 +219,11 @@
 
           <h3>shorting code</h3>
           <section>
-              <p>I usually use this to show 2 version of same code, the short one just showing the important part of the code, and the long one showing the fully working code.</p>
-              <p>To make shorting code, you only need to create 2 consecutive &lt;pre&gt; tags. The first &lt;pre&gt; will be the short code, the 2nd &lt;pre&gt; tag will be the long code.</p>
-              <table>
-                  <thead>
-                      <tr>
-                          <th>example</th>
-                          <th>HTML code</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>
-                              <pre>return 0.5f*pi*radius;</pre>
-                              <pre data-short-code-r3="anjing" data-long-code-r3="anjing22222">float radiusA = 4.0f<br><br>float circle_area(float radius)<br>{<br>    float pi = 3.14f;<br>    return 0.5f*pi*radius;<br>}<br><br>circle_area(radiusA);</pre>
-                          </td>
-                          <td><pre>&lt;pre&gt;return 0.5f*pi*radius;&lt;/pre&gt;<br>&lt;pre&gt;float radiusA = 4.0f<br><br>float circle_area(float radius)<br>{<br>    float pi = 3.14f;<br>    return 0.5f*pi*radius;<br>}<br><br>circle_area(radiusA);&lt;/pre&gt;    </pre></td>
-                      </tr>
-                  </tbody>
-              </table>
-              <p>So here is the javaScript</p>
+              <p>I usually use this to show two version of same code, the short one just showing the important part of the code, and the long one showing the fully working code.</p>
+              <p>Every two consecutive <code>&lt;pre&gt;</code> tags, something like this; <code>&lt;pre&gt;<span class="comment-r3">short code</span>&lt;/pre&gt; &lt;pre&gt;<span class="comment-r3">long code</span>&lt;/pre&gt;</code> will be automatically made into short code, like this example:</p>
+              <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/test-ar3-short-code.html" width="" height=""></iframe>
+
+              <p>So here is the code:</p>
                 <div class="tab-r3">
                   <nav>
                     <a>jQuery</a>
@@ -255,19 +232,73 @@
                   </nav>
                   <div>
                     <div>
-                      <p>here is the link
-                        <a href="#">javaScript ES6</a>
+                      <p>Here is the link
+                        <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-ES6.js">javaScript ES6</a>, or this is the
+                        <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code.js">javaScript ES5</a>.
                       </p>
-                      <pre>{<span class="comment-r3"> // ar3-short-code</span> <br>    <span class="grey-r3">let constructNote = 'r3-short-code_done', <br>        isConstructed = $('body').hasClass(constructNote);</span> <br> <br>    {<span class="comment-r3"> // the main construction of short code</span> <br>        let text1 = 'show all code', <br>            text2 = 'short code'; <br> <br>        if (!isConstructed) { <br>            <b>$('<mark class="red-r3">pre + pre</mark>').css('display', 'none') <br>                .before('&lt;button class="<mark>r3-short-code</mark> r3-active"&gt;'+ text1 + '&lt;/button&gt;');</b> <br>        } <br> <br>        <b>$('<mark>.r3-short-code</mark>').click(function() { <br>            if ($(this).hasClass('r3-active')) { <br>                this.innerHTML= text1; <br>                $(this).prev().delay(300).toggle(600); <br>                $(this).next().toggle(300); <br>            } else { <br>                this.innerHTML= text2; <br>                $(this).prev().toggle(300); <br>                $(this).next().delay(300).toggle(600); <br>            } <br>            $(this).toggleClass('r3-active'); <br>        });</b> <br>    } <br> <br>    <span class="grey-r3">$('body').addClass(constructNote);</span> <br>}</pre>
+                      <pre>{<span class="comment-r3"> // ar3-short-code</span> <br>    <span class="grey-r3">const constructNote = 'r3-short-code_done', <br>        isConstructed = $('body').hasClass(constructNote);</span> <br> <br>    {<span class="comment-r3"> // the main construction of short code</span> <br>        let text1 = 'show all code', <br>            text2 = 'short code'; <br> <br>        if (!isConstructed) { <br>            $('<mark class="red-r3">pre + pre</mark>').css('display', 'none') <br>                .before('&lt;button class="<mark>r3-short-code</mark> r3-active"&gt;'+ text1 + '&lt;/button&gt;'); <br>        } <br> <br>        $('<mark>.r3-short-code</mark>').click(function() { <br>            if ($(this).hasClass('r3-active')) { <br>                this.innerHTML= text2; <br>                $(this).prev().delay(300).toggle(600); <br>                $(this).next().toggle(300); <br>            } else { <br>                this.innerHTML= text1; <br>                $(this).prev().toggle(300); <br>                $(this).next().delay(300).toggle(600); <br>            } <br>            $(this).toggleClass('r3-active'); <br>        }); <br>    } <br> <br>    <span class="grey-r3">$('body').addClass(constructNote);</span> <br>}</pre>
                     </div>
                     <div>
-
+                      <p>Here is the link
+                        <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code.css">CSS</a>
+                      </p>
+                      <pre><span class="comment-r3">/* all of this is only style, no functionality*/</span> <span class="grey-r3"><br>pre{ <br>    color:#333; <br>    background-color:#f5f5f5; <br>    border:1px solid #ccc; <br>    border-radius:4px; <br>    margin:3px 0 3px 0; <br>    padding:3px; <br>    word-break:break-all; <br>    word-wrap:break-word; <br>    overflow:auto; <br>    font:11px Consolas, monospace <br>} <br> <br>.ar3 button{ <br>    cursor:pointer; <br>    font:13px calibri, arial, sans-serif; <br>    -webkit-text-size-adjust:100%; <br>    -ms-text-size-adjust:100%; <br>    -webkit-font-kerning:normal !important; <br>    font-kerning:normal !important <br>} <br> <br>.r3-short-code { <br>    font-size: 11px; <br>    cursor: pointer; <br>    background-color: rgba(0,0,0,0.05); <br>    border: grey thin solid; <br>    border-radius: 4px; <br>    color: rgba(0,0,0,0.6); <br>    display: block; <br>}</span></pre>
                     </div>
                   </div>
                 </div>
 
           </section>
+
+          <h3>short code (2nd update)</h3>
+          <section>
+            <p>So I took notes sometimes in English or in Indonesia, so I need to make sure the button in this short code fits the current language of the pages.</p>
+            <p>By default the page is English, if it is Indonesia than make sure you have this <code>&lt;body lang="id"&gt;</code>, here is the example:</p>
+            <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/test-ar3-short-code-2.html" width="" height=""></iframe>
+            <p>Here is the code and the sources
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-2-ES6.js">javaScript ES6</a> /
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-2.js">javaScript ES5</a>.
+            </p>
+            <pre>const <mark>isIndo</mark> = $('body').attr('lang') == 'id';<br>let text1 = <mark>isIndo</mark> ? 'tunjukkan semua kode' : 'show all code', <br>    text2 = <mark>isIndo</mark> ? 'persingkat kode' : 'short code';</pre>
+            <pre>{ <br>    <span class="grey-r3">const constructNote = 'r3-short-code_done', <br>        isConstructed = $('body').hasClass(constructNote); <br> <br>    {</span> <br>        <span class="comment-r3">// change button text between Indonesia or English based on language that is used </span><br>        const <mark>isIndo</mark> = $('body').attr('lang') == 'id'; <br>        let text1 = <mark>isIndo</mark> ? 'tunjukkan semua kode' : 'show all code', <br>            text2 = <mark>isIndo</mark> ? 'persingkat kode' : 'short code'; <br>        <span class="grey-r3"> <br>        if (!isConstructed) { <br>            $('pre + pre').css('display', 'none') <br>                .before('&lt;button class="r3-short-code r3-active"&gt;'+ text1 + '&lt;/button&gt;'); <br>        } <br> <br>        $('.r3-short-code').click(function() { <br>            if ($(this).hasClass('r3-active')) { <br>                this.innerHTML= text2; <br>                $(this).prev().delay(300).toggle(600); <br>                $(this).next().toggle(300); <br>            } else { <br>                this.innerHTML= text1; <br>                $(this).prev().toggle(300); <br>                $(this).next().delay(300).toggle(600); <br>            } <br>            $(this).toggleClass('r3-active'); <br>        }); <br>    } <br> <br>    $('body').addClass(constructNote); <br>}</span></pre>
+          </section>
+
+          <h3>short code (3rd update)</h3>
+          <section>
+            <p>So this is a scenario if I wanna change the button text globally, for example, if somehow I wanna take notes not in English or Indonesia.</p>
+            <p>To do this, I put the new text in <code>&lt;body&gt;</code> attribute, like this <code>&lt;body <b class="blue-r3">data-short-code-r3-text1</b> = "<span class="comment-r3">new text 1</span>" <b class="red-r3">data-short-code-r3-text2</b> = "<span class="comment-r3">new text 2</span>"&gt;</code><br>Here is an example:</p>
+            <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/test-ar3-short-code-3.html" width="" height=""></iframe>
+            <p>Here is the code and the sources
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-3-ES6.js">javaScript ES6</a> /
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-3.js">javaScript ES5</a>.</p>
+            <pre>let newText1 = $('body').attr('<mark>data-short-code-r3-text1</mark>'), <br>    newText2 = $('body').attr('<mark>data-short-code-r3-text2</mark>'); <br>if (newText1 !== undefined) {text1 = newText1;} <br>if (newText2 !== undefined) {text2 = newText2;}</pre>
+            <pre><span class="grey-r3">{<span class="comment-r3">// ar3-short-code</span> <br>    const constructNote = 'r3-short-code_done', <br>        isConstructed = $('body').hasClass(constructNote); <br> <br>    { <br>        const isIndo = $('body').attr('lang') == 'id'; <br>        let text1 = isIndo ? 'tunjukkan semua kode' : 'show all code', <br>            text2 = isIndo ? 'persingkat kode' : 'short code'; <br>            </span> <br>        <span class="comment-r3">// overriding default text</span> <br>        let newText1 = $('<mark>body</mark>').attr('<mark>data-short-code-r3-text1</mark>'), <br>            newText2 = $('<mark>body</mark>').attr('<mark>data-short-code-r3-text2</mark>'); <br>        if (newText1 !== undefined) {text1 = newText1;} <br>        if (newText2 !== undefined) {text2 = newText2;} <br>        <span class="grey-r3"> <br>        if (!isConstructed) { <br>            $('pre + pre').css('display', 'none') <br>                .before('&gt;button class="r3-short-code r3-active"&lt;'+ text1 + '&gt;/button&lt;'); <br>        } <br> <br>        $('.r3-short-code').click(function() { <br>            if ($(this).hasClass('r3-active')) { <br>                this.innerHTML= text2; <br>                $(this).prev().delay(300).toggle(600); <br>                $(this).next().toggle(300); <br>            } else { <br>                this.innerHTML= text1; <br>                $(this).prev().toggle(300); <br>                $(this).next().delay(300).toggle(600); <br>            } <br>            $(this).toggleClass('r3-active'); <br>        }); <br>    } <br> <br>    $('body').addClass(constructNote); <br>}</span> <br></pre>
+          </section>
+
+          <h3>short code (4th update)</h3>
+          <section>
+            <p>The last override is in case I wanna change the button text unique to the individual <code>&lt;pre&gt;</code> that is targeted.</p>
+            <p>To do this I put the new text as an attribute of the 2nd <code>&lt;pre&gt;</code>:<code>&lt;pre&gt;<span class="comment-r3">short code</span>&lt;/pre&gt;<br>&lt;pre <b class="blue-r3">data-r3-text1</b> ="<span class="comment-r3">new text 1a</span>" <b class="red-r3">data-r3-text2</b> = "<span class="comment-r3">new text 2a</span>"&gt;<span class="comment-r3">long code</span>&lt;/pre&gt;</code></p>
+            <p>Here is an example:</p>
+
+            <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/test-ar3-short-code-4.html" width="" height=""></iframe>
+
+            <p>Here is the sources
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-4-ES6.js">javaScript ES6</a> /
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-4.js">javaScript ES5</a>. and the ES6 preview:</p>
+
+            <pre><span class="comment-r3">// assigning text in button will be done with loop instead auto assign with jQuery</span> <br>const <b>$pre</b> = $('pre + pre'); <br>if (!isConstructed) {$pre.css('display', 'none');} <br> <br>for (let i = 0; i &lt; $pre.length; i++) { <br>    { <br>        let newerText1 = $($pre[i]).attr('<mark>data-r3-text1</mark>'), <br>            newerText2 = $($pre[i]).attr('<mark>data-r3-text2</mark>'), <br>            <span class="blue-r3">newestText1</span> = (newerText1 === undefined) ? newText1 : newerText1, <br>            <span class="red-r3">newestText2</span> = (newerText2 === undefined) ? newText2 : newerText2; <br> <br>        if (!isConstructed) { <br>            $(<b>$pre[i]</b>).before('&lt;button class="r3-short-code r3-active"&gt;'+ <br>                <span class="blue-r3">newestText1</span> + '&lt;/button&gt;'); <br>        } <br> <br>        $($pre[i]).prev().click(function() { <br>            if ($(this).hasClass('r3-active')) { <br>                this.innerHTML= <span class="red-r3">newestText2</span>; <br>                $(this).prev().delay(300).toggle(600); <br>                $(this).next().toggle(300); <br>            } else { <br>                this.innerHTML= <span class="blue-r3">newestText1</span>; <br>                $(this).prev().toggle(300); <br>                $(this).next().delay(300).toggle(600); <br>            } <br>            $(this).toggleClass('r3-active'); <br>        }); <br>    } <br>} <br></pre>
+            <pre><span class="grey-r3">{<br>    const constructNote = 'r3-short-code_done',<br>        isConstructed = $('body').hasClass(constructNote);<br><br>    const isIndo = $('body').attr('lang') == 'id';<br>    let text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',<br>        text2 = isIndo ? 'persingkat kode' : 'short code';<br><br>    let newText1 = $('body').attr('data-short-code-r3-text1'),<br>        newText2 = $('body').attr('data-short-code-r3-text2');<br>    if (newText1 !== undefined) {text1 = newText1;}<br>    if (newText2 !== undefined) {text2 = newText2;}</span><br><br>    <span class="comment-r3">// assigning text in button will be done with loop instead auto assign with jQuery</span><br>    const <b>$pre</b> = $('<u>pre + pre</u>');<br>    if (!isConstructed) {$pre.css('display', 'none');}<br><br>    for (let i = 0; i &lt; $pre.length; i++) {<br>        {<br>            let newerText1 = $(<b>$pre[i]</b>).attr('<mark>data-r3-text1</mark>'),<br>                newerText2 = $(<b>$pre[i]</b>).attr('<mark>data-r3-text2</mark>'),<br>                <span class="blue-r3">newestText1</span> = (newerText1 === undefined) ? newText1 : newerText1,<br>                <span class="red-r3">newestText2</span> = (newerText2 === undefined) ? newText2 : newerText2;<br><br>            if (!isConstructed) {<br>                $($pre[i]).before('&lt;button class="r3-short-code r3-active"&gt;'+<br>                    <span class="blue-r3">newestText1</span> + '&lt;/button&gt;');<br>            }<br><br>            $($pre[i]).prev().click(function() {<br>                if ($(this).hasClass('r3-active')) {<br>                    this.innerHTML= <span class="red-r3">newestText2</span>;<br>                    $(this).prev().delay(300).toggle(600);<br>                    $(this).next().toggle(300);<br>                } else {<br>                    this.innerHTML= <span class="blue-r3">newestText1</span>;<br>                    $(this).prev().toggle(300);<br>                    $(this).next().delay(300).toggle(600);<br>                }<br>                $(this).toggleClass('r3-active');<br>            });<br>        }<br>    }<br>    <span class="grey-r3"><br>    $('body').addClass(constructNote);<br>}</span><br></pre>
+          </section>
         </div>
+        <div>
+          <h2>table</h2>
+
+          <h3>filter table</h3>
+          <section>
+            <p>///</p>
+          </section>
+        </div>
+
       </main>
       <div style="clear:left"></div>
     </div><!-- ar3 -->
