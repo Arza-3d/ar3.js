@@ -18,7 +18,7 @@
 .tab-r3 > div:nth-child(2) > div{padding:6px}
 
 /* miscellaneous */
-body{margin:0 !important;padding:0 !important;font: 11px Tahoma, arial, sans-serif}
+body{font: 11px Tahoma, arial, sans-serif}
 a{text-decoration:none}
 a,
 a:link{color:rgb(225,150,50)}
