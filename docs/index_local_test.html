@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
   </head>
-  <body data-short-code-r3-text1="tunjukkan kodenya" data-short-code-r3-text2="simpan kodenya" data-repo-r3="https://github.com/Arza-3d/ar3js">
+  <body data-repo-r3="https://github.com/Arza-3d/ar3js">
     <script src="D:\DOC\GITHUB\ar3js\ar3header.js"></script>
     <header>
       <h1>ar3<small><small>.js</small></small></h1>
@@ -67,8 +67,15 @@
           <h2>.tab-r3</h2>
           <h3>basic functionality</h3>
           <section>
-            <p>I made this <code>.tab-r3</code> class so I can put different scripts that work for one functionality in 1 place, but still separate them.</p>
-            <p>The 1st version only consist of the basic functionality, that is the tabs group and the contents.</p>
+            <p>I made this <code>.tab-r3</code> class so I can put different example scripts that work for one functionality in one place, but still separate them. I  use this a lot in visual scripting example.</p>
+            <p>
+              To make this you need to make the basic structure:<br>
+              <code>
+                &lt;div class="tab-r3"&gt;
+                <br>&nbsp;&nbsp;
+                <br>&lt;/div&gt;
+              </code>
+            </p>
             <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab.html" width="" height=""></iframe>
             <p>Below is the source code:</p>
             <div class="tab-r3">
@@ -117,7 +124,7 @@
           <h3>shorting code</h3>
           <section>
               <p>I usually use this to show two version of same code, the short one just showing the important part of the code, and the long one showing the fully working code.</p>
-              <p>Every two consecutive <code>&lt;pre&gt;</code> tags, something like this; <code>&lt;pre&gt;<span class="comment-r3">short code</span>&lt;/pre&gt; &lt;pre&gt;<span class="comment-r3">long code</span>&lt;/pre&gt;</code> will be automatically made into short code, like this example:</p>
+              <p>Every two consecutive <code>&lt;pre&gt;</code> tags, something like this; <code>&lt;pre&gt;<span class="comment-r3">short code</span>&lt;/pre&gt; <br>&lt;pre&gt;<span class="comment-r3">long code</span>&lt;/pre&gt;</code> will be automatically made into short code, like this example:</p>
               <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/test-ar3-short-code.html" width="" height=""></iframe>
 
               <p>So here is the code:</p>
@@ -162,7 +169,8 @@
           <h3>short code (3rd update)</h3>
           <section>
             <p>So this is a scenario if I wanna change the button text globally, for example, if somehow I wanna take notes not in English or Indonesia.</p>
-            <p>To do this, I put the new text in <code>&lt;body&gt;</code> attribute, like this <code>&lt;body <b class="blue-r3">data-short-code-r3-text1</b> = "<span class="comment-r3">new text 1</span>" <b class="red-r3">data-short-code-r3-text2</b> = "<span class="comment-r3">new text 2</span>"&gt;</code><br>Here is an example:</p>
+            <p>To do this, I put the new text in <code>&lt;body&gt;</code> attribute, like this <code>&lt;body <span class="blue-r3">data-short-code-r3-text1</span>="<span class="comment-r3">new text 1</span>"
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="red-r3">data-short-code-r3-text2</span>="<span class="comment-r3">new text 2</span>"<br>&gt;</code><br>Here is an example:</p>
             <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/test-ar3-short-code-3.html" width="" height=""></iframe>
             <p>Here is the code and the sources
               <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-3-ES6.js">javaScript ES6</a> /
@@ -174,7 +182,7 @@
           <h3>short code (4th update)</h3>
           <section>
             <p>The last override is in case I wanna change the button text unique to the individual <code>&lt;pre&gt;</code> that is targeted.</p>
-            <p>To do this I put the new text as an attribute of the 2nd <code>&lt;pre&gt;</code>:<code>&lt;pre&gt;<span class="comment-r3">short code</span>&lt;/pre&gt;<br>&lt;pre <b class="blue-r3">data-r3-text1</b> ="<span class="comment-r3">new text 1a</span>" <b class="red-r3">data-r3-text2</b> = "<span class="comment-r3">new text 2a</span>"&gt;<span class="comment-r3">long code</span>&lt;/pre&gt;</code></p>
+            <p>To do this I put the new text as an attribute of the 2nd <code>&lt;pre&gt;</code>:<code>&lt;pre&gt;<br>&nbsp;&nbsp;<span class="comment-r3">short code</span><br>&lt;/pre&gt;<br>&lt;pre <span class="blue-r3">data-r3-text1</span>="<span class="comment-r3">new text 1a</span>" <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="red-r3">data-r3-text2</span>="<span class="comment-r3">new text 2a</span>"<br>&gt;<br>&nbsp;&nbsp;<span class="comment-r3">long code</span><br>&lt;/pre&gt;</code></p>
             <p>Here is an example:</p>
 
             <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/test-ar3-short-code-4.html" width="" height=""></iframe>
