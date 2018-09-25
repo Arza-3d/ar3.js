@@ -18,8 +18,7 @@ a:link{color:rgb(225,150,50)}
 a:visited{color:rgb(200,120,0)}
 a:hover{color:rgb(255,180,0)}
 a:active{color:rgb(255,200,0)}
-body{margin:0 !important;padding:0 !important}
-body{font: 11px Tahoma, arial, sans-serif}
+body{margin:0 !important;padding:0 !important;font: 11px Tahoma, arial, sans-serif}
 code{background-color:#eee; border:#ccc thin solid; padding: 2px 4px; display: inline-block; text-indent: 0; border-radius: 3px}
 html{overflow-x: hidden}
 img{border-radius: 6px}

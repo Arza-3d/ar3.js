@@ -16,3 +16,12 @@
 .tab-r3 > nav > a:hover{color:#fff; background-color:#ff5722}
 .tab-r3 > nav > a.r3-active:hover{color:#000}
 .tab-r3 > div:nth-child(2) > div{padding:6px}
+
+/* miscellaneous */
+body{margin:0 !important;padding:0 !important;font: 11px Tahoma, arial, sans-serif}
+a{text-decoration:none}
+a,
+a:link{color:rgb(225,150,50)}
+a:visited{color:rgb(200,120,0)}
+a:hover{color:rgb(255,180,0)}
+a:active{color:rgb(255,200,0)}
