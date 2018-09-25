@@ -2,8 +2,7 @@
     const constructNote = 'r3-tab_done',
         isConstructed = $('body').hasClass(constructNote);
 
-    const $links = $('.tab-r3 > nav > a'),
-        $contents = $('.tab-r3 > div:nth-child(2) > div');
+    const $contents = $('.tab-r3 > div:nth-child(2) > div');
     if (!isConstructed) {
         for (let i = 0; i < $contents.length; i++) {
             if ($($contents[i]).attr('id') == undefined) {
@@ -12,6 +11,7 @@
         }
 
         let id;
+        const $links = $('.tab-r3 > nav > a');
         for (let i = 0; i < $contents.length; i++) {
             id = $($contents[i]).attr('id');
             $links[i].setAttribute('data-tab-r3', id);
