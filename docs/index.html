@@ -37,14 +37,32 @@
 
       <main>
         <div data-title="construction">
-          <h2>construction phase</h2>
+          <h2>Automate trivial things</h2>
           <p>
             Construction phase only will be done once, at the start of web load, and that's it. If people download the page and open the offline version than the construction will not be executed.
           </p>
-          <h3>inside header</h3>
+
+          <h3>scaled for mobile device</h3>
           <section>
-            <p>Make sure the page is scaled for mobile device.</p>
-            <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre>
+            <p>Make sure the page is scaled for mobile device:</p>
+            <pre>$('header').append('&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;');</pre>
+          </section>
+
+          <h3>every &lt;i&gt; tags are english</h3>
+          <section>
+            <p>Make sure the <code>&lt;i&gt;</code> is english:</p>
+            <pre>$('i').attr('lang', 'en');</pre>
+          </section>
+
+          <h3>every &lt;video&gt; tags have control</h3>
+          <section>
+            <p>Make sure every videos have control:</p>
+            <pre>$('video').attr('controls');</pre>
+          </section>
+
+          <h3>every outside link open new tab</h3>
+          <section>
+            <pre>$("a[href^='http']").attr('target', '_blank');</pre>
           </section>
         </div>
         <div data-title="accordions">
@@ -272,30 +290,11 @@
           </section>
         </div>
         <div>
-          <h2>.....h2</h2>
-          <h3>...h3</h3>
-          <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </section>
-
-          <h3>2nd</h3>
-          <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </section>
-        </div>
-        <div>
           <h2>table</h2>
 
           <h3>filter table</h3>
           <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </section>
-
-          <h3>construct table from JSON data</h3>
-          <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>///</p>
           </section>
         </div>
 

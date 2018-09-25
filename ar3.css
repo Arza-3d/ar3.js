@@ -174,38 +174,38 @@ ol {line-height: 180%}
 /*############
 # AR3 HEADER #
 ############*/
-.ar3 > header{padding-left:60px} @media screen and (max-width:722px){
-.ar3 > header{padding-left:15px}
+header{padding-left:60px} @media screen and (max-width:722px){
+header{padding-left:15px}
 }
-.ar3 > header h1{
+header h1{
     font-size:90px; font-weight:100; border-left:solid orange thick; margin-top:20px; margin-bottom:0; margin-right:3.6%;
     display:block; padding-left:15px; padding-top:28px;
     /*background-image:url(../../media/image/gambarLatar/latarJudul.png);*/
     background-image:url('https://image.ibb.co/jGF34Q/latar_Judul.png');
     background-attachment:fixed; border-right:solid #ddd thin}
-.ar3 > header h4{
+header h4{
     margin-left:0; text-align:left; margin-top:0; margin-right:3.6%; border-top-left-radius:0; padding-left:20px;
     border-left:solid orange thick; border-bottom:solid orange 2px; border-bottom-left-radius:12px; border-top-right-radius:0; border-bottom-right-radius:0}
-.ar3 > header p{max-width:450px; text-indent:-20px; text-align:justify}
-.ar3 > header p:first-letter{font-size:24px; margin-left:60px}
-.ar3 > header table{border-left:solid thick orange; border-top:solid 2px orange; border-top-left-radius:8px}
-.ar3 > header table > a{background-color:#333; border-radius:3px; padding-left:4px; padding-right:4px}
+header p{max-width:450px; text-indent:-20px; text-align:justify}
+header p:first-letter{font-size:24px; margin-left:60px}
+header table{border-left:solid thick orange; border-top:solid 2px orange; border-top-left-radius:8px}
+header table > a{background-color:#333; border-radius:3px; padding-left:4px; padding-right:4px}
 
 /*##########
 # AR3 LIST #
 ##########*/
-.ar3 li,
-.ar3 ol{text-align:justify}
-.ar3 li > pre{margin-bottom:13px}
-.ar3 li > table{margin-bottom:10px}
-.ar3 ul{list-style-type:circle}
-.ar3 p + ul,
-.ar3 p + ol{margin-top:2px}
-.ar3 ul > ul{list-style-type:disc}
-.ar3 ul > ul,
-.ar3 ul > ol,
-.ar3 ol > ul,
-.ar3 ol > ol{padding-left:12px; margin-top:2px}
+li,
+ol{text-align:justify}
+li > pre{margin-bottom:13px}
+li > table{margin-bottom:10px}
+ul{list-style-type:circle}
+p + ul,
+p + ol{margin-top:2px}
+ul > ul{list-style-type:disc}
+ul > ul,
+ul > ol,
+ol > ul,
+ol > ol{padding-left:12px; margin-top:2px}
 
 /*###########
 # AR3 MAIN  #
@@ -293,21 +293,21 @@ ol {line-height: 180%}
 /*##########
 # AR3 MENU #
 ##########*/
-.ar3 button{cursor:pointer, font:11px calibri, arial sans-serif}
-.ar3 input,
-    .ar3 option,
-    .ar3 select,
-    .ar3 textarea{font:13px calibri, arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; -webkit-font-kerning:normal !important; font-kerning:normal !important}
-.ar3 form{cursor:default}
-.ar3 input[type=number],
-    .ar3 input[type=text],
-    .ar3 input[type=url],
-    .ar3 select{font-size:9px}
-.ar3 input[type=number]:focus,
-    .ar3 input[type=text]:focus,
-    .ar3 input[type=url]:focus,
-    .ar3 select:focus{font-size:13px}
-.ar3 label{font-weight:bold}
+button{cursor:pointer, font:11px calibri, arial sans-serif}
+input,
+    option,
+    select,
+    textarea{font:13px calibri, arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; -webkit-font-kerning:normal !important; font-kerning:normal !important}
+form{cursor:default}
+input[type=number],
+    input[type=text],
+    input[type=url],
+    select{font-size:9px}
+input[type=number]:focus,
+    input[type=text]:focus,
+    input[type=url]:focus,
+    select:focus{font-size:13px}
+label{font-weight:bold}
 
 /*###########
 # ar3 table > #
