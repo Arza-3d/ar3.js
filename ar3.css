@@ -2,10 +2,11 @@
 # nav-ar3 #
 #########*/
 #r3-nav div:nth-child(2) a {display: block;
-    background-color: grey; height:100%;
+    background-color: #222; height:100%;
     font-size: 12px; min-width: 65px;
-    text-align: center; line-height: 45px}
-#r3-nav div:nth-child(2) a:hover {background-color: red;}
+    text-align: center; line-height: 53px;
+    transition: background-color 0.4s ease-in-out,color 0.4s ease-in-out; letter-spacing: 1px}
+#r3-nav div:nth-child(2) a:hover {background-color: #ff5722; color: white}
 /*#r3-web-logo {background-color: rgba(0,0,0,0) !important}*/
 
 /*################
@@ -196,8 +197,8 @@ header h1{
     background-image:url('https://image.ibb.co/jGF34Q/latar_Judul.png');
     background-attachment:fixed; border-right:solid #ddd thin}
 header h4{
-    margin-left:0; text-align:left; margin-top:0; margin-right:3.6%; border-top-left-radius:0; padding-left:20px;
-    border-left:solid orange thick; border-bottom:solid orange 2px; border-bottom-left-radius:12px; border-top-right-radius:0; border-bottom-right-radius:0}
+    margin-left:0; margin-top:0; margin-right:3.6%; border-top-left-radius:0; padding-left:20px;
+    border-left:solid orange thick; border-bottom:solid orange 2px; border-bottom-left-radius:12px; border-top-right-radius:0; border-bottom-right-radius:0; background-color: #222; font-size: 12px; color:#fff; font-weight: 100; line-height: 190%; letter-spacing: 2px}
 header p{max-width:450px; text-indent:-20px; text-align:justify}
 header p:first-letter{font-size:24px; margin-left:60px}
 header table{border-left:solid thick orange; border-top:solid 2px orange; border-top-left-radius:8px}
