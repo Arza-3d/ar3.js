@@ -9,7 +9,7 @@
 .tab-r3 > .r3-tab-content > div:target{color:black}
 .tab-r3 > nav {background-color:#2c3236; border-radius:8px 8px 0 0}
 .tab-r3 > nav > *{display:inline-block; border-radius:4px 4px 0 0; padding:7px 6px; margin:0}
-.tab-r3 > nav  a{transition:color 0.4s ease-in, background-color 0.4s ease-out}
+.tab-r3 > nav > a{transition:color 0.4s ease-in, background-color 0.4s ease-out; cursor: pointer}
 .tab-r3 > nav > span{color:white}
 .tab-r3 > nav > *:first-child{border-top-left-radius:8px}
 .tab-r3 > nav > *:last-child{border-top-right-radius:8px}

@@ -1,70 +1,37 @@
-(function() {
+(function() { // ar3-tab-1st version https://arza-3d.github.io/ar3js/
     'use strict';
-    var newElement = !$('body').hasClass('r3-tab_done');
+    var constructNote = 'r3-tab_done',
+        isConstructed = $('body').hasClass(constructNote);
 
-    //##########
-    // .tab-r3 # contain 1st div that will be the links, and 2nd div that will be the content
-    //##########
-    (function() {
-
-        var $tabGroup = $('.tab-r3'),
-            $tabContents = $tabGroup.children('div:nth-child(2)'),
-            $divContent = $tabContents.children('div'),
-            divContentL = $divContent.length;
-
-        //###########
-        // <div>2nd # access div content
-        //###########
-        (function() {
-            if (newElement) {
-                for (let i = 0; i < divContentL; i++) {
-                    $($divContent[i]).attr('id', 'r3_tab_content_'+ i);
-                }
+    var $content = $('.tab-r3 > div:nth-child(2) > div');
+    if (!isConstructed) {
+        for (var i = 0; i < $content.length; i++) {
+            if ($($content[i]).attr('id') == undefined) {
+                $($content[i]).attr('id', 'r3_tab_content_'+ i);
             }
-        })();
+        }
 
-        //###########
-        // <div>1st #
-        //###########
-        (function() {
-            let $nav = $tabGroup.children('nav:first-child'),
-                $a = $nav.children('a');//,
-                //$a = $div1.children('a');
+        var id,
+            $links = $('.tab-r3 > nav > a');
+        for (var i = 0; i < $content.length; i++) {
+            id = $($content[i]).attr('id');
+            $links[i].setAttribute('data-tab-r3', id);
+        }
 
-            //######
-            // <a> # create href attribute to <a>
-            //######
-            (function() {
-                if (newElement) {
-                    for (let i = 0; i < divContentL; i++) {
-                        let id = $($divContent[i]).attr('id');
-                        $a[i].setAttribute('href', '#'+id);
-                    }
-                }
-            })();
+        var $1stLink = $('.tab-r3 > nav > a:first-child');
+        $1stLink.addClass('r3-active');
+    }
 
-            //##################
-            // <a>:first-child # first <a> is activated by default
-            //##################
-            (function() {
-                if (newElement) {
-                    $nav.children('a:first-child').addClass('r3-active');
-                }
-            })();
 
-            //######
-            // <a> # attach click event
-            //######
-            $a.click(function() {
-                var id = this.href.slice(this.href.indexOf('#') + 1, this.href.length);
-                $(this).siblings().removeClass('r3-active');
-                $(this).addClass('r3-active');
-                $('#'+id).siblings().fadeOut(400);
-                $('#'+id).delay(401).fadeIn();
-            });
-        })();
-    })();
+    $links.click(function() {
+        if (!$(this).hasClass('r3-active')) {
+            var id = $(this).attr('data-tab-r3');
+            $(this).siblings().removeClass('r3-active');
+            $(this).addClass('r3-active');
+            $('#'+id).siblings().fadeOut(400);
+            $('#'+id).delay(401).fadeIn();
+        }
+    });
 
-    $('body').addClass('r3-tab_done');
-
+    $('body').addClass(constructNote);
 })();

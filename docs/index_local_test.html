@@ -33,9 +33,6 @@
       <p>Since my script that was meant to help me take study notes, getting bigger and bigger, and it's kinda getting messy, I need to make the documentation for the script. <u>So this page will be documentation of <code><b>ar3</b>.js</code> and <code><b>ar3</b>.css</code>.</u></p>
     </header>
     <div class="ar3">
-
-
-
       <main>
         <div data-title="construction">
           <h2>Automate trivial things</h2>
@@ -73,7 +70,25 @@
             <p>I made this <code>.tab-r3</code> class so I can put different scripts that work for one functionality in 1 place, but still separate them.</p>
             <p>The 1st version only consist of the basic functionality, that is the tabs group and the contents.</p>
             <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab.html" width="" height=""></iframe>
+            <p>Below is the source code:</p>
+            <div class="tab-r3">
+              <nav>
+                <a>javaScript</a>
+                <span> + </span>
+                <a>CSS</a>
+              </nav>
+              <div>
+                <div>
+                  <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-ES6.js">ES6</a> /
+                  <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab.js">ES5</a>
+                  <pre><span class="grey-r3">{ <span class="comment-r3">// ar3-tab-1st version</span> <br>    const constructNote = 'r3-tab_done', <br>        isConstructed = $('body').hasClass(constructNote);</span> <br> <br>    const $contents = $('<mark>.tab-r3</mark> > div:nth-child(2) > div'); <br>    if (!isConstructed) { <br>        for (let i = 0; i < $contents.length; i++) { <br>            if ($($contents[i]).attr('id') == undefined) { <br>                $($contents[i]).attr('id', 'r3_tab_content_'+ i); <br>            } <br>        } <br> <br>        let id; <br>        const $links = $('<mark>.tab-r3</mark> > nav > a'); <br>        for (let i = 0; i < $contents.length; i++) { <br>            id = $($contents[i]).attr('id'); <br>            $links[i].setAttribute('data-tab-r3', id); <br>        } <br> <br>        const $1stLink = $('<mark>.tab-r3</mark> > nav > a:first-child'); <br>        $1stLink.addClass('r3-active'); <br>    } <br> <br>    $links.click(function() { <br>        if (!$(this).hasClass('r3-active')) { <br>            let id = $(this).attr('data-tab-r3'); <br>            $(this).siblings().removeClass('r3-active'); <br>            $(this).addClass('r3-active'); <br>            $('#'+id).siblings().fadeOut(400); <br>            $('#'+id).delay(401).fadeIn(); <br>        } <br>    }); <br><span class="grey-r3"> <br>    $('body').addClass(constructNote); <br>}</span> <br></pre>
+                </div>
+                <div>
 
+                </div>
+              </div>
+
+            </div>
             <p>This are the basic <code>js</code> and <code>css</code> code of the functionality:</p>
 
             <div class="tab-r3">
@@ -97,7 +112,7 @@
               <p>This additional functionality is meant to be used with visual scripting example. It make optional link box on the picture.</p>
 
               <p>Here is the code that is added to make that box link functionality on top of that image</p>
-              <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab-2.html" width="500px" height=""></iframe>
+              <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab-2.html" style="min-width:600px"></iframe>
               <div class="tab-r3">
                   <nav>
                       <a>javaScript</a>
@@ -131,7 +146,7 @@
                   <div>
                     <div>
                       <p>Here is the link
-                        <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-ES6.js">javaScript ES6</a>, or this is the
+                        <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-ES6.js">javaScript ES6</a> /
                         <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code.js">javaScript ES5</a>.
                       </p>
                       <pre>{<span class="comment-r3"> // ar3-short-code</span> <br>    <span class="grey-r3">const constructNote = 'r3-short-code_done', <br>        isConstructed = $('body').hasClass(constructNote);</span> <br> <br>    {<span class="comment-r3"> // the main construction of short code</span> <br>        let text1 = 'show all code', <br>            text2 = 'short code'; <br> <br>        if (!isConstructed) { <br>            $('<mark class="red-r3">pre + pre</mark>').css('display', 'none') <br>                .before('&lt;button class="<mark>r3-short-code</mark> r3-active"&gt;'+ text1 + '&lt;/button&gt;'); <br>        } <br> <br>        $('<mark>.r3-short-code</mark>').click(function() { <br>            if ($(this).hasClass('r3-active')) { <br>                this.innerHTML= text2; <br>                $(this).prev().delay(300).toggle(600); <br>                $(this).next().toggle(300); <br>            } else { <br>                this.innerHTML= text1; <br>                $(this).prev().toggle(300); <br>                $(this).next().delay(300).toggle(600); <br>            } <br>            $(this).toggleClass('r3-active'); <br>        }); <br>    } <br> <br>    <span class="grey-r3">$('body').addClass(constructNote);</span> <br>}</pre>
