@@ -3,18 +3,18 @@
     var constructNote = 'r3-tab_done',
         isConstructed = $('body').hasClass(constructNote);
 
-    var $content = $('.tab-r3 > div:nth-child(2) > div');
+    var $contents = $('.tab-r3 > div:nth-child(2) > div');
     if (!isConstructed) {
-        for (var i = 0; i < $content.length; i++) {
-            if ($($content[i]).attr('id') == undefined) {
-                $($content[i]).attr('id', 'r3_tab_content_'+ i);
+        for (var i = 0; i < $contents.length; i++) {
+            if ($($contents[i]).attr('id') == undefined) {
+                $($contents[i]).attr('id', 'r3_tab_content_'+ i);
             }
         }
 
         var id,
             $links = $('.tab-r3 > nav > a');
-        for (var i = 0; i < $content.length; i++) {
-            id = $($content[i]).attr('id');
+        for (var i = 0; i < $contents.length; i++) {
+            id = $($contents[i]).attr('id');
             $links[i].setAttribute('data-tab-r3', id);
         }
 
