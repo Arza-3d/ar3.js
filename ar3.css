@@ -1,7 +1,12 @@
 /*#########
 # nav-ar3 #
 #########*/
-#r3-nav a {display: inline-block;background-color: red; max-height:100%; min-width: 75px; padding-top: 15px}
+#r3-nav div:nth-child(2) a {display: block;
+    background-color: grey; height:100%;
+    font-size: 12px; min-width: 65px;
+    text-align: center; line-height: 45px}
+#r3-nav div:nth-child(2) a:hover {background-color: red;}
+/*#r3-web-logo {background-color: rgba(0,0,0,0) !important}*/
 
 /*################
 # SET DEFAULT TAG#

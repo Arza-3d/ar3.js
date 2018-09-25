@@ -1463,7 +1463,7 @@
                 // set dynamic header for ar3header
                 (function() {
                     function dynamicHeader() {
-                        var $nav = $('#nav-ar3'),
+                        var $nav = $('#r3-nav'),
                             topLimit = ElemX.topY($main[0]) - $nav.innerHeight() - 15;
                         if (scrolltop() < topLimit) {
                             $nav.css({'position': 'fixed', 'top' : 0});
