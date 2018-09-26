@@ -5,6 +5,7 @@
 
     for (var i = 0; i < $navTarget; i++) {
         $navTarget.wrap('<div class="relative-container-r3">');
+        $navTarget.after('<div style="clear:left">');
     }
 
 })();
