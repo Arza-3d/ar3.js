@@ -17,10 +17,13 @@
             var j = 0;
 
             // insert aside
-            $($navTarget[i]).before('<aside id="r3-aside-nav' + (i + 1) +'" class="r3-aside-nav">');
+            $($navTarget[i]).before('<aside id="r3-aside-nav-' + (i + 1) +'" class="r3-aside-nav">');
 
             while ($headers[j] !== undefined) {
                 var $h = $($navTarget[i]).find($headers[j]);
+                //var comma = (linkTarget)
+                //var linkTarget += ',' +;
+
                     for (var k = 0; k < $h.length; k++) {
 
                         $($h[k]).addClass('ar3-h' + (j + 1));
@@ -30,7 +33,7 @@
                         }
 
                         // create element
-                        $('').;
+                        $('#r3-aside-nav-' + (i + 1)).append('<a href="#'+ $($h[k]).attr('id') +'">' + $($h[k]).html() + '</a>');
                     }
 
                 j++;
