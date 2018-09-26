@@ -76,7 +76,7 @@
                 <br>&lt;/div&gt;
               </code>
             </p>
-            <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab.html" width="" height=""></iframe>
+            <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab.html" width="" height="250px"></iframe>
             <p>Below is the source code:</p>
             <div class="tab-r3">
               <nav>
@@ -86,12 +86,16 @@
               </nav>
               <div>
                 <div>
-                  <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-ES6.js">ES6</a> /
-                  <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab.js">ES5</a>
-                  <pre><span class="grey-r3">{ <span class="comment-r3">// ar3-tab-1st version</span> <br>    const constructNote = 'r3-tab_done', <br>        isConstructed = $('body').hasClass(constructNote);</span> <br> <br>    const $contents = $('<mark>.tab-r3</mark> > div:nth-child(2) > div'); <br>    if (!isConstructed) { <br>        for (let i = 0; i < $contents.length; i++) { <br>            if ($($contents[i]).attr('id') == undefined) { <br>                $($contents[i]).attr('id', 'r3_tab_content_'+ i); <br>            } <br>        } <br> <br>        let id; <br>        const $links = $('<mark>.tab-r3</mark> > nav > a'); <br>        for (let i = 0; i < $contents.length; i++) { <br>            id = $($contents[i]).attr('id'); <br>            $links[i].setAttribute('data-tab-r3', id); <br>        } <br> <br>        const $1stLink = $('<mark>.tab-r3</mark> > nav > a:first-child'); <br>        $1stLink.addClass('r3-active'); <br>    } <br> <br>    $links.click(function() { <br>        if (!$(this).hasClass('r3-active')) { <br>            let id = $(this).attr('data-tab-r3'); <br>            $(this).siblings().removeClass('r3-active'); <br>            $(this).addClass('r3-active'); <br>            $('#'+id).siblings().fadeOut(400); <br>            $('#'+id).delay(401).fadeIn(); <br>        } <br>    }); <br><span class="grey-r3"> <br>    $('body').addClass(constructNote); <br>}</span> <br></pre>
+                  <p><a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-ES6.js">tab-r3.js ES6</a> /
+                  <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab.js">tab-r3.js ES5</a></p>
+                  <pre><span class="grey-r3">{ <span class="comment-r3">// ar3-tab-1st version</span> <br>    const constructNote = 'r3-tab_done', <br>        isConstructed = $('body').hasClass(constructNote);</span> <br> <br>    const $contents = $('<mark>.tab-r3</mark> > div:nth-child(2) > div'),<br>          $links = $('<mark>.tab-r3</mark> > nav > a'); <br>    if (!isConstructed) { <br>        for (let i = 0; i < $contents.length; i++) { <br>            if ($($contents[i]).attr('id') == undefined) { <br>                $($contents[i]).attr('id', 'r3_tab_content_'+ i); <br>            } <br>        } <br> <br>        let id; <br>        for (let i = 0; i < $contents.length; i++) { <br>            id = $($contents[i]).attr('id'); <br>            $links[i].setAttribute('data-tab-r3', id); <br>        } <br> <br>        const $1stLink = $('<mark>.tab-r3</mark> > nav > a:first-child'); <br>        $1stLink.addClass('r3-active'); <br>    } <br> <br>    $links.click(function() { <br>        if (!$(this).hasClass('r3-active')) { <br>            let id = $(this).attr('data-tab-r3'); <br>            $(this).siblings().removeClass('r3-active'); <br>            $(this).addClass('r3-active'); <br>            $('#'+id).siblings().fadeOut(400); <br>            $('#'+id).delay(401).fadeIn(); <br>        } <br>    }); <br><span class="grey-r3"> <br>    $('body').addClass(constructNote); <br>}</span> <br></pre>
                 </div>
                 <div>
-
+                  <p>
+                    <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab.css">tab-r3.css</a>
+                  </p>
+                  <pre><span class="comment-r3">/* tab-r3 functionality*/</span><br>.tab-r3 &gt; div:nth-child(2) &gt; div{display:none}<br>.tab-r3 &gt; div:nth-child(2) &gt; div:first-child{display:block}</pre>
+                  <pre><span class="comment-r3">/* tab-r3 functionality*/</span> <br>.tab-r3 &gt; div:nth-child(2) &gt; div{display:none} <br>.tab-r3 &gt; div:nth-child(2) &gt; div:first-child{display:block} <br> <br><span class="grey-r3"><span class="comment-r3">/* tab-r3 style*/</span> <br>.tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%} <br>.tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold} <br>.tab-r3{border-radius:8px; border:solid thin grey} <br>.tab-r3 &gt; .r3-tab-content &gt; div:target{color:black} <br>.tab-r3 &gt; nav {background-color:#2c3236; border-radius:8px 8px 0 0} <br>.tab-r3 &gt; nav &gt; *{display:inline-block; border-radius:4px 4px 0 0; padding:7px 6px; margin:0} <br>.tab-r3 &gt; nav &gt; a{transition:color 0.4s ease-in, background-color 0.4s ease-out; cursor: pointer} <br>.tab-r3 &gt; nav &gt; span{color:white} <br>.tab-r3 &gt; nav &gt; *:first-child{border-top-left-radius:8px} <br>.tab-r3 &gt; nav &gt; *:last-child{border-top-right-radius:8px} <br>.tab-r3 &gt; nav &gt; a:hover{color:#fff; background-color:#ff5722} <br>.tab-r3 &gt; nav &gt; a.r3-active:hover{color:#000} <br>.tab-r3 &gt; div:nth-child(2) &gt; div{padding:6px} <br> <br><span class="comment-r3">/* miscellaneous */</span> <br>body{font: 11px Tahoma, arial, sans-serif} <br>a{text-decoration:none} <br>a, <br>a:link{color:rgb(225,150,50)} <br>a:visited{color:rgb(200,120,0)} <br>a:hover{color:rgb(255,180,0)} <br>a:active{color:rgb(255,200,0)} <br>p{max-width: 360px; text-align: justify; line-height: 18px} </span></pre>
                 </div>
               </div>
 
@@ -103,7 +107,7 @@
               <p>This additional functionality is meant to be used with visual scripting example. It make optional link box on the picture.</p>
 
               <p>Here is the code that is added to make that box link functionality on top of that image</p>
-              <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab-2.html" style="min-width:600px"></iframe>
+              <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab-2.html" width="600px" height="220px"></iframe>
               <div class="tab-r3">
                   <nav>
                       <a>javaScript</a>
@@ -111,10 +115,14 @@
                       <a>CSS</a>
                   </nav>
                   <div>
-                      <div></div>
                       <div>
-                        <pre>.relative-container-r3 { <br>    position: relative; <br>    overflow: auto <br>} <br>.relative-container-r3 &gt; a { <br>    position: absolute; <br>    border: rgba(255,100,0,0.5) solid medium; <br>    cursor: pointer; <br>    display: block; <br>    border-radius: 6px; <br>    text-align: center <br>} <br>.relative-container-r3 &gt; a &gt; span { <br>    position: relative; <br>    font-weight: bold; <br>    top: 40%; <br>    font-size: 1.5em <br>}
-                        </pre>
+                        <pre>const $insideLinks = $('<mark>.tab-r3 &gt; div:nth-child(2) <u>div.relative-container-r3 &gt; a</u></mark>'); <br>$insideLinks.click(function() { <br>    let n = $(this).attr('<mark>data-tab-a</mark>'); <br>    $(this).parents('.tab-r3') <br>        .children('nav:first-child') <br>        .children('a:nth-of-type('+ n +')').click(); <br>});</pre>
+                        <p>Here is the link to the full working code; <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2-ES6.js">tab-r3-02 ES6</a> /
+                        <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.js">tab-r3-02 ES5</a>.</p>
+                      </div>
+                      <div>
+                        <pre>.relative-container-r3 {position: relative; overflow: auto} <br>.tab-r3 .relative-container-r3 &gt; a { <br>    position: absolute; border: rgba(255,100,0,0.5) solid medium; cursor: pointer; display: block; <br>    border-radius: 6px; text-align: center} <br>.tab-r3 .relative-container-r3 &gt; a &gt; span {position: relative; font-weight: bold; top: 40%; font-size: 1.5em}</pre>
+                        <p>Here is the link to the <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.css">tab-r3-02 CSS</a></p>
                       </div>
                   </div>
               </div>

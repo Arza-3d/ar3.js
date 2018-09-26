@@ -117,10 +117,12 @@
                   <div>
                       <div>
                         <pre>const $insideLinks = $('<mark>.tab-r3 &gt; div:nth-child(2) <u>div.relative-container-r3 &gt; a</u></mark>'); <br>$insideLinks.click(function() { <br>    let n = $(this).attr('<mark>data-tab-a</mark>'); <br>    $(this).parents('.tab-r3') <br>        .children('nav:first-child') <br>        .children('a:nth-of-type('+ n +')').click(); <br>});</pre>
+                        <p>Here is the link to the full working code; <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2-ES6.js">tab-r3-02 ES6</a> /
+                        <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.js">tab-r3-02 ES5</a>.</p>
                       </div>
                       <div>
-                        <pre>.relative-container-r3 { <br>    position: relative; <br>    overflow: auto <br>} <br>.relative-container-r3 &gt; a { <br>    position: absolute; <br>    border: rgba(255,100,0,0.5) solid medium; <br>    cursor: pointer; <br>    display: block; <br>    border-radius: 6px; <br>    text-align: center <br>} <br>.relative-container-r3 &gt; a &gt; span { <br>    position: relative; <br>    font-weight: bold; <br>    top: 40%; <br>    font-size: 1.5em <br>}
-                        </pre>
+                        <pre>.relative-container-r3 {position: relative; overflow: auto} <br>.tab-r3 .relative-container-r3 &gt; a { <br>    position: absolute; border: rgba(255,100,0,0.5) solid medium; cursor: pointer; display: block; <br>    border-radius: 6px; text-align: center} <br>.tab-r3 .relative-container-r3 &gt; a &gt; span {position: relative; font-weight: bold; top: 40%; font-size: 1.5em}</pre>
+                        <p>Here is the link to the <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.css">tab-r3-02 CSS</a></p>
                       </div>
                   </div>
               </div>
