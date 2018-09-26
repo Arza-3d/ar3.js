@@ -59,10 +59,10 @@ ol {line-height: 180%}
 .r3-border{border-color: orange; border-width: 3px}
 
 .relative-container-r3 {position: relative; overflow: auto}
-.relative-container-r3 > a {
+.tab-r3 .relative-container-r3 > a {
     position: absolute; border: rgba(255,100,0,0.5) solid medium; cursor: pointer; display: block;
     border-radius: 6px; text-align: center}
-.relative-container-r3 > a > span {position: relative; font-weight: bold; top: 40%; font-size: 1.5em}
+.tab-r3 .relative-container-r3 > a > span {position: relative; font-weight: bold; top: 40%; font-size: 1.5em}
 
 /*##########
 # AR3 JSON # CLASS

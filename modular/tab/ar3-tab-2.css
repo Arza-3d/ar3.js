@@ -2,6 +2,13 @@
 .tab-r3 > div:nth-child(2) > div{display:none}
 .tab-r3 > div:nth-child(2) > div:first-child{display:block}
 
+/* tab-r3 insidelink functionality (2nd update)*/
+.relative-container-r3 {position: relative; overflow: auto}
+.tab-r3 .relative-container-r3 > a {
+    position: absolute; border: rgba(255,100,0,0.5) solid medium; cursor: pointer; display: block;
+    border-radius: 6px; text-align: center}
+.tab-r3 .relative-container-r3 > a > span {position: relative; font-weight: bold; top: 40%; font-size: 1.5em}
+
 /* tab-r3 style*/
 .tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%}
 .tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold}
