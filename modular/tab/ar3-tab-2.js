@@ -32,5 +32,13 @@
         }
     });
 
+    var $insideLinks = $('.tab-r3 > div:nth-child(2) div.relative-container-r3 > a');
+    $insideLinks.click(function() {
+        var n = $(this).attr('data-tab-a');
+        $(this).parents('.tab-r3')
+            .children('nav:first-child')
+            .children('a:nth-of-type('+ n +')').click();
+    });
+
     $('body').addClass(constructNote);
 })();
