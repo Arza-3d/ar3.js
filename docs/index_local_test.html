@@ -25,8 +25,7 @@
         My preferences for good study notes are...
       </p>
       <ul>
-        <li>Contain lot information in a page, just like books</li>
-        <li>Small readable font, instead of big fonts</li>
+        <li>Small readable font,</li>
         <li>Hidable element, cause I don't like long scroll</li>
         <li>Plus you can embed video in <code>html</code> notes</li>
       </ul>
@@ -40,7 +39,7 @@
             Construction phase only will be done once, at the start of web load, and that's it. If people download the page and open the offline version than the construction will not be executed.
           </p>
 
-          <h3>all trivial stuff</h3>
+          <h3>add necessary attributes:</h3>
           <section>
             <ol>
               <li>Make sure the page is scaled for mobile device:
@@ -64,6 +63,27 @@
             </ol>
           </section>
 
+          <h3>add necessary elements:</h3>
+          <section>
+            <ol>
+              <li>Make sure <code>&lt;table&gt;</code> is inside element with style <code>overflow:auto</code>...
+                <br><code>$('table').wrap('&lt;div style="overflow:auto"&gt;');</code>
+              </li>
+              <li>... also do this for <code>&lt;img&gt;</code> unless it is inside element with <code>relative-container-r3</code> class:</li>
+            </ol>
+          </section>
+
+        </div>
+        <div data-title="navigation">
+          <h2>navigation</h2>
+          <h3>navigation construction (mobile)</h3>
+          <section>
+
+          </section>
+          <h3>navigation construction (PC)</h3>
+          <section>
+            <p>..</p>
+          </section>
         </div>
         <div data-title="accordions">
           <h2>.tab-r3</h2>
