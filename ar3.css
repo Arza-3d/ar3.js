@@ -273,11 +273,13 @@ ol > ol{padding-left:12px; margin-top:2px}
     text-align:left; display:inline-block; border-radius:0; padding: 3px; padding-left: 30px;
     margin-left: -12px; margin-bottom:0; background-color:rgba(70,70,70,1.00); border-bottom:double orange thin;
 }
-.ar3 > main > div > p{padding-left:23px; text-indent:36px; text-align:justify; max-width:360px}
-
+p {padding-left:23px; text-indent:36px; text-align:justify; max-width:360px}
+li{max-width: 360px; line-height: 18px}
 .ar3 > main > div > p:first-letter{font-size:24px} @media print{
 .ar3 > main > div > p:first-letter{font-size:11px}
 }
+br + code {margin: 4px 0}
+code{max-width: none}
 .ar3 > main > div > section{
     border:1px solid #4f4f4f; border-radius:0 0 10px 10px; padding:5px 10px 10px 15px;
     margin:0 1% 15px 1%; background-color:#fafafa; overflow:hidden} @media print{

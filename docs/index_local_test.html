@@ -40,28 +40,30 @@
             Construction phase only will be done once, at the start of web load, and that's it. If people download the page and open the offline version than the construction will not be executed.
           </p>
 
-          <h3>scaled for mobile device</h3>
+          <h3>all trivial stuff</h3>
           <section>
-            <p>Make sure the page is scaled for mobile device:</p>
-            <pre>$('header').append('&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;');</pre>
+            <ol>
+              <li>Make sure the page is scaled for mobile device:
+                <br><code>$('header').append('&lt;meta name="viewport"' + <br>'content="width=device-width, initial-scale=1"&gt;');</code>
+              </li>
+              <li>When I wrote in Indonesia language, I use <code>&lt;i&gt;</code> tag to contain English words. Make sure the <code>&lt;i&gt;</code> are all in english:
+                <br><code>$('i').attr('lang', 'en');</code>
+              </li>
+              <li>Since it's just code, don't translate <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code>...
+                <br><code>$('code, pre').attr('translate', 'no');</code>
+              </li>
+              <li>...but translate it if it has a comment (has <code>comment-r3</code> class):
+                <br><code>$('.comment-r3').attr('translate', 'yes');</code>
+              </li>
+              <li>Make sure every videos have control:
+                <br><code>$('video').attr('controls');</code>
+              </li>
+              <li>Make sure outside links open new tab:
+                <br><code>$("a[href^='http']").attr('target', '_blank');</code>
+              </li>
+            </ol>
           </section>
 
-          <h3>every &lt;i&gt; tags are english</h3>
-          <section>
-            <p>Make sure the <code>&lt;i&gt;</code> is english:</p>
-            <pre>$('i').attr('lang', 'en');</pre>
-          </section>
-
-          <h3>every &lt;video&gt; tags have control</h3>
-          <section>
-            <p>Make sure every videos have control:</p>
-            <pre>$('video').attr('controls');</pre>
-          </section>
-
-          <h3>every outside link open new tab</h3>
-          <section>
-            <pre>$("a[href^='http']").attr('target', '_blank');</pre>
-          </section>
         </div>
         <div data-title="accordions">
           <h2>.tab-r3</h2>
@@ -206,7 +208,7 @@
         <div>
           <h2>table</h2>
 
-          <h3>filter table</h3>
+          <h3>construct table from JSON</h3>
           <section>
             <p>///</p>
           </section>
