@@ -1,11 +1,20 @@
-(function() {
-    'use strict';
-    var $navTarget = $('.aside-nav-target-r3');
-    var $headers = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+.r3-aside-nav {
+    border: grey thin solid;
+    min-height: 98vh;
+    width: 15%;
+    float: left;
+    box-sizing: border-box;
+}
 
-    for (var i = 0; i < $navTarget; i++) {
-        $navTarget.wrap('<div class="relative-container-r3">');
-        $navTarget.after('<div style="clear:left">');
-    }
+.aside-nav-target-r3 {
+    border: grey thin solid;
+    float: left;
+    width: 70%;
+    padding: 10px;
+    min-height: 98vh;
+    box-sizing: border-box;
+}
 
-})();
+aside a {
+    display: block;
+}
