@@ -1,4 +1,9 @@
-{ // ar3-tab-1st version https://arza-3d.github.io/ar3js/
+/*################
+// ar3-tab-1.js  #
+################*/
+/* https://arza-3d.github.io/ar3js/
+-----------------------------------*/
+{
     const constructNote = 'r3-tab_done',
         isConstructed = $('body').hasClass(constructNote);
 
