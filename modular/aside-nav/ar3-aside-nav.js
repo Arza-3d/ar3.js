@@ -57,22 +57,23 @@
                     var hHierarchy = parseInt(hClass.slice(4));
 
                     var hierarchyDiff = hPrevHierarchy - hHierarchy;
+                    console.log(hPrevHierarchy + '-' + hHierarchy + ' = ' + hierarchyDiff);
                     if (hierarchyDiff  == 0) {
                         createLink($h);
                     } else if (hierarchyDiff  == -1) {
                         $targetLinkParent.append('<nav class="r3-hieararchy-' + hPrevHierarchy + '"></nav>');
                         $targetLinkParent = $targetLinkParent.find('nav:last-child');
                         createLink($h);
-                    } else if (hierarchyDiff < 0) {
+                    } else if (hierarchyDiff > 0) {
+                        console.log('YESSS'+hPrevHierarchy);
                         if (hPrevHierarchy == 1) {
-                            $targetLinkParent= $linkParent0;
+                            $targetLinkParent = $linkParent0;
                             createLink($h);
                         } else {
-
+                            //$targetLinkParent = $linkParent0.find();
                         }
-                        $targetLinkParent= $linkParent0.find();
-                    }
 
+                    }
                     $hPrev = $h;
                     hPrevHierarchy = hHierarchy;
                 }
