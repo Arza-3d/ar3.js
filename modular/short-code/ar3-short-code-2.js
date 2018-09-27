@@ -1,12 +1,20 @@
-{// ar3-short-code
+/*#######################
+// ar3-short-code-2.js  #
+#######################*/
+/* https://arza-3d.github.io/ar3js/
+
+<script src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-2.js"></script>
+----------------------------------------------------------------------------------------------------*/
+{
     const constructNote = 'r3-short-code_done',
         isConstructed = $('body').hasClass(constructNote);
 
-    {// the main construction of short code
-        // change button text between Indonesia or English based on language that is used
+    {
+        // 2nd update start
         const isIndo = $('body').attr('lang') == 'id';
         let text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
             text2 = isIndo ? 'persingkat kode' : 'short code';
+        // 2nd update end
 
         if (!isConstructed) {
             $('pre + pre').css('display', 'none')

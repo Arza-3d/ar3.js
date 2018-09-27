@@ -1,4 +1,11 @@
-{// ar3-short-code
+/*#######################
+// ar3-short-code-3.js  #
+#######################*/
+/* https://arza-3d.github.io/ar3js/
+
+<script src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-3.js"></script>
+----------------------------------------------------------------------------------------------------*/
+{
     const constructNote = 'r3-short-code_done',
         isConstructed = $('body').hasClass(constructNote);
 
@@ -7,11 +14,12 @@
         let text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
             text2 = isIndo ? 'persingkat kode' : 'short code';
 
-        // overriding default text
+        // 3rd update start
         let newText1 = $('body').attr('data-short-code-r3-text1'),
             newText2 = $('body').attr('data-short-code-r3-text2');
         if (newText1 !== undefined) {text1 = newText1;}
         if (newText2 !== undefined) {text2 = newText2;}
+        // 3rd update end
 
         if (!isConstructed) {
             $('pre + pre').css('display', 'none')
