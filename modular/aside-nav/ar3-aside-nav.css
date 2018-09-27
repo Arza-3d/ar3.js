@@ -14,6 +14,9 @@
     min-height: 98vh;
     box-sizing: border-box;
 }
+aside nav {
+    padding-left: 15px;
+}
 
 aside a {
     display: block;
