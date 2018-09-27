@@ -3,12 +3,16 @@
         isConstructed = $('body').hasClass(constructNote);
 
     {// the main construction of short code
-        let text1 = 'show all code',
+        const text1 = 'show all code',
             text2 = 'short code';
 
         if (!isConstructed) {
             $('pre + pre').css('display', 'none')
                 .before('<button class="r3-short-code r3-active">'+ text1 + '</button>');
+        } else {
+            $('.r3-short-code').addClass('r3-active')
+                .prev().css('display', 'block')
+                .next().next().css('display', 'none');
         }
 
         $('.r3-short-code').click(function() {

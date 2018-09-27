@@ -8,9 +8,15 @@
     <link href="ar3-short-code.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-      <!-- test example-->
-      <pre>return 0.5f*pi*radius;</pre>
-      <pre>float radiusA = 4.0f<br><br>float circle_area(float radius)<br>{<br>    float pi = 3.14f;<br>    return 0.5f*pi*radius;<br>}<br><br>circle_area(radiusA);</pre>
+      <!-- test example 1-->
+      <pre><span style="color:rgba(0,0,0,0.25); font-style:italic">// circle area =</span><br><mark>0.5*M_PI*radius;</mark></pre>
+      <pre><span style="color:#888">#include &lt;math.h&gt;</span><br><br><span style="color:rgba(0,0,0,0.25); font-style:italic">// circle area =</span><br>double <b style="color:red">circle_area</b>(double radius)<br>{<br>    return <mark>0.5*M_PI*radius;</mark><br>}</pre>
+
+      <br>
+
+      <!-- test example 2-->
+      <pre><span style="color:rgba(0,0,0,0.25); font-style:italic">// vector length =</span><br><mark>Math.sqrt(x**2 + y**2 + z**2);</mark></pre>
+      <pre><span style="color:rgba(0,0,0,0.25); font-style:italic">// vector length =</span><br>function <b style="color:red">vectorLength</b>(x = 0, y = 0, z = 0) {<br>    return <mark>Math.sqrt(x**2 + y**2 + z**2);</mark><br>}</pre>
 
     <script src="ar3-short-code-1.js"></script>
   </body>
