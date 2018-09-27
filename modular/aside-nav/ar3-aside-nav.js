@@ -9,8 +9,12 @@
         var headers = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
         // create necessary wrap for dynamic aside
-        $navTarget.wrap("<div class='relative-container-r3'>");
-        $navTarget.after('<div style="clear:left">');
+        if (!isConstructed) {
+            $navTarget.wrap("<div class='relative-container-r3'>");
+            $navTarget.after('<div style="clear:left">');
+        } else {
+            $navTarget.parent().children('.r3-aside-nav').remove();
+        }
 
         // add class and id
         for (var i = 0; i < $navTarget.length; i++) {
@@ -25,9 +29,7 @@
                     var $h = $($navTarget[i]).find(headers[j]);
 
                         for (var k = 0; k < $h.length; k++) {
-
                             $($h[k]).addClass('r3-h' + (j + 1));
-
                             if ($($h[k]).attr('id') === undefined) {
                                 $($h[k]).attr('id', 'h' + (j + 1) + '-' + (k + 1) + '_of_content_'+ (i + 1));
                             }
@@ -36,7 +38,6 @@
                 }
             })();
 
-            // create element <a> in aside
             (function() {
                 var $allH = $($navTarget[i]).find(headers.toString());
                 var $h1st = $($allH[0]);
@@ -49,28 +50,30 @@
                 }
                 var $hPrev = $h1st;
                 var hPrevClass = $hPrev.attr('class');
-                var hPrevHierarchy = parseInt(hPrevClass.slice(4));// class start with r3-h, for ex: r3-h1, r3-h2, r3-h3
+                var hPrevHierarchy = parseInt(hPrevClass.slice(4));
                 for(var j = 1; j < $allH.length; j++) {
-
                     var $h = $($allH[j]);
                     var hClass = $h.attr('class');
                     var hHierarchy = parseInt(hClass.slice(4));
 
                     var hierarchyDiff = hPrevHierarchy - hHierarchy;
-                    console.log(hPrevHierarchy + '-' + hHierarchy + ' = ' + hierarchyDiff);
+
                     if (hierarchyDiff  == 0) {
                         createLink($h);
                     } else if (hierarchyDiff  == -1) {
-                        $targetLinkParent.append('<nav class="r3-hieararchy-' + hPrevHierarchy + '"></nav>');
+                        $targetLinkParent.append('<nav class="r3-hierarchy-' + hPrevHierarchy + '"></nav>');
                         $targetLinkParent = $targetLinkParent.find('nav:last-child');
                         createLink($h);
                     } else if (hierarchyDiff > 0) {
-                        console.log('YESSS'+hPrevHierarchy);
-                        if (hPrevHierarchy == 1) {
+
+                        if (hHierarchy == 1) {
                             $targetLinkParent = $linkParent0;
                             createLink($h);
                         } else {
-                            //$targetLinkParent = $linkParent0.find();
+
+                            var test = '.r3-hierarchy-' + (hHierarchy - 1) + ':last-child';
+                            $targetLinkParent = $linkParent0.find(test);
+                            createLink($h);
                         }
 
                     }
