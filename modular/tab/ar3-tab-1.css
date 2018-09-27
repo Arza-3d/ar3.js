@@ -2,7 +2,9 @@
 // ar3-tab-1.css  #
 ################*/
 /* https://arza-3d.github.io/ar3js/
------------------------------------*/
+
+<link href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-1.css" rel="stylesheet" type="text/css">
+--------------------------------------------------------------------------------------------------------------*/
 /* tab-r3 functionality*/
 .tab-r3 > div:nth-child(2) > div{display:none}
 .tab-r3 > div:nth-child(2) > div:first-child{display:block}
