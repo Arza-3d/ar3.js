@@ -39,9 +39,17 @@
             // create element <a> in aside
             (function() {
                 var $hInTarget = $($navTarget[i]).find(headers.toString());
-                for(var j = 0; j < $hInTarget.length; j++) {
+                var $h1st = $($hInTarget[0]);
+                $('#r3-aside-nav-' + (i + 1)).append('<a href="#'+ $h1st.attr('id') + '">' + $h1st.html() + '</a>');
 
-                    var $prevEl = (j !== 0) ? $($hInTarget[j - 1]) : undefined;
+                for(var j = 1; j < $hInTarget.length; j++) {
+
+                    var $hPrev = $($hInTarget[j - 1]);
+                    var hClass = $($hInTarget[j]).attr('class');
+                    var targetParent;////////////////////////////////////////
+                    if ($hPrev.attr()) {
+
+                    }
 
                     $('#r3-aside-nav-' + (i + 1)).append('<a href="#'+ $($hInTarget[j]).attr('id') + '">' + $($hInTarget[j]).html() + '</a>');
                 }
