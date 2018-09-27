@@ -16,8 +16,12 @@
     if (newText1 !== undefined) {text1 = newText1;}
     if (newText2 !== undefined) {text2 = newText2;}
 
-    var $pre = $('pre + pre');
-    if (!isConstructed) {$pre.css('display', 'none');}
+    // for downloaded document
+    var $pre = isConstructed ? $('.r3-short-code + pre') : $('pre + pre');
+    $pre.css('display', 'none');
+
+    // reset to default
+    if (isConstructed) {$pre.prev().prev().css('display', 'block');}
 
     for (var i = 0; i < $pre.length; i++) {
         (function() {
@@ -29,6 +33,11 @@
             if (!isConstructed) {
                 $($pre[i]).before('<button class="r3-short-code r3-active">'+
                     newestText1 + '</button>');
+            }
+
+            if (isConstructed) {
+                $pre.prev('button').addClass('r3-active');
+                $pre.prev('button').prev('pre').css('display', 'block');
             }
 
             $($pre[i]).prev().click(function() {
