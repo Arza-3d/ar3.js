@@ -6,6 +6,7 @@ https://arza-3d.github.io/ar3.js/
 
 <script src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.js"></script>
 --------------------------*/
+
 {
     const constructNote = 'r3-tab_done',
         isConstructed = $('body').hasClass(constructNote);
