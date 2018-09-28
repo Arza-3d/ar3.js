@@ -8,8 +8,8 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 /* .tab-r3 functionality */
-.tab-r3 > div:nth-child(2) > div{display:none}
-.tab-r3 > div:nth-child(2) > div:first-child{display:block}
+.tab-r3 > div > div{display:none}
+.tab-r3 > div > div:first-child{display:block}
 
 /* .tab-r3 style*/
 .tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%}
@@ -24,7 +24,7 @@ https://arza-3d.github.io/ar3.js/
 .tab-r3 > nav > *:last-child{border-top-right-radius:8px}
 .tab-r3 > nav > a:hover{color:#fff; background-color:#ff5722}
 .tab-r3 > nav > a.r3-active:hover{color:#000}
-.tab-r3 > div:nth-child(2) > div{padding:6px}
+.tab-r3 > div > div{padding:6px}
 
 /* miscellaneous */
 body{font: 11px Tahoma, arial, sans-serif}
