@@ -1,7 +1,7 @@
 /*#######################
 // ar3-short-code-3.js  #
 #######################*/
-/* https://arza-3d.github.io/ar3js/
+/* https://arza-3d.github.io/ar3.js/
 
 <script src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-3.js"></script>
 ----------------------------------------------------------------------------------------------------*/
