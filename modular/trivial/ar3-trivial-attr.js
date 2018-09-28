@@ -21,16 +21,16 @@ https://arza-3d.github.io/ar3.js/
             $('i').attr('lang', 'en');
         }
 
-        // 3. don't translate <code> and <pre>...
+        // 3.
         $('code, pre').attr('translate', 'no');
 
-        // 4. ...but translate .comment-r3
+        // 4.
         $('.comment-r3').attr('translate', 'yes');
 
-        // 5. make sure every video have control
+        // 5.
         $('video').attr('controls');
 
-        // 6. make sure every outside link open new table
+        // 6.
         $("a[href^='http']").attr('target', '_blank');
 
     }
