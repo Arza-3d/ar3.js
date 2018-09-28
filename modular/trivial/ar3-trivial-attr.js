@@ -12,10 +12,10 @@ https://arza-3d.github.io/ar3.js/
         isConstructed = $('body').hasClass(constructNote);
 
     if (!isConstructed) {
-        // 1. make sure the page is scaled for mobile device
+        // 1.
         $('header').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
 
-        // 2. if the page is not English, by default every <i> is english
+        // 2.
         const isEnglish = $('body').attr('lang') == 'en';
         if (!isEnglish) {
             $('i').attr('lang', 'en');
