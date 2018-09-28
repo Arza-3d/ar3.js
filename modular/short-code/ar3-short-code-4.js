@@ -1,10 +1,12 @@
 /*#######################
 // ar3-short-code-4.js  #
 #######################*/
-/* https://arza-3d.github.io/ar3.js/
+/*--------------------------
+https://arza-3d.github.io/ar3.js/
 
 <script src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-4.js"></script>
-----------------------------------------------------------------------------------------------------*/
+--------------------------*/
+
 {
     const constructNote = 'r3-short-code_done',
         isConstructed = $('body').hasClass(constructNote);
