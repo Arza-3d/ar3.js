@@ -41,12 +41,8 @@
           <h3>add necessary attributes:</h3>
           <section>
             <ol>
-              <li>Make sure the page is scaled for mobile device:
-                <br><code>$('header').append('&lt;meta name="viewport"' + <br>'content="width=device-width, initial-scale=1"&gt;');</code>
-              </li>
-              <li>When I wrote in Indonesia language, I use <code>&lt;i&gt;</code> tag to contain English words. Make sure the <code>&lt;i&gt;</code> are all in english:
-                <br><code>$('i').attr('lang', 'en');</code>
-              </li>
+              <li>Make sure the page is scaled for mobile device</li>
+              <li>Make sure <code>&lt;i&gt;</code> has attribute <code>lang="en"</code>, if the page is not in English. The other language that sometimes I use is in the documentation is Indonesian language, ex: <code>&lt;body lang="en"&gt;</code></li>
               <li>Since it's just code, don't translate <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code>...
                 <br><code>$('code, pre').attr('translate', 'no');</code>
               </li>
