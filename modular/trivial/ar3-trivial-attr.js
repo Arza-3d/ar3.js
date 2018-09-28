@@ -8,10 +8,11 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
-    const constructNote = 'ar3-trivial_is_constructed',
+    const constructNote = 'ar3-trivial-attr_is_constructed',
         isConstructed = $('body').hasClass(constructNote);
 
     if (!isConstructed) {
+
         // 1.
         $('header').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
 

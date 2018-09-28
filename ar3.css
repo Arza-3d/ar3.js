@@ -19,7 +19,7 @@ a:visited{color:rgb(200,120,0)}
 a:hover{color:rgb(255,180,0)}
 a:active{color:rgb(255,200,0)}
 body{margin:0 !important;padding:0 !important;font: 11px Tahoma, arial, sans-serif}
-code{background-color:#eee; border:#ccc thin solid; padding: 2px 4px; display: inline-block; text-indent: 0; border-radius: 3px}
+code{background-color:#eee; border:#ccc thin solid; padding: 1px; display: inline-block; text-indent: 0; border-radius: 3px}
 html{overflow-x: hidden}
 img{border-radius: 6px}
 ul,
@@ -275,7 +275,7 @@ ol > ol{padding-left:12px; margin-top:2px}
 }
 main > div > p {margin-left: 25px}
 p {text-indent:36px; text-align:justify; max-width:360px}
-li{max-width: 360px; line-height: 18px}
+li{max-width: 360px}
 .ar3 > main > div > p:first-letter{font-size:24px} @media print{
 .ar3 > main > div > p:first-letter{font-size:11px}
 }
