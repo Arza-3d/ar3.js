@@ -47,22 +47,14 @@
           <h3>add necessary attributes:</h3>
           <section>
             <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/trivial/ar3-trivial-attr.js"><code>ar3-trivial-attr.js</code></a>
-            <p>Automate boring stuff, will be split between adding attributes then elements:</p>
+            <p>Automate boring stuff, will be split between adding attributes then elements;</p>
             <ol>
-              <li>Make sure the page is scaled for mobile device</li>
-              <li>Make sure <code>&lt;i&gt;</code> has attribute <code>lang="en"</code>, if the page is not in English. The other language that sometimes I use is in the documentation is Indonesian language, ex: <code>&lt;body lang="en"&gt;</code></li>
-              <li>Since it's just code, don't translate <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code>...
-                <br><code>$('code, pre').attr('translate', 'no');</code>
-              </li>
-              <li>...but translate it if it has a comment (has <code>comment-r3</code> class):
-                <br><code>$('.comment-r3').attr('translate', 'yes');</code>
-              </li>
-              <li>Make sure every videos have control:
-                <br><code>$('video').attr('controls');</code>
-              </li>
-              <li>Make sure outside links open new tab:
-                <br><code>$("a[href^='http']").attr('target', '_blank');</code>
-              </li>
+              <li>make sure the page is scaled for mobile device</li>
+              <li>use <code>&lt;i&gt;</code> to contain English words in non-English page</li>
+              <li>Since it's just code, don't translate <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code></li>
+              <li>...but translate it if it has a comment (has <code>comment-r3</code> class)</li>
+              <li>make sure every videos have control</li>
+              <li>Make sure outside links open new tab</li>
             </ol>
           </section>
 
