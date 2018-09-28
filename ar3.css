@@ -417,11 +417,11 @@ aside nav > .r3-accordion{left:16px}
 # AR3 TAB  # SCRIPTED
 ##########*/
 
-/* tab-r3 functionality*/
+/* .tab-r3 functionality */
 .ar3 .tab-r3 > div:nth-child(2) > div{display:none; background-color: #fafafa}
 .ar3 .tab-r3 > div:nth-child(2) > div:first-child{display:block}
 
-/* tab-r3 style*/
+/* .tab-r3 style*/
 .ar3 .tab-r3{margin:5px 0 5px 0; overflow:hidden; max-width:98%; border-radius:8px; border:solid thin grey}
 .ar3 .tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold}
 .ar3 .tab-r3 > nav{background-color:#535353}
@@ -436,7 +436,7 @@ aside nav > .r3-accordion{left:16px}
 .ar3 .tab-r3 > div:nth-child(2) > div:target{color:black}
 .ar3 .tab-r3 > div:nth-child(2) > div{padding:6px}
 
-/* tab-r3 special case for example inside table has color that is lighter*/
+/* .tab-r3 special case for example inside table has color that is lighter*/
 .ar3 table .tab-r3 > nav{background-color:#747474}
 
 /*##########
