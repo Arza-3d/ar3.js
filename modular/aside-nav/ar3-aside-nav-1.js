@@ -7,17 +7,16 @@ https://arza-3d.github.io/ar3.js/
 <script src="https://rawgit.com/Arza-3d/ar3.js/master/modular/tab/ar3-aside-nav-1.js"></script>
 --------------------------*/
 
-(function() {
-    'use strict';
-
-    var $navTarget = $('.aside-nav-target-r3');
+{
+    const $navTarget = $('.aside-nav-target-r3');
     if ($navTarget.length !== 0) {
-        var constructNote = 'ar3-aside-nav_done';
-        var isConstructed = $('body').hasClass(constructNote);
+        const constructNote = 'ar3-aside-nav_done',
+            isConstructed = $('body').hasClass(constructNote);
 
-        var headers = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+        // set default header from h1 to h2
+        const headers = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
-        // create necessary wrap for dynamic aside
+        // create necessary wrap for dynamic aside\
         if (!isConstructed) {
             $navTarget.wrap("<div class='relative-container-r3'>");
             $navTarget.after('<div style="clear:left">');
@@ -25,19 +24,18 @@ https://arza-3d.github.io/ar3.js/
             $navTarget.parent().children('.r3-aside-nav').remove();
         }
 
-        // add class and id
-        for (var i = 0; i < $navTarget.length; i++) {
+        // construct navigation
+        for (let i = 0; i < $navTarget.length; i++) {
 
             // insert aside
-            $($navTarget[i]).before('<aside id="r3-aside-nav-' + (i + 1) +'" class="r3-aside-nav">');
+            $($navTarget[i]).before('<aside id="r3-aside-nav-' + (i + 1) + '" class="r3-aside-nav">');
 
             // create id and class for h1-h6
-            (function() {
-                var j = 0;
+            {
+                let j = 0;
                 while (headers[j] !== undefined) {
-                    var $h = $($navTarget[i]).find(headers[j]);
-
-                        for (var k = 0; k < $h.length; k++) {
+                    let $h = $($navTarget[i]).find(headers[j]);
+                        for (let k = 0; k < $h.length; k++) {
                             $($h[k]).addClass('r3-h' + (j + 1));
                             if ($($h[k]).attr('id') === undefined) {
                                 $($h[k]).attr('id', 'h' + (j + 1) + '-' + (k + 1) + '_of_content_'+ (i + 1));
@@ -45,28 +43,27 @@ https://arza-3d.github.io/ar3.js/
                         }
                     j++;
                 }
-            })();
+            }
 
-            (function() {
-                var $allH = $($navTarget[i]).find(headers.toString());
-                var $h1st = $($allH[0]);
-                var $targetLinkParent = $('#r3-aside-nav-' + (i + 1));
+            {
+                const $allH = $($navTarget[i]).find(headers.toString()),
+                      $h1st = $($allH[0]);
+                let $targetLinkParent = $('#r3-aside-nav-' + (i + 1));
                 var $linkParent0 = $targetLinkParent;
                 $targetLinkParent.append('<a href="#'+ $h1st.attr('id') + '">' + $h1st.html() + '</a>');
 
                 function createLink($header) {
                     return $targetLinkParent.append('<a href="#'+ $header.attr('id') + '">' + $header.html() + '</a>');
                 }
-                var $hPrev = $h1st;
-                var hPrevClass = $hPrev.attr('class');
-                var hPrevHierarchy = parseInt(hPrevClass.slice(4));
-                for(var j = 1; j < $allH.length; j++) {
-                    var $h = $($allH[j]);
-                    var hClass = $h.attr('class');
-                    var hHierarchy = parseInt(hClass.slice(4));
+                let $hPrev = $h1st,
+                    hPrevClass = $hPrev.attr('class'),
+                    hPrevHierarchy = parseInt(hPrevClass.slice(4));
+                for (let j = 1; j < $allH.length; j++) {
+                    let $h = $($allH[j]),
+                        hClass = $h.attr('class'),
+                        hHierarchy = parseInt(hClass.slice(4));
 
-                    var hierarchyDiff = hPrevHierarchy - hHierarchy;
-
+                    let hierarchyDiff = hPrevHierarchy - hHierarchy;
                     if (hierarchyDiff  == 0) {
                         createLink($h);
                     } else if (hierarchyDiff  == -1) {
@@ -74,25 +71,20 @@ https://arza-3d.github.io/ar3.js/
                         $targetLinkParent = $targetLinkParent.find('nav:last-child');
                         createLink($h);
                     } else if (hierarchyDiff > 0) {
-
                         if (hHierarchy == 1) {
                             $targetLinkParent = $linkParent0;
                             createLink($h);
                         } else {
-
-                            var test = '.r3-hierarchy-' + (hHierarchy - 1) + ':last-child';
-                            $targetLinkParent = $linkParent0.find(test);
+                            $targetLinkParent = $linkParent0.find('.r3-hierarchy-' + (hHierarchy - 1) + ':last-child');
                             createLink($h);
                         }
-
                     }
                     $hPrev = $h;
                     hPrevHierarchy = hHierarchy;
                 }
-            })();
+            }
         }
 
         $('body').addClass(constructNote);
     }
-
-})();
+}
