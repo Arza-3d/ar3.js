@@ -28,7 +28,6 @@ https://arza-3d.github.io/ar3.js/
                 $links[i].setAttribute('data-tab-r3', id);
             }
         } else {
-            // reset to default
             $links.removeClass('r3-active');
             $('.tab-r3 > div > div').css('display', 'none');
             $('.tab-r3 > div > div:first-child').css('display', 'block');
