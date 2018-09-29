@@ -34,7 +34,7 @@ a:active{color:rgb(255,200,0)}
     border:1px solid #999;
     border-right: none;
     background-color:#bbb;
-    padding: 0 0 2px 15px;
+    padding: 0 0 2px 4%;
 }
 
 .r3-aside-nav a + a {
@@ -57,7 +57,7 @@ a:active{color:rgb(255,200,0)}
 .r3-aside-nav a {
     background-color: #363636;
     display: block;
-    padding: 3px 0 3px 8px;
+    padding: 3px 0 3px 4px;
     /*margin: 2px;*/
     /*margin: 2px 0 2px 8px;*/
 }
