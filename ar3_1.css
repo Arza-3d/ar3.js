@@ -137,25 +137,29 @@ s{text-decoration-color:red}
 # AR3 ASIDE #
 ###########*/
 .ar3 > aside{
+    box-sizing: border-box;
     overflow:auto; border-radius:10px 0 0 10px;
     border:2px solid #666;
     float:left;
-    height:93vh;
-    margin: 2px 0 15px 1%;
+    height: 100vh;
+    margin: 1px;
+    /*margin: 2px 0 15px 1%;*/
     padding:15px 5px 20px 8px;
-    width:13%} @media screen and (max-width:722px){
+    width:15%} @media screen and (max-width:722px){
 .ar3 > aside{display:none}
 } @media print {
 .ar3 > aside{display:none}
 }
 
 .ar3 div.r3-aside-replacement{
+    box-sizing: border-box;
     border:2px solid rgba(0,0,0,0);
     float:left;
     height:91vh;
-    margin:2px 0 15px 1%;
+    margin:1px;
+    /*margin:2px 0 15px 1%;*/
     padding:15px 5px 20px 8px;
-    width:13%;
+    width:15%;
 } @media screen and (max-width:722px){
 .ar3 div.r3-aside-replacement{display:none}
 } @media print {
@@ -223,13 +227,14 @@ ol > ol{padding-left:12px; margin-top:2px}
 # AR3 MAIN  #
 ###########*/
 
-.ar3 > aside + main{width:79%} @media print{
+.ar3 > aside + main{width:83%} @media print{
 .ar3 > aside + main{width:auto}} @media screen and (max-width:722px){
-.ar3 > aside + main{width:95%;}
+.ar3 > aside + main{width:96%; margin-left:3px}
 }
 .ar3 > main{
+    box-sizing: border-box;
     border:2px solid #666; border-radius:10px; float:left; /*height:94vh;*/
-    margin:2px 1% 15px 0.4%; overflow:auto; padding:15px 5px 15px 5px; width:95vw;} @media print{
+    margin:2px 1% 15px 0.4%; overflow:auto; padding:15px 5px 15px 5px; /*width:95vw;*/} @media print{
 .ar3 > main{height :auto; width:auto; border:none}} @media screen and (max-width:722px){
 .ar3 > main{margin-left:15px;width:88vw}
 }
