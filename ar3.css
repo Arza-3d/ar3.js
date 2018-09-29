@@ -229,7 +229,7 @@ ol > ol{padding-left:12px; margin-top:2px}
 }
 .ar3 > main{
     border:2px solid #666; border-radius:10px; float:left; /*height:94vh;*/
-    margin:2px 1% 15px 0.4%; overflow:auto; padding:15px 5px 15px 5px; width:95vw;} @media print{
+    margin:2px 1% 15px 0.4%; overflow:auto; padding:15px 5px 15px 5px; /*width:95vw;*/} @media print{
 .ar3 > main{height :auto; width:auto; border:none}} @media screen and (max-width:722px){
 .ar3 > main{margin-left:15px;width:88vw}
 }
