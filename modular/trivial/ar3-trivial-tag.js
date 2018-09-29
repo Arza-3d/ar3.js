@@ -4,7 +4,7 @@
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://rawgit.com/Arza-3d/ar3js/master/modular/trivial/ar3-trivial-tag.js"></script>
+<script src="https://rawgit.com/Arza-3d/ar3.js/master/modular/trivial/ar3-trivial-tag.js"></script>
 --------------------------*/
 
 {
