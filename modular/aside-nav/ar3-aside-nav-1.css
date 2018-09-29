@@ -24,7 +24,7 @@ a:active{color:rgb(255,200,0)}
     border-radius:10px 0 0 10px;
     box-sizing: border-box;
     float: left;
-    min-height: 98vh;
+    height: 98vh;
     overflow: auto;
     padding: 10px 0 0 5px;
     width: 17%;
@@ -51,15 +51,12 @@ a:active{color:rgb(255,200,0)}
 
 .r3-aside-nav a + nav {
     margin-top: 0px;
-    /*margin: 2px 0 2px 8px;*/
 }
 
 .r3-aside-nav a {
     background-color: #363636;
     display: block;
     padding: 3px 0 3px 4px;
-    /*margin: 2px;*/
-    /*margin: 2px 0 2px 8px;*/
 }
 
 .aside-nav-target-r3 * {
@@ -71,8 +68,10 @@ a:active{color:rgb(255,200,0)}
     border-radius:10px;
     box-sizing: border-box;
     float:left;
+    height: 98vh;
     margin:2px 1% 15px 0.4%;
-    min-height: 98vh;
+    overflow: auto;
     padding:15px 5px 15px 5px;
     width:79%;
+
 }
