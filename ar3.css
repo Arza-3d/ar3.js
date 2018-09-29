@@ -1,13 +1,22 @@
 /*#########
 # nav-ar3 #
 #########*/
-#r3-nav div:nth-child(2) a {display: block;
-    background-color: #222; height:100%;
-    font-size: 12px; min-width: 65px;
-    text-align: center; line-height: 53px;
-    transition: background-color 0.4s ease-in-out,color 0.4s ease-in-out; letter-spacing: 1px}
-#r3-nav div:nth-child(2) a:hover {background-color: #ff5722; color: white}
-/*#r3-web-logo {background-color: rgba(0,0,0,0) !important}*/
+#r3-nav div:nth-child(2) a {
+    background-color: #222;
+    display: block;
+    font-size: 12px;
+    height:100%;
+    letter-spacing: 1px;
+    line-height: 53px;
+    min-width: 65px;
+    text-align: center;
+    transition: background-color 0.4s ease-in-out,
+        color 0.4s ease-in-out;
+}
+#r3-nav div:nth-child(2) a:hover {
+    background-color: #ff5722;
+    color: white
+}
 
 /*################
 # SET DEFAULT TAG#
@@ -18,19 +27,38 @@ a:link{color:rgb(225,150,50)}
 a:visited{color:rgb(200,120,0)}
 a:hover{color:rgb(255,180,0)}
 a:active{color:rgb(255,200,0)}
-body{margin:0 !important;padding:0 !important;font: 11px Tahoma, arial, sans-serif}
-code{background-color:#eee; border:#ccc thin solid; padding: 1px; display: inline-block; text-indent: 0; border-radius: 3px}
-html{overflow-x: hidden}
-img{border-radius: 6px}
+body{
+    font: 11px Tahoma, arial, sans-serif;
+    margin:0 !important;
+    padding:0 !important;
+}
+code {
+    background-color:#eee;
+    border:#ccc thin solid;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 1px;
+    text-indent: 0;
+}
+html {
+    overflow-x: hidden
+}
+img {
+    border-radius: 6px
+}
 ul,
 ol {line-height: 180%; padding-inline-start: 20px;}
 
 /*###########
 # AR3 CLASS # CLASS
 ###########*/
-.ar3{position:relative !important; font:11px Tahoma, arial, sans-serif; letter-spacing: 0.02em;
-  -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;
-  -webkit-font-kerning:normal !important; font-kerning:normal !important} @media print{
+.ar3 {
+    position:relative !important;
+    font:11px Tahoma, arial, sans-serif;
+    letter-spacing: 0.02em;
+    font-kerning:normal !important;
+}
+@media print{
 .ar3{font:12px "Times New Roman"}
 }
 .code-r3{font:11px Consolas,monospace !important; white-space:pre !important}
@@ -60,9 +88,19 @@ ol {line-height: 180%; padding-inline-start: 20px;}
 
 .relative-container-r3 {position: relative; overflow: auto}
 .tab-r3 .relative-container-r3 > a {
-    position: absolute; border: rgba(255,100,0,0.5) solid medium; cursor: pointer; display: block;
-    border-radius: 6px; text-align: center}
-.tab-r3 .relative-container-r3 > a > span {position: relative; font-weight: bold; top: 40%; font-size: 1.5em}
+    border: rgba(255,100,0,0.5) solid medium;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+.tab-r3 .relative-container-r3 > a > span {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+    top: 40%;
+}
 
 /*##########
 # AR3 JSON # CLASS
@@ -77,31 +115,51 @@ ol {line-height: 180%; padding-inline-start: 20px;}
 .r3-boolean{color:#c71c2c}
 .r3-number{color:#006698}
 
-.r3-code-highlight{color:red}
-.r3-depreceated{text-decoration: line-through;text-decoration-color:red}
+.r3-code-highlight{
+    color:red}
+.r3-depreceated {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
 
 /*#########
 # ar3 TAG #
 #########*/
 *[title]{cursor:help}
-.ar3 *:target{color:orange; transition:color 1s ease-in-out, background-color 1s ease-in-out}
+.ar3 *:target {
+    color:orange;
+    transition:color 1s ease-in-out,
+        background-color 1s ease-in-out;
+}
 
-/* TEST
-.ar3 a{text-decoration:none}
-.ar3 a:link{color:rgb(225,150,50)}
-.ar3 a:visited{color:rgb(200,120,0)}
-.ar3 a:hover{color:rgb(255,180,0)}
-.ar3 a:active{color:rgb(255,200,0)}
-*/
-.ar3 b:target {color:#fff !important; background-color:#ff5722 !important; border-radius:3px; padding:0 3px 0 3px}
-.ar3 blockquote{
-    padding:10px 20px; margin:0 30px 0 30px; font-size:13px;
-    border-left:5px solid #bbb; font-style:italic; background-color:#efefef}
-.ar3 code{font:11px Consolas,monospace}
-.ar3 figcaption{text-align:center; padding:0px; text-indent:0px; margin:0 0 7px 0}
-.ar3 figure{
-    overflow:auto; border-width:1px; border-style:solid; border-top-color:#ddd; border-right-color:#ddd;
-    border-bottom-color:#999; border-left-color:#bbb; background-color:#FBFBFB}
+blockquote {
+    background-color: #efefef;
+    border-left: 5px solid #bbb;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0 30px 0 30px;
+    padding: 10px 20px;
+}
+
+code {
+    font:11px Consolas,monospace;
+}
+
+figcaption {
+    text-align: center;
+    padding: 0px;
+    text-indent: 0px;
+    margin: 0 0 7px 0
+}
+
+figure{
+    background-color: #fbfbfb;
+    border-color: #ddd #ddd #999 #bbb;
+    border-style: solid;
+    border-width: 1px;
+    overflow: auto;
+}
+
 footer {
     clear:left; text-align:center; background-color:rgb(45,45,45); color:white; height:30px; width:auto;
     left:0; right:0; padding-top:20px; z-index:10; margin:auto; overflow:hidden; padding-bottom:20px}
@@ -137,13 +195,17 @@ s{text-decoration-color:red}
 # AR3 ASIDE #
 ###########*/
 .ar3 > aside{
-    overflow:auto; border-radius:10px 0 0 10px;
-    border:2px solid #666;
-    float:left;
-    height:93vh;
+    border: 2px solid #666;
+    border-radius: 10px 0 0 10px;
+    float: left;
+    height: 93vh;
+    overflow: auto;
     margin: 2px 0 15px 1%;
-    padding:15px 5px 20px 8px;
-    width:13%} @media screen and (max-width:722px){
+    padding: 15px 5px 20px 8px;
+    width: 13%;
+}
+
+@media screen and (max-width:722px) {
 .ar3 > aside{display:none}
 } @media print {
 .ar3 > aside{display:none}
@@ -168,7 +230,10 @@ s{text-decoration-color:red}
 .ar3 > aside.r3-dynamic-after{position:absolute;bottom:0 !important}
 
 .ar3 > aside > * >  nav + a{margin-top:4px}
-.ar3 > aside > nav{border:1px solid #999; background-color:#bbb}
+.ar3 > aside > nav {
+    border:1px solid #999; 
+    background-color:#bbb;
+}
 .ar3 > aside > nav a{margin:2px 0 2px 8px; display:block; padding:2px 0 2px 7px}
 .ar3 > aside > a + a,
     .ar3 > aside > nav + a ,
