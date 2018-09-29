@@ -49,7 +49,7 @@ https://arza-3d.github.io/ar3.js/
                 const $allH = $($navTarget[i]).find(headers.toString()),
                       $h1st = $($allH[0]);
                 let $targetLinkParent = $('#r3-aside-nav-' + (i + 1));
-                var $linkParent0 = $targetLinkParent;
+                const $linkParent0 = $targetLinkParent;
                 $targetLinkParent.append('<a href="#'+ $h1st.attr('id') + '">' + $h1st.html() + '</a>');
 
                 function createLink($header) {
