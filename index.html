@@ -85,36 +85,73 @@
           <h3>basic functionality</h3>
           <section>
             <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-1.js"><code>tab-r3-1.js</code></a>
+            <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-1.css"><code>tab-r3-1.css</code></a>
             <p>I made this <code>.tab-r3</code> class so I can put different example scripts that work for one functionality in one place, but still separate them. I  use this a lot in visual scripting example.</p>
             <p>
               To make this you need to make the basic structure:<br>
               <code>
-                &lt;div class="tab-r3"&gt;
-                <br>&nbsp;&nbsp;
+                &lt;div class="<mark>tab-r3</mark>"&gt;
+                <br>&nbsp;&nbsp;&lt;nav&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;<span class="comment-r3">link-1</span>&lt;/a&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;<span class="comment-r3">link-2</span>&lt;/a&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;<span class="comment-r3">optional</span>&lt;/span&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;<span class="comment-r3">link-n</span>&lt;/a&gt;
+                <br>&nbsp;&nbsp;&lt;/nav&gt;
+                <br>&nbsp;&nbsp;&lt;div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<span class="comment-r3">content-1</span>&lt;/div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<span class="comment-r3">content-2</span>&lt;/div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<span class="comment-r3">content-n</span>&lt;/div&gt;
+                <br>&nbsp;&nbsp;&lt;/div&gt;
                 <br>&lt;/div&gt;
               </code>
             </p>
+            <p>Here is an example:</p>
             <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab-1.html" width="" height="250px"></iframe>
-            <p>Below is the source code:</p>
           </section>
 
           <h3>extra box link</h3>
           <section>
-              <p>This additional functionality is meant to be used with visual scripting example. It make optional link box on the picture.</p>
-
-              <p>
-                  Here is the code that is added to make that box link functionality on top of that image
-
-              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.js">tab-r3-2.js</a>
-              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.css">tab-r3-2.css</a>
+            <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.js"><code>tab-r3-2.js</code></a>
+            <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/ar3-tab-2.css"><code>tab-r3-2.css</code></a>
+            <p>This additional functionality is meant to be used with visual scripting example. It make optional link box on the picture.</p>
+            <p>Here is the code that is added to make that box link functionality on top of that image.
+              <br>
+              <code>
+                &lt;div class="tab-r3"&gt;
+                <br>&nbsp;&nbsp;&lt;nav&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;link-1&lt;/a&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;link-2&lt;/a&gt;
+                <br>&nbsp;&nbsp;&lt;/nav&gt;
+                <br>&nbsp;&nbsp;&lt;div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="<mark>relative-container-r3</mark>"&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="magenta-r3">img</span> src="<span class="comment-r3">screenshot-1</span>"&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<mark>a</mark> style="<span class="comment-r3">...</span>"&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span style="<span class="comment-r3">...</span>"&gt;<span class="comment-r3">text-1</span>&lt;/span&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="<mark>relative-container-r3</mark>"&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="magenta-r3">img</span> src="<span class="comment-r3">screenshot-2</span>"&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<mark>a</mark> style="<span class="comment-r3">...</span>"&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span style="<span class="comment-r3">...</span>"&gt;<span class="comment-r3">text-2</span>&lt;/span&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                <br>&nbsp;&nbsp;&lt;/div&gt;
+                <br>&lt;/div&gt;
+                <br>
+              </code>
             </p>
               <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/tab/test-ar3-tab-2.html" width="600px" height="220px"></iframe>
-
           </section>
           <h2>short code</h2>
 
           <h3>short code</h3>
           <section>
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code-1.js"><code>short-code-1.js</code></a>
+              <a href="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/ar3-short-code.css"><code>short-code.css</code></a>
               <p>I usually use this to show two version of same code, the short one just showing the important part of the code, and the long one showing the fully working code.</p>
               <p>Every two consecutive <code>&lt;pre&gt;</code> tags, something like this; <code>&lt;pre&gt;<span class="comment-r3">short code</span>&lt;/pre&gt; <br>&lt;pre&gt;<span class="comment-r3">long code</span>&lt;/pre&gt;</code> will be automatically made into short code, like this example:</p>
               <iframe src="https://rawgit.com/Arza-3d/ar3js/master/modular/short-code/test-ar3-short-code-1.html"></iframe>
