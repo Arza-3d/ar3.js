@@ -21,8 +21,14 @@ https://arza-3d.github.io/ar3.js/
         if (newText2 !== undefined) {text2 = newText2;}
 
         // 4th update start
-        const $pre = $('pre + pre');
-        if (!isConstructed) {$pre.css('display', 'none');}
+        const $pre = (isConstructed) ? $('.r3-short-code + pre') : $('pre + pre');
+        if (!isConstructed) {
+            $pre.css('display', 'none');
+        } else {
+            $('.r3-short-code').addClass('r3-active')
+                .prev().css('display', 'block')
+                .next().next().css('display', 'none');
+        }
 
         for (let i = 0; i < $pre.length; i++) {
             {
