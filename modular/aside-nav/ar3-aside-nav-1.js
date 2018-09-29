@@ -16,7 +16,7 @@ https://arza-3d.github.io/ar3.js/
         // set default header from h1 to h2
         const headers = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
-        // create necessary wrap for dynamic aside\
+        // create necessary wrap for dynamic aside
         if (!isConstructed) {
             $navTarget.wrap("<div class='relative-container-r3'>");
             $navTarget.after('<div style="clear:left">');
