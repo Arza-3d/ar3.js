@@ -1,0 +1,49 @@
+/*################
+// ar3-tab-3.css  #
+################*/
+/*--------------------------
+https://arza-3d.github.io/ar3.js/
+
+<link href="https://rawgit.com/Arza-3d/ar3js/master/modular/aside-nav/ar3-aside-nav-4.css" rel="stylesheet" type="text/css">
+--------------------------*/
+
+.r3-aside-nav {
+    background-color: white;
+    width: 0;
+    z-index: 1;
+    position: fixed; /* Stay in place */
+    transition: 0.5s;
+    left: -10px;
+    overflow: hide;
+}
+
+.r3-aside-nav.r3-active {
+    width: 250px;
+    left:0px;
+}
+
+.r3-aside-nav + button {
+    left: 0px;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.r3-aside-nav.r3-active + button  {
+    left: 250px;
+}
+
+.aside-nav-target-r3 {
+    transition: 0.5s;
+}
+
+.r3-aside-nav.r3-active + button + .aside-nav-target-r3  {
+    margin-left: 250px;
+}
+
+.aside-nav-target-r3 {
+    display: block;
+    width: auto;
+}
+
+/*
+.r3-aside-nav.r3-active*/

@@ -1,10 +1,10 @@
 /*######################
-// ar3-aside-nav-2.js  #
+// ar3-aside-nav-3.js  #
 ######################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://rawgit.com/Arza-3d/ar3.js/master/modular/tab/ar3-aside-nav-2.js"></script>
+<script src="https://rawgit.com/Arza-3d/ar3.js/master/modular/tab/ar3-aside-nav-3.js"></script>
 --------------------------*/
 
 {
