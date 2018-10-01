@@ -1,0 +1,76 @@
+/*#####################
+// ar3-accordion-1.css  #
+#####################*/
+/*--------------------------
+https://arza-3d.github.io/ar3.js/
+
+<link href="https://rawgit.com/Arza-3d/ar3js/master/modular/accordion/ar3-accordion-1.css" rel="stylesheet" type="text/css">
+--------------------------*/
+
+body {
+    font: 11px Tahoma, arial, sans-serif;
+    letter-spacing: 0.02em;
+}
+
+a {
+    text-decoration:none;
+    background-color: #363636;
+    display: block;
+    padding: 3px 0 3px 4px;
+}
+a, a:link{color:rgb(225,150,50)}
+a:visited{color:rgb(200,120,0)}
+a:hover{color:rgb(255,180,0)}
+a:active{color:rgb(255,200,0)}
+
+section {
+    background-color: #fafafa;
+    border: 1px solid #4f4f4f;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 10px 10px 15px;
+}
+
+nav {
+    border: 1px solid #999;
+    border-right: none;
+    background-color: #bbb;
+    padding: 0 0 2px 4%;
+}
+}
+
+p {
+    max-width: 380px;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+nav > a {
+  margin-top: 2px;
+}
+
+h3 {
+    background-color: #363636;
+    border-radius: 8px 8px 0 0;
+    color: RGB(230,230,230);
+    cursor: pointer;
+    font-family: "DejaVu Sans","Trebuchet MS",arial,sans-serif;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding: 6px;
+    text-align: center;
+}
+.r3-accordion-B::before {
+    content: '-';
+}
+.r3-accordion-B.r3-active::before {
+    content: '+';
+}
+.r3-accordion-B {
+    cursor: pointer;
+    float: left;
+}
+
+.r3-accordion-B  {
+    color: white;
+    font: 14px Tahoma, sans-serif;
+}

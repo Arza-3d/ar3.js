@@ -231,7 +231,7 @@ s{text-decoration-color:red}
 
 .ar3 > aside > * >  nav + a{margin-top:4px}
 .ar3 > aside > nav {
-    border:1px solid #999; 
+    border:1px solid #999;
     background-color:#bbb;
 }
 .ar3 > aside > nav a{margin:2px 0 2px 8px; display:block; padding:2px 0 2px 7px}
@@ -439,8 +439,9 @@ table.column-1-just tbody > tr > *:first-child,
     table.column-8-just tbody > tr > *:nth-child(8),
     table.column-9-just tbody > tr > *:nth-child(9),
     table.column-10-just tbody > tr > *:nth-child(10),
-    table.column-last-just tbody > tr > *:last-child
-{text-align:justify}
+    table.column-last-just tbody > tr > *:last-child {
+    text-align:justify;
+}
 
 td.r3-multi-row{background-color:rgb(237,237,237)}
 td.r3-multi-row-last{border-bottom:thin solid  grey}
@@ -454,14 +455,46 @@ tr.blank-r3 > td,
 /*###############
 # AR3 ACCORDION # SCRIPTED
 ###############*/
-aside span.r3-accordion{float:left; position:relative; left:8px; top:2px; cursor:pointer; background-color:rgba(0,0,0,0)}
-aside span.r3-accordion + a{padding-left:10px}
-aside > nav + .r3-accordion{top:12px}
-aside nav > .r3-accordion{left:16px}
-.r3-short-code{font-size:11px; cursor:pointer; background-color:rgba(0,0,0,0.05); border:grey thin solid; border-radius:4px; color:rgba(0,0,0,0.6); display:block}
-.r3-accordion:before{ content:'\02795'; font-size:8px; color:#F1F1F1; margin-right:3px; margin-left:-6px}
-.r3-accordion.r3-active:before{content:'\2796'}
-.r3-accordion.w3-khakiAR:before{color:#000}
+aside span.r3-accordion {
+    float:left;
+    position:relative;
+    left:8px;
+    top:2px;
+    cursor:pointer;
+    background-color:rgba(0,0,0,0);
+}
+aside span.r3-accordion + a {
+    padding-left:10px
+}
+aside > nav + .r3-accordion {
+    top:12px
+}
+aside nav > .r3-accordion {
+    left:16px
+}
+
+.r3-short-code {
+    background-color:rgba(0,0,0,0.05);
+    border:grey thin solid;
+    border-radius:4px;
+    color:rgba(0,0,0,0.6);
+    cursor:pointer;
+    font-size:11px;
+    display:block;
+}
+.r3-accordion:before {
+    color:#f1f1f1;
+    content:'\02795';
+    font-size:8px;
+    margin-right:3px;
+    margin-left:-6px;
+}
+.r3-accordion.r3-active:before {
+    content:'\2796';
+}
+.r3-accordion.w3-khakiAR:before {
+    color:#000;
+}
 
 /*##########
 # AR3 FLEX # SCRIPTED

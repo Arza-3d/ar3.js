@@ -1,10 +1,10 @@
 /*#####################
-// ar3-accordion.css  #
+// ar3-accordion-1.css  #
 #####################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<link href="https://rawgit.com/Arza-3d/ar3js/master/modular/accordion/ar3-accordion.css" rel="stylesheet" type="text/css">
+<link href="https://rawgit.com/Arza-3d/ar3js/master/modular/accordion/ar3-accordion-1.css" rel="stylesheet" type="text/css">
 --------------------------*/
 
 body {
@@ -17,7 +17,6 @@ a {
     background-color: #363636;
     display: block;
     padding: 3px 0 3px 4px;
-}
 }
 a,
 a:link{color:rgb(225,150,50)}

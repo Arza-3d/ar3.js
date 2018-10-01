@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>test ar3-accordion-1</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://image.ibb.co/nqbdHJ/titlelogo.png" rel="icon">
+    <link href="ar3-accordion-B-1.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <!-- test example 1-->
+      <div class="r3-accordion-B"></div>
+      <h3> accordion test a </h3>
+      <section class="r3-panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </section>
+      <br><br>
+      <!-- test example 2-->
+      <div class="r3-accordion-B"></div>
+      <a>accordion test b </a>
+      <nav>
+          <a href="#">dummy link #1</a>
+          <div class="r3-accordion-B"></div>
+          <a href="#">accordion test c</a>
+            <nav>
+              <a href="#">dummy link #2a</a>
+              <a href="#">dummy link #2b</a>
+            </nav>
+      </nav>
+
+    <script src="ar3-accordion-B-1.js"></script>
+    <script type="text/javascript">
+        {
+            let $accordions2 = $('.r3-accordion-B');
+
+            function hasNextSibling(targetElement, desiredSibling) {
+                return $(targetElement).next(desiredSibling).length > 0;
+            }
+
+            for (let i = 0; i < $accordions2.length; i++) {
+                if (hasNextSibling($accordions2[i], 'h3')) {
+                    $($accordions2[i]).css({
+                        'margin-top':'5px',
+                        'margin-left': '3px',
+                        'font-size': '17px'
+                    });
+                } else if (hasNextSibling($accordions2[i], 'a')) {
+                    $($accordions2[i]).css({
+                        'color' : 'orange',
+                        'margin':'2px 3px auto 2px'
+                    });
+                }
+            }
+        }
+    </script>
+  </body>
+</html>
