@@ -1,0 +1,914 @@
+/*#########
+# nav-ar3 #
+#########*/
+#r3-nav div:nth-child(2) a {
+    background-color: #222;
+    display: block;
+    font-size: 12px;
+    height:100%;
+    letter-spacing: 1px;
+    line-height: 53px;
+    min-width: 65px;
+    text-align: center;
+    transition: background-color 0.4s ease-in-out,
+        color 0.4s ease-in-out;
+}
+#r3-nav div:nth-child(2) a:hover {
+    background-color: #ff5722;
+    color: white
+}
+
+/*################
+# SET DEFAULT TAG#
+################*/
+a{text-decoration:none}
+a,
+a:link {color:rgb(225,150,50)}
+a:visited {color:rgb(200,120,0)}
+a:hover {color:rgb(255,180,0)}
+a:active {color:rgb(255,200,0)}
+body{
+    font: 11px Tahoma, arial, sans-serif;
+    margin:0 !important;
+    padding:0 !important;
+}
+code {
+    background-color:#eee;
+    border:#ccc thin solid;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 1px;
+    text-indent: 0;
+}
+html {
+    overflow-x: hidden
+}
+img {
+    border-radius: 6px
+}
+ul,
+ol {
+    line-height: 180%;
+    padding-inline-start: 20px;
+}
+
+/*###########
+# AR3 CLASS # CLASS
+###########*/
+body {
+    position:relative !important;
+    font:11px Tahoma, arial, sans-serif;
+    letter-spacing: 0.02em;
+    font-kerning:normal !important;
+}
+
+.code-r3 {
+    font:11px Consolas,monospace !important;
+    white-space:pre !important;
+}
+
+.hide-r3{display:none}
+.hide-toggle-r3{display:none}
+.hide-not-print-r3{display:none} @media print{
+.hide-not-print-r3{display:initial}
+}
+
+.absolute-r3{position:absolute}
+.fixed-r3{position:fixed}
+.relative-r3{position:relative}
+
+.blue-r3 {
+    color:blue
+}
+
+.green-r3 {
+    color:green
+}
+
+.magenta-r3{color:magenta}
+.orange-r3{color:orange}
+.purple-r3{color:purple}
+.red-r3{color:red}
+.yellow-r3{color:yellow}
+.comment-r3{color:rgba(0,0,0,0.25); font-style: italic;}
+.grey-r3{color:#888}
+
+.r3-slider{overflow:auto}
+.r3-slider + .r3-slider{margin-top:15px}
+
+.just-r3{text-align:justify !important}
+
+.math-r3 {
+    text-align:center;
+    font-style:italic;
+    font:9pt "Times New Roman", serif;
+}
+
+.r3-border{border-color: orange; border-width: 3px}
+
+.relative-container-r3 {
+    position: relative;
+    overflow: auto;
+}
+
+.tab-r3 .relative-container-r3 > a {
+    border: rgba(255,100,0,0.5) solid medium;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+.tab-r3 .relative-container-r3 > a > span {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+    top: 40%;
+}
+
+/*##########
+# AR3 JSON # CLASS
+###########*/
+.r3-default-object{color:magenta}
+.r3-object{color:blue}
+.r3-argument,
+.r3-literal{color:green}
+.r3-argument > .r3-object{color:green}
+
+.r3-string{color:#4e9843}
+.r3-boolean{color:#c71c2c}
+.r3-number{color:#006698}
+
+.r3-code-highlight{
+    color:red}
+.r3-depreceated {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+
+/*#########
+# ar3 TAG #
+#########*/
+*[title]{cursor:help}
+ *:target {
+    color:orange;
+    transition:color 1s ease-in-out,
+        background-color 1s ease-in-out;
+}
+
+blockquote {
+    background-color: #efefef;
+    border-left: 5px solid #bbb;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0 30px 0 30px;
+    padding: 10px 20px;
+}
+
+code {
+    font:11px Consolas,monospace;
+}
+
+figcaption {
+    text-align: center;
+    padding: 0px;
+    text-indent: 0px;
+    margin: 0 0 7px 0
+}
+
+figure{
+    background-color: #fbfbfb;
+    border-color: #ddd #ddd #999 #bbb;
+    border-style: solid;
+    border-width: 1px;
+    overflow: auto;
+}
+
+footer {
+    clear:left; text-align:center; background-color:rgb(45,45,45); color:white; height:30px; width:auto;
+    left:0; right:0; padding-top:20px; z-index:10; margin:auto; overflow:hidden; padding-bottom:20px}
+
+ h3,
+ h4,
+ h5,
+ h6{font-weight:lighter; background-color:RGB(33,33,33); color:RGB(230,230,230); border-radius:8px; padding:6px; margin:10px 1% 10px 1%; text-align:center; font-family:"DejaVu Sans","Trebuchet MS",arial,sans-serif}
+ hr{height:0; -webkit-box-sizing:content-box; -moz-box-sizing:content-box; box-sizing:content-box; margin:15px 5% 15px 5%; border:0; border-top:1px solid #aaa}
+
+ kbd{
+    padding:1px 10px;
+    font: 90% Consolas, monospace;
+    color:#fff;
+    background-color:#333;
+    background-image:linear-gradient(rgb(130,130,130), rgb(20,20,20) 85%, black);
+    border-radius:3px;
+    -webkit-box-shadow:inset 0 -1px 0 rgba(0,0,0,.25);
+    box-shadow:inset 0 -1px 0 rgba(0,0,0,.25);
+    line-height:1.7em
+}
+
+p {
+    line-height: 18px
+}
+
+pre{
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display:block; margin:3px 0 3px 0;
+    padding: 3px;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: auto;
+    font: 11px Consolas, monospace;
+}
+s{text-decoration-color:red}
+ span[id] {font-weight:bold}
+ video{border-radius:6px}
+
+/*###########
+# AR3 ASIDE #
+###########*/
+aside{
+    border: 2px solid #666;
+    border-radius: 10px 0 0 10px;
+    float: left;
+    height: 93vh;
+    overflow: auto;
+    margin: 2px 0 15px 1%;
+    padding: 15px 5px 20px 8px;
+    width: 13%;
+}
+
+@media screen and (max-width:722px) {
+aside{display:none}
+} @media print {
+aside{display:none}
+}
+
+.r3-aside-replacement{
+    border:2px solid rgba(0,0,0,0);
+    float:left;
+    height:91vh;
+    margin:2px 0 15px 1%;
+    padding:15px 5px 20px 8px;
+    width:13%;
+} @media screen and (max-width:722px){
+.r3-aside-replacement{display:none}
+} @media print {
+.r3-aside-replacement{display:none}
+}
+
+
+aside.r3-dynamic-before {
+    position: static;
+}
+
+aside.r3-dynamic-on {
+    position: fixed;
+    top: 0
+}
+aside.r3-dynamic-after {
+    position: absolute;
+    bottom:0 !important
+}
+
+aside > * >  nav + a {
+    margin-top: 4px;
+}
+
+aside > nav {
+    border: 1px solid #999;
+    background-color: #bbb;
+}
+
+aside > nav a {
+    margin: 2px 0 2px 8px;
+    display: block;
+    padding: 2px 0 2px 7px;
+}
+
+aside > a + a,
+aside > nav + a ,
+aside > nav + .r3-accordion + a {
+    margin-top: 10px;
+}
+
+aside > nav nav {
+    margin: 2px 0 2px 8px;
+    border-bottom: solid thin black;
+    border-left: thin grey solid;
+    border-bottom-left-radius: 4px
+}
+
+aside *:not(h3) {
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+aside a {
+    display: block;
+    background-color: #363636;
+    padding:3px 0 3px 8px;
+}
+
+aside a:hover {
+    color: #fff !important;
+    background-color: #ff5722 !important;
+    transition:color 0.5s ease-in, background-color 0.3s;
+}
+
+aside h3 {
+    background-color: inherit;
+    border-left: 2px solid grey;
+    border-top: 2px solid grey;
+    border-radius: 8px 0 0 0;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 1px 0 7px 0px;
+    text-align: left;
+    transition:background-color 1s ease-in-out, color 1s ease-in-out;
+}
+
+/*############
+# AR3 HEADER #
+############*/
+header {
+    padding-left: 60px;
+}
+
+@media screen and (max-width: 722px) {
+    header {
+        padding-left: 15px;
+    }
+}
+
+header h1 {
+    font-size: 90px;
+    font-weight: 100;
+    border-left: solid orange thick;
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-right: 3.6%;
+    display: block;
+    padding-left: 15px;
+    padding-top: 28px;
+    background-image: url('https://image.ibb.co/jGF34Q/latar_Judul.png');
+    background-attachment: fixed;
+    border-right: solid #ddd thin;
+}
+
+header h4{
+    background-color: #222;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 3.6%;
+    border-top-left-radius: 0;
+    padding-left: 20px;
+    border-left: solid orange thick;
+    border-bottom: solid orange 2px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 190%;
+    letter-spacing: 2px;
+}
+
+header p {
+    max-width: 450px;
+    text-indent: -20px;
+    text-align: justify;
+}
+
+header p:first-letter {
+    font-size:24px;
+    margin-left:60px
+}
+
+header table {
+    border-left: solid thick orange;
+    border-top: solid 2px orange;
+    border-top-left-radius:8px;
+}
+
+header table > a {
+    background-color: #333;
+    border-radius: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/*##########
+# AR3 LIST #
+##########*/
+li,
+ol {
+    text-align:justify;
+}
+
+li > pre {
+    margin-bottom:13px;
+}
+
+li > table{margin-bottom:10px}
+ul{list-style-type:circle}
+p + ul,
+p + ol{margin-top:2px}
+ul > ul{list-style-type:disc}
+
+ul > ul,
+ul > ol,
+ol > ul,
+ol > ol {
+    padding-left: 12px;
+    margin-top:2px;
+}
+
+/*###########
+# AR3 MAIN  #
+###########*/
+
+aside + main{width:79%} @media print{
+aside + main{width:auto}} @media screen and (max-width:722px){
+aside + main{width:95%;}
+}
+main{
+    border:2px solid #666;
+    border-radius:10px;
+    float:left;
+    margin:2px 1% 15px 0.4%;
+    overflow:auto;
+    padding:15px 5px 15px 5px;
+}
+
+@media print {
+    main {
+        height :auto;
+        width: auto;
+        border: none;
+    }
+}
+
+@media screen and (max-width:722px){
+main{margin-left:15px;width:88vw}
+}
+
+main > div{padding:3px 0 35px 0} @media print{
+main > div:first-child > h2{page-break-before: avoid}
+}
+main > div:nth-of-type(odd) {
+    background-color: rgba(0,0,0,0.05);
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-left: solid 2px orange;
+    border-top:solid 1px orange;
+}
+
+main > div:nth-of-type(even){
+    background-color: rgba(0,0,0,0.1);
+    border-right: solid 2px orange;
+    border-top: 1px solid orange;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+main > div:last-child {
+    border-bottom: 3px orange solid;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius:12px;
+}
+
+main > div > h2 {
+    background-color:#222;
+    border-bottom:ridge thick grey;
+    border-right:solid thin grey;
+    border-radius:0 2px 60px 0;
+    color:white;
+    font:400 40px Calibri;
+    padding-top:6px;
+    padding-left:6px;
+    margin-top:20px;
+    margin-right: 30%;
+    margin-bottom: 3px;
+}
+
+@media print{
+    main > div > h2 {
+        color:black;
+        page-break-before:always;
+        -webkit-page-break-before:always;
+        border:none;
+    }
+
+    main > div > h2 ~ *:not(h2) {
+        margin-left: 40px;
+    }
+}
+
+main > div > h2 + marquee {
+    background-color:#333;
+    color:#ddd;
+    margin-right:40%;
+    margin-top:3px;
+    border-bottom-right-radius:20px;
+}
+
+main > div > h2 + marquee + marquee {
+    background-color:#555;
+    color:#ccc;
+    margin-right:50%;
+    margin-top:3px;
+    border-bottom-right-radius:20px;
+}
+
+main > div > h2 + marquee + marquee + marquee {
+    background-color:#777;
+    color:#bbb;
+    margin-right:60%;
+    margin-top:3px;
+    border-bottom-right-radius:20px;
+}
+
+main > div > h3 {
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    background-color:#363636;
+    cursor:pointer;
+    margin-bottom:0;
+    transition:color 1s ease-in
+}
+
+@media print{
+
+    main > div > h3 {
+        border:thin black solid;
+        border-bottom:none;
+        color:black;
+        font-weight:bold
+    }
+}
+
+main > div > h3:before {
+    content:'\2796';
+    float:left;
+    font-size:10px;
+    color:#F1F1F1;
+    padding-left:13px;
+}
+
+@media print{
+main > div > h3 ~ *:not(h2),
+main > div > h3 ~ *:not(h3){margin-left: 60px}
+main > div > hr,
+main > div > marquee{display: none !important}
+}
+
+main > div > h3.r3-active {
+    background-color:rgb(171,171,171);
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+}
+
+main > div > h3.r3-active:before {content:'\02795'; background-color:transparent}
+main > div > h3.r3-active:target {color:rgba(25,25,25,1.00)}
+main > div > marquee + hr
+    main > div > p + hr,
+main > div > ul + hr{margin-top:13px; margin-left:7px; border-radius:4px; padding:1px}
+main > div > section > h4{
+    text-align:left; display:inline-block; border-radius:0; padding: 3px; padding-left: 30px;
+    margin-left: -12px; margin-bottom:0; background-color:rgba(70,70,70,1.00); border-bottom:double orange thin;
+}
+main > div > p {margin-left: 25px}
+
+p {
+    text-indent:36px;
+    text-align:justify;
+    max-width:360px;
+}
+
+li {
+    max-width: 360px;
+}
+main > div > p:first-letter{font-size:24px} @media print{
+main > div > p:first-letter{font-size:11px}
+}
+br + code {margin: 4px 0}
+code{max-width: none}
+
+main > div > section {
+    border: 1px solid #4f4f4f;
+    border-radius:0 0 10px 10px;
+    padding:15px 10px 10px 15px;
+    margin:0 1% 15px 1%;
+    background-color:#fafafa;
+    overflow:hidden;
+}
+
+@media print{
+main > div > section{border: none !important}
+}
+main > div > section > div > h4{
+    text-align:left; display:inline-block; border-radius:0; padding:3px; padding-left:30px;
+    margin-left:-12px; margin-bottom:0; background-color:rgba(70,70,70,1.00); border-bottom:double orange thin}
+main > div > section > h4,
+main > div > section > hr + h4{margin-top: 4px}
+@media print{
+main > div > section > h4 ~ *:not(h4){margin-left: 70px}
+}
+main > div > section > h4:first-child,
+main > div > section > div:first-child + h4{margin-top: 20px}
+
+main > div > section > p {
+    max-width: 380px;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+main > div > section > p > b[id],
+main > div > section > ul b[id] {
+    background-color: #666;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 3px;
+}
+
+main > div > section > ul li{margin-top:1px}
+main > div > section  table.filter-r3 > thead > tr > td > input{width: 15px; border-radius:50%}
+main > div > section  table.filter-r3 > thead > tr > td > input:focus{width: 100px; border-radius:3%}
+main > div > ul{margin-left:15px}
+main > p{margin-left:23px}
+
+/*##########
+# AR3 MENU #
+##########*/
+button{cursor:pointer, font:11px calibri, arial sans-serif}
+input,
+    option,
+    select,
+    textarea{font:13px calibri, arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; -webkit-font-kerning:normal !important; font-kerning:normal !important}
+form{cursor:default}
+input[type=number],
+    input[type=text],
+    input[type=url],
+    select{font-size:9px}
+input[type=number]:focus,
+    input[type=text]:focus,
+    input[type=url]:focus,
+    select:focus{font-size:13px}
+label{font-weight:bold}
+
+/*###########
+# ar3 table > #
+###########*/
+h4 + .r3-slider{margin-top: 10px}
+
+table {
+    border-collapse: collapse;
+    margin-top: 3px;
+    table-layout: fixed;
+    border-bottom: solid thin #949494
+}
+
+caption {
+    border: grey thin solid;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    font-size: 1.02em;
+    font-weight: bold;
+    padding: 0.3em
+}
+
+table > pre {margin:1px 0 1px 0; padding:1px}
+table > * > tr > *{padding-left:5px; padding-right:5px}
+table > * > tr:first-child{border-top:solid thin #949494}
+table > tbody > th{text-align:left}
+table > tbody > tr.hide-r3 + tr:not(.hide-r3){border-top: thin solid rgba(0,0,0,0.1)}
+
+tbody > tr:nth-of-type(even) {
+    background-color:#e5e5e5;
+}
+
+tbody > tr:nth-of-type(odd){
+    background-color:#F5F5F5;
+}
+
+table > tbody > tr > td{height:25px}
+table > tbody > tr > td[rowspan]{background-color:#ededed}
+table > tbody > tr > *{border-right:rgba(0,0,0,0.02) thin solid}
+
+tbody > tr > *:last-child {
+    border-right:none;
+}
+
+thead th {
+    background-color: rgba(83,83,83,1.00);
+    color: rgba(224,224,224,1.00);
+    height: 18px;
+    text-align: center;
+}
+
+thead th[colspan] {
+    border-bottom:grey thin solid;
+}
+
+thead th[rowspan] {
+    border-left:grey thin solid;
+}
+
+thead th[rowspan] + th {
+    border-left:grey thin solid;
+}
+
+thead th[rowspan]:first-child {
+    border-left:none;
+}
+
+table > thead > tr:nth-child(2) th{border-left:grey thin solid}
+table > thead > tr >  td > *{display:block; margin:auto}
+
+table.column-1-code tbody > tr > *:first-child,
+    table.column-2-code tbody > tr > *:nth-child(2),
+    table.column-3-code tbody > tr > *:nth-child(3),
+    table.column-4-code tbody > tr > *:nth-child(4),
+    table.column-5-code tbody > tr > *:nth-child(5),
+    table.column-6-code tbody > tr > *:nth-child(6),
+    table.column-7-code tbody > tr > *:nth-child(7),
+    table.column-8-code tbody > tr > *:nth-child(8),
+    table.column-9-code tbody > tr > *:nth-child(9),
+    table.column-10-code tbody > tr > *:nth-child(10),
+    table.column-last-code tbody > tr > *:last-child
+{font:11px Consolas,monospace; white-space:pre}
+
+table.column-1-just tbody > tr > *:first-child,
+    table.column-2-just tbody > tr > *:nth-child(2),
+    table.column-3-just tbody > tr > *:nth-child(3),
+    table.column-4-just tbody > tr > *:nth-child(4),
+    table.column-5-just tbody > tr > *:nth-child(5),
+    table.column-6-just tbody > tr > *:nth-child(6),
+    table.column-7-just tbody > tr > *:nth-child(7),
+    table.column-8-just tbody > tr > *:nth-child(8),
+    table.column-9-just tbody > tr > *:nth-child(9),
+    table.column-10-just tbody > tr > *:nth-child(10),
+    table.column-last-just tbody > tr > *:last-child {
+    text-align:justify;
+}
+
+td.r3-multi-row{background-color:rgb(237,237,237)}
+td.r3-multi-row-last{border-bottom:thin solid  grey}
+tr.r3-multi-row{border-top:thin solid rgb(200,200,200)}
+
+tr.blank-r3{background-color:transparent !important}
+tr.blank-r3 > td,
+    tr.blank-r3 > td[colspan]
+{border:none; padding-top:1em; padding-bottom:0.3em}
+
+/*###############
+# AR3 ACCORDION # SCRIPTED
+###############*/
+aside span.r3-accordion {
+    float:left;
+    position:relative;
+    left:8px;
+    top:2px;
+    cursor:pointer;
+    background-color:rgba(0,0,0,0);
+}
+aside span.r3-accordion + a {
+    padding-left:10px
+}
+aside > nav + .r3-accordion {
+    top:12px
+}
+aside nav > .r3-accordion {
+    left:16px
+}
+
+.r3-short-code {
+    background-color:rgba(0,0,0,0.05);
+    border:grey thin solid;
+    border-radius:4px;
+    color:rgba(0,0,0,0.6);
+    cursor:pointer;
+    font-size:11px;
+    display:block;
+}
+.r3-accordion:before {
+    color:#f1f1f1;
+    content:'\02795';
+    font-size:8px;
+    margin-right:3px;
+    margin-left:-6px;
+}
+.r3-accordion.r3-active:before {
+    content:'\2796';
+}
+.r3-accordion.w3-khakiAR:before {
+    color:#000;
+}
+
+/*##########
+# AR3 FLEX # SCRIPTED
+##########*/
+.flex-r3{display:-webkit-flex; display:flex}
+div.flex-r3{flex-wrap:wrap; border:grey thin solid; background-color:rgba(0,0,0,0.1); border-radius:8px; overflow:auto}
+div.flex-r3 > div{
+    margin:2px; border:grey thin solid; background-color:rgb(240,240,240); padding:4px;
+    border-radius:6px; text-align:center; color:rgba(0,0,0,0.3); font-weight:normal}
+div.flex-r3 > b{line-height:2; padding-left:2%; font-size:14px; display:inline-block; width:95%; color:rgba(0,0,0,0.75)}
+div.flex-r3 > hr{width:98%; color:rgba(0,0,0,0.1); margin-top:7px; margin-bottom:4px; margin-right:2%; margin-left:2%}
+div.flex-r3 pre{text-align:left}
+div.flex-r3 > div > b{color:rgba(0,0,0,0.6)}
+div.flex-r3 > div > b > b{color:rgb(0,0,0)}
+div.flex-r3 > div > div {
+    background-color: white;
+    border: grey thin solid;
+    padding: 4px;
+    font-weight: normal;
+    border-radius: 6px;
+    color: #000;
+    text-align: left;
+    margin: auto;
+}
+
+/*##########
+# AR3 TAB  # SCRIPTED
+##########*/
+
+/* .tab-r3 functionality */
+.tab-r3 > div:nth-child(2) > div{display:none; background-color: #fafafa}
+.tab-r3 > div:nth-child(2) > div:first-child{display:block}
+
+/* .tab-r3 style*/
+.tab-r3 {
+    margin:5px 0 5px 0;
+    overflow:hidden;
+    max-width:98%;
+    border-radius:8px;
+    border:solid thin grey;
+}
+
+.tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold}
+.tab-r3 > nav{background-color:#535353}
+
+.tab-r3 > nav > * {
+    display:inline-block;
+    border-radius:4px 4px 0 0;
+    padding:7px 6px;
+    margin:0;
+}
+
+.tab-r3 > nav > a {
+    transition:color 0.4s ease-in, background-color 0.4s ease-out;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.tab-r3 > nav > span{color:white}
+.tab-r3 > nav > *:first-child{border-top-left-radius:8px}
+.tab-r3 > nav > *:last-child{border-top-right-radius:8px}
+.tab-r3 > nav > a:hover{color:#fff; background-color:#ff5722}
+.tab-r3 > nav > a.r3-active:hover{color:#000}
+.tab-r3 > div:nth-child(2) {background-color: #fff}
+.tab-r3 > div:nth-child(2) > div:target{color:black}
+.tab-r3 > div:nth-child(2) > div{padding:6px}
+
+/* .tab-r3 special case for example inside table has color that is lighter*/
+ table .tab-r3 > nav{background-color:#747474}
+
+/*##########
+# W3 CLASS # IMPORTED from w3.css
+##########*/
+.w3-amber,.w3-hover-amber:hover{color:#000 !important;background-color:#ffc107 !important}
+.w3-aqua,.w3-hover-aqua:hover{color:#000 !important;background-color:#00ffff !important}
+.w3-blue,.w3-hover-blue:hover{color:#fff !important;background-color:#2196F3 !important}
+.w3-light-blue,.w3-hover-light-blue:hover{color:#000 !important;background-color:#87CEEB !important}
+.w3-brown,.w3-hover-brown:hover{color:#fff !important;background-color:#795548 !important}
+.w3-cyan,.w3-hover-cyan:hover{color:#000 !important;background-color:#00bcd4 !important}
+.w3-blue-grey,.w3-hover-blue-grey:hover{color:#fff !important;background-color:#607d8b !important}
+.w3-green,.w3-hover-green:hover{color:#fff !important;background-color:#4CAF50 !important}
+.w3-light-green,.w3-hover-light-green:hover{color:#000 !important;background-color:#8bc34a !important}
+.w3-indigo,.w3-hover-indigo:hover{color:#fff !important;background-color:#3f51b5 !important}
+.w3-khaki,.w3-hover-khaki:hover{color:#000 !important;background-color:#f0e68c !important}
+.w3-lime,.w3-hover-lime:hover{color:#000 !important;background-color:#cddc39 !important}
+.w3-orange,.w3-hover-orange:hover{color:#000 !important;background-color:#ff9800 !important}
+.w3-deep-orange,.w3-hover-deep-orange:hover{color:#fff !important;background-color:#ff5722 !important}
+.w3-pink,.w3-hover-pink:hover{color:#fff !important;background-color:#e91e63 !important}
+.w3-purple,.w3-hover-purple:hover{color:#fff !important;background-color:#9c27b0 !important}
+.w3-deep-purple,.w3-hover-deep-purple:hover{color:#fff !important;background-color:#673ab7 !important}
+.w3-red,.w3-hover-red:hover{color:#fff !important;background-color:#f44336 !important}
+.w3-sand,.w3-hover-sand:hover{color:#000 !important;background-color:#fdf5e6 !important}
+.w3-teal,.w3-hover-teal:hover{color:#fff !important;background-color:#009688 !important}
+.w3-yellow,.w3-hover-yellow:hover{color:#000 !important;background-color:#ffeb3b !important}
+.w3-white,.w3-hover-white:hover{color:#000 !important;background-color:#fff !important}
+.w3-black,.w3-hover-black:hover{color:#fff !important;background-color:#000 !important}
+.w3-grey,.w3-hover-grey:hover{color:#000 !important;background-color:#9e9e9e !important}
+.w3-light-grey,.w3-hover-light-grey:hover{color:#000 !important;background-color:#f1f1f1 !important}
+.w3-dark-grey,.w3-hover-dark-grey:hover{color:#fff !important;background-color:#616161 !important}
+.w3-pale-red,.w3-hover-pale-red:hover{color:#000 !important;background-color:#ffe7e7 !important}
+.w3-pale-green,.w3-hover-pale-green:hover{color:#000 !important;background-color:#e7ffe7 !important}
+.w3-pale-yellow,.w3-hover-pale-yellow:hover{color:#000 !important;background-color:#ffffd7 !important}
+.w3-pale-blue,.w3-hover-pale-blue:hover{color:#000 !important;background-color:#e7ffff !important}
