@@ -1,0 +1,23 @@
+@import 'color-selector';
+
+$link-color : (
+    link-d: rgb(225,150,50), // a
+    link-l: rgb(225,150,50), // link
+    link-v: rgb(200,120,0), // visited
+    link-h: rgb(255,180,0), // hover
+    link-a: rgb(255,200,0) // active
+);
+
+$table-color : (
+    border-c: #949494,
+    even-row-c: #e5e5e5,
+    odd-row-c: #f5f5f5,
+    dob-row-c: #ededed,
+    in-border-c: rgba(0,0,0,0.02),
+    in-h-border-c: grey,
+    th-c: rgb(224,224,224),
+    th-bgc: rgb(83,83,83)
+);
+
+$grey = grey;
+//ededed

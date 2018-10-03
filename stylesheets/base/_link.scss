@@ -1,0 +1,23 @@
+@import 'colors';
+
+
+a {
+    text-decoration: none
+}
+
+a,
+a:link {
+    color: map-get($link-color, link-d);
+}
+
+a:visited {
+    color: map-get($link-color, link-v);
+}
+
+a:hover {
+    color: map-get($link-color, link-h);
+}
+
+a:active {
+    color: map-get($link-color, link-a);
+}
