@@ -1,0 +1,73 @@
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
+
+/*##############
+# tab mechanic #
+##############*/
+.tab-r3 > div > div {
+    display: none;
+}
+.tab-r3 > div > div:first-child {
+    display: block;
+}
+
+/*#######
+# style #
+#######*/
+.tab-r3 {
+
+    border: solid thin map-get($tab, border-c);
+    border-radius: 8px;
+    margin: 5px 0 5px 0;
+    max-width: 98%;
+    overflow: hidden;
+
+    > nav {
+        background-color: map-get($tab, nav-c);
+        border-radius: 8px 8px 0 0;
+
+        > * {
+            border-radius: 4px 4px 0 0;
+            display: inline-block;
+            margin: 0;
+            padding: 7px 6px;
+        }
+
+        > *:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        > *:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        > a {
+            cursor: pointer;
+            transition: color 0.4s ease-in, background-color 0.4s ease-out;
+        }
+
+        > a:hover {
+            background-color: map-get($tab, nav-a-h-bc);
+            color: map-get($tab, nav-a-h-c);
+        }
+
+        > a.r3-active {
+            background-color: map-get($tab, bg-c) !important;
+            color: map-get($tab, nav-a-act-c);
+            font-weight: bold;
+        }
+
+        > a.r3-active:hover {
+            color: map-get($tab, nav-a-act-hov-c);
+        }
+
+        > span {
+            color: map-get($tab, nav-span);
+        }
+
+    }
+
+    > div > div {
+        padding: 6px;
+    }
+
+}
