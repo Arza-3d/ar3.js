@@ -55,12 +55,7 @@ ol {
 /*###########
 # AR3 CLASS # CLASS
 ###########*/
-body {
-    position:relative !important;
-    font:11px Tahoma, arial, sans-serif;
-    letter-spacing: 0.02em;
-    font-kerning:normal !important;
-}
+
 
 .code-r3 {
     font:11px Consolas,monospace !important;
@@ -656,10 +651,24 @@ b[id] {
 }
 
 main section > ul li{margin-top:1px}
-main section table.filter-r3 > thead > tr > td > input{width: 15px; border-radius:50%}
-main section table.filter-r3 > thead > tr > td > input:focus{width: 100px; border-radius:3%}
-main ul {margin-left:15px}
-main > p{margin-left:23px}
+
+table.filter-r3 input {
+    width: 15px;
+    border-radius:50%;
+}
+
+table.filter-r3 input:focus {
+    width: 100px;
+    border-radius:3%;
+}
+
+main ul {
+    margin-left:15px;
+}
+
+main > p {
+    margin-left: 23px;
+}
 
 /*##########
 # AR3 MENU #
@@ -670,9 +679,15 @@ button {
 }
 
 input,
-    option,
-    select,
-    textarea{font:13px calibri, arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; -webkit-font-kerning:normal !important; font-kerning:normal !important}
+option,
+select,
+textarea {
+    font:13px calibri, arial, sans-serif;
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    -webkit-font-kerning:normal !important;
+    font-kerning:normal !important;
+}
 
 form {
     cursor:default;
@@ -717,8 +732,15 @@ caption {
     padding: 0.3em
 }
 
-table > pre {margin:1px 0 1px 0; padding:1px}
-table > * > tr > *{padding-left:5px; padding-right:5px}
+table > pre {
+    margin:1px 0 1px 0;
+    padding:1px;
+}
+
+table > * > tr > * {
+    padding-left:5px;
+    padding-right:5px;
+}
 
 tr:first-child {
     border-top: solid thin #949494;
@@ -728,7 +750,9 @@ tbody th {
     text-align:left;
 }
 
-tbody > tr.hide-r3 + tr:not(.hide-r3){border-top: thin solid rgba(0,0,0,0.1)}
+tbody > tr.hide-r3 + tr:not(.hide-r3) {
+    border-top: thin solid rgba(0,0,0,0.1);
+}
 
 tbody > tr:nth-of-type(even) {
     background-color:#e5e5e5;
@@ -856,38 +880,19 @@ aside nav > .r3-accordion {
 }
 
 /*##########
-# AR3 FLEX # SCRIPTED
-##########*/
-.flex-r3{display:-webkit-flex; display:flex}
-.flex-r3{flex-wrap:wrap; border:grey thin solid; background-color:rgba(0,0,0,0.1); border-radius:8px; overflow:auto}
-.flex-r3 > div{
-    margin:2px; border:grey thin solid; background-color:rgb(240,240,240); padding:4px;
-    border-radius:6px; text-align:center; color:rgba(0,0,0,0.3); font-weight:normal}
-.flex-r3 > b{line-height:2; padding-left:2%; font-size:14px; display:inline-block; width:95%; color:rgba(0,0,0,0.75)}
-.flex-r3 > hr{width:98%; color:rgba(0,0,0,0.1); margin-top:7px; margin-bottom:4px; margin-right:2%; margin-left:2%}
-.flex-r3 pre{text-align:left}
-.flex-r3 > div > b{color:rgba(0,0,0,0.6)}
-.flex-r3 > div > b > b{color:rgb(0,0,0)}
-.flex-r3 > div > div {
-    background-color: white;
-    border: grey thin solid;
-    padding: 4px;
-    font-weight: normal;
-    border-radius: 6px;
-    color: #000;
-    text-align: left;
-    margin: auto;
-}
-
-/*##########
 # AR3 TAB  # SCRIPTED
 ##########*/
 
 /* .tab-r3 functionality */
-.tab-r3 > div:nth-child(2) > div{display:none; background-color: #fafafa}
-.tab-r3 > div:nth-child(2) > div:first-child{display:block}
+.tab-r3 > div:nth-child(2) > div {
+    display: none;
+    background-color: #fafafa;
+}
 
-/* .tab-r3 style*/
+.tab-r3 > div:nth-child(2) > div:first-child {
+    display:block;
+}
+
 .tab-r3 {
     margin:5px 0 5px 0;
     overflow:hidden;
@@ -896,14 +901,21 @@ aside nav > .r3-accordion {
     border:solid thin grey;
 }
 
-.tab-r3 a.r3-active{background-color:#fafafa !important; color:black; font-weight:bold}
-.tab-r3 > nav{background-color:#535353}
+.tab-r3 a.r3-active {
+    background-color:#fafafa !important;
+    color:black;
+    font-weight:bold;
+}
+
+.tab-r3 > nav {
+    background-color: #535353;
+}
 
 .tab-r3 > nav > * {
-    display:inline-block;
-    border-radius:4px 4px 0 0;
-    padding:7px 6px;
-    margin:0;
+    border-radius: 4px 4px 0 0;
+    display: inline-block;
+    padding: 7px 6px;
+    margin: 0;
 }
 
 .tab-r3 > nav > a {

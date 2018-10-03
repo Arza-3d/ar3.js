@@ -1,0 +1,61 @@
+/*##########
+
+# AR3 FLEX # SCRIPTED
+
+##########*/
+
+
+.flex-r3 {
+    background-color: rgba(0,0,0,0.1);
+    border: grey thin solid;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.flex-r3 > div {
+    background-color: rgb(240,240,240);
+    border: grey thin solid;
+    border-radius: 6px;
+    color: rgba(0,0,0,0.3);
+    font-weight: normal;
+    margin: 2px;
+    padding: 4px;
+    text-align: center;
+}
+
+.flex-r3 > b {
+    color: rgba(0,0,0,0.75);
+    display: inline-block;
+    font-size: 14px;
+    line-height: 2;
+    padding-left: 2%;
+    width:95%;
+}
+
+.flex-r3 > hr {
+    color: rgba(0,0,0,0.1);
+    margin: 7px 2%;
+    width: 98%;
+}
+
+.flex-r3 pre{text-align:left}
+
+.flex-r3 > div > b{color:rgba(0,0,0,0.6)}
+
+
+.flex-r3 > div > b > b {
+    color: rgb(0,0,0);
+}
+
+.flex-r3 > div > div {
+    background-color: white;
+    border: grey thin solid;
+    border-radius: 6px;
+    color: #000;
+    font-weight: normal;
+    margin: auto;
+    padding: 4px;
+    text-align: left;
+}

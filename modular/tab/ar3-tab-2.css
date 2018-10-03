@@ -35,45 +35,52 @@ https://arza-3d.github.io/ar3.js/
 
 /* .tab-r3 style*/
 .tab-r3 {
-    border:solid thin grey;
-    border-radius:8px;
-    margin:5px 0 5px 0;
-    max-width:98%;
-    overflow:hidden;
+    border: solid thin grey;
+    border-radius: 8px;
+    margin: 5px 0 5px 0;
+    max-width: 98%;
+    overflow: hidden;
 }
 .tab-r3 > .r3-tab-content > div:target {
     color:black;
 }
+
 .tab-r3 > nav {
     background-color:#2c3236;
     border-radius:8px 8px 0 0;
 }
+
 .tab-r3 > nav > * {
     border-radius:4px 4px 0 0;
     display:inline-block;
     margin:0;
     padding:7px 6px;
 }
+
 .tab-r3 > nav > *:first-child {
     border-top-left-radius:8px;
 }
+
 .tab-r3 > nav > *:last-child {
     border-top-right-radius:8px;
 }
+
 .tab-r3 > nav > a{
-    transition:color 0.4s ease-in,
-        background-color 0.4s ease-out;
+    transition: color 0.4s ease-in, background-color 0.4s ease-out;
     cursor: pointer
 }
+
 .tab-r3 > nav > a:hover {
     color:#fff;
     background-color:#ff5722
 }
+
 .tab-r3 > nav > a.r3-active {
     background-color:#fafafa !important;
     color:black;
     font-weight:bold;
 }
+
 .tab-r3 > nav > a.r3-active:hover {
     color:#000;
 }
@@ -85,13 +92,31 @@ https://arza-3d.github.io/ar3.js/
 }
 
 /* miscellaneous */
-a {text-decoration:none}
-a,
-a:link {color:rgb(225,150,50)}
-a:visited {color:rgb(200,120,0)}
-a:hover {color:rgb(255,180,0)}
-a:active {color:rgb(255,200,0)}
-body {font: 11px Tahoma, arial, sans-serif}
+a {
+    color: rgb(225,150,50);
+    text-decoration: none;
+}
+
+a:link {
+    color: rgb(225,150,50);
+}
+
+a:visited {
+    color: rgb(200,120,0);
+}
+
+a:hover {
+    color: rgb(255,180,0);
+}
+
+a:active {
+    color: rgb(255,200,0);
+}
+
+body {
+    font: 11px Tahoma, arial, sans-serif;
+}
+
 p {
     line-height: 18px;
     max-width: 360px;

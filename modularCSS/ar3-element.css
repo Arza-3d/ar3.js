@@ -1,0 +1,33 @@
+a {
+    color: rgb(225,150,50);
+    text-decoration: none;
+}
+
+a:link {
+    color: rgb(225,150,50);
+}
+
+a:visited {
+    color: rgb(200,120,0);
+}
+
+a:hover {
+    color: rgb(255,180,0);
+}
+
+a:active {
+    color: rgb(255,200,0);
+}
+
+body {
+    font:11px Tahoma, arial, sans-serif;
+    font-kerning: normal;
+    letter-spacing: 0.02em;
+    position: relative;
+}
+
+p {
+    line-height: 18px;
+    max-width: 360px;
+    text-align: justify;
+}
