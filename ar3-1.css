@@ -415,9 +415,15 @@ li > pre {
 
 li > table{margin-bottom:10px}
 ul{list-style-type:circle}
+
 p + ul,
-p + ol{margin-top:2px}
-ul > ul{list-style-type:disc}
+p + ol {
+    margin-top:2px;
+}
+
+ul > ul {
+    list-style-type:disc;
+}
 
 ul > ul,
 ul > ol,
@@ -456,9 +462,10 @@ main{
 main{margin-left:15px;width:88vw}
 }
 
-main > div{padding:3px 0 35px 0} @media print{
-main > div:first-child > h2{page-break-before: avoid}
-}
+main > div {
+    padding:3px 0 35px 0;
+}
+
 main > div:nth-of-type(odd) {
     background-color: rgba(0,0,0,0.05);
     border-bottom-right-radius: 10px;
@@ -481,7 +488,7 @@ main > div:last-child {
     border-bottom-right-radius:12px;
 }
 
-main > div > h2 {
+main h2 {
     background-color:#222;
     border-bottom:ridge thick grey;
     border-right:solid thin grey;
@@ -495,20 +502,7 @@ main > div > h2 {
     margin-bottom: 3px;
 }
 
-@media print{
-    main > div > h2 {
-        color:black;
-        page-break-before:always;
-        -webkit-page-break-before:always;
-        border:none;
-    }
-
-    main > div > h2 ~ *:not(h2) {
-        margin-left: 40px;
-    }
-}
-
-main > div > h2 + marquee {
+main h2 + marquee {
     background-color:#333;
     color:#ddd;
     margin-right:40%;
@@ -516,7 +510,7 @@ main > div > h2 + marquee {
     border-bottom-right-radius:20px;
 }
 
-main > div > h2 + marquee + marquee {
+main h2 + marquee + marquee {
     background-color:#555;
     color:#ccc;
     margin-right:50%;
@@ -524,7 +518,7 @@ main > div > h2 + marquee + marquee {
     border-bottom-right-radius:20px;
 }
 
-main > div > h2 + marquee + marquee + marquee {
+main h2 + marquee + marquee + marquee {
     background-color:#777;
     color:#bbb;
     margin-right:60%;
@@ -532,7 +526,7 @@ main > div > h2 + marquee + marquee + marquee {
     border-bottom-right-radius:20px;
 }
 
-main > div > h3 {
+main h3 {
     border-bottom-left-radius:0;
     border-bottom-right-radius:0;
     background-color:#363636;
@@ -541,17 +535,7 @@ main > div > h3 {
     transition:color 1s ease-in
 }
 
-@media print{
-
-    main > div > h3 {
-        border:thin black solid;
-        border-bottom:none;
-        color:black;
-        font-weight:bold
-    }
-}
-
-main > div > h3:before {
+main h3:before {
     content:'\2796';
     float:left;
     font-size:10px;
@@ -560,28 +544,49 @@ main > div > h3:before {
 }
 
 @media print{
-main > div > h3 ~ *:not(h2),
-main > div > h3 ~ *:not(h3){margin-left: 60px}
-main > div > hr,
-main > div > marquee{display: none !important}
+main h3 ~ *:not(h2),
+main h3 ~ *:not(h3){margin-left: 60px}
+main hr,
+main marquee{display: none !important}
 }
 
-main > div > h3.r3-active {
+main h3.r3-active {
     background-color:rgb(171,171,171);
     border-bottom-left-radius:8px;
     border-bottom-right-radius:8px;
 }
 
-main > div > h3.r3-active:before {content:'\02795'; background-color:transparent}
-main > div > h3.r3-active:target {color:rgba(25,25,25,1.00)}
-main > div > marquee + hr
-    main > div > p + hr,
-main > div > ul + hr{margin-top:13px; margin-left:7px; border-radius:4px; padding:1px}
-main > div > section > h4{
-    text-align:left; display:inline-block; border-radius:0; padding: 3px; padding-left: 30px;
-    margin-left: -12px; margin-bottom:0; background-color:rgba(70,70,70,1.00); border-bottom:double orange thin;
+main h3.r3-active:before {
+    content:'\02795';
+    background-color:transparent;
 }
-main > div > p {margin-left: 25px}
+
+main h3.r3-active:target {
+    color:rgba(25,25,25,1.00);
+}
+
+main hr {
+    margin-top:13px;
+    margin-left:7px;
+    border-radius:4px;
+    padding:1px;
+}
+
+main section > h4{
+    text-align: left;
+    display: inline-block;
+    border-radius:0;
+    padding: 3px;
+    padding-left: 30px;
+    margin-left: -12px;
+    margin-bottom: 0;
+    background-color: rgba(70,70,70,1.00);
+    border-bottom: double orange thin;
+}
+
+main p {
+    margin-left: 25px;
+}
 
 p {
     text-indent:36px;
@@ -592,13 +597,20 @@ p {
 li {
     max-width: 360px;
 }
-main > div > p:first-letter{font-size:24px} @media print{
-main > div > p:first-letter{font-size:11px}
-}
-br + code {margin: 4px 0}
-code{max-width: none}
 
-main > div > section {
+main p:first-letter {
+    font-size:24px;
+}
+
+br + code {
+    margin: 4px 0;
+}
+
+code {
+    max-width: none;
+}
+
+main section {
     border: 1px solid #4f4f4f;
     border-radius:0 0 10px 10px;
     padding:15px 10px 10px 15px;
@@ -608,27 +620,34 @@ main > div > section {
 }
 
 @media print{
-main > div > section{border: none !important}
+main section{border: none !important}
 }
-main > div > section > div > h4{
-    text-align:left; display:inline-block; border-radius:0; padding:3px; padding-left:30px;
-    margin-left:-12px; margin-bottom:0; background-color:rgba(70,70,70,1.00); border-bottom:double orange thin}
-main > div > section > h4,
-main > div > section > hr + h4{margin-top: 4px}
-@media print{
-main > div > section > h4 ~ *:not(h4){margin-left: 70px}
+main section > div > h4{
+    text-align:left;
+    display:inline-block;
+    border-radius:0;
+    padding:3px;
+    padding-left:30px;
+    margin-left:-12px;
+    margin-bottom:0;
+    background-color:rgba(70,70,70,1.00);
+    border-bottom:double orange thin;
 }
-main > div > section > h4:first-child,
-main > div > section > div:first-child + h4{margin-top: 20px}
 
-main > div > section > p {
+main section h4 {
+    margin-top: 4px
+}
+
+main section > h4:first-child,
+main section > div:first-child + h4{margin-top: 20px}
+
+main section p {
     max-width: 380px;
     text-align: justify;
     text-indent: 20px;
 }
 
-main > div > section > p > b[id],
-main > div > section > ul b[id] {
+b[id] {
     background-color: #666;
     color: white;
     padding-left: 2px;
@@ -636,30 +655,46 @@ main > div > section > ul b[id] {
     border-radius: 3px;
 }
 
-main > div > section > ul li{margin-top:1px}
-main > div > section  table.filter-r3 > thead > tr > td > input{width: 15px; border-radius:50%}
-main > div > section  table.filter-r3 > thead > tr > td > input:focus{width: 100px; border-radius:3%}
-main > div > ul{margin-left:15px}
+main section > ul li{margin-top:1px}
+main section table.filter-r3 > thead > tr > td > input{width: 15px; border-radius:50%}
+main section table.filter-r3 > thead > tr > td > input:focus{width: 100px; border-radius:3%}
+main ul {margin-left:15px}
 main > p{margin-left:23px}
 
 /*##########
 # AR3 MENU #
 ##########*/
-button{cursor:pointer, font:11px calibri, arial sans-serif}
+button {
+    cursor:pointer;
+    font:11px calibri, arial sans-serif;
+}
+
 input,
     option,
     select,
     textarea{font:13px calibri, arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; -webkit-font-kerning:normal !important; font-kerning:normal !important}
-form{cursor:default}
+
+form {
+    cursor:default;
+}
+
 input[type=number],
-    input[type=text],
-    input[type=url],
-    select{font-size:9px}
+input[type=text],
+input[type=url],
+select {
+    font-size:9px;
+}
+
 input[type=number]:focus,
-    input[type=text]:focus,
-    input[type=url]:focus,
-    select:focus{font-size:13px}
-label{font-weight:bold}
+input[type=text]:focus,
+input[type=url]:focus,
+select:focus {
+    font-size: 13px;
+}
+
+label {
+    font-weight: bold;
+}
 
 /*###########
 # ar3 table > #
@@ -684,19 +719,29 @@ caption {
 
 table > pre {margin:1px 0 1px 0; padding:1px}
 table > * > tr > *{padding-left:5px; padding-right:5px}
-table > * > tr:first-child{border-top:solid thin #949494}
-table > tbody > th{text-align:left}
-table > tbody > tr.hide-r3 + tr:not(.hide-r3){border-top: thin solid rgba(0,0,0,0.1)}
+
+tr:first-child {
+    border-top: solid thin #949494;
+}
+
+tbody th {
+    text-align:left;
+}
+
+tbody > tr.hide-r3 + tr:not(.hide-r3){border-top: thin solid rgba(0,0,0,0.1)}
 
 tbody > tr:nth-of-type(even) {
     background-color:#e5e5e5;
 }
 
-tbody > tr:nth-of-type(odd){
+tbody > tr:nth-of-type(odd) {
     background-color:#F5F5F5;
 }
 
-table > tbody > tr > td{height:25px}
+tbody td {
+    height:25px;
+}
+
 table > tbody > tr > td[rowspan]{background-color:#ededed}
 table > tbody > tr > *{border-right:rgba(0,0,0,0.02) thin solid}
 
@@ -814,16 +859,16 @@ aside nav > .r3-accordion {
 # AR3 FLEX # SCRIPTED
 ##########*/
 .flex-r3{display:-webkit-flex; display:flex}
-div.flex-r3{flex-wrap:wrap; border:grey thin solid; background-color:rgba(0,0,0,0.1); border-radius:8px; overflow:auto}
-div.flex-r3 > div{
+.flex-r3{flex-wrap:wrap; border:grey thin solid; background-color:rgba(0,0,0,0.1); border-radius:8px; overflow:auto}
+.flex-r3 > div{
     margin:2px; border:grey thin solid; background-color:rgb(240,240,240); padding:4px;
     border-radius:6px; text-align:center; color:rgba(0,0,0,0.3); font-weight:normal}
-div.flex-r3 > b{line-height:2; padding-left:2%; font-size:14px; display:inline-block; width:95%; color:rgba(0,0,0,0.75)}
-div.flex-r3 > hr{width:98%; color:rgba(0,0,0,0.1); margin-top:7px; margin-bottom:4px; margin-right:2%; margin-left:2%}
-div.flex-r3 pre{text-align:left}
-div.flex-r3 > div > b{color:rgba(0,0,0,0.6)}
-div.flex-r3 > div > b > b{color:rgb(0,0,0)}
-div.flex-r3 > div > div {
+.flex-r3 > b{line-height:2; padding-left:2%; font-size:14px; display:inline-block; width:95%; color:rgba(0,0,0,0.75)}
+.flex-r3 > hr{width:98%; color:rgba(0,0,0,0.1); margin-top:7px; margin-bottom:4px; margin-right:2%; margin-left:2%}
+.flex-r3 pre{text-align:left}
+.flex-r3 > div > b{color:rgba(0,0,0,0.6)}
+.flex-r3 > div > b > b{color:rgb(0,0,0)}
+.flex-r3 > div > div {
     background-color: white;
     border: grey thin solid;
     padding: 4px;
