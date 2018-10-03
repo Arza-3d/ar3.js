@@ -44,6 +44,15 @@ table {
 
     > thead {
 
+        > tr >  * > * {
+            display: block;
+            margin: auto;
+        }
+
+        > tr:nth-child(2) > th {
+            border-left: thin solid map-get($table-color, in-h-border-c);
+        }
+
         th {
             background-color: map-get($table-color, th-bgc);
             color: map-get($table-color, th-c);
@@ -63,6 +72,10 @@ table {
             border-left: thin solid map-get($table-color, in-h-border-c);
         }
 
+        th[rowspan]:first-child {
+            border-left: none;
+        }
+
     }
 
     caption {
@@ -79,86 +92,3 @@ table {
     }
 
 }
-
-
-
-/*
-
-
-
-
-
-thead th[rowspan] + th {
-    border-left:grey thin solid;
-}
-
-
-thead th[rowspan]:first-child {
-    border-left:none;
-}
-
-
-table > thead > tr:nth-child(2) th{border-left:grey thin solid}
-
-// center head
-table > thead > tr >  * > * {
-    display:block; margin:auto
-}
-
-
-
-table.column-1-code tbody > tr > *:first-child,
-
-    table.column-2-code tbody > tr > *:nth-child(2),
-
-    table.column-3-code tbody > tr > *:nth-child(3),
-
-    table.column-4-code tbody > tr > *:nth-child(4),
-
-    table.column-5-code tbody > tr > *:nth-child(5),
-
-    table.column-6-code tbody > tr > *:nth-child(6),
-
-    table.column-7-code tbody > tr > *:nth-child(7),
-
-    table.column-8-code tbody > tr > *:nth-child(8),
-
-    table.column-9-code tbody > tr > *:nth-child(9),
-
-    table.column-10-code tbody > tr > *:nth-child(10),
-
-    table.column-last-code tbody > tr > *:last-child
-
-{font:11px Consolas,monospace; white-space:pre}
-
-
-
-table.column-1-just tbody > tr > *:first-child,
-
-    table.column-2-just tbody > tr > *:nth-child(2),
-
-    table.column-3-just tbody > tr > *:nth-child(3),
-
-    table.column-4-just tbody > tr > *:nth-child(4),
-
-    table.column-5-just tbody > tr > *:nth-child(5),
-
-    table.column-6-just tbody > tr > *:nth-child(6),
-
-    table.column-7-just tbody > tr > *:nth-child(7),
-
-    table.column-8-just tbody > tr > *:nth-child(8),
-
-    table.column-9-just tbody > tr > *:nth-child(9),
-
-    table.column-10-just tbody > tr > *:nth-child(10),
-
-    table.column-last-just tbody > tr > *:last-child
- {
-    text-align:justify;
-}
-
-tbody > tr.hide-r3 + tr:not(.hide-r3) {
-    border-top: thin solid rgba(0,0,0,0.1);
-}
-*/
