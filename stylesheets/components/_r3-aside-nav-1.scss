@@ -4,6 +4,7 @@
 $aside-main-height : 98vh;
 $aside-main-border: 2px solid;
 $aside-main-border-radius: 10px;
+$aside-width: 17%;
 
 .r3-aside-nav {
 
@@ -14,8 +15,8 @@ $aside-main-border-radius: 10px;
     height: $aside-main-height;
     overflow: auto;
     padding: 10px 0 0 5px;
-    width: 17%;
-    margin-right: 1%;
+    width: $aside-width;
+    /*margin-right: 1%;*/
 
     * {
         overflow-y: auto;
@@ -66,7 +67,7 @@ $aside-main-border-radius: 10px;
     box-sizing: border-box;
     float:left;
     height: $aside-main-height;
-    margin: 0 1% 15px 0%;
+    margin: 0 1% 15px 1%;
     overflow: auto;
     padding:15px 5px 15px 5px;
     width:79%;

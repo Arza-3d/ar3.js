@@ -1,10 +1,26 @@
 @import 'r3-aside-nav-1';
 //max-width:722p and aside will be none in the early ar3
 
+
+.r3-aside-nav.r3-dynamic-on {
+    position: fixed;
+    top: 0;
+}
+
+.r3-aside-nav.r3-dynamic-after {
+    bottom: 0;
+    position: absolute;
+}
+
 .r3-aside-replacement {
     @extend .r3-aside-nav;
+    width: $aside-width;
+    border-color: rgba(0,0,0,0);
     display: none;
-    position: static;
+}
+
+.r3-aside-replacement.r3-active {
+    display: block;
 }
 
 .aside-nav-target-r3 {
