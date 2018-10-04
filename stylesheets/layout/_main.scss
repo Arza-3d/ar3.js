@@ -1,0 +1,219 @@
+main {
+
+    border:2px solid #666;
+    border-radius:10px;
+    float:left;
+    margin:2px 1% 15px 0.4%;
+    overflow:auto;
+    padding:15px 5px 15px 5px;
+
+    > div {
+
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0 2%;
+
+        > section {
+
+            border:1px solid #4f4f4f;
+            border-radius:0 0 10px 10px;
+            padding:15px 10px 10px 15px;
+            /*margin:0 1% 15px 1%;*/
+            background-color:#fafafa;
+            overflow:hidden;
+        }
+
+        > h3 {
+
+            border-bottom-left-radius:0;
+            border-bottom-right-radius:0;
+            background-color:#363636;
+            cursor:pointer;
+            margin-bottom:0;
+            transition:color 1s ease-in
+        }
+
+    }
+
+    > div:nth-of-type(odd) {
+        background-color:rgba(0,0,0,0.05);
+        border-bottom-right-radius:10px;
+        border-top-left-radius:10px;
+        border-left:solid 2px orange;
+        border-top:solid 1px orange;
+    }
+
+    > div:nth-of-type(even) {
+        background-color:rgba(0,0,0,0.1);
+        border-right:solid 2px orange;
+        border-top:1px solid orange;
+        border-bottom-left-radius:10px;
+        border-top-right-radius:10px;
+    }
+
+}
+
+/*
+.ar3 > aside + main{width:79%} @media print{
+
+.ar3 > aside + main{width:auto}} @media screen and (max-width:722px){
+
+.ar3 > aside + main{width:95%;}
+
+}
+
+.ar3 > main{
+
+    border:2px solid #666; border-radius:10px; float:left;
+
+    margin:2px 1% 15px 0.4%; overflow:auto; padding:15px 5px 15px 5px; }
+
+@media print{
+    .ar3 > main{height :auto; width:auto; border:none}
+}
+
+@media screen and (max-width:722px){
+
+.ar3 > main{margin-left:15px;width:88vw}
+
+}
+
+
+
+.ar3 > main > div{padding:3px 0 35px 0} @media print{
+
+.ar3 > main > div:first-child > h2{page-break-before: avoid}
+
+}
+
+.ar3 > main > div:nth-of-type(odd){
+
+    background-color:rgba(0,0,0,0.05); border-bottom-right-radius:10px; border-top-left-radius:10px; border-left:solid 2px orange; border-top:solid 1px orange}
+
+.ar3 > main > div:nth-of-type(even){
+
+    background-color:rgba(0,0,0,0.1); border-right:solid 2px orange; border-top:1px solid orange; border-bottom-left-radius:10px; border-top-right-radius:10px}
+
+.ar3 > main > div:last-child{border-bottom:3px orange solid; border-bottom-left-radius:12px; border-bottom-right-radius:12px}
+
+.ar3 > main > div > h2{
+
+    background-color:#222; border-bottom:ridge thick grey; border-right:solid thin grey; border-radius:0 2px 60px 0;
+
+    color:white; font:400 40px Calibri; padding-top:6px; padding-left:6px; margin-top:20px; margin-right: 30%; margin-bottom: 3px} @media print{
+
+.ar3 > main > div > h2{color:black; page-break-before:always; -webkit-page-break-before:always; border:none}
+
+.ar3 > main > div > h2 ~ *:not(h2){margin-left: 40px}
+
+}
+
+.ar3 > main > div > h2 + marquee{background-color:#333; color:#ddd; margin-right:40%; margin-top:3px; border-bottom-right-radius:20px}
+
+.ar3 > main > div > h2 + marquee + marquee{background-color:#555; color:#ccc; margin-right:50%; margin-top:3px; border-bottom-right-radius:20px}
+
+.ar3 > main > div > h2 + marquee + marquee + marquee{background-color:#777; color:#bbb; margin-right:60%; margin-top:3px; border-bottom-right-radius:20px}
+
+.ar3 > main > div > h3{
+
+    border-bottom-left-radius:0; border-bottom-right-radius:0; background-color:#363636;
+
+    cursor:pointer; margin-bottom:0; transition:color 1s ease-in} @media print{
+
+.ar3 > main > div > h3{border:thin black solid; border-bottom:none; color:black; font-weight:bold}
+
+}
+
+.ar3 > main > div > h3:before{content:'\2796'; float:left; font-size:10px; color:#F1F1F1; padding-left:13px}
+
+@media print{
+
+.ar3 > main > div > h3 ~ *:not(h2),
+
+.ar3 > main > div > h3 ~ *:not(h3){margin-left: 60px}
+
+.ar3 > main > div > hr,
+
+.ar3 > main > div > marquee{display: none !important}
+
+}
+
+.ar3 > main > div > h3.r3-active {background-color:rgb(171,171,171); border-bottom-left-radius:8px; border-bottom-right-radius:8px}
+
+.ar3 > main > div > h3.r3-active:before {content:'\02795'; background-color:transparent}
+
+.ar3 > main > div > h3.r3-active:target {color:rgba(25,25,25,1.00)}
+
+.ar3 > main > div > marquee + hr
+
+    .ar3 > main > div > p + hr,
+
+.ar3 > main > div > ul + hr{margin-top:13px; margin-left:7px; border-radius:4px; padding:1px}
+
+.ar3 > main > div > section > h4{
+
+    text-align:left; display:inline-block; border-radius:0; padding: 3px; padding-left: 30px;
+
+    margin-left: -12px; margin-bottom:0; background-color:rgba(70,70,70,1.00); border-bottom:double orange thin;
+
+}
+
+main > div > p {margin-left: 25px}
+p {text-indent:36px; text-align:justify; max-width:360px}
+
+
+li{max-width: 360px}
+.ar3 > main > div > p:first-letter{font-size:24px} @media print{
+
+.ar3 > main > div > p:first-letter{font-size:11px}
+
+}
+
+br + code {margin: 4px 0}
+code{max-width: none}
+.ar3 > main > div > section{
+
+    border:1px solid #4f4f4f; border-radius:0 0 10px 10px; padding:15px 10px 10px 15px;
+
+    margin:0 1% 15px 1%; background-color:#fafafa; overflow:hidden} @media print{
+
+.ar3 > main > div > section{border: none !important}
+
+}
+
+.ar3 > main > div > section > div > h4{
+
+    text-align:left; display:inline-block; border-radius:0; padding:3px; padding-left:30px;
+
+    margin-left:-12px; margin-bottom:0; background-color:rgba(70,70,70,1.00); border-bottom:double orange thin}
+
+.ar3 > main > div > section > h4,
+
+.ar3 > main > div > section > hr + h4{margin-top: 4px}
+
+@media print{
+
+.ar3 > main > div > section > h4 ~ *:not(h4){margin-left: 70px}
+
+}
+
+.ar3 > main > div > section > h4:first-child,
+
+.ar3 > main > div > section > div:first-child + h4{margin-top: 20px}
+
+.ar3 > main > div > section > p{max-width:380px; text-align:justify; text-indent:20px}
+
+.ar3 > main > div > section > p > b[id],
+
+.ar3 > main > div > section > ul b[id]{background-color:#666; color:white; padding-left:2px; padding-right:2px; border-radius:3px}
+
+.ar3 > main > div > section > ul li{margin-top:1px}
+
+.ar3 > main > div > section  table.filter-r3 > thead > tr > td > input{width: 15px; border-radius:50%}
+
+.ar3 > main > div > section  table.filter-r3 > thead > tr > td > input:focus{width: 100px; border-radius:3%}
+
+.ar3 > main > div > ul{margin-left:15px}
+
+.ar3 > main > p{margin-left:23px}
+*/

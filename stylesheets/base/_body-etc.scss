@@ -3,8 +3,11 @@
 
 body, html {
     font: 11px $sans-serif;
-    margin:0;
-    padding:0;
+    letter-spacing: 0.04em;
+}
+
+body {
+    padding: 1%
 }
 
 p {

@@ -25,9 +25,9 @@ https://arza-3d.github.io/ar3.js/
         const $aside = $('.r3-aside-nav');
         // create dummy aside
         {
-            $aside.before('<div class="r3-dummy-aside">');
+            $aside.before('<div class="r3-aside-replacement">');
         }
-        const $dummy = $('.r3-dummy-aside');
+        const $dummy = $('.r3-aside-replacement');
 
         function scrollTopCoord() {
             let top = 0;
