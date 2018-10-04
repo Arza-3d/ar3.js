@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'typography';
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/utils/media';
 
 body, html {
     font: 11px $sans-serif;
@@ -7,7 +8,15 @@ body, html {
 }
 
 body {
-    padding: 1%
+    margin-left: 8px;
+}
+
+@media screen and (max-width: $viewport-1st-limit) {
+
+    body {
+        margin-left: 2px;
+    };
+
 }
 
 p {
