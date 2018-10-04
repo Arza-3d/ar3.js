@@ -1,16 +1,17 @@
 @import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
 //max-width:722p and aside will be none in the early ar3
 
-$aside-main : 98vh;
-$border-aside-main: 2px solid;
+$aside-main-height : 98vh;
+$aside-main-border: 2px solid;
+$aside-main-border-radius: 10px;
 
 .r3-aside-nav {
 
-    border: $border-aside-main map-get($aside-color, border);
-    border-radius:10px 0 0 10px;
+    border: $aside-main-border map-get($aside-color, border);
+    border-radius: $aside-main-border-radius 0 0 $aside-main-border-radius;
     box-sizing: border-box;
     float: left;
-    height: $aside-main;
+    height: $aside-main-height;
     overflow: auto;
     padding: 10px 0 0 5px;
     width: 17%;
@@ -60,11 +61,11 @@ $border-aside-main: 2px solid;
 }
 
 .aside-nav-target-r3 {
-    border: $border-aside-main map-get($aside-color, border);
-    border-radius: 10px 0 0 10px;
+    border: $aside-main-border map-get($aside-color, border);
+    border-radius: $aside-main-border-radius 0 0 $aside-main-border-radius;
     box-sizing: border-box;
     float:left;
-    height: $aside-main;
+    height: $aside-main-height;
     margin: 0 1% 15px 0%;
     overflow: auto;
     padding:15px 5px 15px 5px;
