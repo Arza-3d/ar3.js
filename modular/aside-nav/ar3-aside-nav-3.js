@@ -58,7 +58,7 @@ https://arza-3d.github.io/ar3.js/
             } else {
                 $aside.removeClass('r3-dynamic-on')
                       .addClass('r3-dynamic-after');
-                $dummy.removeClass('r3-active');
+                $dummy.addClass('r3-active');
             }
         }
         dynamicAside();
