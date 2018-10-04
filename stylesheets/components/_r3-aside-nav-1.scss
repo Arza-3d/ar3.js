@@ -2,10 +2,11 @@
 //max-width:722p and aside will be none in the early ar3
 
 $aside-main : 98vh;
+$border-aside-main: 2px solid;
 
 .r3-aside-nav {
 
-    border: 2px solid map-get($aside-color, border);
+    border: $border-aside-main map-get($aside-color, border);
     border-radius:10px 0 0 10px;
     box-sizing: border-box;
     float: left;
@@ -58,14 +59,8 @@ $aside-main : 98vh;
 
 }
 
-.r3-aside-replacement {
-    @extend .r3-aside-nav;
-    display: none;
-    position: static;
-}
-
 .aside-nav-target-r3 {
-    border:2px solid #666;
+    border: $border-aside-main map-get($aside-color, border);
     border-radius: 10px 0 0 10px;
     box-sizing: border-box;
     float:left;

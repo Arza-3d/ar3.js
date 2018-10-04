@@ -67,25 +67,6 @@ https://arza-3d.github.io/ar3.js/
         document.addEventListener('resize', dynamicAside);
         document.addEventListener('scroll', dynamicAside);
 
-        /*
-        // set dynamic header for ar3header
-        {
-            function dynamicHeader() {
-                let $nav = $('#r3-nav'),
-                    topLimit = topCoord($main[0]) - $nav.innerHeight() - 15;
-                if (scrollTopCoord() < topLimit) {
-                    $nav.css({'position': 'fixed', 'top' : 0});
-                } else if (scrollTopCoord() > topLimit){
-                    $nav.css({'position': 'absolute', 'top': topLimit + 'px'});
-                }
-            }
-          dynamicHeader();
-
-          document.addEventListener('click', dynamicHeader);
-          document.addEventListener('resize', dynamicHeader);
-          document.addEventListener('scroll', dynamicHeader);
-        }
-        */
     }
 
 
