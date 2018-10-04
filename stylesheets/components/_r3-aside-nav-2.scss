@@ -1,0 +1,8 @@
+@import 'r3-aside-nav';
+//max-width:722p and aside will be none in the early ar3
+
+.r3-aside-replacement {
+    @extend .r3-aside-nav;
+    display: none;
+    position: static;
+}
