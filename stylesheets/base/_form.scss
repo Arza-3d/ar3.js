@@ -1,0 +1,8 @@
+@import 'typography';
+
+.ar3 button{
+    cursor: pointer;
+    font: 13px $sans-serif-form;
+    -webkit-font-kerning: normal;
+    font-kerning: normal;
+}

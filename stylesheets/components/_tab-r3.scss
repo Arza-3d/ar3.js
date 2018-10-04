@@ -15,14 +15,14 @@
 #######*/
 .tab-r3 {
 
-    border: solid thin map-get($tab, border-c);
+    border: solid thin map-get($tab-color, border-c);
     border-radius: 8px;
     margin: 5px 0 5px 0;
     max-width: 98%;
     overflow: hidden;
 
     > nav {
-        background-color: map-get($tab, nav-c);
+        background-color: map-get($tab-color, nav-c);
         border-radius: 8px 8px 0 0;
 
         > * {
@@ -46,22 +46,22 @@
         }
 
         > a:hover {
-            background-color: map-get($tab, nav-a-h-bc);
-            color: map-get($tab, nav-a-h-c);
+            background-color: map-get($tab-color, nav-a-h-bc);
+            color: map-get($tab-color, nav-a-h-c);
         }
 
         > a.r3-active {
-            background-color: map-get($tab, bg-c) !important;
-            color: map-get($tab, nav-a-act-c);
+            background-color: map-get($tab-color, bg-c) !important;
+            color: map-get($tab-color, nav-a-act-c);
             font-weight: bold;
         }
 
         > a.r3-active:hover {
-            color: map-get($tab, nav-a-act-hov-c);
+            color: map-get($tab-color, nav-a-act-hov-c);
         }
 
         > span {
-            color: map-get($tab, nav-span);
+            color: map-get($tab-color, nav-span);
         }
 
     }

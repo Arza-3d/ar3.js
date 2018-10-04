@@ -1,6 +1,7 @@
 @import 'colors';
+@import 'typography';
 
-body{
+body, html {
     font: 11px $sans-serif;
     margin:0;
     padding:0;
@@ -10,4 +11,28 @@ p {
     line-height: 18px;
     max-width: 360px;
     text-align: justify;
+}
+
+code,
+pre {
+    background-color: map-get($code-color, code-bg);
+    border: thin solid map-get($code-color, code-border);
+    border-radius: 3px;
+    color: map-get($code-color, code-c);
+}
+
+code {
+    display: inline-block;
+    padding: 1px;
+    text-indent: 0;
+}
+
+img {
+    border-radius: 6px
+}
+
+ul,
+ol {
+    line-height: 180%;
+    padding-inline-start: 20px;
 }

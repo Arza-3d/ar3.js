@@ -8,6 +8,12 @@ $link-color : (
     link-a: rgb(255,200,0) // active
 );
 
+$code-color: (
+    code-border: #ccc,
+    code-c: #060606,
+    code-bg: #eee
+);
+
 $table-color : (
     border-c: #949494,
     even-row-c: #e5e5e5,
@@ -19,7 +25,7 @@ $table-color : (
     th-bgc: rgb(83,83,83)
 );
 
-$tab : (
+$tab-color : (
     border-c: grey,
     nav-c: #2c3236,
     nav-a-h-c: #fff, // a hover color
@@ -28,4 +34,15 @@ $tab : (
     bg-c: #fafafa, // background-color
     nav-a-act-hov-c: #000, // a active and hovered
     nav-span: #fff
+);
+
+$aside-color : (
+    border: #666,
+    nav-border: #999,
+    nav-bg: #bbb,
+    nav-nav-bord-bott: #000,
+    nav-nav-bord-left: grey,
+    a-bg: #363636,
+    a-hov: #fff,
+    a-hov-bg: #ff5722
 );
