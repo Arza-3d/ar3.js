@@ -16,36 +16,11 @@
 .r3-aside-nav-button:hover {
     background-color: map-get($aside-color, a-hov-bg);
 }
-/*
+
 .r3-aside-nav {
-
-    + button {
-        position: fixed;
-    }
-
-    + button::before {
-        content: '&#9665;';
-    }
-
-    + button.r3-active::before {
-        content: '&#9655;';
-    }
-
+    transition: margin-left 0.5s
 }
 
-.r3-aside-nav.r3-dynamic-on {
-
-    + button {
-        position: fixed;
-    }
-
+.aside-nav-target-r3 {
+    transition: width 0.5s
 }
-
-.r3-aside-nav.r3-dynamic-after {
-
-    + button {
-        position: absolute;
-    }
-
-}
-*/

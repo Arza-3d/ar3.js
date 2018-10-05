@@ -29,6 +29,7 @@ https://arza-3d.github.io/ar3.js/
         }
         const $dummy = $('.r3-aside-replacement');
 
+        // get current scroll top = 0 coordinate
         function scrollTopCoord() {
             let top = 0;
             if (typeof window.pageYOffset === "number") {
@@ -50,11 +51,18 @@ https://arza-3d.github.io/ar3.js/
             });
         }
 
-        $('.r3-aside-nav-button').remove();
+        function setButtonLocation() {
+            setLocation('.r3-aside-nav-button', $aside);
+            console.log(1);
+        }
+
+        let $button = $('.r3-aside-nav-button');
+        $button.remove();
         {
             $('body').prepend('<a class="r3-aside-nav-button r3-active">&#9664;</a>');
             setLocation('.r3-aside-nav-button', $aside);
         }
+        $button = $('.r3-aside-nav-button');
 
         function dynamicAside() {
             let topLimit = topCoord($main[0]);
@@ -88,9 +96,28 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
-        $('.r3-aside-nav-button').click(function() {
-            $('.r3-aside-nav-button').toggleClass('r3-active');
+        let buttonMove,
+            buttonStop;
+        const marginLeftTransition = 500;
+        const mainDefaultWidth = '79%'; // make sure it is the same with the _r3-aside-nav-1.scss
+        console.log(mainDefaultWidth);
+        function stopUpdateButton() {
+            clearInterval(buttonMove);
+        }
+        $button.click(function() {
+            if (buttonStop !== undefined) {clearTimeout(buttonStop)}
+            $button.toggleClass('r3-active');
             changeButtonContent('.r3-aside-nav-button');
+            if ($('.r3-aside-nav-button').hasClass('r3-active')) {
+                $aside.add($dummy).css('margin-left', '0');
+                $main.css('width', mainDefaultWidth);
+            } else {
+                $aside.add($dummy).css('margin-left', (-1 * $aside[0].getBoundingClientRect().width) + 'px');
+                $main.css('width', '95%');
+                //$dummy.css('margin-left', '-100px');
+            }
+            buttonMove = setInterval(setButtonLocation, 1);
+            buttonStop = setTimeout(stopUpdateButton, marginLeftTransition);
         });
 
     }
