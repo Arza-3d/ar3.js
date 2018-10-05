@@ -1,0 +1,47 @@
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
+@import 'r3-aside-nav-2';
+
+
+.r3-aside-nav-button {
+    background-color: map-get($nav-a-color, bg);
+    border-radius: 2px 50% 50% 2px;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    padding-right: 6px;
+    position: absolute;
+    z-index:3;
+}
+/*
+.r3-aside-nav {
+
+    + button {
+        position: fixed;
+    }
+
+    + button::before {
+        content: '&#9665;';
+    }
+
+    + button.r3-active::before {
+        content: '&#9655;';
+    }
+
+}
+
+.r3-aside-nav.r3-dynamic-on {
+
+    + button {
+        position: fixed;
+    }
+
+}
+
+.r3-aside-nav.r3-dynamic-after {
+
+    + button {
+        position: absolute;
+    }
+
+}
+*/

@@ -2,13 +2,13 @@
 //max-width:722p and aside will be none in the early ar3
 
 $aside-main-height : 98vh;
-$aside-main-border: 2px solid;
+$aside-main-border-thick: 2px;
 $aside-main-border-radius: 10px;
 $aside-width: 17%;
 
 .r3-aside-nav {
 
-    border: $aside-main-border map-get($aside-color, border);
+    border: $aside-main-border-thick solid map-get($aside-color, border);
     border-radius: $aside-main-border-radius 0 0 $aside-main-border-radius;
     box-sizing: border-box;
     float: left;
@@ -62,7 +62,7 @@ $aside-width: 17%;
 }
 
 .aside-nav-target-r3 {
-    border: $aside-main-border map-get($aside-color, border);
+    border: $aside-main-border-thick solid map-get($aside-color, border);
     border-radius: $aside-main-border-radius 0 0 $aside-main-border-radius;
     box-sizing: border-box;
     float:left;

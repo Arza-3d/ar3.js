@@ -1,6 +1,7 @@
 @import 'r3-aside-nav-1';
-//max-width:722p and aside will be none in the early ar3
+// add the mechanism of dynamic aside, aside will be fixed when you scroll main
 
+$aside-replacement-adjust: ($aside-main-border-thick * -1);
 
 .r3-aside-nav.r3-dynamic-on {
     position: fixed;
@@ -17,6 +18,7 @@
     width: $aside-width;
     border-color: rgba(0,0,0,0);
     display: none;
+    left: $aside-replacement-adjust;
 }
 
 .r3-aside-replacement.r3-active {
