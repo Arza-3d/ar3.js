@@ -80,7 +80,19 @@ https://arza-3d.github.io/ar3.js/
         window.addEventListener('resize', dynamicAside);
         document.addEventListener('scroll', dynamicAside);
 
-    }
+        function changeButtonContent(elem) {
+            if ($(elem).hasClass('r3-active')) {
+                $(elem).html('&#9664;');
+            } else {
+                $(elem).html('&#9658;');
+            }
+        }
 
+        $('.r3-aside-nav-button').click(function() {
+            $('.r3-aside-nav-button').toggleClass('r3-active');
+            changeButtonContent('.r3-aside-nav-button');
+        });
+
+    }
 
 }
