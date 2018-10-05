@@ -3,14 +3,18 @@
 
 
 .r3-aside-nav-button {
-    background-color: map-get($nav-a-color, bg);
-    border-radius: 2px 50% 50% 2px;
+    background-color: map-get($aside-color, a-bg);
+    border-radius: 0 50% 50% 0;
     cursor: pointer;
     display: block;
     font-size: 18px;
-    padding-right: 6px;
+    padding: 3px 9px 3px 0;
     position: absolute;
     z-index:3;
+}
+
+.r3-aside-nav-button:hover {
+    background-color: map-get($aside-color, a-hov-bg);
 }
 /*
 .r3-aside-nav {

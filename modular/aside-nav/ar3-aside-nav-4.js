@@ -45,14 +45,14 @@ https://arza-3d.github.io/ar3.js/
 
         function setLocation(elem, $anchor) {
             $(elem).css({
-                'top' : topCoord($anchor[0]),
+                'top' : topCoord($anchor[0]) + $anchor[0].getBoundingClientRect().height * 0.04,
                 'left' : leftCoord($anchor[0]) + $anchor[0].getBoundingClientRect().width
             });
         }
 
         $('.r3-aside-nav-button').remove();
         {
-            $('body').prepend('<a class="r3-aside-nav-button r3-active">...</a>');
+            $('body').prepend('<a class="r3-aside-nav-button r3-active">&#9664;</a>');
             setLocation('.r3-aside-nav-button', $aside);
         }
 

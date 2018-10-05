@@ -15,9 +15,9 @@ $aside-replacement-adjust: ($aside-main-border-thick * -1);
 
 .r3-aside-replacement {
     @extend .r3-aside-nav;
-    width: $aside-width;
     border-color: rgba(0,0,0,0);
     display: none;
+    width: $aside-width;
     left: $aside-replacement-adjust;
 }
 
