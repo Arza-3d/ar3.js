@@ -21,12 +21,8 @@ https://arza-3d.github.io/ar3.js/
 
     // track current position
     {
-
         const $aside = $('.r3-aside-nav');
-        // create dummy aside
-        {
-            $aside.before('<div class="r3-aside-replacement">');
-        }
+        $aside.before('<div class="r3-aside-replacement">');
         const $dummy = $('.r3-aside-replacement');
 
         // get current scroll top = 0 coordinate
@@ -88,33 +84,24 @@ https://arza-3d.github.io/ar3.js/
         window.addEventListener('resize', dynamicAside);
         document.addEventListener('scroll', dynamicAside);
 
-        function changeButtonContent(elem) {
-            if ($(elem).hasClass('r3-active')) {
-                $(elem).html('&#9664;');
-            } else {
-                $(elem).html('&#9658;');
-            }
-        }
-
         let buttonMove,
             buttonStop;
         const marginLeftTransition = 500;
-        const mainDefaultWidth = '79%'; // make sure it is the same with the _r3-aside-nav-1.scss
-        console.log(mainDefaultWidth);
+              mainDefaultWidth = '79%'; // make sure it is the same with the _r3-aside-nav-1.scss
         function stopUpdateButton() {
             clearInterval(buttonMove);
         }
         $button.click(function() {
             if (buttonStop !== undefined) {clearTimeout(buttonStop)}
             $button.toggleClass('r3-active');
-            changeButtonContent('.r3-aside-nav-button');
             if ($('.r3-aside-nav-button').hasClass('r3-active')) {
+                $button.html('&#9664;');
                 $aside.add($dummy).css('margin-left', '0');
                 $main.css('width', mainDefaultWidth);
             } else {
+                $button.html('&#9658;');
                 $aside.add($dummy).css('margin-left', (-1 * $aside[0].getBoundingClientRect().width) + 'px');
                 $main.css('width', '95%');
-                //$dummy.css('margin-left', '-100px');
             }
             buttonMove = setInterval(setButtonLocation, 1);
             buttonStop = setTimeout(stopUpdateButton, marginLeftTransition);
