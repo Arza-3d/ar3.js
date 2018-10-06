@@ -9,5 +9,5 @@ https://arza-3d.github.io/ar3.js/
 
 {
     $('.r3-aside-nav').find('a + nav').prev()
-        .before('<div class="r3-accordion-B">');
+        .before('<div class="r3-accordion-B">LOL</div>');
 }
