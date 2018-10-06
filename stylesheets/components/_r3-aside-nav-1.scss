@@ -5,6 +5,7 @@ $aside-main-height : 98vh;
 $aside-main-border-thick: 2px;
 $aside-main-border-radius: 10px;
 $aside-width: 17%;
+$aside-overflow: auto;
 
 .r3-aside-nav {
 
@@ -13,7 +14,7 @@ $aside-width: 17%;
     box-sizing: border-box;
     float: left;
     height: $aside-main-height;
-    overflow: auto;
+    overflow: $aside-overflow;
     padding: 10px 0 0 5px;
     width: $aside-width;
     /*margin-right: 1%;*/
@@ -42,6 +43,7 @@ $aside-width: 17%;
         background-color: map-get($aside-color, a-bg);
         display: block;
         padding: 3px 0 3px 4px;
+        overflow: initial;
 
         + a {
             margin-top: 2px;
@@ -68,7 +70,7 @@ $aside-width: 17%;
     float:left;
     height: $aside-main-height;
     margin: 0 1% 0 1%;
-    overflow: auto;
+    overflow: $aside-overflow;
     padding:15px 5px 15px 5px;
     width:79%;
 
