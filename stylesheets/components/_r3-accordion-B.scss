@@ -1,0 +1,25 @@
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/typography';
+
+.r3-accordion-B::before {
+    content: '-';
+}
+
+.r3-accordion-B.r3-active::before {
+    content: '+';
+}
+
+.r3-accordion-B {
+    color: white;
+    cursor: pointer;
+    float: left;
+    font: 14px $monospace;
+
+}
+
+.r3-aside-nav {
+
+    .r3-accordion-B {
+        padding: 1px 3px 1px 2px;
+    }
+
+}
