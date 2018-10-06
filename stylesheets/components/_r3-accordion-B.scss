@@ -5,9 +5,7 @@
     content: '-';
 }
 
-nav + .r3-accordion-B + a {
-    margin-top: $nav-a-top-margin;/////////////////////////////check it later, kinda mess up the position
-}
+
 
 .r3-accordion-B.r3-active::before {
     content: '+';
@@ -18,7 +16,7 @@ nav + .r3-accordion-B + a {
     cursor: pointer;
     float: left;
     font: 14px $monospace;
-
+    position: relative;
 }
 
 .r3-aside-nav {
@@ -26,5 +24,18 @@ nav + .r3-accordion-B + a {
     .r3-accordion-B {
         padding: 1px 3px 1px 2px;
     }
+
+    nav + .r3-accordion-B + a {
+        margin-top: $nav-a-top-margin;
+    }
+
+    .r3-accordion-B {
+        top: $nav-a-top-margin;
+    }
+
+    .r3-accordion-B:first-of-type {
+        top: 0;
+    }
+
 
 }

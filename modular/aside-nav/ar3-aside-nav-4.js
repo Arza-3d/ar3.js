@@ -42,7 +42,7 @@ https://arza-3d.github.io/ar3.js/
 
         function setLocation(elem, $anchor) {
             $(elem).css({
-                'top' : topCoord($anchor[0]) + $anchor[0].getBoundingClientRect().height * 0.04,
+                'top' : topCoord($anchor[0]) + $anchor[0].getBoundingClientRect().height * 0.25,
                 'left' : leftCoord($anchor[0]) + $anchor[0].getBoundingClientRect().width
             });
         }
