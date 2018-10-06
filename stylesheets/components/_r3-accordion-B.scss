@@ -1,7 +1,12 @@
 @import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/typography';
+@import 'r3-aside-nav-1';
 
 .r3-accordion-B::before {
     content: '-';
+}
+
+nav + .r3-accordion-B + a {
+    margin-top: $nav-a-top-margin;/////////////////////////////check it later, kinda mess up the position
 }
 
 .r3-accordion-B.r3-active::before {

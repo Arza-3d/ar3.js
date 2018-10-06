@@ -6,6 +6,7 @@ $aside-main-border-thick: 2px;
 $aside-main-border-radius: 10px;
 $aside-width: 17%;
 $aside-overflow: auto;
+$nav-a-top-margin: 6px;
 
 .r3-aside-nav {
 
@@ -34,7 +35,7 @@ $aside-overflow: auto;
         }
 
         + a {
-            margin-top: 6px;
+            margin-top: $nav-a-top-margin;
         }
 
     }
