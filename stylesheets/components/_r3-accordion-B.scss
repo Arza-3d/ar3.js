@@ -1,11 +1,9 @@
 @import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/typography';
-@import 'r3-aside-nav-1';
+//@import 'r3-aside-nav-1';
 
 .r3-accordion-B::before {
     content: '-';
 }
-
-
 
 .r3-accordion-B.r3-active::before {
     content: '+';
