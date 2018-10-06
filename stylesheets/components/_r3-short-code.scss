@@ -1,0 +1,11 @@
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
+
+.r3-short-code {
+    background-color: map-get($short-code-color, button-bg);
+    border: grey thin solid;
+    border-radius: 4px;
+    color: map-get($short-code-color, button-c);
+    cursor: pointer;
+    font-size: 11px;
+    /*display: block;*/
+}
