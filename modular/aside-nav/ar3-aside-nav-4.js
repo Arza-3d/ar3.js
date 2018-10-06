@@ -49,7 +49,6 @@ https://arza-3d.github.io/ar3.js/
 
         function setButtonLocation() {
             setLocation('.r3-aside-nav-button', $aside);
-            console.log(1);
         }
 
         let $button = $('.r3-aside-nav-button');
