@@ -1,0 +1,25 @@
+{
+  "name": "ar3.js",
+  "version": "1.0.0",
+  "description": "javaScript for my personal documentation",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arza-3d/ar3js.git"
+  },
+  "keywords": [
+    "documentation",
+    "javaScript",
+    "learning",
+    "note"
+  ],
+  "author": "Forest Guhareza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arza-3d/ar3js/issues"
+  },
+  "homepage": "https://github.com/Arza-3d/ar3js#readme"
+}
