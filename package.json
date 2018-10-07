@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Arza-3d/ar3js/issues"
   },
-  "homepage": "https://arza-3d.github.io/ar3.js/"
+  "homepage": "https://arza-3d.github.io/ar3.js/",
+  "devDependencies": {
+    "grunt": "^1.0.3"
+  }
 }
