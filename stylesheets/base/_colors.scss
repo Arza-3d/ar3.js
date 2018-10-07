@@ -1,5 +1,5 @@
 @import 'color-selector';
-
+// Basic element
 $link-color : (
     link-d: rgb(225,150,50), // a
     link-l: rgb(225,150,50), // link
@@ -10,8 +10,8 @@ $link-color : (
 
 $code-color: (
     code-border: #ccc,
-    code-c: #060606,
-    code-bg: #eee
+    code-bg: #eee,
+    code-c: #060606
 );
 
 $table-color : (
@@ -25,16 +25,7 @@ $table-color : (
     th-bgc: rgb(83,83,83)
 );
 
-$tab-color : (
-    border-c: grey,
-    nav-c: #2c3236,
-    nav-a-h-c: #fff, // a hover color
-    nav-a-h-bc: #ff5722, // a hover background-color
-    nav-a-act-c: #000, // a active color
-    bg-c: #fafafa, // background-color
-    nav-a-act-hov-c: #000, // a active and hovered
-    nav-span: #fff
-);
+//------------------------------
 
 $aside-color : (
     border: #666,
@@ -45,6 +36,27 @@ $aside-color : (
     a-bg: #363636,
     a-hov: #fff,
     a-hov-bg: #ff5722
+);
+
+$main-color : (
+    h2: #fff,
+    h2-bg: #222,
+    h2-border: grey,
+    h3: RGB(230,230,230),
+    h3-bg: #363636,
+    section-bg: #fafafa,
+    section-border: #4f4f4f
+);
+
+$tab-color : (
+    border-c: grey,
+    nav-c: #2c3236,
+    nav-a-h-c: #fff, // a hover color
+    nav-a-h-bc: #ff5722, // a hover background-color
+    nav-a-act-c: #000, // a active color
+    bg-c: #fafafa, // background-color
+    nav-a-act-hov-c: #000, // a active and hovered
+    nav-span: #fff
 );
 
 $short-code-color : (

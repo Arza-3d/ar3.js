@@ -1,3 +1,5 @@
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
+
 main {
 
     border:2px solid #666;
@@ -8,29 +10,45 @@ main {
     padding:15px 5px 15px 5px;
 
     > div {
+        $main-div-left-padding : 2%;
 
         margin-top: 0;
         margin-bottom: 0;
-        padding: 0 2%;
+        padding: 10px $main-div-left-padding;
 
         > section {
+            border: 1px solid map-get($main-color, section-border);
+            border-radius: 0 0 10px 10px;
+            padding: 15px 10px 10px 15px;
+            background-color: map-get($main-color, section-bg);
+            overflow: hidden;
+        }
 
-            border:1px solid #4f4f4f;
-            border-radius:0 0 10px 10px;
-            padding:15px 10px 10px 15px;
-            /*margin:0 1% 15px 1%;*/
-            background-color:#fafafa;
-            overflow:hidden;
+        > h2 {
+            background-color: map-get($main-color, h2-bg);
+            border-bottom: ridge thick map-get($main-color, h2-border);
+            border-right: solid thin map-get($main-color, h2-border);
+            border-radius: 0 2px 60px 0;
+            color: map-get($main-color, h2);
+            font: 400 40px Calibri;
+            padding: 6px 0 0 6px;
+            margin: 20px 30% 3px 0;
+            margin-left: -$main-div-left-padding;
         }
 
         > h3 {
+            color: map-get($main-color, h3);
+            border-radius: 8px 8px 0 0;
+            padding: 6px;
+            margin: 10px 0 10px 0;
+            text-align: center;
+            font-family: "DejaVu Sans","Trebuchet MS",arial,sans-serif;
+            background-color: map-get($main-color, h2-bg);
+            cursor: pointer;
+            margin-bottom: 0;
+            transition:color 1s ease-in;
+            font-weight: lighter;
 
-            border-bottom-left-radius:0;
-            border-bottom-right-radius:0;
-            background-color:#363636;
-            cursor:pointer;
-            margin-bottom:0;
-            transition:color 1s ease-in
         }
 
     }
