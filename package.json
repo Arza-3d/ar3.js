@@ -23,6 +23,7 @@
   },
   "homepage": "https://arza-3d.github.io/ar3.js/",
   "devDependencies": {
-    "grunt": "^1.0.3"
+    "grunt": "^1.0.3",
+    "grunt-contrib-uglify": "^4.0.0"
   }
 }
