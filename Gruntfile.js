@@ -4,7 +4,6 @@ module.exports = function (grunt) {
     });
 
     var concatTarget = 'ar3-concat.js';
-    var minTarget = 'ar3.min.js';
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.initConfig({
@@ -21,7 +20,7 @@ module.exports = function (grunt) {
 
                     'modular/accordion/ar3-accordion-B-1.js', // set event for that class
 
-                    'modular/ar3-trivial-attr.js'
+                    'modular/trivial/ar3-trivial-attr.js'
                 ],
                 dest: concatTarget,
             },
@@ -31,7 +30,7 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 files: {
-                    minTarget: [concatTarget]
+                    'ar3.min.js' : [concatTarget]
                 }
             }
         }
