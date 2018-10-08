@@ -44,6 +44,16 @@ img {
     border-radius: 6px
 }
 
+hr {
+    height: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 15px 5% 15px 5%;
+    border: 0;
+    border-top: 1px solid #aaa;
+}
+
 ul,
 ol {
     line-height: 180%;

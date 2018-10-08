@@ -81,6 +81,7 @@ https://arza-3d.github.io/ar3.js/
 
         document.addEventListener('click', dynamicAside);
         window.addEventListener('resize', dynamicAside);
+        $('.aside-nav-target-r3')[0].addEventListener('resize', dynamicAside);
         document.addEventListener('scroll', dynamicAside);
 
         let buttonMove,

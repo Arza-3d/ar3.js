@@ -192,6 +192,7 @@ https://arza-3d.github.io/ar3.js/
 
         document.addEventListener('click', dynamicAside);
         window.addEventListener('resize', dynamicAside);
+        $('.aside-nav-target-r3')[0].addEventListener('resize', dynamicAside);
         document.addEventListener('scroll', dynamicAside);
 
         var buttonMove = void 0,
@@ -235,11 +236,6 @@ https://arza-3d.github.io/ar3.js/
 
 // r3-separator
 
-
-$('main > div > h3').addClass('r3-accordion');
-
-// r3-separator
-
 /*######################
 // ar3-accordion-B.js  #
 ######################*/
@@ -250,6 +246,12 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
+    var accordTarget = $('body').attr('data-accordion-B-r3'),
+        _isValid = accordTarget !== undefined;
+    if (_isValid) {
+        $(accordTarget).addClass('r3-accordion-B');
+    }
+
     $('.r3-accordion-B').click(function () {
         $(this).toggleClass('r3-active').next().next().slideToggle('slow');
     });
@@ -267,6 +269,12 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
+    var _accordTarget = $('body').attr('data-accordion-r3'),
+        _isValid2 = _accordTarget !== undefined;
+    if (_isValid2) {
+        $(_accordTarget).addClass('r3-accordion');
+    }
+
     $('.r3-accordion').click(function () {
         $(this).toggleClass('r3-active').next().slideToggle('slow');
     });
@@ -312,4 +320,57 @@ https://arza-3d.github.io/ar3.js/
     }
 
     $('body').addClass(_constructNote);
+}
+
+// r3-separator
+
+/*######################
+// ar3-trivial-tag.js  #
+######################*/
+/*--------------------------
+https://arza-3d.github.io/ar3.js/
+
+<script src="https://rawgit.com/Arza-3d/ar3.js/master/modular/trivial/ar3-trivial-tag.js"></script>
+--------------------------*/
+
+{
+    var _constructNote2 = 'ar3-trivial-tag_is_constructed',
+        _isConstructed2 = $('body').hasClass(_constructNote2);
+
+    if (!_isConstructed2) {
+
+        // 1.
+        $('table').wrap('<div style="overflow:auto">');
+
+        // 2.
+        {
+            var $img = $('img');
+            for (var _i = 0; _i < $img.length; _i++) {
+                if ($($img[_i]).parent().hasClass('relative-container-r3')) {
+                    $($img[_i]).parent().css('overflow', 'auto');
+                } else {
+                    $($img[_i]).wrap('<div style="overflow:auto">');
+                }
+            }
+        }
+
+        // 3. add hr between section
+        $('main section + h3, aside > nav + .r3-accordion-B').before('<hr>');
+
+        // 4. add contextual title based on the main > div[data-title-r3]
+        {
+            var $titles = $('main > div');
+            var title = void 0,
+                id = void 0;
+
+            for (var _i2 = 0; _i2 < $titles.length; _i2++) {
+                title = $($titles[_i2]).attr('data-title-r3');
+
+                id = $($titles[_i2]).find('> h2:first-child').attr('id');
+                $('aside > a[href="#' + id + '"]').prev('.r3-accordion-B').before('<h3>' + title + '</h3>');
+            }
+        }
+    }
+
+    $('body').addClass(_constructNote2);
 }

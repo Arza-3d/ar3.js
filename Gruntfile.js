@@ -18,12 +18,12 @@ module.exports = function (grunt) {
                     'modular/aside-nav/ar3-aside-nav-4.js', // semi fixed nav + add button
 
                     'modular/aside-nav/ar3-aside-nav-5.js', // target element
-                    'modular/accordion/target-r3-accordion.js', // target element
 
                     'modular/accordion/ar3-accordion-B-1.js', // set event for that class
                     'modular/accordion/ar3-accordion-1.js', // target element
 
-                    'modular/trivial/ar3-trivial-attr.js'
+                    'modular/trivial/ar3-trivial-attr.js',
+                    'modular/trivial/ar3-trivial-tag.js'
                 ],
                 dest: concatTarget,
             },
