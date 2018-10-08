@@ -8,6 +8,12 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
+    let accordTarget = $('body').attr('data-accordion-r3'),
+        isValid = accordTarget !== undefined;
+    if (isValid) {
+        $(accordTarget).addClass('r3-accordion');
+    }
+
     $('.r3-accordion').click(function() {
         $(this).toggleClass('r3-active').next().slideToggle('slow');
     });

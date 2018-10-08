@@ -64,7 +64,7 @@ https://arza-3d.github.io/ar3.js/
         dynamicAside();
 
         document.addEventListener('click', dynamicAside);
-        document.addEventListener('resize', dynamicAside);
+        window.addEventListener('resize', dynamicAside);
         document.addEventListener('scroll', dynamicAside);
 
     }

@@ -21,18 +21,20 @@
 
     .r3-accordion-B {
         padding: 1px 3px 1px 2px;
-    }
-
-    nav + .r3-accordion-B + a {
-        margin-top: $nav-a-top-margin;
-    }
-
-    .r3-accordion-B {
         top: $nav-a-top-margin;
     }
 
     .r3-accordion-B:first-of-type {
         top: 0;
+    }
+
+    hr + .r3-accordion-B,
+    h3 + .r3-accordion-B {
+        top: 0;
+    }
+
+    nav + .r3-accordion-B + a {
+        margin-top: $nav-a-top-margin;
     }
 
 
