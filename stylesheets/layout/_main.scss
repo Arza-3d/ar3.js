@@ -43,7 +43,7 @@ main {
             margin: 10px 0 10px 0;
             text-align: center;
             font-family: "DejaVu Sans","Trebuchet MS",arial,sans-serif;
-            background-color: map-get($main-color, h2-bg);
+            background-color: map-get($main-color, h3-bg);
             cursor: pointer;
             margin-bottom: 0;
             transition:color 1s ease-in;

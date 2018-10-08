@@ -3,6 +3,8 @@
 @import 'D:/DOC/WAMP/www/ar3js/stylesheets/utils/media';
 
 body, html {
+    background-color: $background-color;
+    color: $default-text-color;
     font: 11px $sans-serif;
     letter-spacing: 0.04em;
 }

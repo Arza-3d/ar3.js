@@ -1,5 +1,6 @@
 @import 'color-selector';
 // Basic element
+/*
 $link-color : (
     link-d: rgb(225,150,50), // a
     link-l: rgb(225,150,50), // link
@@ -45,6 +46,75 @@ $main-color : (
     h3: RGB(230,230,230),
     h3-bg: #363636,
     section-bg: #fafafa,
+    section-border: #4f4f4f
+);
+
+$tab-color : (
+    border-c: grey,
+    nav-c: #2c3236,
+    nav-a-h-c: #fff, // a hover color
+    nav-a-h-bc: #ff5722, // a hover background-color
+    nav-a-act-c: #000, // a active color
+    bg-c: #fafafa, // background-color
+    nav-a-act-hov-c: #000, // a active and hovered
+    nav-span: #fff
+);
+
+$short-code-color : (
+  button-bg: rgba(0,0,0,0.05),
+  button-c: rgba(0,0,0,0.6)
+);
+*/
+@import 'color-selector';
+// Basic element
+$background-color: rgb(37,37,37);
+$default-text-color: rgb(160,160,160);
+
+$link-color : (
+    link-d: #b86000, // a
+    link-l: #b86000, // link
+    link-v: #e47700, // visited
+    link-h: #ff921c, // hover
+    link-a: #ffaa4e // active
+);
+
+$code-color: (
+    code-border: #ccc,
+    code-bg: #111,
+    code-c: #e42800
+);
+
+$table-color : (
+    border-c: #949494,
+    even-row-c: #e5e5e5,
+    odd-row-c: #f5f5f5,
+    dob-row-c: #ededed,
+    in-border-c: rgba(0,0,0,0.02),
+    in-h-border-c: grey,
+    th-c: rgb(224,224,224),
+    th-bgc: rgb(83,83,83)
+);
+
+//------------------------------
+
+$aside-color : (
+    border: #666,
+    nav-border: #999,
+    nav-bg: #333,
+    nav-nav-bord-bott: #000,
+    nav-nav-bord-left: grey,
+    a-bg: #111,
+    a-hov: #fff,
+    a-hov-bg: #ff5722
+);
+
+$main-color : (
+    h2: #fff,
+    h2-bg: #222,
+    h2-border: grey,
+    h3: RGB(230,230,230),
+    h3-bg: rgb(19,19,19),
+    section-bg: rgb(30,30,30),
     section-border: #4f4f4f
 );
 
