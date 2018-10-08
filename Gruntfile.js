@@ -18,6 +18,7 @@ module.exports = function (grunt) {
                     'modular/aside-nav/ar3-aside-nav-4.js', // semi fixed nav + add button
                     'modular/aside-nav/ar3-aside-nav-5.js', // target element
                     'modular/short-code/ar3-short-code-2.js', // <pre><pre>
+                    'modular/top-nav/ar3-top-nav.js', // tab and the box link inside it
                     'modular/tab/ar3-tab-2.js', // tab and the box link inside it
 
                     'modular/accordion/ar3-accordion-B-1.js', // set event for that class

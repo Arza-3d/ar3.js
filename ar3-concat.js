@@ -281,6 +281,54 @@ https://arza-3d.github.io/ar3.js/
 
 // r3-separator
 
+/*##################
+// ar3-top-nav.js  #
+##################*/
+/*--------------------------
+https://arza-3d.github.io/ar3.js/
+
+<script src="https://rawgit.com/Arza-3d/ar3.js/master/modular/top-nav/ar3-top-nav.js"></script>
+--------------------------*/
+
+{
+    var _topCoord = function _topCoord(elem) {
+        var y = elem.getBoundingClientRect().top + window.scrollY;
+        return y;
+    };
+
+    var scrolltop = function scrolltop() {
+        var top = 0;
+        if (typeof window.pageYOffset === "number") {
+            top = window.pageYOffset;
+        } else if (document.body && document.body.scrollTop) {
+            top = document.body.scrollTop;
+        } else if (document.documentElement && document.documentElement.scrollTop) {
+            top = document.documentElement.scrollTop;
+        }
+        return top;
+    };
+
+    var dynamicHeader = function dynamicHeader() {
+        var topLimit = _topCoord(_$main[0]) - $nav.innerHeight() - 15;
+        if (scrolltop() < topLimit) {
+            $nav.css({ 'position': 'fixed', 'top': 0 });
+        } else if (scrolltop() > topLimit) {
+            $nav.css({ 'position': 'absolute', 'top': topLimit + 'px' });
+        }
+    };
+
+    var $nav = $('#r3-nav'),
+        _$main = $('main');
+
+    dynamicHeader();
+
+    document.addEventListener('click', dynamicHeader);
+    window.addEventListener('resize', dynamicHeader);
+    document.addEventListener('scroll', dynamicHeader);
+}
+
+// r3-separator
+
 /*################
 // ar3-tab-2.js  #
 ################*/

@@ -6,11 +6,11 @@ $background-color: #fafafa;
 $default-text-color: #111;
 
 $link-color : (
-    link-d: rgb(225,150,50), // a
-    link-l: rgb(225,150,50), // link
-    link-v: rgb(200,120,0), // visited
-    link-h: rgb(255,180,0), // hover
-    link-a: rgb(255,200,0) // active
+    link-d: #e09531, // a
+    link-l: #e09531, // link
+    link-v: #c87800, // visited
+    link-h: #ffb400, // hover
+    link-a: #ffc800 // active
 );
 
 $code-color: (
@@ -26,11 +26,9 @@ $table-color : (
     dob-row-c: #ededed,
     in-border-c: rgba(0,0,0,0.02),
     in-h-border-c: grey,
-    th-c: rgb(224,224,224),
-    th-bgc: rgb(83,83,83)
+    th-c: #e0e0e0,
+    th-bgc: #535353
 );
-
-//------------------------------
 
 $aside-color : (
     border: #666,
@@ -69,6 +67,9 @@ $short-code-color : (
   button-c: rgba(0,0,0,0.6)
 );
 
+/*############
+# dark theme #
+############*/
 /*
 @import 'color-selector';
 // Basic element

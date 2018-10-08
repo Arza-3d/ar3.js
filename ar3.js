@@ -1471,11 +1471,11 @@
                             $nav.css({'position': 'absolute', 'top': topLimit + 'px'});
                         }
                     }
-                  dynamicHeader();
+                    dynamicHeader();
 
-                  document.addEventListener('click', dynamicHeader);
-                  document.addEventListener('resize', dynamicHeader);
-                  document.addEventListener('scroll', dynamicHeader);
+                    document.addEventListener('click', dynamicHeader);
+                    document.addEventListener('resize', dynamicHeader);
+                    document.addEventListener('scroll', dynamicHeader);
                 })();
             })();
         })();
