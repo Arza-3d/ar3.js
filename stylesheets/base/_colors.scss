@@ -1,6 +1,10 @@
 @import 'color-selector';
 // Basic element
-/*
+
+
+$background-color: #fafafa;
+$default-text-color: #111;
+
 $link-color : (
     link-d: rgb(225,150,50), // a
     link-l: rgb(225,150,50), // link
@@ -64,7 +68,8 @@ $short-code-color : (
   button-bg: rgba(0,0,0,0.05),
   button-c: rgba(0,0,0,0.6)
 );
-*/
+
+/*
 @import 'color-selector';
 // Basic element
 $background-color: rgb(37,37,37);
@@ -133,3 +138,4 @@ $short-code-color : (
   button-bg: rgba(0,0,0,0.05),
   button-c: rgba(0,0,0,0.6)
 );
+*/
