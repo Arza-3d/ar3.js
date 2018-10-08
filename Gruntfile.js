@@ -3,19 +3,8 @@ module.exports = function (grunt) {
         grunt.log.write('test calling grunt task');
     });
 
-    // Project configuration.
-    /*
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.initConfig({
-      uglify: {
-        my_target: {
-          files: {
-            'ar3.min.js': ['modular/aside-nav/ar3-aside-nav-2.js']
-          }
-        }
-      }
-    });*/
-
+    var concatTarget = 'ar3-concat.js';
+    var minTarget = 'ar3.min.js';
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.initConfig({
@@ -25,19 +14,24 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
-                    'modular/aside-nav/ar3-aside-nav-2.js',
-                    'modular/aside-nav/ar3-aside-nav-4.js',
-                    'modular/aside-nav/ar3-aside-nav-5.js',
-                    'accordion/ar3-accordion-B-1.js'
+
+                    'modular/aside-nav/ar3-aside-nav-2.js', // construct nav with override option data-headers-r3
+                    'modular/aside-nav/ar3-aside-nav-4.js', // semi fixed nav + add button
+                    'modular/aside-nav/ar3-aside-nav-5.js', // set r3-accordion-B
+
+                    'modular/accordion/ar3-accordion-B-1.js', // set event for that class
+
+                    'modular/ar3-trivial-attr.js'
                 ],
-                dest: 'ar3-aside-concat.js',
+                dest: concatTarget,
             },
         },
 
+        // go to this site for converting it to ES5 first before ugliying it https://babeljs.io/
         uglify: {
             my_target: {
                 files: {
-                    'ar3.min.js': ['ar3-aside-concat.js']
+                    minTarget: [concatTarget]
                 }
             }
         }
