@@ -236,6 +236,51 @@ https://arza-3d.github.io/ar3.js/
 
 // r3-separator
 
+/*#######################
+// ar3-short-code-2.js  #
+#######################*/
+/*--------------------------
+https://arza-3d.github.io/ar3.js/
+
+<script src="https://rawgit.com/Arza-3d/ar3.js/master/modular/short-code/ar3-short-code-2.js"></script>
+--------------------------*/
+
+{
+    var _constructNote = 'r3-short-code_done',
+        _isConstructed = $('body').hasClass(_constructNote);
+
+    {
+        // 2nd update start
+        var isIndo = $('body').attr('lang') == 'id';
+        var text1 = isIndo ? 'tunjukkan semua kode' : 'show all code',
+            text2 = isIndo ? 'persingkat kode' : 'short code';
+        // 2nd update end
+
+        if (!_isConstructed) {
+            $('pre + pre').css('display', 'none').before('<button class="r3-short-code r3-active">' + text1 + '</button>');
+        } else {
+            $('.r3-short-code').addClass('r3-active').prev().css('display', 'block').next().next().css('display', 'none');
+        }
+
+        $('.r3-short-code').click(function () {
+            if ($(this).hasClass('r3-active')) {
+                this.innerHTML = text2;
+                $(this).prev().delay(300).toggle(600);
+                $(this).next().toggle(300);
+            } else {
+                this.innerHTML = text1;
+                $(this).prev().toggle(300);
+                $(this).next().delay(300).toggle(600);
+            }
+            $(this).toggleClass('r3-active');
+        });
+    }
+
+    $('body').addClass(_constructNote);
+}
+
+// r3-separator
+
 /*######################
 // ar3-accordion-B.js  #
 ######################*/
@@ -292,10 +337,10 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
-    var _constructNote = 'ar3-trivial-attr_is_constructed',
-        _isConstructed = $('body').hasClass(_constructNote);
+    var _constructNote2 = 'ar3-trivial-attr_is_constructed',
+        _isConstructed2 = $('body').hasClass(_constructNote2);
 
-    if (!_isConstructed) {
+    if (!_isConstructed2) {
 
         // 1.
         $('header').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
@@ -319,7 +364,7 @@ https://arza-3d.github.io/ar3.js/
         $("a[href^='http']").attr('target', '_blank');
     }
 
-    $('body').addClass(_constructNote);
+    $('body').addClass(_constructNote2);
 }
 
 // r3-separator
@@ -334,10 +379,10 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
-    var _constructNote2 = 'ar3-trivial-tag_is_constructed',
-        _isConstructed2 = $('body').hasClass(_constructNote2);
+    var _constructNote3 = 'ar3-trivial-tag_is_constructed',
+        _isConstructed3 = $('body').hasClass(_constructNote3);
 
-    if (!_isConstructed2) {
+    if (!_isConstructed3) {
 
         // 1.
         $('table').wrap('<div style="overflow:auto">');
@@ -372,5 +417,5 @@ https://arza-3d.github.io/ar3.js/
         }
     }
 
-    $('body').addClass(_constructNote2);
+    $('body').addClass(_constructNote3);
 }
