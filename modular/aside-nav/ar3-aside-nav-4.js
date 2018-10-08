@@ -85,7 +85,7 @@ https://arza-3d.github.io/ar3.js/
 
         let buttonMove,
             buttonStop;
-        const marginLeftTransition = 500;
+        const marginLeftTransition = 500,
               mainDefaultWidth = '79%'; // make sure it is the same with the _r3-aside-nav-1.scss
         function stopUpdateButton() {
             clearInterval(buttonMove);
