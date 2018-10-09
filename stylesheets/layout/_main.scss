@@ -1,6 +1,8 @@
 @import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
 @import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/typography';
 
+$main-div-h3-border-radius : 8px;
+
 main {
 
     border:2px solid #666;
@@ -39,7 +41,7 @@ main {
 
         > h3 {
             color: map-get($main-color, h3);
-            border-radius: 8px 8px 0 0;
+            border-radius: $main-div-h3-border-radius $main-div-h3-border-radius 0 0;
             padding: 6px;
             margin: 10px 0 10px 0;
             text-align: center;

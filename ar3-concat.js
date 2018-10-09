@@ -414,26 +414,18 @@ https://arza-3d.github.io/ar3.js/
 
 // r3-separator
 
-/*######################
-// ar3-accordion-1.js  #
-######################*/
-/*--------------------------
-https://arza-3d.github.io/ar3.js/
-
-<script src="https://rawgit.com/Arza-3d/ar3.js/master/modular/accordion/ar3-accordion-1.js"></script>
---------------------------*/
-
-{
-    var _accordTarget = $('body').attr('data-accordion-r3'),
-        _isValid2 = _accordTarget !== undefined;
-    if (_isValid2) {
-        $(_accordTarget).addClass('r3-accordion');
+$('main > div > h3').on('click touch', function () {
+    if (this.classList.contains("r3-active") !== true) {
+        this.style.setProperty('-webkit-transition', 'background-color 0.3s ease-in-out 0.6s, border-radius 0.2s 0.6s, color 0.3s ease-in-out 0.6s');
+        this.style.setProperty('transition', 'background-color 0.3s ease-in-out 0.6s, border-radius 0.2s 0.6s, color 0.3s ease-in-out 0.6s');
+        $(this).next().slideToggle(600);
+    } else {
+        this.style.setProperty('-webkit-transition', 'background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out, color 0.3s ease-in-out');
+        this.style.setProperty('transition', 'background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out, color 0.3s ease-in-out');
+        $(this).next().delay(300).slideToggle(600);
     }
-
-    $('.r3-accordion').click(function () {
-        $(this).toggleClass('r3-active').next().slideToggle('slow');
-    });
-}
+    this.classList.toggle("r3-active");
+});
 
 // r3-separator
 

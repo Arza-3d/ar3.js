@@ -22,7 +22,8 @@ module.exports = function (grunt) {
                     'modular/tab/ar3-tab-2.js', // tab and the box link inside it
 
                     'modular/accordion/ar3-accordion-B-1.js', // set event for that class
-                    'modular/accordion/ar3-accordion-1.js', // target element
+                    //'modular/accordion/ar3-accordion-1.js', // target element
+                    'modular/accordion/ar3-accordion-2(h3-main).js',
 
                     'modular/trivial/ar3-trivial-attr.js',
                     'modular/trivial/ar3-trivial-tag.js'
