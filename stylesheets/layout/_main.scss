@@ -1,4 +1,5 @@
 @import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/typography';
 
 main {
 
@@ -30,10 +31,10 @@ main {
             border-right: solid thin map-get($main-color, h2-border);
             border-radius: 0 2px 60px 0;
             color: map-get($main-color, h2);
-            font: 400 40px Calibri;
-            padding: 6px 0 0 6px;
+            font: 400 40px map-get($main-font, h2-font);
             margin: 20px 30% 3px 0;
             margin-left: -$main-div-left-padding;
+            padding: 6px 0 0 6px;
         }
 
         > h3 {
@@ -42,7 +43,7 @@ main {
             padding: 6px;
             margin: 10px 0 10px 0;
             text-align: center;
-            font-family: "DejaVu Sans","Trebuchet MS",arial,sans-serif;
+            font-family: map-get($main-font, h3-font);
             background-color: map-get($main-color, h3-bg);
             cursor: pointer;
             margin-bottom: 0;
@@ -54,17 +55,17 @@ main {
     }
 
     > div:nth-of-type(odd) {
-        background-color:rgba(0,0,0,0.05);
+        background-color: rgba(0,0,0,0.05);
         border-bottom-right-radius:10px;
         border-top-left-radius:10px;
-        border-left:solid 2px orange;
-        border-top:solid 1px orange;
+        border-left:solid 2px map-get($main-color, div-border);
+        border-top:solid 1px map-get($main-color, div-border);
     }
 
     > div:nth-of-type(even) {
-        background-color:rgba(0,0,0,0.1);
-        border-right:solid 2px orange;
-        border-top:1px solid orange;
+        background-color: rgba(0,0,0,0.1);
+        border-right:solid 2px map-get($main-color, div-border);
+        border-top:1px solid map-get($main-color, div-border);
         border-bottom-left-radius:10px;
         border-top-right-radius:10px;
     }
