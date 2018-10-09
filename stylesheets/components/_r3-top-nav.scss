@@ -1,0 +1,50 @@
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
+
+#r3-nav {
+    background-color: map-get($top-nav, nav-bg);
+    height:45px;
+    left:0px;
+    position: fixed;
+    top: 0px;
+    width:100%;
+    z-index: 10;
+
+    > * {
+        float: left;
+        height: 100%;
+    }
+
+    > a {
+        background-color: rgba(0,0,0,0);
+        display: block;
+        height: 24px;
+        min-width: 60px;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    > a:hover {
+        color: map-get($aside-color, a-hov);
+        background-color: map-get($aside-color, a-hov-bg);
+    }
+
+    > div:first-child {
+        width: 158px;
+    }
+
+    >div:first-child:hover {
+        background-color: (map-get($aside-color, a-hov-bg)/6);
+    }
+
+}
+
+#r3-nav.r3-dynamic-after {
+    position: absolute;
+}
+
+.separator-r3 {
+    background-color: rgba(0,0,0,0.4);
+    float: left;
+    height: 100%;
+    width: 2px;
+}

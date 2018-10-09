@@ -57,8 +57,8 @@ $nav-a-top-margin: 10px;
     }
 
     a:hover {
-        color: map-get($aside-color, a-hov) !important;
-        background-color: map-get($aside-color, a-hov-bg) !important;
+        color: map-get($aside-color, a-hov);
+        background-color: map-get($aside-color, a-hov-bg);
         transition:color 0.5s ease-in, background-color 0.3s;
     }
 

@@ -5,12 +5,16 @@
 $background-color: #fafafa;
 $default-text-color: #111;
 
-$link-color : (
+$link-color: (
     link-d: #e09531, // a
     link-l: #e09531, // link
     link-v: #c87800, // visited
     link-h: #ffb400, // hover
     link-a: #ffc800 // active
+);
+
+$top-nav: (
+    nav-bg: #171a1c
 );
 
 $code-color: (
