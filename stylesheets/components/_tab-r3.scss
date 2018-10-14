@@ -73,5 +73,5 @@
 }
 
 section .tab-r3 > nav {
-    background-color: #535353;
+    background-color: map-get($tab-color, nav-c-lighter);
 }
