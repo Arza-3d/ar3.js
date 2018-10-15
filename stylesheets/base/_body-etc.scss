@@ -8,25 +8,14 @@ body, html {
     font: 11px $sans-serif;
     letter-spacing: 0.04em;
 }
-
 body {
     margin-left: 8px;
 }
-
 @media screen and (max-width: $viewport-1st-limit) {
-
     body {
         margin-left: 2px;
     };
-
 }
-
-p {
-    line-height: 18px;
-    max-width: 360px;
-    text-align: justify;
-}
-
 code,
 pre {
     background-color: map-get($code-color, code-bg);
@@ -36,21 +25,16 @@ pre {
     line-height: normal;
     tab-size: 4;
 }
-
-pre {
-    margin: 3px 0 3px 0;
-}
-
 code {
     display: inline-block;
     padding: 1px;
     text-indent: 0;
 }
-
-img {
-    border-radius: 6px
+details[open] {
+    > summary {
+        font-weight: normal;
+    }
 }
-
 hr {
     height: 0;
     -webkit-box-sizing: content-box;
@@ -60,13 +44,33 @@ hr {
     border: 0;
     border-top: 1px solid #aaa;
 }
-
-ul,
-ol {
+img {
+    border-radius: 6px
+}
+p {
+    line-height: 18px;
+    max-width: 360px;
+    text-align: justify;
+}
+pre {
+    margin: 3px 0 3px 0;
+}
+ol,
+ul {
     line-height: 180%;
     padding-inline-start: 20px;
 }
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+ul {
+    list-style-type:circle;
 
+    > ul {
+        list-style-type:disc;
+    }
+}
 var {
   font-family: $math;
 }
