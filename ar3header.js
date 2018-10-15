@@ -5,7 +5,7 @@
         '<nav id="r3-nav">\n'+
             '<div>\n'+
                 '<a id="r3-web-logo" href="https://github.com/Arza-3d">'+
-                    '<img src="https://image.ibb.co/i5Hp0a/LogoWeb.png" alt="">\n'+
+                    '<img src="https://image.ibb.co/dAuxML/Logo-Web-0.png" alt="">\n'+
                 '</a>'+
             '</div>\n'+
             '<div class="separator-r3"></div>\n'+
