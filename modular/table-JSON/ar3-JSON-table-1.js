@@ -4,7 +4,7 @@
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-JSON/ar3-JSON-table-1.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-JS/ar3-JSON-table-1.js"></script>
 --------------------------*/
 
 {
@@ -16,7 +16,7 @@ https://arza-3d.github.io/ar3.js/
 
             // get JSON
             $('head').append('<script>var jsonText = _jsonText;</script>');
-            var jsonObject = JSON.parse(jsonText);
+            let objectInJSON = JSON.parse(jsonText);
 
             for (let i = 0; i < $tableJSON.length; i++) {
                 // add <tbody> if necessary
@@ -27,8 +27,25 @@ https://arza-3d.github.io/ar3.js/
                 let $th = $($tableJSON[i]).find('thead > tr:last-child > th'),
                     $tbody = $($tableJSON[i]).children('tbody'),
                     arrayInJSON = $($tableJSON[i]).attr('data-JSON-r3');
-            }
 
+                if (objectInJSON[arrayInJSON] !== undefined) {
+
+                    // table row loop
+                    let arrayJSONlength = objectInJSON[arrayInJSON].length;
+                    for (let j = 0; j < arrayInJSONlength; j++) {
+                        //$tbody.append('<tr></tr>');
+
+                        // table column loop
+                        let rowContent = '';
+                        for (let k = 0; k < $th.length; k++) {
+                            let keyInJSON = $($th[k]).attr('data-JSON-r3'),
+                                valueInJSON = objectInJSON[arrayInJSON][keyInJSON];
+                            rowContent += '<td>' + valueInJSON + '</td>\n';
+                        }
+                        $tbody.append('<tr>'+ rowContent +'</tr>');
+                    }
+                }
+            }
         }
     }
     $('body').addClass(constructNote);
