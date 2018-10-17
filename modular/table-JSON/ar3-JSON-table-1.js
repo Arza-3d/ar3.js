@@ -29,18 +29,17 @@ https://arza-3d.github.io/ar3.js/
                     arrayInJSON = $($tableJSON[i]).attr('data-JSON-r3');
 
                 if (objectInJSON[arrayInJSON] !== undefined) {
-
+                    console.log(objectInJSON[arrayInJSON]);
                     // table row loop
-                    let arrayJSONlength = objectInJSON[arrayInJSON].length;
+                    let arrayInJSONlength = objectInJSON[arrayInJSON].length;
                     for (let j = 0; j < arrayInJSONlength; j++) {
-                        //$tbody.append('<tr></tr>');
 
                         // table column loop
                         let rowContent = '';
                         for (let k = 0; k < $th.length; k++) {
                             let keyInJSON = $($th[k]).attr('data-JSON-r3'),
-                                valueInJSON = objectInJSON[arrayInJSON][keyInJSON];
-                            rowContent += '<td>' + valueInJSON + '</td>\n';
+                                valueInJSON = objectInJSON[arrayInJSON][j][keyInJSON];
+                            rowContent += '\t<td>' + valueInJSON + '</td>\n';
                         }
                         $tbody.append('<tr>'+ rowContent +'</tr>');
                     }
