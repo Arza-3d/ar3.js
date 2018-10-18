@@ -40,19 +40,18 @@ https://arza-3d.github.io/ar3.js/
 
                     // table row loop
                     let arrayInJSONlength = objectInJSON[arrayInJSON].length,
-                        thText = '<tbody>\n';
+                        tbodyText = '<tbody>\n';
                     for (let j = 0; j < arrayInJSONlength; j++) {
                         let myObject = objectInJSON[arrayInJSON][j];
-                        thText += '\t<tr>\n';
+                        tbodyText += '\t<tr>\n';
                         for (x in myObject) {
-                            thText += '\t\t<td>' + myObject[x] + '</td>\n'
+                            tbodyText += '\t\t<td>' + myObject[x] + '</td>\n'
                         }
-                        thText += '\t</tr>\n';
+                        tbodyText += '\t</tr>\n';
 
                     }
-                    thText += '</tbody>';
-                    console.log(thText);
-                    $($tableJSON[i]).append(thText);
+                    tbodyText += '</tbody>';
+                    $($tableJSON[i]).append(tbodyText);
                 }
             }
         }
