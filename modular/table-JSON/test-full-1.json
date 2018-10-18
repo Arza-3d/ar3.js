@@ -1,0 +1,19 @@
+var _JSON_fullString_r3 ='{'+
+
+    '"Comment":['+
+
+        '{'+
+            '"nam":"multi-lines"'+
+            ',"syn":"/*\\n  comment1\\n  comment2\\n*/"'+
+            ',"cod":"/* */"'+
+            ',"typ":"comment"'+
+        '}'+
+
+        ',{'+
+            '"nam":"single-line"'+
+            ',"syn":"// comment"'+
+            ',"cod":"//"'+
+            ',"typ":"comment"'+
+        '}'+
+    ']'+
+'}';
