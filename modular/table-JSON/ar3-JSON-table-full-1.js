@@ -8,7 +8,7 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
-    const constructNote = "ar3-JSON-table_done";
+    const constructNote = "ar3-JSON-table-full-1_done";
     const isConstructed = $('body').hasClass(constructNote);
     {
         const $tableJSON = $('table[data-JSON-full-r3]');
@@ -39,18 +39,20 @@ https://arza-3d.github.io/ar3.js/
                     }
 
                     // table row loop
-                    let arrayInJSONlength = objectInJSON[arrayInJSON].length;
+                    let arrayInJSONlength = objectInJSON[arrayInJSON].length,
+                        thText = '<tbody>\n';
                     for (let j = 0; j < arrayInJSONlength; j++) {
                         let myObject = objectInJSON[arrayInJSON][j];
-                        let thText = '<tbody>\n\t<tr>\n';
+                        thText += '\t<tr>\n';
                         for (x in myObject) {
                             thText += '\t\t<td>' + myObject[x] + '</td>\n'
                         }
-                        thText += '\t</tr>\n</tbody>'
-                        $($tableJSON[i]).append(thText);
+                        thText += '\t</tr>\n';
 
                     }
-
+                    thText += '</tbody>';
+                    console.log(thText);
+                    $($tableJSON[i]).append(thText);
                 }
             }
         }
