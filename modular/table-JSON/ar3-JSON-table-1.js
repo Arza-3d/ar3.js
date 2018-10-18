@@ -15,7 +15,7 @@ https://arza-3d.github.io/ar3.js/
         if (!isConstructed && $tableJSON .length > 0) {
 
             // get JSON
-            $('head').append('<script>var jsonText = _jsonText;</script>');
+            $('head').append('<script>var jsonText = _JSON_string_r3;</script>');
             let objectInJSON = JSON.parse(jsonText);
 
             for (let i = 0; i < $tableJSON.length; i++) {

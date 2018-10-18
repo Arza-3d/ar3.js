@@ -330,25 +330,63 @@
         <h3>construct table from JSON</h3>
         <section>
           <a href="https://github.com/Arza-3d/ar3.js/blob/master/modular/table-JSON/ar3-JSON-table-1.js"><code>ar3-JSON-table-1.js</code></a>
-          <p>Create table from JSON file. Have more control over what members of the JSON object that you wanna print.</p>
+          <p>
+            Create table from JSON file. Have more control over what members of the JSON object, and have more control over the table. Use it for JSON and table that you wanna keep edit in the future.
+          </p>
+          <p>
+            JSON file must use variable name:
+            <code><span class="red-r3">_JSON_string_r3</span></code>
+            <br>I add <b>_r3</b> suffix to evade possible naming collision, since this variable will be exposed as global variable.
+            <br>Example:
+          </p>
           <code>
-              &lt;table <mark>data-JSON-r3</mark>="<span class="comment-r3">arrayInJSONName</span>&gt;
-              <br>&nbsp;&nbsp;&lt;thead&gt;
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th <mark>data-JSON-r3</mark>="<span class="comment-r3">key1</span>"&gt;<span class="comment-r3">th name 1</span>&lt;/th&gt;
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th <mark>data-JSON-r3</mark>="<span class="comment-r3">key2</span>"&gt;<span class="comment-r3">th name 2</span>&lt;/th&gt;
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
-              <br>&nbsp;&nbsp;&lt;/thead&gt;
-              <br>&lt;/table&gt;
+            <mark>var <span class="red-r3">_JSON_string_r3</span></mark> =
+            <br>`
+            <br>{
+            <br>&nbsp;&nbsp;"<em class="magenta-r3">table1</em>":
+            <br>&nbsp;&nbsp;[
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;{
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<em class="green-r3">col1</em>":"<em class="comment-r3">row1c1</em>",
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<em class="blue-r3">col2</em>":"<em class="comment-r3">row1c2</em>"
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;},
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;{
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<em class="blue-r3">col2</em>":"<em class="comment-r3">row2c2</em>",
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<em class="green-r3">col1</em>":"<em class="comment-r3">row1c2</em>"
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br>&nbsp;&nbsp;],
+            <br>&nbsp;&nbsp;"<em class="comment-r3">table2</em>":
+            <br>&nbsp;&nbsp;[
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;{
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<em class="comment-r3">col1</em>":"<em class="comment-r3">row1c1</em>",
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<em class="comment-r3">col1</em>":"<em class="comment-r3">row1c2</em>"
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br>&nbsp;&nbsp;]
+            <br>}
+            <br>`;</code>
+          <p>example of the HTML table structure:</p>
+          <code>
+            &lt;table <mark>data-JSON-r3</mark>="<em class="magenta-r3">table1</em>&gt;
+            <br>&nbsp;&nbsp;&lt;thead&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th rowspan="2"&gt;<span class="comment-r3">line 1</span>&lt;/th&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th <mark>data-JSON-r3</mark>="<em class="green-r3">col1</em>"&gt;<span class="comment-r3">th name 1</span>&lt;/th&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th <mark>data-JSON-r3</mark>="<em class="blue-r3">col2</em>"&gt;<span class="comment-r3">th name 2</span>&lt;/th&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+            <br>&nbsp;&nbsp;&lt;/thead&gt;
+            <br>&lt;/table&gt;
           </code>
         </section>
 
         <h3>construct table from JSON 2</h3>
         <section>
-            <a href="https://github.com/Arza-3d/ar3.js/blob/master/modular/table-JSON/ar3-JSON-table-full-1.js"><code>ar3-JSON-table-full-1.js</code></a>
-            <p>Create full table from JSON, completely take all the data and make it as tables. Usefull for non-editable JSON, something that you got from converting spreadsheet into JSON.</p>
-            <code>&lt;table <mark>data-JSON-full-r3</mark>="<span class="comment-r3">arrayInJSONName</span>&gt;
-            <br>&lt;/table&gt;</code>
+          <a href="https://github.com/Arza-3d/ar3.js/blob/master/modular/table-JSON/ar3-JSON-table-full-1.js"><code>ar3-JSON-table-full-1.js</code></a>
+          <p>
+            Create full table from JSON, completely take all the data and make it as tables. Use it for non-editable JSON, something that you got from converting spreadsheet into JSON.
+          </p>
+          <code>&lt;table <mark>data-JSON-full-r3</mark>="<span class="comment-r3">arrayInJSONName</span>&gt;
+          <br>&lt;/table&gt;</code>
         </section>
       </div>
     </main>
