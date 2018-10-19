@@ -6,10 +6,6 @@ table {
     margin-top: 3px;
     table-layout: fixed;
 
-    > * > tr > * {
-        padding: auto 5px;
-    }
-
     > tbody {
 
         > tr:nth-of-type(even) {
@@ -22,14 +18,11 @@ table {
 
         > tr > * {
             border-right: thin solid map-get($table-color, in-border-c);
+            padding: 2px 5px;
         }
 
         > tr > *:last-child {
             border-right: none;
-        }
-
-        td {
-            height:25px;
         }
 
         td[rowspan] {

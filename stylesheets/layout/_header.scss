@@ -1,3 +1,5 @@
+@import 'D:/DOC/WAMP/www/ar3js/stylesheets/base/colors';
+
 header {
 
     padding-left:60px;
@@ -51,12 +53,19 @@ header {
         border-top:solid 2px orange;
         border-top-left-radius:8px;
 
-        > a {
-            background-color:#333;
+        a {
+            background-color: map-get($aside-color, a-bg);
             border-radius:3px;
-            padding-left:4px;
-            padding-right:4px;
+            display: inline-block;
+            padding: 2px 4px;
         }
+
+        a:hover {
+            color: map-get($aside-color, a-hov);
+            background-color: map-get($aside-color, a-hov-bg);
+            transition:color 0.5s ease-in, background-color 0.3s;
+        }
+
 
     }
 
