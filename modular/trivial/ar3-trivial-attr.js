@@ -14,24 +14,21 @@ https://arza-3d.github.io/ar3.js/
     if (!isConstructed) {
 
         // 1.
-        $('header').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
-
-        // 2.
         const isEnglish = $('body').attr('lang') == 'en';
         if (!isEnglish) {
             $('i').attr('lang', 'en');
         }
 
-        // 3.
+        // 2.
         $('code, pre').attr('translate', 'no');
 
-        // 4.
+        // 3.
         $('.comment-r3').attr('translate', 'yes');
 
-        // 5.
+        // 4.
         $('video').attr('controls');
 
-        // 6.
+        // 5.
         $("a[href^='http']").attr('target', '_blank');
 
     }

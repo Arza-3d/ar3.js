@@ -36,7 +36,7 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'ar3.min.js' : [concatTarget]
+                    'ar3.min.js' : 'ar3-concat-ES5.js'
                 }
             }
         }

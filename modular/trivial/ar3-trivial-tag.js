@@ -28,10 +28,10 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
-        // 3. add hr between section
+        // 3.
         $('main section + h3, aside > nav + .r3-accordion-B').before('<hr>');
 
-        // 4. add contextual title based on the main > div[data-title-r3]
+        // 4.
         {
             const $titles = $('main > div');
             let title, id;
@@ -42,6 +42,15 @@ https://arza-3d.github.io/ar3.js/
                 id = $($titles[i]).find('> h2:first-child').attr('id');
                 $('aside > a[href="#'+ id +'"]').prev('.r3-accordion-B')
                     .before('<h3>'+ title +'</h3>');
+            }
+        }
+
+        //5.
+        {
+            const $firstLineTableinHeader = $('header table td:first-child');
+            for (let i = 0; i < $firstLineTableinHeader.length; i++) {
+              let text = $($firstLineTableinHeader[i]).html();
+                $($firstLineTableinHeader[i]).html(text + '<b style="float:right">&nbsp;:</b>');
             }
         }
     }
