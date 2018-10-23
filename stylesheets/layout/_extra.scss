@@ -1,3 +1,12 @@
+$aCodeImgSize : 17px;
+
 a > code {
     color: inherit;
+    > img {
+        border-radius: 2px;
+        display: inline-block;
+        height: $aCodeImgSize;
+        margin-right: 3px;
+        width: $aCodeImgSize;
+    }
 }

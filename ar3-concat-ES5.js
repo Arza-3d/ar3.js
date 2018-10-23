@@ -429,9 +429,9 @@ $('main > div > h3').on('click touch', function () {
 
 // r3-separator
 
-/*##################
+/*#######################
 // ar3-trivial-attr.js  #
-##################*/
+#######################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
@@ -445,26 +445,21 @@ https://arza-3d.github.io/ar3.js/
     if (!_isConstructed3) {
 
         // 1.
-        /*
-        $('header').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
-        */
-
-        // 2.
         var isEnglish = $('body').attr('lang') == 'en';
         if (!isEnglish) {
             $('i').attr('lang', 'en');
         }
 
-        // 3.
+        // 2.
         $('code, pre').attr('translate', 'no');
 
-        // 4.
+        // 3.
         $('.comment-r3').attr('translate', 'yes');
 
-        // 5.
+        // 4.
         $('video').attr('controls');
 
-        // 6.
+        // 5.
         $("a[href^='http']").attr('target', '_blank');
     }
 
@@ -493,7 +488,7 @@ https://arza-3d.github.io/ar3.js/
 
         // 2.
         {
-            var $img = $('img');
+            var $img = $('img').not('code > img, h3 > img');
             for (var _i3 = 0; _i3 < $img.length; _i3++) {
                 if ($($img[_i3]).parent().hasClass('relative-container-r3')) {
                     $($img[_i3]).parent().css('overflow', 'auto');
@@ -503,10 +498,10 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
-        // 3. add hr between section
+        // 3.
         $('main section + h3, aside > nav + .r3-accordion-B').before('<hr>');
 
-        // 4. add contextual title based on the main > div[data-title-r3]
+        // 4.
         {
             var $titles = $('main > div');
             var title = void 0,
@@ -520,7 +515,7 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
-        //5. added ':' in header table
+        //5.
         {
             var $firstLineTableinHeader = $('header table td:first-child');
             for (var _i5 = 0; _i5 < $firstLineTableinHeader.length; _i5++) {

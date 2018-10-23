@@ -435,9 +435,9 @@ $('main > div > h3').on('click touch', function(){
 
 // r3-separator
 
-/*##################
+/*#######################
 // ar3-trivial-attr.js  #
-##################*/
+#######################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
@@ -451,26 +451,21 @@ https://arza-3d.github.io/ar3.js/
     if (!isConstructed) {
 
         // 1.
-        /*
-        $('header').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
-        */
-
-        // 2.
         const isEnglish = $('body').attr('lang') == 'en';
         if (!isEnglish) {
             $('i').attr('lang', 'en');
         }
 
-        // 3.
+        // 2.
         $('code, pre').attr('translate', 'no');
 
-        // 4.
+        // 3.
         $('.comment-r3').attr('translate', 'yes');
 
-        // 5.
+        // 4.
         $('video').attr('controls');
 
-        // 6.
+        // 5.
         $("a[href^='http']").attr('target', '_blank');
 
     }
@@ -501,7 +496,7 @@ https://arza-3d.github.io/ar3.js/
 
         // 2.
         {
-            const $img = $('img');
+            let $img = $('img').not('code > img, h3 > img');
             for (let i = 0; i < $img.length; i++) {
                 if ($($img[i]).parent().hasClass('relative-container-r3')) {
                     $($img[i]).parent().css('overflow', 'auto');
@@ -511,10 +506,10 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
-        // 3. add hr between section
+        // 3.
         $('main section + h3, aside > nav + .r3-accordion-B').before('<hr>');
 
-        // 4. add contextual title based on the main > div[data-title-r3]
+        // 4.
         {
             const $titles = $('main > div');
             let title, id;
@@ -528,7 +523,7 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
-        //5. added ':' in header table:
+        //5.
         {
             const $firstLineTableinHeader = $('header table td:first-child');
             for (let i = 0; i < $firstLineTableinHeader.length; i++) {
