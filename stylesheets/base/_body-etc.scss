@@ -45,7 +45,8 @@ hr {
     border-top: 1px solid #aaa;
 }
 img {
-    border-radius: 6px
+    border-radius: 6px;
+    border: solid thin $img-border-color;
 }
 p {
     line-height: 18px;
