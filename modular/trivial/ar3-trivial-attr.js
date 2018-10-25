@@ -14,9 +14,11 @@ https://arza-3d.github.io/ar3.js/
     if (!isConstructed) {
 
         // 1.
-        const isEnglish = $('body').attr('lang') == 'en';
-        if (!isEnglish) {
-            $('i').attr('lang', 'en');
+        {
+            const isEnglish = $('body').attr('lang') == 'en';
+            if (!isEnglish) {
+                $('i').attr('lang', 'en');
+            }
         }
 
         // 2.
@@ -30,6 +32,24 @@ https://arza-3d.github.io/ar3.js/
 
         // 5.
         $("a[href^='http']").attr('target', '_blank');
+
+        // 6.
+        {
+
+            function youtubeResize() {
+                let youtube = document.querySelector("iframe[src*='youtube']"),
+                    maxWidth = $(youtube).parents('section').width() * 0.8,
+                    maxHeight = (9/16)*maxWidth;
+
+                $("iframe[src*='youtube']").css({
+                    'width' : maxWidth + 'px',
+                    'height' : maxHeight + 'px'
+                });
+            }
+            youtubeResize();
+
+            window.addEventListener('resize', youtubeResize);
+        }
 
     }
 

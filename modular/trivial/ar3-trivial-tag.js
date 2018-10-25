@@ -45,7 +45,7 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
-        //5.
+        // 5.
         {
             const $firstLineTableinHeader = $('header table td:first-child');
             for (let i = 0; i < $firstLineTableinHeader.length; i++) {
@@ -53,6 +53,7 @@ https://arza-3d.github.io/ar3.js/
                 $($firstLineTableinHeader[i]).html(text + '<b style="float:right">&nbsp;:</b>');
             }
         }
+
     }
 
     $('body').addClass(constructNote);

@@ -29,7 +29,6 @@ https://arza-3d.github.io/ar3.js/
                     arrayInJSON = $($tableJSON[i]).attr('data-JSON-r3');
 
                 if (objectInJSON[arrayInJSON] !== undefined) {
-                    console.log(objectInJSON[arrayInJSON]);
                     // table row loop
                     let arrayInJSONlength = objectInJSON[arrayInJSON].length;
                     for (let j = 0; j < arrayInJSONlength; j++) {

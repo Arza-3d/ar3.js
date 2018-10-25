@@ -46,7 +46,7 @@ https://arza-3d.github.io/ar3.js/
         function dynamicAside() {
             let topLimit = topCoord($main[0]);
             let bottomLimit = topLimit + $main[0].scrollHeight - window.innerHeight;
-            console.log(leftCoord($main[0]));
+
             if (scrollTopCoord() < topLimit) {
                 $aside.removeClass('r3-dynamic-on')
                       .removeClass('r3-dynamic-after');

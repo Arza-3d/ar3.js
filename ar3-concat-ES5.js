@@ -445,9 +445,11 @@ https://arza-3d.github.io/ar3.js/
     if (!_isConstructed3) {
 
         // 1.
-        var isEnglish = $('body').attr('lang') == 'en';
-        if (!isEnglish) {
-            $('i').attr('lang', 'en');
+        {
+            var isEnglish = $('body').attr('lang') == 'en';
+            if (!isEnglish) {
+                $('i').attr('lang', 'en');
+            }
         }
 
         // 2.
@@ -461,6 +463,24 @@ https://arza-3d.github.io/ar3.js/
 
         // 5.
         $("a[href^='http']").attr('target', '_blank');
+
+        // 6.
+        {
+            var youtubeResize = function youtubeResize() {
+                var youtube = document.querySelector("iframe[src*='youtube']"),
+                    maxWidth = $(youtube).parents('section').width() * 0.8,
+                    maxHeight = 9 / 16 * maxWidth;
+
+                $("iframe[src*='youtube']").css({
+                    'width': maxWidth + 'px',
+                    'height': maxHeight + 'px'
+                });
+            };
+
+            youtubeResize();
+
+            window.addEventListener('resize', youtubeResize);
+        }
     }
 
     $('body').addClass(_constructNote3);
@@ -515,7 +535,7 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
-        //5.
+        // 5.
         {
             var $firstLineTableinHeader = $('header table td:first-child');
             for (var _i5 = 0; _i5 < $firstLineTableinHeader.length; _i5++) {
