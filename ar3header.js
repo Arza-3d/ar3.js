@@ -15,8 +15,8 @@
                     '</a>'+
                 '</div>\n'+
                 '<div class="separator-r3"></div>\n'+
-                '<a id="'+ linkToCurrentRepo +'">'+
-                    'repo'+
+                '<a id="'+ linkToCurrentRepo +'" style="font-size:12px">'+
+                    '🖿 repo'+
                 '</a>'+
                 '<div class="separator-r3"></div>\n'+
             '</nav>\n'+
