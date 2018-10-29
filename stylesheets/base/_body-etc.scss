@@ -23,6 +23,7 @@ pre {
     border-radius: 3px;
     color: map-get($code-color, code-c);
     line-height: normal;
+    font-family: $monospace;
     tab-size: 4;
 }
 code {
