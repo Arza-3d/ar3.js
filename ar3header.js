@@ -5,6 +5,9 @@
         isConstructed = $('body').hasClass(constructNote);
 
     if (!isConstructed) {
+        // add font
+        $('head').append('<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"> ');
+
         var linkToCurrentRepo = 'r3-link-to-current-repo';
 
         $('body').prepend(
