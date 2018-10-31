@@ -18,3 +18,8 @@ a > code {
 #r3-web-logo img {
     border: none;
 }
+
+code code {
+    background-color: transparent;
+    border: none;
+}
