@@ -35,7 +35,6 @@ https://arza-3d.github.io/ar3.js/
 
         // 6.
         {
-
             function youtubeResize() {
                 let youtube = document.querySelector("iframe[src*='youtube']"),
                     maxWidth = $(youtube).parents('section').width() * 0.8,
