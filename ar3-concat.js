@@ -552,6 +552,15 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
+        // 6.
+        {
+            const $address = $('code:contains("📁")', 'main, header');
+            for (let i = 0; i < $address.length; i++) {
+                let addressHTML = $address[i].innerHTML;
+                $address[i].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
+            }
+        }
+
     }
 
     $('body').addClass(constructNote);

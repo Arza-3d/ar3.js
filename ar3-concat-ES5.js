@@ -543,6 +543,15 @@ https://arza-3d.github.io/ar3.js/
                 $($firstLineTableinHeader[_i5]).html(text + '<b style="float:right">&nbsp;:</b>');
             }
         }
+
+        // 6.
+        {
+            var $address = $('code:contains("📁")', 'main, header');
+            for (var _i6 = 0; _i6 < $address.length; _i6++) {
+                var addressHTML = $address[_i6].innerHTML;
+                $address[_i6].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
+            }
+        }
     }
 
     $('body').addClass(_constructNote4);
