@@ -54,6 +54,11 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
+        // 6.
+        {
+            //prolly do it later
+        }
+
     }
 
     $('body').addClass(constructNote);
