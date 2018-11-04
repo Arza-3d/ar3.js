@@ -7,7 +7,7 @@
     if (!isConstructed) {
         // 1. add font
         $('head').append(
-            '<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Sarala" rel="stylesheet"> '
+            '<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Sarala:400,700" rel="stylesheet">'
         );
 
         // 2. add top nav
