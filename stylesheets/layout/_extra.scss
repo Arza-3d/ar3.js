@@ -19,6 +19,10 @@ a > code {
     border: none;
 }
 
+*[title] {
+    cursor: pointer;
+}
+
 code code {
     background-color: transparent;
     border: none;
