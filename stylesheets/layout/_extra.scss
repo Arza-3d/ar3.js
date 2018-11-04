@@ -1,5 +1,9 @@
 $aCodeImgSize : 17px;
 
+*[title] {
+    cursor: pointer;
+}
+
 a > code {
     color: inherit;
     > img {
@@ -9,18 +13,6 @@ a > code {
         margin-right: 3px;
         width: $aCodeImgSize;
     }
-}
-
-.mjx-math {
-    font-size: 11pt;
-}
-
-#r3-web-logo img {
-    border: none;
-}
-
-*[title] {
-    cursor: pointer;
 }
 
 code code {
@@ -38,4 +30,12 @@ ol, ul {
       list-style-type: disc;
     }
 
+}
+
+.mjx-math {
+    font-size: 11pt;
+}
+
+#r3-web-logo img {
+    border: none;
 }
