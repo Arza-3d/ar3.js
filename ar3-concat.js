@@ -537,7 +537,7 @@ https://arza-3d.github.io/ar3.js/
                 title = $($titles[i]).attr('data-title-r3');
 
                 id = $($titles[i]).find('> h2:first-child').attr('id');
-                $('aside > a[href="#'+ id +'"]').prev('.r3-accordion-B')
+                $('aside > a[href="#'+ id +'"]').prev('.r3-accordion-B, hr')
                     .before('<h3>'+ title +'</h3>');
             }
         }
