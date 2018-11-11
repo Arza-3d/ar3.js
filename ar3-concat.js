@@ -472,7 +472,6 @@ https://arza-3d.github.io/ar3.js/
 
         // 6.
         {
-
             function youtubeResize() {
                 let youtube = document.querySelector("iframe[src*='youtube']"),
                     maxWidth = $(youtube).parents('section').width() * 0.8,
@@ -527,7 +526,7 @@ https://arza-3d.github.io/ar3.js/
         }
 
         // 3.
-        $('main section + h3, aside > nav + .r3-accordion-B').before('<hr>');
+        $('main section + h3, aside > nav + .r3-accordion-B, aside > a + a').before('<hr>');
 
         // 4.
         {
