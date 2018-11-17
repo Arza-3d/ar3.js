@@ -511,7 +511,7 @@ https://arza-3d.github.io/ar3.js/
     if (!isConstructed) {
 
         // 1.
-        $('table').wrap('<div style="overflow:auto">');
+        $('table, pre').wrap('<div style="overflow:auto">');
 
         // 2.
         {
