@@ -264,12 +264,12 @@ https://arza-3d.github.io/ar3.js/
         $('.r3-short-code').click(function() {
             if ($(this).hasClass('r3-active')) {
                 this.innerHTML= text2;
-                $(this).prev().delay(300).toggle(600);
-                $(this).next().toggle(300);
+                $(this).prev().children().delay(300).toggle(600);
+                $(this).next().children().toggle(300);
             } else {
                 this.innerHTML= text1;
-                $(this).prev().toggle(300);
-                $(this).next().delay(300).toggle(600);
+                $(this).prev().children().toggle(300);
+                $(this).next().children().delay(300).toggle(600);
             }
             $(this).toggleClass('r3-active');
         });
