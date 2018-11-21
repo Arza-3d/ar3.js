@@ -233,12 +233,12 @@ https://arza-3d.github.io/ar3.js/
 // r3-separator
 
 /*#######################
-// ar3-short-code-2.js  #
+// ar3-short-code-2b.js  #
 #######################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/short-code/ar3-short-code-2.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/short-code/ar3-short-code-2b.js"></script>
 --------------------------*/
 
 {
@@ -531,14 +531,17 @@ https://arza-3d.github.io/ar3.js/
         // 4.
         {
             const $titles = $('main > div');
-            let title, id;
+            let title, id, $target;
 
             for (let i = 0; i < $titles.length; i++) {
                 title = $($titles[i]).attr('data-title-r3');
-
                 id = $($titles[i]).find('> h2:first-child').attr('id');
-                $('aside > a[href="#'+ id +'"]').prev('.r3-accordion-B, hr')
-                    .before('<h3>'+ title +'</h3>');
+                $target = $('aside > a[href="#'+ id +'"]');
+                if ($target.prev('.r3-accordion-B').length > 0) {
+                    $target.prev().before('<h3>'+ title +'</h3>');
+                } else {
+                    $target.before('<h3>'+ title +'</h3>');
+                }
             }
         }
 
