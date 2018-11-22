@@ -1,10 +1,9 @@
 $sans-serif : 'Sarala', Tahoma, calibri arial, sans-serif;
 //$sans-serif: 'Niramit', sans-serif;
 $sans-serif-form: calibri, arial, sans-serif;
-$sans-serif-3: "DejaVu Sans", "Trebuchet MS", arial, sans-serif;
 $monospace : 'Roboto Mono', Consolas, monospace;
 
 $main-font: (
     h2-font: $sans-serif-form,
-    h3-font: $sans-serif-3
+    h3-font: $sans-serif
 );
