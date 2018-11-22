@@ -22,8 +22,9 @@ pre {
     border: thin solid map-get($code-color, code-border);
     border-radius: 3px;
     color: map-get($code-color, code-c);
-    line-height: normal;
     font-family: $monospace;
+    line-height: normal;
+    max-height: 360px;
     tab-size: 4;
 }
 code {
