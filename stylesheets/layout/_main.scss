@@ -16,6 +16,7 @@ main {
 
     > div {
         $main-div-left-padding : 2%;
+        $section-side-padding : 15px;
 
         margin-top: 0;
         margin-bottom: 0;
@@ -24,9 +25,18 @@ main {
         > section {
             border: 1px solid map-get($main-color, section-border);
             border-radius: 0 0 10px 10px;
-            padding: 15px 10px 10px 15px;
+            padding: $section-side-padding 10px 10px $section-side-padding;
             background-color: map-get($main-color, section-bg);
             overflow: hidden;
+
+            > h4 {
+                background-color: map-get($main-color, h3-bg);
+                color: map-get($main-color, h3);
+                font-weight: normal;
+                margin-left: -15px;
+                padding: 3px 3px 3px $section-side-padding;
+                width: fit-content;
+            }
         }
 
         > h2 {
