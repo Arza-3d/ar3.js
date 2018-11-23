@@ -22,7 +22,7 @@ https://arza-3d.github.io/ar3.js/
                   varTag = 'span',
                   var2Tag= 'var',
                   varClass = 'green-r3',
-                  var2Class = "grey-r3"
+                  var2Class = "grey-r3",
                   functTag = 'mark',
                   commentTag = 'var',
                   commentClass = 'comment-r3';

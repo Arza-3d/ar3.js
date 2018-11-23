@@ -458,8 +458,10 @@ https://arza-3d.github.io/ar3.js/
                 varTag = 'span',
                 var2Tag = 'var',
                 varClass = 'green-r3',
-                var2Class = "grey-r3";
-            functTag = 'mark', commentTag = 'var', commentClass = 'comment-r3';
+                var2Class = "grey-r3",
+                functTag = 'mark',
+                commentTag = 'var',
+                commentClass = 'comment-r3';
 
             for (var _i4 = 0; _i4 < $codEx.length; _i4++) {
 
