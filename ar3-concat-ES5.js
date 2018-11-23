@@ -391,6 +391,121 @@ https://arza-3d.github.io/ar3.js/
 
 // r3-separator
 
+/*###############################
+// ar3-cpp-ue4-code-wrapper.js  #
+###############################*/
+/*--------------------------
+https://arza-3d.github.io/ar3.js/
+
+<script src="https://raw.githack.com/Arza-3d/ar3.js/modular/code-wrapper/ar3-cpp-ue4-code-wrapper.js"></script>
+--------------------------*/
+
+{
+    var _constructNote3 = 'r3-cpp-ue4-code-wrapper_done',
+        _isConstructed3 = $('body').hasClass(_constructNote3);
+
+    {
+
+        var $codEx = $('.cpp-codex-r3');
+        if ($codEx.length > 0) {
+            var wrapTag = function wrapTag(text, tag, css_class) {
+                if (css_class != null) {
+                    return '<' + tag + ' class="' + css_class + '">' + text + '</' + tag + '>';
+                } else {
+                    return '<' + tag + '>' + text + '</' + tag + '>';
+                }
+            };
+
+            var wrapFromAttr = function wrapFromAttr(targText, targHtml, attr_, tag_, class_) {
+                var words = $(targHtml).attr(attr_);
+                if (words) {
+                    words = words.split(',');
+
+                    var rx_ = void 0;
+                    for (var _j2 = 0; _j2 < words.length; _j2++) {
+                        rx_ = new RegExp('\\b' + words[_j2] + '\\b', 'g');
+                        targText = targText.replace(rx_, wrapTag(words[_j2], tag_, class_));
+                    }
+                }
+                return targText;
+            };
+
+            var wrapSinglComment = function wrapSinglComment(targetText, tagComment_, classComment_) {
+                var comments = targetText.match(/\/\/.*$/mg);
+                if (comments.length > 0) {
+                    for (var _i3 = 0; _i3 < comments.length; _i3++) {
+                        targetText = targetText.replace(comments[_i3], wrapTag(comments[_i3], tagComment_, classComment_));
+                    }
+                }
+                return targetText;
+            };
+
+            var wrapMultComment = function wrapMultComment(targetText, tagComment_, classComment_) {
+                targetText = targetText.replace(/\/\*/gm, '<' + tagComment_ + ' class="' + classComment_ + '">/*');
+                targetText = targetText.replace(/\*\//gm, '*/</' + tagComment_ + '>');
+                return targetText;
+            };
+
+            var wrapComment = function wrapComment(targetText) {
+                targetText = wrapSinglComment(targetText, commentTag, commentClass);
+                targetText = wrapMultComment(targetText, commentTag, commentClass);
+                return targetText;
+            };
+
+            var classTag = 'var',
+                classClass = 'blue-r3',
+                constrTag = 'span',
+                varTag = 'span',
+                var2Tag = 'var',
+                varClass = 'green-r3',
+                var2Class = "grey-r3";
+            functTag = 'mark', commentTag = 'var', commentClass = 'comment-r3';
+
+            for (var _i4 = 0; _i4 < $codEx.length; _i4++) {
+
+                var codText = $codEx[_i4].innerHTML;
+
+                {
+                    codText = codText.replace(/\>/g, '&gt;');
+                    codText = codText.replace(/\</g, '&lt;');
+                }
+
+                {
+                    var baseClass = $($codEx[_i4]).attr('data-cpp-class-r3'),
+                        rxBaseClass = void 0;
+
+                    codText = codText.replace(baseClass + '\.h', wrapTag(baseClass, classTag, classClass));
+
+                    baseClass = 'A' + baseClass;
+                    rxBaseClass = new RegExp('\\s' + baseClass, 'g');
+                    codText = codText.replace(rxBaseClass, ' ' + wrapTag(baseClass, classTag, classClass));
+
+                    codText = codText.replace('::' + baseClass, '::' + wrapTag(baseClass, constrTag, classClass));
+
+                    rxBaseClass = new RegExp('&amp;' + baseClass, 'g');
+                    codText = codText.replace(rxBaseClass, '&amp;' + wrapTag(baseClass, classTag, classClass));
+                }
+
+                codText = wrapFromAttr(codText, $codEx[_i4], 'data-cpp-funct-r3', functTag);
+                codText = wrapFromAttr(codText, $codEx[_i4], 'data-var-funct-r3', varTag, varClass);
+                codText = wrapFromAttr(codText, $codEx[_i4], 'data-var2-funct-r3', var2Tag, var2Class);
+
+                {
+                    codText = wrapComment(codText);
+                    codText = codText.replace(/\n/g, '\n<br>');
+                    codText = codText.replace(/\t/g, '&emsp;&emsp;');
+                }
+
+                $codEx[_i4].innerHTML = codText;
+            }
+        }
+    }
+
+    $('body').addClass(_constructNote3);
+}
+
+// r3-separator
+
 /*######################
 // ar3-accordion-B.js  #
 ######################*/
@@ -439,10 +554,10 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
-    var _constructNote3 = 'ar3-trivial-attr_is_constructed',
-        _isConstructed3 = $('body').hasClass(_constructNote3);
+    var _constructNote4 = 'ar3-trivial-attr_is_constructed',
+        _isConstructed4 = $('body').hasClass(_constructNote4);
 
-    if (!_isConstructed3) {
+    if (!_isConstructed4) {
 
         // 1.
         {
@@ -483,7 +598,7 @@ https://arza-3d.github.io/ar3.js/
         }
     }
 
-    $('body').addClass(_constructNote3);
+    $('body').addClass(_constructNote4);
 }
 
 // r3-separator
@@ -498,10 +613,10 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
-    var _constructNote4 = 'ar3-trivial-tag_is_constructed',
-        _isConstructed4 = $('body').hasClass(_constructNote4);
+    var _constructNote5 = 'ar3-trivial-tag_is_constructed',
+        _isConstructed5 = $('body').hasClass(_constructNote5);
 
-    if (!_isConstructed4) {
+    if (!_isConstructed5) {
 
         // 1.
         $('table, pre').wrap('<div style="overflow:auto">');
@@ -509,11 +624,11 @@ https://arza-3d.github.io/ar3.js/
         // 2.
         {
             var $img = $('img').not('code > img, h3 > img');
-            for (var _i3 = 0; _i3 < $img.length; _i3++) {
-                if ($($img[_i3]).parent().hasClass('relative-container-r3')) {
-                    $($img[_i3]).parent().css('overflow', 'auto');
+            for (var _i5 = 0; _i5 < $img.length; _i5++) {
+                if ($($img[_i5]).parent().hasClass('relative-container-r3')) {
+                    $($img[_i5]).parent().css('overflow', 'auto');
                 } else {
-                    $($img[_i3]).wrap('<div style="overflow:auto">');
+                    $($img[_i5]).wrap('<div style="overflow:auto">');
                 }
             }
         }
@@ -528,9 +643,9 @@ https://arza-3d.github.io/ar3.js/
                 _id2 = void 0,
                 $target = void 0;
 
-            for (var _i4 = 0; _i4 < $titles.length; _i4++) {
-                title = $($titles[_i4]).attr('data-title-r3');
-                _id2 = $($titles[_i4]).find('> h2:first-child').attr('id');
+            for (var _i6 = 0; _i6 < $titles.length; _i6++) {
+                title = $($titles[_i6]).attr('data-title-r3');
+                _id2 = $($titles[_i6]).find('> h2:first-child').attr('id');
                 $target = $('aside > a[href="#' + _id2 + '"]');
                 if ($target.prev('.r3-accordion-B').length > 0) {
                     $target.prev().before('<h3>' + title + '</h3>');
@@ -543,21 +658,21 @@ https://arza-3d.github.io/ar3.js/
         // 5.
         {
             var $firstLineTableinHeader = $('header table td:first-child');
-            for (var _i5 = 0; _i5 < $firstLineTableinHeader.length; _i5++) {
-                var text = $($firstLineTableinHeader[_i5]).html();
-                $($firstLineTableinHeader[_i5]).html(text + '<b style="float:right">&nbsp;:</b>');
+            for (var _i7 = 0; _i7 < $firstLineTableinHeader.length; _i7++) {
+                var text = $($firstLineTableinHeader[_i7]).html();
+                $($firstLineTableinHeader[_i7]).html(text + '<b style="float:right">&nbsp;:</b>');
             }
         }
 
         // 6.
         {
             var $address = $('code:contains("📁")', 'main, header');
-            for (var _i6 = 0; _i6 < $address.length; _i6++) {
-                var addressHTML = $address[_i6].innerHTML;
-                $address[_i6].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
+            for (var _i8 = 0; _i8 < $address.length; _i8++) {
+                var addressHTML = $address[_i8].innerHTML;
+                $address[_i8].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
             }
         }
     }
 
-    $('body').addClass(_constructNote4);
+    $('body').addClass(_constructNote5);
 }
