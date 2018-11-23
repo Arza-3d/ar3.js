@@ -1,0 +1,96 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.text.html.basic':
+   'learning note r3':
+     'prefix': 'r3-note'
+     'body': """
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <title>ar3.js documentation</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://image.ibb.co/nqbdHJ/titlelogo.png" rel="icon">
+     <link href="https://raw.githack.com/Arza-3d/ar3.js/master/stylesheets/ar3.min.css" rel="stylesheet" type="text/css">
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   </head>
+   <body
+     data-repo-r3="https://github.com/Arza-3d/#"
+     data-headers-r3="> div > h2| > div > h3 "
+     data-accordion-r3="main > div > h3"
+   >
+     <script src="https://raw.githack.com/Arza-3d/ar3.js/master/ar3header.js"></script>
+     <header>
+       <h1>...title 1</h1>
+       <h4>...title 2</h4>
+       <table>
+         <tbody>
+           <tr>
+             <td>author</td>
+             <td>Forest Guhareza</td>
+           </tr>
+           <tr>
+             <td>project status</td>
+             <td></td>
+           </tr>
+           <tr>
+             <td>final file</td>
+             <td></td>
+           </tr>
+         </tbody>
+       </table>
+     </header>
+     <main class="aside-nav-target-r3">
+       <div data-title-r3="...context">
+         <h2>...title too</h2>
+
+         <h3>...title 3</h3>
+         <section>
+
+         </section>
+       </div>
+     </main>
+
+     <script src="https://raw.githack.com/Arza-3d/ar3.js/master/ar3.min.js"></script>
+   </body>
+ </html>
+     """
+
+     'tab r3':
+       'prefix': 'r3-tab'
+       'body': """
+<div class="tab-r3">
+  <nav>
+    <a>__</a>
+    <a>__</a>
+  </nav>
+  <div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+  </div>
+</div>
+       """
