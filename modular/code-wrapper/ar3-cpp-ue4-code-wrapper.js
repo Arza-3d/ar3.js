@@ -52,8 +52,11 @@ https://arza-3d.github.io/ar3.js/
             function wrapSinglComment(targetText, tagComment_, classComment_) {
                 let comments = targetText.match(/\/\/.*$/mg);
                 if (comments.length > 0) {
+                  let setComments = new Set(comments);
+                  comments = [...setComments];
                     for (let i = 0; i < comments.length; i++) {
-                        targetText = targetText.replace(comments[i], wrapTag(comments[i], tagComment_, classComment_));
+                        let rexComment = new RegExp(comments[i], 'g');
+                        targetText = targetText.replace(rexComment, wrapTag(comments[i], tagComment_, classComment_));
                     }
                 }
                 return targetText;
@@ -87,10 +90,12 @@ https://arza-3d.github.io/ar3.js/
                     codText = codText.replace(baseClass + '\.h', wrapTag(baseClass, classTag, classClass));
 
                     baseClass = 'A' + baseClass;
-                    rxBaseClass = new RegExp('\\s' + baseClass, 'g');
-                    codText = codText.replace(rxBaseClass, ' ' + wrapTag(baseClass, classTag, classClass));
+                    rxBaseClass = new RegExp(' ' + baseClass + '::', 'g');
+                    codText = codText.replace(rxBaseClass, ' ' + wrapTag(baseClass, classTag, classClass) + '::');
 
-                    codText = codText.replace('::' + baseClass, '::' + wrapTag(baseClass, constrTag, classClass));
+                    codText = codText.replace(baseClass + ' : public', ' ' + wrapTag(baseClass, classTag, classClass) + ' : public');
+
+                    codText = codText.replace(baseClass + '()', wrapTag(baseClass, constrTag, classClass) + '()');
 
                     rxBaseClass = new RegExp('&amp;' + baseClass, 'g');
                     codText = codText.replace(rxBaseClass, '&amp;' + wrapTag(baseClass, classTag, classClass));
