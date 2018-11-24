@@ -449,15 +449,22 @@
               This are things that the code will do:
           </p>
           <ol>
-            <li>define the tag target with class <code>cpp-codex-r3</code></li>
-            <li>wrap the base class defined in attribute <code>data-cpp-class-r3</code></li>
-            <li>wrap the highligted function defined in attribute <code>data-cpp-funct-r3</code></li>
-            <li>wrap the custom variable defined in attribute <code>data-cpp-var-r3</code></li>
-            <li>wrap the optional custom variable defined in attribute <code>data-cpp-var2-r3</code></li>
-            <li>wrap the input string defined in attribute <code>data-cpp-input-r3</code></li>
-            <li>automatically wrap comment</li>
-            <li>change newline with <code>&lt;br&gt;</code></li>
-            <li>automatically add tab</li>
+            <li>define the tag target with class <code>cpp-codex-r3</code>,<br> then do this in target text:</li>
+            <ol>
+              <li>change <code>&lt;</code> to <code>&amp;lt;</code>, then <code>&gt;</code> to <code>&amp;gt;</code></li>
+              <li>wrap the base class defined in attribute <code>data-cpp-class-r3</code></li>
+              <li>wrap the highligted function defined in attribute <code>data-cpp-funct-r3</code></li>
+              <li>wrap the custom variable defined in attribute <code>data-cpp-var-r3</code></li>
+              <li>wrap the optional custom variable defined in attribute <code>data-cpp-var2-r3</code></li>
+              <li>wrap the input string defined in attribute <code>data-cpp-input-r3</code></li>
+            </ol>
+            <li>then do this for other trivial things:</li>
+            <ol>
+              <li>automatically wrap comment</li>
+              <li>automatically add tab</li>
+              <li>change newline with <code>&lt;br&gt;</code></li>
+            </ol>
+
           </ol>
         </section>
 
