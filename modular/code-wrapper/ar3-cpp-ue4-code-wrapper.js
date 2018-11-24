@@ -11,8 +11,7 @@ https://arza-3d.github.io/ar3.js/
     const constructNote = 'r3-cpp-ue4-code-wrapper_done',
           isConstructed = $('body').hasClass(constructNote);
 
-    {
-
+    (function(){
         const $codEx = $('.cpp-codex-r3');
         if ($codEx.length > 0) {
 
@@ -157,7 +156,7 @@ https://arza-3d.github.io/ar3.js/
 
             }
         }
-    }
+    })();
 
     $('body').addClass(constructNote);
 }
