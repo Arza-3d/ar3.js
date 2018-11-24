@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>ar3.js documentation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://image.ibb.co/nqbdHJ/titlelogo.png" rel="icon">
+    <link href="https://raw.githack.com/Arza-3d/ar3.js/master/stylesheets/ar3.min.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body
+    data-repo-r3="https://github.com/Arza-3d/#"
+    data-headers-r3="> div > h2| > div > h3 "
+    data-accordion-r3="main > div > h3"
+  >
+    <script src="https://raw.githack.com/Arza-3d/ar3.js/master/ar3header.js"></script>
+    <header>
+      <h1>...title 1</h1>
+      <h4>...title 2</h4>
+
+    </header>
+    <main class="aside-nav-target-r3">
+      <div data-title-r3="...context">
+        <h2>...title too</h2>
+
+        <h3>...title 3</h3>
+        <section  class="cpp-codexes-r3" data-cpp-class-r3="SprintJumpCharacter" data-cpp-funct-r3="GetXYSpeed,Sprint,StopSprinting"  data-cpp-var-r3="DefaultMaxWalkSpeed,DefaultJumpZVelocity,MaxSprintSpeed,SprintJumpZVelocity,GradientJumpToSpeed"
+        data-cpp-var2-r3="bIsSprinting,bIsInSprintJump"  data-cpp-input-r3 ="SecondaryInput">
+            <pre> +ActionMappings=(ActionName="SecondaryInput",Key=LeftShift,bShift=False,bCtrl=False,bAlt=False,bCmd=False)</pre>
+
+                <pre>
+                  #pragma once
+
+                  #include "CoreMinimal.h"
+                  #include "StudyJumpMechanicCharacter.h"
+                  #include "SprintJumpCharacter.generated.h"
+
+                  /**
+                   * Character class with built-in sprint jump ability
+                   */
+                  UCLASS()
+                  class STUDYJUMPMECHANIC_API ASprintJumpCharacter : public AStudyJumpMechanicCharacter
+                  {
+                    GENERATED_BODY()
+
+                    float GradientJumpToSpeed;
+
+                    float DefaultMaxWalkSpeed;
+
+                    float DefaultJumpZVelocity;
+
+                    void SetupPlayerInputComponent(UInputComponent * PlayerInputComponent) override;
+
+                  public:
+                    ASprintJumpCharacter();
+
+                    void Jump() override;
+
+                    void OnJumped_Implementation() override;
+
+                    void Landed(const FHitResult & Hit) override;
+
+                  protected:
+
+                    UPROPERTY(EditAnywhere, Category = "Jump")
+                    float MaxSprintSpeed;
+
+                    UPROPERTY(EditAnywhere, Category = "Jump")
+                    float SprintJumpZVelocity;
+
+                    // is meant to be used for animBP:
+                    UPROPERTY(BlueprintReadOnly, Category = "Jump")
+                    bool bIsSprinting;
+                                                            //testTEEEEEEEEEEEEEEEEEEEEEEEEEEEESSSSSSS
+                                              //testTEEEEEEEEEEEEEEEEEEEEEEEEEEEESSSSSSS
+                    // is meant to be used for animBP:
+                    UPROPERTY(BlueprintReadOnly, Category = "Jump")
+                    bool bIsInSprintJump;
+
+                    void Sprint();
+
+                    void StopSprinting();
+
+                    float GetXYSpeed();
+
+                  };
+                </pre>
+<hr>
+                <pre>
+                  // Part of jump mechanic study in https://arza-3d.github.io/UE4-jump-mechanic/
+
+                  #include "SprintJumpCharacter.h"
+                  #include "Components/InputComponent.h"
+                  #include "GameFramework/CharacterMovementComponent.h"
+                  #include "Components/CapsuleComponent.h"
+                  #include "Kismet/KismetMathLibrary.h"
+
+                  ASprintJumpCharacter::ASprintJumpCharacter()
+                  {
+                  	DefaultMaxWalkSpeed = GetCharacterMovement()->MaxWalkSpeed;
+                  	DefaultJumpZVelocity = GetCharacterMovement()->JumpZVelocity;
+                  	MaxSprintSpeed = 1200.0f;
+                  	SprintJumpZVelocity = 1200.0f;
+                  	GradientJumpToSpeed = (SprintJumpZVelocity - DefaultJumpZVelocity) / (MaxSprintSpeed - DefaultMaxWalkSpeed);
+
+                  	// these are meant to be used for AnimBP:
+                  	bIsSprinting = false;
+                  	bIsInSprintJump = false;
+                  }
+                  //testTEEEEEEEEEEEEEEEEEEEEEEEEEEEESSSSSSS
+    //testTEEEEEEEEEEEEEEEEEEEEEEEEEEEESSSSSSS
+
+                  void ASprintJumpCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+                  {
+                  	Super::SetupPlayerInputComponent(InputComponent);
+                  	PlayerInputComponent->BindAction("SecondaryInput", IE_Pressed, this, &ASprintJumpCharacter::Sprint);
+                  	PlayerInputComponent->BindAction("SecondaryInput", IE_Released, this, &ASprintJumpCharacter::StopSprinting);
+                  }
+
+                  float ASprintJumpCharacter::GetXYSpeed()
+                  {
+                  	FVector ActorVelocity = GetCapsuleComponent()->GetPhysicsLinearVelocity();
+                  	float xSpeedSquared = UKismetMathLibrary::Square(ActorVelocity.Component(0));
+                  	float ySpeedSquared = UKismetMathLibrary::Square(ActorVelocity.Component(1));
+                  	return UKismetMathLibrary::Sqrt(xSpeedSquared + ySpeedSquared);
+                  }
+
+                  void ASprintJumpCharacter::Sprint()
+                  {
+                  	GetCharacterMovement()->MaxWalkSpeed = MaxSprintSpeed;
+                  	bIsSprinting = true;
+                  }
+
+                  void ASprintJumpCharacter::StopSprinting()
+                  {
+                  	GetCharacterMovement()->MaxWalkSpeed = DefaultMaxWalkSpeed;
+                  	bIsSprinting = false;
+                  }
+
+                  void ASprintJumpCharacter::OnJumped_Implementation()
+                  {
+                  	bIsInSprintJump = (bIsSprinting) ? true : false;
+                  }
+
+                  void ASprintJumpCharacter::Landed(const FHitResult & Hit)
+                  {
+                  	GetCharacterMovement()->JumpZVelocity = DefaultJumpZVelocity;
+                  	bIsInSprintJump = false;
+                  }
+
+                  void ASprintJumpCharacter::Jump()
+                  {
+                  	if (GetXYSpeed() > DefaultMaxWalkSpeed && bIsSprinting)
+                  	{
+                  		float NewJumpZVelocity = ((GetXYSpeed() - DefaultMaxWalkSpeed) * GradientJumpToSpeed) + DefaultJumpZVelocity;
+                  		GetCharacterMovement()->JumpZVelocity = NewJumpZVelocity;
+                  	}
+                  	else
+                  	{
+                  		GetCharacterMovement()->JumpZVelocity = DefaultJumpZVelocity;
+                  	}
+
+                  	Super::Jump();
+                  }
+                </pre>
+
+        </section>
+      </div>
+    </main>
+
+<!--
+    <script src="https://raw.githack.com/Arza-3d/ar3.js/master/ar3.min.js"></script>
+  -->
+    <script src="ar3-cpp-ue4-code-wrapper-2.js"></script>
+  </body>
+</html>
