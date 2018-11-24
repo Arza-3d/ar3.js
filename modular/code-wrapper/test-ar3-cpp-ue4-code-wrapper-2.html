@@ -26,6 +26,65 @@
         <h3>...title 3</h3>
         <section  class="cpp-codexes-r3" data-cpp-class-r3="SprintJumpCharacter" data-cpp-funct-r3="GetXYSpeed,Sprint,StopSprinting"  data-cpp-var-r3="DefaultMaxWalkSpeed,DefaultJumpZVelocity,MaxSprintSpeed,SprintJumpZVelocity,GradientJumpToSpeed"
         data-cpp-var2-r3="bIsSprinting,bIsInSprintJump"  data-cpp-input-r3 ="SecondaryInput">
+        <pre>// Part of jump mechanic study in https://arza-3d.github.io/UE4-jump-mechanic/
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "StudyJumpMechanicCharacter.h"
+#include "SprintJumpCharacter.generated.h"
+
+/**
+ * Character class with built-in sprint jump ability
+ */
+UCLASS()
+class STUDYJUMPMECHANIC_API ASprintJumpCharacter : public AStudyJumpMechanicCharacter
+{
+	GENERATED_BODY()
+
+	float GradientJumpToSpeed;
+
+	float DefaultMaxWalkSpeed;
+
+	float DefaultJumpZVelocity;
+
+	void SetupPlayerInputComponent(UInputComponent * PlayerInputComponent) override;
+
+public:
+	ASprintJumpCharacter();
+
+	void Jump() override;
+
+	void OnJumped_Implementation() override;
+
+	void Landed(const FHitResult & Hit) override;
+
+protected:
+
+	// this value should be higher than CharacterMovement.MaxWalkSpeed
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Sprint Jump")
+	float MaxSprintSpeed;
+
+	// this value should be higher than CharacterMovement.JumpZVelocity
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Sprint Jump")
+	float SprintJumpZVelocity;
+
+	void Sprint();
+
+	void StopSprinting();
+
+	float GetXYSpeed();
+
+	// is meant to be used for animBP (optional):
+	UPROPERTY(BlueprintReadOnly, Category = "Sprint Jump")
+	bool bIsSprinting;
+
+	// is meant to be used for animBP --optional:
+	UPROPERTY(BlueprintReadOnly, Category = "Sprint Jump")
+	bool bIsInSprintJump;
+
+};
+</pre>
             <pre> +ActionMappings=(ActionName="SecondaryInput",Key=LeftShift,bShift=False,bCtrl=False,bAlt=False,bCmd=False)</pre>
 
                 <pre>
