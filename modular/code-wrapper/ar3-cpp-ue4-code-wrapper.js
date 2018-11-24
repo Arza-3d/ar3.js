@@ -24,8 +24,9 @@ https://arza-3d.github.io/ar3.js/
                   varClass = 'green-r3',
                   var2Class = "grey-r3",
                   functTag = 'mark',
-                  commentTag = 'var',
-                  commentClass = 'comment-r3';
+                  commentTag = 'span',
+                  commentClass = 'comment-r3',
+                  tabLength = 4;
 
             function wrapTag(text, tag, css_class) {
                 if (css_class != null) {
@@ -74,6 +75,47 @@ https://arza-3d.github.io/ar3.js/
                 return targetText;
             }
 
+            function addTabForFunction(targetText) {
+
+                let sumText;
+                if (/\{/.exec(targetText).length > 0) {
+                    let tab_ = '&nbsp;'.repeat(tabLength);
+
+                    let arrText = targetText.split('\n'),
+                        openCurlyCount = 0,
+                        lineText;
+                    console.log(arrText);
+
+                    for (let i = 0; i < arrText.length; i++) {
+
+                        if (arrText[i].indexOf('{') > -1) {
+                            arrText[i] = tab_.repeat(openCurlyCount) + arrText[i];
+                            openCurlyCount++;
+                            continue;
+                        } else if (arrText[i].indexOf('}') > -1) {
+                            openCurlyCount--;
+                            arrText[i] = tab_.repeat(openCurlyCount) + arrText[i];
+                            continue;
+                        }
+
+                        if (openCurlyCount == 0) {
+                            continue;
+                        }
+
+                        if (arrText[i].indexOf('public:') > -1 || arrText[i].indexOf('protected:') > -1) {
+                            arrText[i] = tab_.repeat(openCurlyCount - 1) + arrText[i];
+                        } else {
+                            arrText[i] = tab_.repeat(openCurlyCount) + arrText[i];
+                        }
+
+                    }
+
+                    targetText = arrText.join('\n');
+                }
+
+                return targetText;
+            }
+
             for (let i = 0; i < $codEx.length; i++) {
 
                 let codText = $codEx[i].innerHTML;
@@ -107,8 +149,8 @@ https://arza-3d.github.io/ar3.js/
 
                 {
                     codText = wrapComment(codText);
+                    codText = addTabForFunction(codText);
                     codText = codText.replace(/\n/g, '\n<br>');
-                    codText = codText.replace(/\t/g, '&emsp;&emsp;');
                 }
 
                 $codEx[i].innerHTML = codText;
