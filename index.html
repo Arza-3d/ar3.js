@@ -464,15 +464,49 @@
               <li>automatically add tab</li>
               <li>change newline with <code>&lt;br&gt;</code></li>
             </ol>
-
+            <p>usage example:</p>
+            <code>
+              &lt;pre class="<mark>cpp-codex-r3</mark>"
+              <br>&nbsp;&nbsp;<mark>data-cpp-class-r3</mark>="<var class="green-r3">BaseClass</var>"
+              <br>&nbsp;&nbsp;<mark>data-cpp-funct-r3</mark>="<var class="green-r3">Function_1,Function_2,Function_n</var>"
+              <br>&nbsp;&nbsp;<mark>data-cpp-var-r3</mark>="<var class="green-r3">Variable_1,Variable_2,Variable_n</var>"
+              <br>&nbsp;&nbsp;<mark>data-cpp-var2-r3</mark>="<var class="green-r3">Variable_a,Variable_b,Variable_c</var>"
+              <br>&nbsp;&nbsp;<mark>data-cpp-input-r3</mark>="<var class="green-r3">Input_1,Input_2,Input_n</var>"
+              <br>&gt;
+              <br>&nbsp;&nbsp;<span class="comment-r3">// code example 1</span>
+              <br>&lt;/pre&gt;
+            </code>
           </ol>
         </section>
 
         <h3>UE4 C++ code wrapper (2nd update)</h3>
         <section>
           <a href="https://github.com/Arza-3d/ar3.js/blob/master/modular/code-wrapper/ar3-cpp-ue4-code-wrapper-2.js"><code>ar3-cpp-ue4-code-wrapper-2.js</code></a>
-          <p>Code wrapper now has global selector, that is defined with <code>class="cpp-codexes-r3"</code>, attribute names definition are the same with previous code.
+          <p>
+            Code wrapper now has global selector, that is defined with <code>class="cpp-codexes-r3"</code>, attribute names definition are the same with previous code. Below is the usage example:
           </p>
+          <code>
+            &lt;div class="<mark>cpp-codexes-r3</mark>"
+            <br>&nbsp;&nbsp;data-cpp-class-r3="<var class="green-r3">BaseClass</var>"
+            <br>&nbsp;&nbsp;data-cpp-funct-r3="<var class="green-r3">Function_1,Function_2,Function_n</var>"
+            <br>&nbsp;&nbsp;data-cpp-var-r3="<var class="green-r3">Variable_1,Variable_2,Variable_n</var>"
+            <br>&nbsp;&nbsp;data-cpp-var2-r3="<var class="green-r3">Variable_a,Variable_b,Variable_c</var>"
+            <br>&nbsp;&nbsp;data-cpp-input-r3="<var class="green-r3">Input_1,Input_2,Input_n</var>"
+            <br>&gt;
+            <br>&nbsp;&nbsp;&lt;pre&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment-r3">// code example 1</span>
+            <br>&nbsp;&nbsp;&lt;/pre&gt;
+            <br>
+            <br>&nbsp;&nbsp;&lt;pre&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment-r3">// code example 2</span>
+            <br>&nbsp;&nbsp;&lt;/pre&gt;
+            <br>
+            <br>&nbsp;&nbsp;&lt;pre&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment-r3">// code example 3</span>
+            <br>&nbsp;&nbsp;&lt;/pre&gt;
+            <br>&lt;/div&gt;
+
+          </code>
         </section>
 
       </div>
