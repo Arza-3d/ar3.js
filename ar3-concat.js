@@ -453,10 +453,17 @@ https://arza-3d.github.io/ar3.js/
             let comments = targetText.match(/\/\/.*$/mg);
             if (comments == null) {return targetText;}
             if (comments.length > 0) {
-              let setComments = new Set(comments);
-              comments = [...setComments];
+                let setComments = new Set(comments);
+                comments = [...setComments];
+
                 for (let i = 0; i < comments.length; i++) {
-                    let rexComment = new RegExp(comments[i], 'g');
+                    let comment_ = comments[i];
+                    if (comments[i].indexOf('(') || comments[i].indexOf(')') ) {
+                        comment_ = comment_.replace(/\(/, '\\(');
+                        comment_ = comment_.replace(/\)/, '\\)');
+                    }
+                    let rexComment = new RegExp(comment_, 'g');
+
                     targetText = targetText.replace(rexComment, wrapTag(comments[i], tagComment_, classComment_));
                 }
             }
@@ -549,7 +556,22 @@ https://arza-3d.github.io/ar3.js/
                         codText = codText.replace(rxBaseClass, '&amp;' + wrapTag(baseClass, classTag, classClass));
                     }
 
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-funct-r3', functTag,); // 1.c.
+                    //codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-funct-r3', functTag,); // 1.c.
+                    // 1.c
+                    {
+                        let words = $($codExes[h]).attr('data-cpp-funct-r3');
+                        if (words) {
+                            words = words.split(',');
+
+                            let rx_;
+                            for (let j = 0; j < words.length; j++) {
+                                rx_ = new RegExp('\\b'+ words[j] + '\\(', 'g');
+                                codText = codText.replace(rx_, wrapTag(words[j], functTag,) + '(');
+                            }
+                        }
+                    }
+
+
                     codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var-r3', varTag, varClass); // 1.d.
                     codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var2-r3', var2Tag, var2Class); // 1.e.
                     codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-input-r3', inputTag, inputClass); // 1.f.
