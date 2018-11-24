@@ -1,6 +1,6 @@
-/*###############################
+/*#################################
 // ar3-cpp-ue4-code-wrapper-1.js  #
-###############################*/
+#################################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
@@ -87,7 +87,6 @@ https://arza-3d.github.io/ar3.js/
                     let arrText = targetText.split('\n'),
                         openCurlyCount = 0,
                         lineText;
-                    console.log(arrText);
 
                     for (let i = 0; i < arrText.length; i++) {
 
