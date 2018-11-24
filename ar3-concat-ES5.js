@@ -394,23 +394,25 @@ https://arza-3d.github.io/ar3.js/
 // r3-separator
 
 /*###############################
-// ar3-cpp-ue4-code-wrapper.js  #
+// ar3-cpp-ue4-code-wrapper-1.js  #
 ###############################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/modular/code-wrapper/ar3-cpp-ue4-code-wrapper.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/modular/code-wrapper/ar3-cpp-ue4-code-wrapper-1.js"></script>
 --------------------------*/
 
 {
     var _constructNote3 = 'r3-cpp-ue4-code-wrapper_done',
         _isConstructed3 = $('body').hasClass(_constructNote3);
 
-    {
-
+    (function () {
         var $codEx = $('.cpp-codex-r3');
         if ($codEx.length > 0) {
-            var wrapTag = function wrapTag(text, tag, css_class) {
+            var wrapTag = function wrapTag(text) {
+                var tag = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'span';
+                var css_class = arguments[2];
+
                 if (css_class != null) {
                     return '<' + tag + ' class="' + css_class + '">' + text + '</' + tag + '>';
                 } else {
@@ -434,6 +436,9 @@ https://arza-3d.github.io/ar3.js/
 
             var wrapSinglComment = function wrapSinglComment(targetText, tagComment_, classComment_) {
                 var comments = targetText.match(/\/\/.*$/mg);
+                if (comments == null) {
+                    return targetText;
+                }
                 if (comments.length > 0) {
                     var setComments = new Set(comments);
                     comments = [].concat(_toConsumableArray(setComments));
@@ -460,6 +465,9 @@ https://arza-3d.github.io/ar3.js/
             var addTabForFunction = function addTabForFunction(targetText) {
 
                 var sumText = void 0;
+                if (/\{/.exec(targetText) == null) {
+                    return targetText;
+                }
                 if (/\{/.exec(targetText).length > 0) {
                     var tab_ = '&nbsp;'.repeat(tabLength);
 
@@ -501,12 +509,14 @@ https://arza-3d.github.io/ar3.js/
                 classClass = 'blue-r3',
                 constrTag = 'span',
                 varTag = 'span',
-                var2Tag = 'var',
+                var2Tag = 'span',
                 varClass = 'green-r3',
                 var2Class = "grey-r3",
                 functTag = 'mark',
                 commentTag = 'span',
                 commentClass = 'comment-r3',
+                inputTag = 'var',
+                inputClass = 'magenta-r3',
                 tabLength = 4;
 
             for (var _i5 = 0; _i5 < $codEx.length; _i5++) {
@@ -537,8 +547,9 @@ https://arza-3d.github.io/ar3.js/
                 }
 
                 codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-funct-r3', functTag);
-                codText = wrapFromAttr(codText, $codEx[_i5], 'data-var-funct-r3', varTag, varClass);
-                codText = wrapFromAttr(codText, $codEx[_i5], 'data-var2-funct-r3', var2Tag, var2Class);
+                codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-var-r3', varTag, varClass);
+                codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-var2-r3', var2Tag, var2Class);
+                codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-input-r3', inputTag, inputClass);
 
                 {
                     codText = wrapComment(codText);
@@ -549,7 +560,7 @@ https://arza-3d.github.io/ar3.js/
                 $codEx[_i5].innerHTML = codText;
             }
         }
-    }
+    })();
 
     $('body').addClass(_constructNote3);
 }
