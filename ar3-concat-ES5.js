@@ -1,5 +1,7 @@
 'use strict';
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 /*######################
 // ar3-aside-nav-2.js  #
 ######################*/
@@ -433,8 +435,11 @@ https://arza-3d.github.io/ar3.js/
             var wrapSinglComment = function wrapSinglComment(targetText, tagComment_, classComment_) {
                 var comments = targetText.match(/\/\/.*$/mg);
                 if (comments.length > 0) {
+                    var setComments = new Set(comments);
+                    comments = [].concat(_toConsumableArray(setComments));
                     for (var _i3 = 0; _i3 < comments.length; _i3++) {
-                        targetText = targetText.replace(comments[_i3], wrapTag(comments[_i3], tagComment_, classComment_));
+                        var rexComment = new RegExp(comments[_i3], 'g');
+                        targetText = targetText.replace(rexComment, wrapTag(comments[_i3], tagComment_, classComment_));
                     }
                 }
                 return targetText;
@@ -452,6 +457,46 @@ https://arza-3d.github.io/ar3.js/
                 return targetText;
             };
 
+            var addTabForFunction = function addTabForFunction(targetText) {
+
+                var sumText = void 0;
+                if (/\{/.exec(targetText).length > 0) {
+                    var tab_ = '&nbsp;'.repeat(tabLength);
+
+                    var arrText = targetText.split('\n'),
+                        openCurlyCount = 0,
+                        lineText = void 0;
+                    console.log(arrText);
+
+                    for (var _i4 = 0; _i4 < arrText.length; _i4++) {
+
+                        if (arrText[_i4].indexOf('{') > -1) {
+                            arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
+                            openCurlyCount++;
+                            continue;
+                        } else if (arrText[_i4].indexOf('}') > -1) {
+                            openCurlyCount--;
+                            arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
+                            continue;
+                        }
+
+                        if (openCurlyCount == 0) {
+                            continue;
+                        }
+
+                        if (arrText[_i4].indexOf('public:') > -1 || arrText[_i4].indexOf('protected:') > -1) {
+                            arrText[_i4] = tab_.repeat(openCurlyCount - 1) + arrText[_i4];
+                        } else {
+                            arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
+                        }
+                    }
+
+                    targetText = arrText.join('\n');
+                }
+
+                return targetText;
+            };
+
             var classTag = 'var',
                 classClass = 'blue-r3',
                 constrTag = 'span',
@@ -460,12 +505,13 @@ https://arza-3d.github.io/ar3.js/
                 varClass = 'green-r3',
                 var2Class = "grey-r3",
                 functTag = 'mark',
-                commentTag = 'var',
-                commentClass = 'comment-r3';
+                commentTag = 'span',
+                commentClass = 'comment-r3',
+                tabLength = 4;
 
-            for (var _i4 = 0; _i4 < $codEx.length; _i4++) {
+            for (var _i5 = 0; _i5 < $codEx.length; _i5++) {
 
-                var codText = $codEx[_i4].innerHTML;
+                var codText = $codEx[_i5].innerHTML;
 
                 {
                     codText = codText.replace(/\>/g, '&gt;');
@@ -473,32 +519,34 @@ https://arza-3d.github.io/ar3.js/
                 }
 
                 {
-                    var baseClass = $($codEx[_i4]).attr('data-cpp-class-r3'),
+                    var baseClass = $($codEx[_i5]).attr('data-cpp-class-r3'),
                         rxBaseClass = void 0;
 
                     codText = codText.replace(baseClass + '\.h', wrapTag(baseClass, classTag, classClass));
 
                     baseClass = 'A' + baseClass;
-                    rxBaseClass = new RegExp('\\s' + baseClass, 'g');
-                    codText = codText.replace(rxBaseClass, ' ' + wrapTag(baseClass, classTag, classClass));
+                    rxBaseClass = new RegExp(' ' + baseClass + '::', 'g');
+                    codText = codText.replace(rxBaseClass, ' ' + wrapTag(baseClass, classTag, classClass) + '::');
 
-                    codText = codText.replace('::' + baseClass, '::' + wrapTag(baseClass, constrTag, classClass));
+                    codText = codText.replace(baseClass + ' : public', ' ' + wrapTag(baseClass, classTag, classClass) + ' : public');
+
+                    codText = codText.replace(baseClass + '()', wrapTag(baseClass, constrTag, classClass) + '()');
 
                     rxBaseClass = new RegExp('&amp;' + baseClass, 'g');
                     codText = codText.replace(rxBaseClass, '&amp;' + wrapTag(baseClass, classTag, classClass));
                 }
 
-                codText = wrapFromAttr(codText, $codEx[_i4], 'data-cpp-funct-r3', functTag);
-                codText = wrapFromAttr(codText, $codEx[_i4], 'data-var-funct-r3', varTag, varClass);
-                codText = wrapFromAttr(codText, $codEx[_i4], 'data-var2-funct-r3', var2Tag, var2Class);
+                codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-funct-r3', functTag);
+                codText = wrapFromAttr(codText, $codEx[_i5], 'data-var-funct-r3', varTag, varClass);
+                codText = wrapFromAttr(codText, $codEx[_i5], 'data-var2-funct-r3', var2Tag, var2Class);
 
                 {
                     codText = wrapComment(codText);
+                    codText = addTabForFunction(codText);
                     codText = codText.replace(/\n/g, '\n<br>');
-                    codText = codText.replace(/\t/g, '&emsp;&emsp;');
                 }
 
-                $codEx[_i4].innerHTML = codText;
+                $codEx[_i5].innerHTML = codText;
             }
         }
     }
@@ -626,11 +674,11 @@ https://arza-3d.github.io/ar3.js/
         // 2.
         {
             var $img = $('img').not('code > img, h3 > img');
-            for (var _i5 = 0; _i5 < $img.length; _i5++) {
-                if ($($img[_i5]).parent().hasClass('relative-container-r3')) {
-                    $($img[_i5]).parent().css('overflow', 'auto');
+            for (var _i6 = 0; _i6 < $img.length; _i6++) {
+                if ($($img[_i6]).parent().hasClass('relative-container-r3')) {
+                    $($img[_i6]).parent().css('overflow', 'auto');
                 } else {
-                    $($img[_i5]).wrap('<div style="overflow:auto">');
+                    $($img[_i6]).wrap('<div style="overflow:auto">');
                 }
             }
         }
@@ -645,9 +693,9 @@ https://arza-3d.github.io/ar3.js/
                 _id2 = void 0,
                 $target = void 0;
 
-            for (var _i6 = 0; _i6 < $titles.length; _i6++) {
-                title = $($titles[_i6]).attr('data-title-r3');
-                _id2 = $($titles[_i6]).find('> h2:first-child').attr('id');
+            for (var _i7 = 0; _i7 < $titles.length; _i7++) {
+                title = $($titles[_i7]).attr('data-title-r3');
+                _id2 = $($titles[_i7]).find('> h2:first-child').attr('id');
                 $target = $('aside > a[href="#' + _id2 + '"]');
                 if ($target.prev('.r3-accordion-B').length > 0) {
                     $target.prev().before('<h3>' + title + '</h3>');
@@ -660,18 +708,18 @@ https://arza-3d.github.io/ar3.js/
         // 5.
         {
             var $firstLineTableinHeader = $('header table td:first-child');
-            for (var _i7 = 0; _i7 < $firstLineTableinHeader.length; _i7++) {
-                var text = $($firstLineTableinHeader[_i7]).html();
-                $($firstLineTableinHeader[_i7]).html(text + '<b style="float:right">&nbsp;:</b>');
+            for (var _i8 = 0; _i8 < $firstLineTableinHeader.length; _i8++) {
+                var text = $($firstLineTableinHeader[_i8]).html();
+                $($firstLineTableinHeader[_i8]).html(text + '<b style="float:right">&nbsp;:</b>');
             }
         }
 
         // 6.
         {
             var $address = $('code:contains("📁")', 'main, header');
-            for (var _i8 = 0; _i8 < $address.length; _i8++) {
-                var addressHTML = $address[_i8].innerHTML;
-                $address[_i8].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
+            for (var _i9 = 0; _i9 < $address.length; _i9++) {
+                var addressHTML = $address[_i9].innerHTML;
+                $address[_i9].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
             }
         }
     }
