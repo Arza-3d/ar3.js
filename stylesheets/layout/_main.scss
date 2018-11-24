@@ -35,7 +35,8 @@ main {
                 font-weight: normal;
                 margin-left: -15px;
                 padding: 3px 3px 3px $section-side-padding;
-                width: fit-content;
+                //width: fit-content; this only works in Chrome
+                display: table; // works everywhere
             }
         }
 
