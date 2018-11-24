@@ -408,6 +408,8 @@ https://arza-3d.github.io/ar3.js/
           isConstructed = $('body').hasClass(constructNote);
 
     (function(){
+
+        // 1. (2nd update)
         const $codExes = $('.cpp-codexes-r3');
         if ($codExes == null) {return;}
 
@@ -515,18 +517,20 @@ https://arza-3d.github.io/ar3.js/
         }
 
         for (let h = 0; h < $codExes.length; h++) {
-            let $codEx = $($codExes[h]).find('pre');
+            let $codEx = $($codExes[h]).find('pre'); // change in 2nd update
             if ($codEx.length > 0) {
 
                 for (let i = 0; i < $codEx.length; i++) {
 
                     let codText = $codEx[i].innerHTML;
 
+                    // 1.a.
                     {
                         codText = codText.replace(/\>/g, '&gt;');
                         codText = codText.replace(/\</g, '&lt;');
                     }
 
+                    // 1.b.
                     {
                         let baseClass = $($codExes[h]).attr('data-cpp-class-r3'),
                             rxBaseClass;
@@ -545,15 +549,15 @@ https://arza-3d.github.io/ar3.js/
                         codText = codText.replace(rxBaseClass, '&amp;' + wrapTag(baseClass, classTag, classClass));
                     }
 
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-funct-r3', functTag,);
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var-r3', varTag, varClass);
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var2-r3', var2Tag, var2Class);
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-input-r3', inputTag, inputClass);
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-funct-r3', functTag,); // 1.c.
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var-r3', varTag, varClass); // 1.d.
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var2-r3', var2Tag, var2Class); // 1.e.
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-input-r3', inputTag, inputClass); // 1.f.
 
                     {
-                        codText = wrapComment(codText);
-                        codText = addTabForFunction(codText);
-                        codText = codText.replace(/\n/g, '\n<br>');
+                        codText = wrapComment(codText); // 2.a.
+                        codText = addTabForFunction(codText); // 2.b.
+                        codText = codText.replace(/\n/g, '\n<br>'); // 2.c.
                     }
 
                     $codEx[i].innerHTML = codText;
@@ -703,6 +707,17 @@ https://arza-3d.github.io/ar3.js/
 
         // 3.
         $('main section + h3, aside > nav + .r3-accordion-B, aside > a + .r3-accordion-B').before('<hr>');
+        {
+            const $h4s = $('main section > h4');
+            if ($h4s != null) {
+                for (let i = 0; i < $h4s.length; i++) {
+                    let $h4 = $($h4s[i]);
+                    if ($h4.prev().length != 0) {
+                        $h4.before('<hr>');
+                    }
+                }
+            }
+        }
 
         // 4.
         {

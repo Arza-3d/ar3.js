@@ -407,6 +407,8 @@ https://arza-3d.github.io/ar3.js/
         _isConstructed3 = $('body').hasClass(_constructNote3);
 
     (function () {
+
+        // 1. (2nd update)
         var $codExes = $('.cpp-codexes-r3');
         if ($codExes == null) {
             return;
@@ -522,18 +524,20 @@ https://arza-3d.github.io/ar3.js/
         }
 
         for (var h = 0; h < $codExes.length; h++) {
-            var $codEx = $($codExes[h]).find('pre');
+            var $codEx = $($codExes[h]).find('pre'); // change in 2nd update
             if ($codEx.length > 0) {
 
                 for (var _i5 = 0; _i5 < $codEx.length; _i5++) {
 
                     var codText = $codEx[_i5].innerHTML;
 
+                    // 1.a.
                     {
                         codText = codText.replace(/\>/g, '&gt;');
                         codText = codText.replace(/\</g, '&lt;');
                     }
 
+                    // 1.b.
                     {
                         var baseClass = $($codExes[h]).attr('data-cpp-class-r3'),
                             rxBaseClass = void 0;
@@ -552,15 +556,15 @@ https://arza-3d.github.io/ar3.js/
                         codText = codText.replace(rxBaseClass, '&amp;' + wrapTag(baseClass, classTag, classClass));
                     }
 
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-funct-r3', functTag);
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var-r3', varTag, varClass);
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var2-r3', var2Tag, var2Class);
-                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-input-r3', inputTag, inputClass);
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-funct-r3', functTag); // 1.c.
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var-r3', varTag, varClass); // 1.d.
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var2-r3', var2Tag, var2Class); // 1.e.
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-input-r3', inputTag, inputClass); // 1.f.
 
                     {
-                        codText = wrapComment(codText);
-                        codText = addTabForFunction(codText);
-                        codText = codText.replace(/\n/g, '\n<br>');
+                        codText = wrapComment(codText); // 2.a.
+                        codText = addTabForFunction(codText); // 2.b.
+                        codText = codText.replace(/\n/g, '\n<br>'); // 2.c.
                     }
 
                     $codEx[_i5].innerHTML = codText;
@@ -703,6 +707,17 @@ https://arza-3d.github.io/ar3.js/
 
         // 3.
         $('main section + h3, aside > nav + .r3-accordion-B, aside > a + .r3-accordion-B').before('<hr>');
+        {
+            var $h4s = $('main section > h4');
+            if ($h4s != null) {
+                for (var _i7 = 0; _i7 < $h4s.length; _i7++) {
+                    var $h4 = $($h4s[_i7]);
+                    if ($h4.prev().length != 0) {
+                        $h4.before('<hr>');
+                    }
+                }
+            }
+        }
 
         // 4.
         {
@@ -711,9 +726,9 @@ https://arza-3d.github.io/ar3.js/
                 _id2 = void 0,
                 $target = void 0;
 
-            for (var _i7 = 0; _i7 < $titles.length; _i7++) {
-                title = $($titles[_i7]).attr('data-title-r3');
-                _id2 = $($titles[_i7]).find('> h2:first-child').attr('id');
+            for (var _i8 = 0; _i8 < $titles.length; _i8++) {
+                title = $($titles[_i8]).attr('data-title-r3');
+                _id2 = $($titles[_i8]).find('> h2:first-child').attr('id');
                 $target = $('aside > a[href="#' + _id2 + '"]');
                 if ($target.prev('.r3-accordion-B').length > 0) {
                     $target.prev().before('<h3>' + title + '</h3>');
@@ -726,18 +741,18 @@ https://arza-3d.github.io/ar3.js/
         // 5.
         {
             var $firstLineTableinHeader = $('header table td:first-child');
-            for (var _i8 = 0; _i8 < $firstLineTableinHeader.length; _i8++) {
-                var text = $($firstLineTableinHeader[_i8]).html();
-                $($firstLineTableinHeader[_i8]).html(text + '<b style="float:right">&nbsp;:</b>');
+            for (var _i9 = 0; _i9 < $firstLineTableinHeader.length; _i9++) {
+                var text = $($firstLineTableinHeader[_i9]).html();
+                $($firstLineTableinHeader[_i9]).html(text + '<b style="float:right">&nbsp;:</b>');
             }
         }
 
         // 6.
         {
             var $address = $('code:contains("📁")', 'main, header');
-            for (var _i9 = 0; _i9 < $address.length; _i9++) {
-                var addressHTML = $address[_i9].innerHTML;
-                $address[_i9].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
+            for (var _i10 = 0; _i10 < $address.length; _i10++) {
+                var addressHTML = $address[_i10].innerHTML;
+                $address[_i10].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
             }
         }
     }

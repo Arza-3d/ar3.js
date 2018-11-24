@@ -30,6 +30,17 @@ https://arza-3d.github.io/ar3.js/
 
         // 3.
         $('main section + h3, aside > nav + .r3-accordion-B, aside > a + .r3-accordion-B').before('<hr>');
+        {
+            const $h4s = $('main section > h4');
+            if ($h4s != null) {
+                for (let i = 0; i < $h4s.length; i++) {
+                    let $h4 = $($h4s[i]);
+                    if ($h4.prev().length != 0) {
+                        $h4.before('<hr>');
+                    }
+                }
+            }
+        }
 
         // 4.
         {
