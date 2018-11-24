@@ -393,13 +393,13 @@ https://arza-3d.github.io/ar3.js/
 
 // r3-separator
 
-/*###############################
-// ar3-cpp-ue4-code-wrapper-1.js  #
-###############################*/
+/*#################################
+// ar3-cpp-ue4-code-wrapper-2.js  #
+#################################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/modular/code-wrapper/ar3-cpp-ue4-code-wrapper-1.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/modular/code-wrapper/ar3-cpp-ue4-code-wrapper-2.js"></script>
 --------------------------*/
 
 {
@@ -407,157 +407,164 @@ https://arza-3d.github.io/ar3.js/
         _isConstructed3 = $('body').hasClass(_constructNote3);
 
     (function () {
-        var $codEx = $('.cpp-codex-r3');
-        if ($codEx.length > 0) {
-            var wrapTag = function wrapTag(text) {
-                var tag = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'span';
-                var css_class = arguments[2];
+        var $codExes = $('.cpp-codexes-r3');
+        if ($codExes == null) {
+            return;
+        }
 
-                if (css_class != null) {
-                    return '<' + tag + ' class="' + css_class + '">' + text + '</' + tag + '>';
-                } else {
-                    return '<' + tag + '>' + text + '</' + tag + '>';
+        var classTag = 'var',
+            classClass = 'blue-r3',
+            constrTag = 'span',
+            varTag = 'span',
+            var2Tag = 'span',
+            varClass = 'green-r3',
+            var2Class = "grey-r3",
+            functTag = 'mark',
+            commentTag = 'span',
+            commentClass = 'comment-r3',
+            inputTag = 'var',
+            inputClass = 'magenta-r3',
+            tabLength = 4;
+
+        function wrapTag(text) {
+            var tag = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'span';
+            var css_class = arguments[2];
+
+            if (css_class != null) {
+                return '<' + tag + ' class="' + css_class + '">' + text + '</' + tag + '>';
+            } else {
+                return '<' + tag + '>' + text + '</' + tag + '>';
+            }
+        }
+
+        function wrapFromAttr(targText, targHtml, attr_, tag_, class_) {
+            var words = $(targHtml).attr(attr_);
+            if (words) {
+                words = words.split(',');
+
+                var rx_ = void 0;
+                for (var _j2 = 0; _j2 < words.length; _j2++) {
+                    rx_ = new RegExp('\\b' + words[_j2] + '\\b', 'g');
+                    targText = targText.replace(rx_, wrapTag(words[_j2], tag_, class_));
                 }
-            };
+            }
+            return targText;
+        }
 
-            var wrapFromAttr = function wrapFromAttr(targText, targHtml, attr_, tag_, class_) {
-                var words = $(targHtml).attr(attr_);
-                if (words) {
-                    words = words.split(',');
+        function wrapSinglComment(targetText, tagComment_, classComment_) {
+            var comments = targetText.match(/\/\/.*$/mg);
+            if (comments == null) {
+                return targetText;
+            }
+            if (comments.length > 0) {
+                var setComments = new Set(comments);
+                comments = [].concat(_toConsumableArray(setComments));
+                for (var _i3 = 0; _i3 < comments.length; _i3++) {
+                    var rexComment = new RegExp(comments[_i3], 'g');
+                    targetText = targetText.replace(rexComment, wrapTag(comments[_i3], tagComment_, classComment_));
+                }
+            }
+            return targetText;
+        }
 
-                    var rx_ = void 0;
-                    for (var _j2 = 0; _j2 < words.length; _j2++) {
-                        rx_ = new RegExp('\\b' + words[_j2] + '\\b', 'g');
-                        targText = targText.replace(rx_, wrapTag(words[_j2], tag_, class_));
+        function wrapMultComment(targetText, tagComment_, classComment_) {
+            targetText = targetText.replace(/\/\*/gm, '<' + tagComment_ + ' class="' + classComment_ + '">/*');
+            targetText = targetText.replace(/\*\//gm, '*/</' + tagComment_ + '>');
+            return targetText;
+        }
+
+        function wrapComment(targetText) {
+            targetText = wrapSinglComment(targetText, commentTag, commentClass);
+            targetText = wrapMultComment(targetText, commentTag, commentClass);
+            return targetText;
+        }
+
+        function addTabForFunction(targetText) {
+
+            var sumText = void 0;
+            if (/\{/.exec(targetText) == null) {
+                return targetText;
+            }
+            if (/\{/.exec(targetText).length > 0) {
+                var tab_ = '&nbsp;'.repeat(tabLength);
+
+                var arrText = targetText.split('\n'),
+                    openCurlyCount = 0,
+                    lineText = void 0;
+
+                for (var _i4 = 0; _i4 < arrText.length; _i4++) {
+
+                    if (arrText[_i4].indexOf('{') > -1) {
+                        arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
+                        openCurlyCount++;
+                        continue;
+                    } else if (arrText[_i4].indexOf('}') > -1) {
+                        openCurlyCount--;
+                        arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
+                        continue;
+                    }
+
+                    if (openCurlyCount == 0) {
+                        continue;
+                    }
+
+                    if (arrText[_i4].indexOf('public:') > -1 || arrText[_i4].indexOf('protected:') > -1) {
+                        arrText[_i4] = tab_.repeat(openCurlyCount - 1) + arrText[_i4];
+                    } else {
+                        arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
                     }
                 }
-                return targText;
-            };
 
-            var wrapSinglComment = function wrapSinglComment(targetText, tagComment_, classComment_) {
-                var comments = targetText.match(/\/\/.*$/mg);
-                if (comments == null) {
-                    return targetText;
-                }
-                if (comments.length > 0) {
-                    var setComments = new Set(comments);
-                    comments = [].concat(_toConsumableArray(setComments));
-                    for (var _i3 = 0; _i3 < comments.length; _i3++) {
-                        var rexComment = new RegExp(comments[_i3], 'g');
-                        targetText = targetText.replace(rexComment, wrapTag(comments[_i3], tagComment_, classComment_));
-                    }
-                }
-                return targetText;
-            };
+                targetText = arrText.join('\n');
+            }
 
-            var wrapMultComment = function wrapMultComment(targetText, tagComment_, classComment_) {
-                targetText = targetText.replace(/\/\*/gm, '<' + tagComment_ + ' class="' + classComment_ + '">/*');
-                targetText = targetText.replace(/\*\//gm, '*/</' + tagComment_ + '>');
-                return targetText;
-            };
+            return targetText;
+        }
 
-            var wrapComment = function wrapComment(targetText) {
-                targetText = wrapSinglComment(targetText, commentTag, commentClass);
-                targetText = wrapMultComment(targetText, commentTag, commentClass);
-                return targetText;
-            };
+        for (var h = 0; h < $codExes.length; h++) {
+            var $codEx = $($codExes[h]).find('pre');
+            if ($codEx.length > 0) {
 
-            var addTabForFunction = function addTabForFunction(targetText) {
+                for (var _i5 = 0; _i5 < $codEx.length; _i5++) {
 
-                var sumText = void 0;
-                if (/\{/.exec(targetText) == null) {
-                    return targetText;
-                }
-                if (/\{/.exec(targetText).length > 0) {
-                    var tab_ = '&nbsp;'.repeat(tabLength);
+                    var codText = $codEx[_i5].innerHTML;
 
-                    var arrText = targetText.split('\n'),
-                        openCurlyCount = 0,
-                        lineText = void 0;
-                    console.log(arrText);
-
-                    for (var _i4 = 0; _i4 < arrText.length; _i4++) {
-
-                        if (arrText[_i4].indexOf('{') > -1) {
-                            arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
-                            openCurlyCount++;
-                            continue;
-                        } else if (arrText[_i4].indexOf('}') > -1) {
-                            openCurlyCount--;
-                            arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
-                            continue;
-                        }
-
-                        if (openCurlyCount == 0) {
-                            continue;
-                        }
-
-                        if (arrText[_i4].indexOf('public:') > -1 || arrText[_i4].indexOf('protected:') > -1) {
-                            arrText[_i4] = tab_.repeat(openCurlyCount - 1) + arrText[_i4];
-                        } else {
-                            arrText[_i4] = tab_.repeat(openCurlyCount) + arrText[_i4];
-                        }
+                    {
+                        codText = codText.replace(/\>/g, '&gt;');
+                        codText = codText.replace(/\</g, '&lt;');
                     }
 
-                    targetText = arrText.join('\n');
+                    {
+                        var baseClass = $($codExes[h]).attr('data-cpp-class-r3'),
+                            rxBaseClass = void 0;
+
+                        codText = codText.replace(baseClass + '\.h', wrapTag(baseClass, classTag, classClass));
+
+                        baseClass = 'A' + baseClass;
+                        rxBaseClass = new RegExp(' ' + baseClass + '::', 'g');
+                        codText = codText.replace(rxBaseClass, ' ' + wrapTag(baseClass, classTag, classClass) + '::');
+
+                        codText = codText.replace(baseClass + ' : public', ' ' + wrapTag(baseClass, classTag, classClass) + ' : public');
+
+                        codText = codText.replace(baseClass + '()', wrapTag(baseClass, constrTag, classClass) + '()');
+
+                        rxBaseClass = new RegExp('&amp;' + baseClass, 'g');
+                        codText = codText.replace(rxBaseClass, '&amp;' + wrapTag(baseClass, classTag, classClass));
+                    }
+
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-funct-r3', functTag);
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var-r3', varTag, varClass);
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-var2-r3', var2Tag, var2Class);
+                    codText = wrapFromAttr(codText, $codExes[h], 'data-cpp-input-r3', inputTag, inputClass);
+
+                    {
+                        codText = wrapComment(codText);
+                        codText = addTabForFunction(codText);
+                        codText = codText.replace(/\n/g, '\n<br>');
+                    }
+
+                    $codEx[_i5].innerHTML = codText;
                 }
-
-                return targetText;
-            };
-
-            var classTag = 'var',
-                classClass = 'blue-r3',
-                constrTag = 'span',
-                varTag = 'span',
-                var2Tag = 'span',
-                varClass = 'green-r3',
-                var2Class = "grey-r3",
-                functTag = 'mark',
-                commentTag = 'span',
-                commentClass = 'comment-r3',
-                inputTag = 'var',
-                inputClass = 'magenta-r3',
-                tabLength = 4;
-
-            for (var _i5 = 0; _i5 < $codEx.length; _i5++) {
-
-                var codText = $codEx[_i5].innerHTML;
-
-                {
-                    codText = codText.replace(/\>/g, '&gt;');
-                    codText = codText.replace(/\</g, '&lt;');
-                }
-
-                {
-                    var baseClass = $($codEx[_i5]).attr('data-cpp-class-r3'),
-                        rxBaseClass = void 0;
-
-                    codText = codText.replace(baseClass + '\.h', wrapTag(baseClass, classTag, classClass));
-
-                    baseClass = 'A' + baseClass;
-                    rxBaseClass = new RegExp(' ' + baseClass + '::', 'g');
-                    codText = codText.replace(rxBaseClass, ' ' + wrapTag(baseClass, classTag, classClass) + '::');
-
-                    codText = codText.replace(baseClass + ' : public', ' ' + wrapTag(baseClass, classTag, classClass) + ' : public');
-
-                    codText = codText.replace(baseClass + '()', wrapTag(baseClass, constrTag, classClass) + '()');
-
-                    rxBaseClass = new RegExp('&amp;' + baseClass, 'g');
-                    codText = codText.replace(rxBaseClass, '&amp;' + wrapTag(baseClass, classTag, classClass));
-                }
-
-                codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-funct-r3', functTag);
-                codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-var-r3', varTag, varClass);
-                codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-var2-r3', var2Tag, var2Class);
-                codText = wrapFromAttr(codText, $codEx[_i5], 'data-cpp-input-r3', inputTag, inputClass);
-
-                {
-                    codText = wrapComment(codText);
-                    codText = addTabForFunction(codText);
-                    codText = codText.replace(/\n/g, '\n<br>');
-                }
-
-                $codEx[_i5].innerHTML = codText;
             }
         }
     })();
