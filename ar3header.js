@@ -7,7 +7,8 @@
     if (!isConstructed) {
         // 1. add font
         $('head').append(
-            '<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Sarala:400,700" rel="stylesheet">'
+            '<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Sarala:400,700" rel="stylesheet">\n'+
+            '<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>'
         );
 
         // 2. add top nav
