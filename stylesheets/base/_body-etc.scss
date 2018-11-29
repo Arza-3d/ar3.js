@@ -22,10 +22,12 @@ pre {
     border: thin solid map-get($code-color, code-border);
     border-radius: 3px;
     color: map-get($code-color, code-c);
-    font-family: $monospace;
+    font-family: $monospace !important;
+    font-size: 10px;
     line-height: normal;
     max-height: 360px;
     tab-size: 4;
+    width: auto;
 }
 code {
     display: inline-block;
