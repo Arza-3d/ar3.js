@@ -50,6 +50,9 @@ img {
     border-radius: 6px;
     border: solid thin $img-border-color;
 }
+img[src$=".svg"] {
+    border: none;
+}
 kbd{
     padding:1px 10px;
     font-size: 90%;
