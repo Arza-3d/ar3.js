@@ -1,0 +1,17 @@
+table.blank-r3,
+table.blank-r3 tbody,
+table.blank-r3 tr,
+table.blank-r3 td,
+table.blank-r3 th {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border: none !important;
+}
+table.blank-r3 td:first-child {
+    font-weight: bold;
+    padding-left: 0;
+}
+table.blank-r3 td:first-child::after {
+    content: ":";
+    float: right;
+}
