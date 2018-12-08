@@ -26,7 +26,6 @@ https://arza-3d.github.io/ar3.js/
       }
       let dateLine = countDate(7*12);
 
-
       $target12.append(
         '<table class="blank-2-r3">\n' +
           ' <tbody class="r3-build-box-here">\n' +
@@ -34,6 +33,7 @@ https://arza-3d.github.io/ar3.js/
         '</table>'
       );
 
+      let dayCount = Math.ceil((Date.now() - new Date(date0))/(1000*60*60*24));
       // 1. make 7 X 12 small boxes that represent days
       let $boxTarget = $target12.find('.r3-build-box-here');
       {
@@ -60,10 +60,19 @@ https://arza-3d.github.io/ar3.js/
             }
           }
 
+          let daylyProgressReportAddress;
+          if (i < dayCount) {
+            daylyProgressReportAddress = 'href="https://raw.githack.com/Arza-3d/docs/master/12_weeks_year/'+date0+
+              '/week_'+ Math.ceil((i + 1)/7) +'-day_'+ (i % 7 + 1) +'.html" target="_blank"';
+          } else {
+            daylyProgressReportAddress = 'href="#"';
+          }
           $theTarget.append(
             '<td>\n'+
-            ' <div class="r3-box" '+ boxColor +' title="'+ theDate.toDateString() +'">\n'+
-            ' </div>\n'+
+            ' <a '+ daylyProgressReportAddress +'>\n'+
+            '   <div class="r3-box" '+ boxColor +' title="'+ theDate.toDateString() +'">\n'+
+            '   </div>\n'+
+            ' </a>' +
             '</td>'
           );
         }
