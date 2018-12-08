@@ -95,14 +95,13 @@ https://arza-3d.github.io/ar3.js/
             'DATELINE-nya TANGGAL <b>'+ dateLine.toDateString() +'</b>!! <big>😠</big>\n'+
           '</div>\n'+
           '<div style="font-size:12px;">\n'+
-            '<br>SISA WAKTU TINGGAL <b style="color:#e34336;">' +
+            '<br>SISA WAKTU TINGGAL <b style="color:#e34336;"><big><big>' +
             wakeHoursBeforeDeadline + ' JAM ' +
-            wakeHoursToMinutes + ' MENIT </b>'+
+            wakeHoursToMinutes + ' MENIT </big></big></b>'+
             'LAGI!!!<big><big>😠</big></big>\n'+
           '</div>\n'
         );
       }
-
 
       $('head').append(
         '<style>' +
