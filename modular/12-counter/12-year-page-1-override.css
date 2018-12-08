@@ -1,0 +1,12 @@
+/*##########################
+// ar3-12-year-page-1-override.css  #
+##########################*/
+/*--------------------------
+https://arza-3d.github.io/ar3.js/
+
+<link href="https://raw.githack.com/Arza-3d/ar3.js/master/modular/12-counter/ar3-12-year-page-1-override.css" rel="stylesheet" type="text/css">
+--------------------------*/
+
+h1 {
+  background-color: #111 !important;
+}
