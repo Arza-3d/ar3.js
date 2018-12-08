@@ -26,77 +26,74 @@ https://arza-3d.github.io/ar3.js/
       }
       let dateLine = countDate(7*12);
 
-      function build12WeeksBoxTable(startDate) {
-        $target12.append(
-          '<table class="blank-2-r3">\n' +
-            ' <tbody class="r3-build-box-here">\n' +
-            ' </tbody>\n' +
-          '</table>'
-        );
 
-        // 1. make 7 X 12 small boxes that represent days
-        let $boxTarget = $target12.find('.r3-build-box-here');
-        {
-          for (let i = 0; i < 7; i++) {
-            $boxTarget.append('<tr>');
-          }
+      $target12.append(
+        '<table class="blank-2-r3">\n' +
+          ' <tbody class="r3-build-box-here">\n' +
+          ' </tbody>\n' +
+        '</table>'
+      );
 
-          for (let i = 0; i < (7*12); i++) {
-            let lineCount = i % 7;
-            $theTarget = $boxTarget.find('tr:nth-of-type(' + (lineCount + 1) + ')');
-
-            let theDate = countDate(i);
-
-            let boxColor = '';
-            let dayDifference = Date.now() - theDate;
-
-            if (dayDifference < 0) {
-              boxColor = '';
-            } else {
-              if (dayDifference < (24*60*60*1000)) {
-                boxColor = 'style="background-color: yellow;"';
-              } else {
-                boxColor = 'style="background-color: #f44336;"';
-              }
-            }
-
-            $theTarget.append(
-              '<td>\n'+
-              ' <div class="r3-box" '+ boxColor +' title="'+ theDate.toDateString() +'">\n'+
-              ' </div>\n'+
-              '</td>'
-            );
-          }
-
+      // 1. make 7 X 12 small boxes that represent days
+      let $boxTarget = $target12.find('.r3-build-box-here');
+      {
+        for (let i = 0; i < 7; i++) {
+          $boxTarget.append('<tr>');
         }
 
-        // 2. show starting day date
-        $target12.prepend(
-          '<div style="font-size:12px">mulai tanggal <b>'+ new Date(date0).toDateString() +'</b></div>\n'
-        );
+        for (let i = 0; i < (7*12); i++) {
+          let lineCount = i % 7;
+          $theTarget = $boxTarget.find('tr:nth-of-type(' + (lineCount + 1) + ')');
 
-        // 3. show dateline and time left
-        {
-          let timeInHourBeforeDeadline = (dateLine - Date.now())/(1000*60*60*(24/(24-8)));
-          let wakeHoursBeforeDeadline = Math.floor(timeInHourBeforeDeadline);
-          let wakeHoursToMinutes = Math.round((timeInHourBeforeDeadline - wakeHoursBeforeDeadline)*60);
+          let theDate = countDate(i);
 
-          $target12.append(
-            '<div style="font-size:12px">\n'+
-              'DATELINE-nya TANGGAL <b>'+ dateLine.toDateString() +'</b>!! <big>😠</big>\n'+
-            '</div>\n'+
-            '<div style="font-size:12px; color:#e34336;">\n'+
-              '<br><b>SISA WAKTU TINGGAL ' +
-              wakeHoursBeforeDeadline + ' JAM ' +
-              wakeHoursToMinutes + ' MENIT '+
-              'LAGI!!!</b><big><big>😠</big></big>\n'+
-            '</div>\n'
+          let boxColor = '';
+          let dayDifference = Date.now() - theDate;
+
+          if (dayDifference < 0) {
+            boxColor = '';
+          } else {
+            if (dayDifference < (24*60*60*1000)) {
+              boxColor = 'style="background-color: yellow;"';
+            } else {
+              boxColor = 'style="background-color: #f44336;"';
+            }
+          }
+
+          $theTarget.append(
+            '<td>\n'+
+            ' <div class="r3-box" '+ boxColor +' title="'+ theDate.toDateString() +'">\n'+
+            ' </div>\n'+
+            '</td>'
           );
         }
 
       }
 
-      build12WeeksBoxTable(date0);
+      // 2. show starting day date
+      $target12.prepend(
+        '<div style="font-size:12px">mulai tanggal <b>'+ new Date(date0).toDateString() +'</b></div>\n'
+      );
+
+      // 3. show dateline and time left
+      {
+        let timeInHourBeforeDeadline = (dateLine - Date.now())/(1000*60*60*(24/(24-8)));
+        let wakeHoursBeforeDeadline = Math.floor(timeInHourBeforeDeadline);
+        let wakeHoursToMinutes = Math.round((timeInHourBeforeDeadline - wakeHoursBeforeDeadline)*60);
+
+        $target12.append(
+          '<div style="font-size:12px">\n'+
+            'DATELINE-nya TANGGAL <b>'+ dateLine.toDateString() +'</b>!! <big>😠</big>\n'+
+          '</div>\n'+
+          '<div style="font-size:12px; color:#e34336;">\n'+
+            '<br><b>SISA WAKTU TINGGAL ' +
+            wakeHoursBeforeDeadline + ' JAM ' +
+            wakeHoursToMinutes + ' MENIT '+
+            'LAGI!!!</b><big><big>😠</big></big>\n'+
+          '</div>\n'
+        );
+      }
+
 
       $('head').append(
         '<style>' +
