@@ -102,12 +102,12 @@ https://arza-3d.github.io/ar3.js/
         '<style>' +
 
           'table.blank-2-r3 td{\n'+
-            'padding: 4px;\n'+
+            'padding: 6px;\n'+
           '}\n'+
 
           '.r3-build-box-here .r3-box {\n'+
-            ' height: 12px;\n'+
-            ' width: 12px;\n'+
+            ' height: 14px;\n'+
+            ' width: 14px;\n'+
             ' background-color: #7bc96f;\n'+
             ' cursor: pointer;\n'+
             ' border: grey thin solid \n'+
