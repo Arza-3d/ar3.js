@@ -56,7 +56,7 @@ https://arza-3d.github.io/ar3.js/
               if (dayDifference < (24*60*60*1000)) {
                 boxColor = 'style="background-color: yellow;"';
               } else {
-                boxColor = 'style="background-color: red;"';
+                boxColor = 'style="background-color: #f44336;"';
               }
             }
 
@@ -85,7 +85,7 @@ https://arza-3d.github.io/ar3.js/
             '<div style="font-size:12px">\n'+
               'DATELINE-nya TANGGAL <b>'+ dateLine.toDateString() +'</b>!! <big>😠</big>\n'+
             '</div>\n'+
-            '<div style="font-size:12px" class="red-r3">\n'+
+            '<div style="font-size:12px; color:#e34336;">\n'+
               '<br><b>SISA WAKTU TINGGAL ' +
               wakeHoursBeforeDeadline + ' JAM ' +
               wakeHoursToMinutes + ' MENIT '+
