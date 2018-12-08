@@ -85,11 +85,11 @@ https://arza-3d.github.io/ar3.js/
           '<div style="font-size:12px">\n'+
             'DATELINE-nya TANGGAL <b>'+ dateLine.toDateString() +'</b>!! <big>😠</big>\n'+
           '</div>\n'+
-          '<div style="font-size:12px; color:#e34336;">\n'+
-            '<br><b>SISA WAKTU TINGGAL ' +
+          '<div style="font-size:12px;">\n'+
+            '<br>SISA WAKTU TINGGAL <b style="color:#e34336;">' +
             wakeHoursBeforeDeadline + ' JAM ' +
-            wakeHoursToMinutes + ' MENIT '+
-            'LAGI!!!</b><big><big>😠</big></big>\n'+
+            wakeHoursToMinutes + ' MENIT </b>'+
+            'LAGI!!!<big><big>😠</big></big>\n'+
           '</div>\n'
         );
       }
