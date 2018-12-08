@@ -24,7 +24,7 @@ https://arza-3d.github.io/ar3.js/
         dateEnd = new Date(dateEnd);
         return dateEnd;
       }
-      let dateLine = countDate(84);
+      let dateLine = countDate(7*12);
 
       function build12WeeksBoxTable(startDate) {
         $target12.append(
@@ -41,7 +41,7 @@ https://arza-3d.github.io/ar3.js/
             $boxTarget.append('<tr>');
           }
 
-          for (let i = 0; i < 84; i++) {
+          for (let i = 0; i < (7*12); i++) {
             let lineCount = i % 7;
             $theTarget = $boxTarget.find('tr:nth-of-type(' + (lineCount + 1) + ')');
 
