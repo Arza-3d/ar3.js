@@ -63,7 +63,7 @@ https://arza-3d.github.io/ar3.js/
           let daylyProgressReportAddress;
           if (i < dayCount) {
             daylyProgressReportAddress = 'href="https://raw.githack.com/Arza-3d/docs/master/12_weeks_year/'+date0+
-              '/week_'+ Math.ceil((i + 1)/7) +'-day_'+ (i % 7 + 1) +'.html" target="_blank"';
+              '/week_'+ Math.ceil((i + 1)/7) +'-day_'+ (i % 7 + 1) +'.html"';
           } else {
             daylyProgressReportAddress = 'href="#"';
           }
