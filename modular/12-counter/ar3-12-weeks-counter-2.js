@@ -14,7 +14,7 @@ https://arza-3d.github.io/ar3.js/
   (function() {
     let $target12 = $('.twelve-weeks-r3'); // class name to set
     let date0 = $target12.attr('data-date-0-r3'); // start date attribute to set
-    let thisAddress = $target12.attr('data-site-base-r3');;
+    let thisAddress = $target12.attr('data-site-base-r3');
 
     if (!isConstructed) {
 
