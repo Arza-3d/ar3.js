@@ -81,7 +81,7 @@ https://arza-3d.github.io/ar3.js/
 
       // 2. show starting day date
       $target12.prepend(
-        '<div style="font-size:12px">mulai tanggal <b>'+ new Date(date0).toDateString() +'</b></div>\n'
+        '<div style="font-size:12px">started at <b>'+ new Date(date0).toDateString() +'</b></div>\n'
       );
 
       // 3. show dateline and time left
