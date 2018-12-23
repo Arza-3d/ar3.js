@@ -1,10 +1,10 @@
 /*#############################
-// ar3-12-weeks-counter-2.js  #
+// ar3-12-weeks-counter-3-EN.js  #
 #############################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/12-counter/ar3-12-weeks-counter-2.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/12-counter/ar3-12-weeks-counter-3-EN.js"></script>
 --------------------------*/
 
 {
