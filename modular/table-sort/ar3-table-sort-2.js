@@ -1,10 +1,10 @@
 /*#######################
-// ar3-table-sort-1.js  #
+// ar3-table-sort-2.js  #
 #######################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-sort/ar3-table-sort-1.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-sort/ar3-table-sort-2.js"></script>
 --------------------------*/
 // basic sort function that will sort table with class sort-r3
 (function() {
