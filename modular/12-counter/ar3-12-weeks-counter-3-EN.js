@@ -86,7 +86,7 @@ https://arza-3d.github.io/ar3.js/
 
       // 3. show dateline and time left
       {
-        let timeInHourBeforeDeadline = (dateLine - Date.now())/(1000*60*60*(24/(24-8)));
+        let timeInHourBeforeDeadline = (dateLine - Date.now())/(1000*60*60*(24/(24-8-8)));
         let wakeHoursBeforeDeadline = Math.floor(timeInHourBeforeDeadline);
         let wakeHoursToMinutes = Math.round((timeInHourBeforeDeadline - wakeHoursBeforeDeadline)*60);
 
