@@ -508,7 +508,7 @@ https://arza-3d.github.io/ar3.js/
 
         // 2.
         {
-            var $img = $('img').not('code > img, h3 > img, img[src$=".svg"]');
+            var $img = $('img').not('code > img, h3 > img, img[src$=".svg"],  img[src$=".png"]');
             for (var _i3 = 0; _i3 < $img.length; _i3++) {
                 if ($($img[_i3]).parent().hasClass('relative-container-r3')) {
                     $($img[_i3]).parent().css('overflow', 'auto');
