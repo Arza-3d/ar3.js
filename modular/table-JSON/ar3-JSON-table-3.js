@@ -8,7 +8,7 @@ https://arza-3d.github.io/ar3.js/
 --------------------------*/
 
 {
-    const constructNote = "ar3-JSON-table_is_constructed";
+    const constructNote = "ar3-JSON-table-3_is_constructed";
     const isConstructed = $('body').hasClass(constructNote);
     {
         const $tableJSON = $('table[data-JSON-r3]');
