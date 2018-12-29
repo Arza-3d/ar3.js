@@ -4,7 +4,7 @@
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-JS/ar3-JSON-table-full-1.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-JSON/ar3-JSON-table-full-1.js"></script>
 --------------------------*/
 
 {

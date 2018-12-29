@@ -1,10 +1,10 @@
 /*#######################
-// ar3-JSON-table-1.js  #
+// ar3-JSON-table-3.js  #
 #######################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-JSON/ar3-JSON-table-1.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-JSON/ar3-JSON-table-3.js"></script>
 --------------------------*/
 
 {
@@ -16,7 +16,7 @@ https://arza-3d.github.io/ar3.js/
 
             // get JSON
             $('head').append('<script>var jsonText = _JSON_string_r3;</script>');
-            let objectInJSON = JSON.parse(jsonText);
+            let objectInJSON = jsonText;//THIS is the fix
 
             for (let i = 0; i < $tableJSON.length; i++) {
                 // add <tbody> if necessary
