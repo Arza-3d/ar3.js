@@ -1,0 +1,60 @@
+var _jsonText ={
+
+    "Comment":[
+
+        {
+            "nam":"multi-lines"
+            ,"syn":"/*\\n  comment1\\n  comment2\\n*/"
+            ,"cod":"/* */"
+            ,"typ":"comment"
+        }
+
+        ,{
+            "nam":"single-line"
+            ,"syn":"// comment"
+            ,"cod":"//"
+            ,"typ":"comment"
+        }
+    ]
+
+    ,"BitOperator":[
+
+        {
+            "nam":"and"
+            ,"cod":"<!-- & -->&amp;"
+            ,"val":"x | y"
+        }
+
+        ,{
+            "nam":"or"
+            ,"cod":"|"
+        }
+
+        ,{
+            "nam":"Xor"
+            ,"cod":"^"
+        },
+
+        {
+            "nam":"not"
+            ,"cod":"~"
+            ,"val":"|x"
+        }
+
+        ,{
+            "nam":"left shift"
+            ,"cod":"<!-- << -->&lt;&lt;"
+        }
+
+        ,{
+            "nam":"right shift"
+            ,"cod":"<!-- >> -->&gt;&gt;"
+        }
+
+        ,{
+            "nam":"unsigned right shift"
+            ,"cod":"<!-- >>> -->&gt;&gt;&gt;"
+        }
+    ]
+
+};
