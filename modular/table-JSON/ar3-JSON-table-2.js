@@ -16,7 +16,7 @@ https://arza-3d.github.io/ar3.js/
 
             // get JSON
             $('head').append('<script>var jsonText = _JSON_string_r3;</script>');
-            let objectInJSON = jsonText;//JSON.parse(jsonText);
+            let objectInJSON = jsonText;//THIS is the fix
 
             for (let i = 0; i < $tableJSON.length; i++) {
                 // add <tbody> if necessary
