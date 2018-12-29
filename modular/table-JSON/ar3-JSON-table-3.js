@@ -37,7 +37,15 @@ https://arza-3d.github.io/ar3.js/
                         let rowContent = '';
                         for (let k = 0; k < $th.length; k++) {
                             let keyInJSON = $($th[k]).attr('data-JSON-r3'),
-                                valueInJSON = objectInJSON[arrayInJSON][j][keyInJSON];
+                              valueInJSON;
+                            if (keyInJSON != 'title+link') {
+                              valueInJSON = objectInJSON[arrayInJSON][j][keyInJSON];
+                            } else {
+                              //if ($($th[k]).attr('data-JSON-link-r3').length > 0) {
+                                valueInJSON = '<a href="' + objectInJSON[arrayInJSON][j]['link'] + '" target="_blank">' + objectInJSON[arrayInJSON][j]['title'] + '</a>';
+                              //}
+                            }
+
                             rowContent += '\t<td>' + valueInJSON + '</td>\n';
                         }
                         $tbody.append('<tr>'+ rowContent +'</tr>');
