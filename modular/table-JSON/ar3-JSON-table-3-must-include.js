@@ -1,10 +1,10 @@
 /*#######################
-// ar3-JSON-table-3.js  #
+// ar3-JSON-table-3-must-include.js  #
 #######################*/
 /*--------------------------
 https://arza-3d.github.io/ar3.js/
 
-<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-JSON/ar3-JSON-table-3.js"></script>
+<script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/table-JSON/ar3-JSON-table-3-must-include.js"></script>
 --------------------------*/
 
 {
