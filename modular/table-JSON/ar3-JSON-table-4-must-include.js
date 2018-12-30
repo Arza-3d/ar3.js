@@ -59,7 +59,8 @@ https://arza-3d.github.io/ar3.js/
 
                               console.log(objectInJSON[arrayInJSON][j][keyInJSON]);
 
-                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100"></progress>'
+                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100" title="'+  objectInJSON[arrayInJSON][j][keyInJSON]
+                              +'%"></progress>'
 
                             }
                             //#########
