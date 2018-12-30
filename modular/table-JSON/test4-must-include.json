@@ -10,7 +10,7 @@ var _JSON_string_r3 = {
             ,"title" : "link pertama"
             ,"link" : "https://google.com"
             ,"keytest" : "limitval"
-            ,"progress" : 0.3
+            ,"progress" : 30
         }
 
         ,{
@@ -21,7 +21,7 @@ var _JSON_string_r3 = {
             ,"title" : "link kedua"
             ,"link" : "https://blibli.com"
             ,"keytest" : "none"
-            ,"progress" : 0.8
+            ,"progress" : 80
         }
     ]
 };

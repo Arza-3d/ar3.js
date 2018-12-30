@@ -28,23 +28,23 @@ https://arza-3d.github.io/ar3.js/
                     $tbody = $($tableJSON[i]).children('tbody'),
                     arrayInJSON = $($tableJSON[i]).attr('data-JSON-r3');
 
-                //##################### MUST INCLUDE PART 1
+                //# MUST INCLUDE PART 1
                 let mustIncludeKey =  $($tableJSON[i]).attr('data-JSON-must-include-key-r3'),
                     mustIncludeVal =  $($tableJSON[i]).attr('data-JSON-must-include-val-r3');
-                //######################
+                //#
 
                 if (objectInJSON[arrayInJSON] !== undefined) {
                     // table row loop
                     let arrayInJSONlength = objectInJSON[arrayInJSON].length;
                     for (let j = 0; j < arrayInJSONlength; j++) {
 
-                      //##################### MUST INCLUDE PART 2
+                      //# MUST INCLUDE PART 2
                       if (mustIncludeKey != undefined) {
                         if (objectInJSON[arrayInJSON][j][mustIncludeKey] != mustIncludeVal) {
                             continue;
                         }
                       }
-                      //######################
+                      //#
 
 
                         // table column loop
@@ -52,7 +52,19 @@ https://arza-3d.github.io/ar3.js/
                         for (let k = 0; k < $th.length; k++) {
                             let keyInJSON = $($th[k]).attr('data-JSON-r3'),
                               valueInJSON;
-                            if (keyInJSON != 'title+link') {
+
+                            //######### Display as progress bar
+
+                            if (keyInJSON == 'progress') {
+
+                              console.log(objectInJSON[arrayInJSON][j][keyInJSON]);
+
+                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100"></progress>'
+
+                            }
+                            //#########
+
+                            else if (keyInJSON != 'title+link') {
                               valueInJSON = objectInJSON[arrayInJSON][j][keyInJSON];
                             } else {
                               valueInJSON = '<a href="' + objectInJSON[arrayInJSON][j]['link'] + '" target="_blank">' + objectInJSON[arrayInJSON][j]['title'] + '</a>';
