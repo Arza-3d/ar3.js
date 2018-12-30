@@ -28,10 +28,24 @@ https://arza-3d.github.io/ar3.js/
                     $tbody = $($tableJSON[i]).children('tbody'),
                     arrayInJSON = $($tableJSON[i]).attr('data-JSON-r3');
 
+                //##################### MUST INCLUDE PART 1
+                let mustIncludeKey =  $($tableJSON[i]).attr('data-JSON-must-include-key-r3'),
+                    mustIncludeVal =  $($tableJSON[i]).attr('data-JSON-must-include-val-r3');
+                //######################
+
                 if (objectInJSON[arrayInJSON] !== undefined) {
                     // table row loop
                     let arrayInJSONlength = objectInJSON[arrayInJSON].length;
                     for (let j = 0; j < arrayInJSONlength; j++) {
+
+                      //##################### MUST INCLUDE PART 2
+                      if (mustIncludeKey.length > 0) {
+                        if (objectInJSON[arrayInJSON][j][mustIncludeKey] == mustIncludeVal) {
+                            continue;
+                        }
+                      }
+                      //######################
+
 
                         // table column loop
                         let rowContent = '';
