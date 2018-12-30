@@ -40,7 +40,7 @@ https://arza-3d.github.io/ar3.js/
 
                       //##################### MUST INCLUDE PART 2
                       if (mustIncludeKey != undefined) {
-                        if (objectInJSON[arrayInJSON][j][mustIncludeKey] == mustIncludeVal) {
+                        if (objectInJSON[arrayInJSON][j][mustIncludeKey] != mustIncludeVal) {
                             continue;
                         }
                       }
