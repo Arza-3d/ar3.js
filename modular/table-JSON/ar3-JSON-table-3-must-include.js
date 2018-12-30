@@ -39,7 +39,7 @@ https://arza-3d.github.io/ar3.js/
                     for (let j = 0; j < arrayInJSONlength; j++) {
 
                       //##################### MUST INCLUDE PART 2
-                      if (mustIncludeKey.length > 0) {
+                      if (mustIncludeKey != undefined) {
                         if (objectInJSON[arrayInJSON][j][mustIncludeKey] == mustIncludeVal) {
                             continue;
                         }
