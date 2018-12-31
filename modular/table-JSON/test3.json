@@ -7,8 +7,8 @@ var _JSON_string_r3 = {
             ,"syn":"/*\\n  comment1\\n  comment2\\n*/"
             ,"cod":"/* */"
             ,"typ":"comment"
-            ,"title" : "link pertama"
-            ,"link" : "https://google.com"
+            ,"_title" : "link pertama"
+            ,"_link" : "https://google.com"
         }
 
         ,{
@@ -16,8 +16,8 @@ var _JSON_string_r3 = {
             ,"syn":"// comment"
             ,"cod":"//"
             ,"typ":"comment"
-            ,"title" : "link kedua"
-            ,"link" : "https://blibli.com"
+            ,"_title" : "link kedua"
+            ,"_link" : "https://blibli.com"
         }
     ]
 };

@@ -59,16 +59,16 @@ https://arza-3d.github.io/ar3.js/
 
                               console.log(objectInJSON[arrayInJSON][j][keyInJSON]);
 
-                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100" title="'+  objectInJSON[arrayInJSON][j][keyInJSON]
+                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100" _title="'+  objectInJSON[arrayInJSON][j][keyInJSON]
                               +'%"></progress>'
 
                             }
                             //#########
 
-                            else if (keyInJSON != 'title+link') {
+                            else if (keyInJSON != '_title+_link') {
                               valueInJSON = objectInJSON[arrayInJSON][j][keyInJSON];
                             } else {
-                              valueInJSON = '<a href="' + objectInJSON[arrayInJSON][j]['link'] + '" target="_blank">' + objectInJSON[arrayInJSON][j]['title'] + '</a>';
+                              valueInJSON = '<a href="' + objectInJSON[arrayInJSON][j]['_link'] + '" target="_blank">' + objectInJSON[arrayInJSON][j]['_title'] + '</a>';
                             }
 
                             rowContent += '\t<td>' + valueInJSON + '</td>\n';

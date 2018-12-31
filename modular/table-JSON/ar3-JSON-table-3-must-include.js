@@ -52,10 +52,10 @@ https://arza-3d.github.io/ar3.js/
                         for (let k = 0; k < $th.length; k++) {
                             let keyInJSON = $($th[k]).attr('data-JSON-r3'),
                               valueInJSON;
-                            if (keyInJSON != 'title+link') {
+                            if (keyInJSON != '_title+_link') {
                               valueInJSON = objectInJSON[arrayInJSON][j][keyInJSON];
                             } else {
-                              valueInJSON = '<a href="' + objectInJSON[arrayInJSON][j]['link'] + '" target="_blank">' + objectInJSON[arrayInJSON][j]['title'] + '</a>';
+                              valueInJSON = '<a href="' + objectInJSON[arrayInJSON][j]['_link'] + '" target="_blank">' + objectInJSON[arrayInJSON][j]['_title'] + '</a>';
                             }
 
                             rowContent += '\t<td>' + valueInJSON + '</td>\n';
