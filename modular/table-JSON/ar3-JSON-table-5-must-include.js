@@ -55,7 +55,7 @@ https://arza-3d.github.io/ar3.js/
 
                             // Display as progress bar
                             if (keyInJSON == '_progress') {
-                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100" _title="'+  objectInJSON[arrayInJSON][j][keyInJSON]
+                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100" title="'+  objectInJSON[arrayInJSON][j][keyInJSON]
                               +'%"></progress>';
                             }
                             //
@@ -65,15 +65,41 @@ https://arza-3d.github.io/ar3.js/
 
                               let tempWords = objectInJSON[arrayInJSON][j][keyInJSON].split(' ');
 
-
                               let _tempWords = '';
                               for (word in tempWords) {
+                                if (tempWords[word] == '+') {
+                                  _tempWords += '+ ';
+                                  continue;
+                                } else if (tempWords[word].indexOf('_') == 0) {
+                                  switch (tempWords[word]) {
+                                    case '_plus':
+                                      _tempWords += '<kbd>+</kbd> ';
+                                      break;
+                                    case '_space':
+                                      _tempWords += '<kbd style="color:transparent">Space</kbd> ';
+                                      break;
+                                    case '_lclick':
+                                      _tempWords += '<img src="https://i.ibb.co/7JgYJPf/l-click25.png" alt="l-click25"> ';
+                                      break;
+                                    case '_rclick':
+                                      _tempWords += '<img src="https://i.ibb.co/b1yFPwh/r-click25.png" alt="r-click25"> ';
+                                      break;
+                                    case '_mclick':
+                                      _tempWords += '<img src="https://i.ibb.co/12sxdYM/m-click25.png" alt="m-click25"> ';
+                                      break;
+                                    default:
+                                      _tempWords += tempWords[word].substr(1) + ' ';
+                                      break;
+                                  }
+                                  continue;
+                                }
+                                tempWords[word] = tempWords[word].charAt(0).toUpperCase() + tempWords[word].substr(1);
                                 _tempWords += '<kbd>' + tempWords[word] + '</kbd> ';
                               }
                               tempWords = _tempWords;
 
                               valueInJSON = _tempWords;
-                              console.log(tempWords);
+
 
                             }
                             //############
