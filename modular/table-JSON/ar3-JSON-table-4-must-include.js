@@ -55,7 +55,7 @@ https://arza-3d.github.io/ar3.js/
 
                             //######### Display as progress bar
 
-                            if (keyInJSON == 'progress') {
+                            if (keyInJSON == '_progress') {
 
                               console.log(objectInJSON[arrayInJSON][j][keyInJSON]);
 
