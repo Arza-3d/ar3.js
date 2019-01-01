@@ -55,14 +55,28 @@ https://arza-3d.github.io/ar3.js/
 
                             // Display as progress bar
                             if (keyInJSON == '_progress') {
-
-                              console.log(objectInJSON[arrayInJSON][j][keyInJSON]);
-
                               valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100" _title="'+  objectInJSON[arrayInJSON][j][keyInJSON]
                               +'%"></progress>';
-
                             }
                             //
+
+                            //############ wrap <kbd>
+                            else if (keyInJSON == '_shortcut') {
+
+                              let tempWords = objectInJSON[arrayInJSON][j][keyInJSON].split(' ');
+
+
+                              let _tempWords = '';
+                              for (word in tempWords) {
+                                _tempWords += '<kbd>' + tempWords[word] + '</kbd> ';
+                              }
+                              tempWords = _tempWords;
+
+                              valueInJSON = _tempWords;
+                              console.log(tempWords);
+
+                            }
+                            //############
 
                             else if (keyInJSON != '_title+_link') {
                               valueInJSON = objectInJSON[arrayInJSON][j][keyInJSON];
