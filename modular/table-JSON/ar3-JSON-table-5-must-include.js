@@ -53,17 +53,16 @@ https://arza-3d.github.io/ar3.js/
                             let keyInJSON = $($th[k]).attr('data-JSON-r3'),
                               valueInJSON;
 
-                            //######### Display as progress bar
-
+                            // Display as progress bar
                             if (keyInJSON == 'progress') {
 
                               console.log(objectInJSON[arrayInJSON][j][keyInJSON]);
 
                               valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100" _title="'+  objectInJSON[arrayInJSON][j][keyInJSON]
-                              +'%"></progress>'
+                              +'%"></progress>';
 
                             }
-                            //#########
+                            //
 
                             else if (keyInJSON != '_title+_link') {
                               valueInJSON = objectInJSON[arrayInJSON][j][keyInJSON];
