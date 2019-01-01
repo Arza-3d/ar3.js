@@ -1,0 +1,29 @@
+var _JSON_string_r3 = {
+
+    "Comment":[
+
+        {
+            "nam":"multi-lines"
+            ,"syn":"/*\\n  comment1\\n  comment2\\n*/"
+            ,"cod":"/* */"
+            ,"typ":"comment"
+            ,"_title" : "link pertama"
+            ,"_link" : "https://google.com"
+            ,"keytest" : "limitval"
+            ,"progress" : 30
+            ,"_shortcut" : "4 + h"
+        }
+
+        ,{
+            "nam":"single-line"
+            ,"syn":"// comment"
+            ,"cod":"//"
+            ,"typ":"comment"
+            ,"_title" : "link kedua"
+            ,"_link" : "https://blibli.com"
+            ,"keytest" : "none"
+            ,"progress" : 80
+            ,"_shortcut" : "ctrl + Alt"
+        }
+    ]
+};
