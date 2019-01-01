@@ -20,7 +20,9 @@ export function sum2Arrays(array1, array2) {
 }
 /////////////////
 
-/*export */var ArrX = {
+export var cepot = 'xxx' //test/////////////////////////////////////////////////
+
+export var ArrX = {
 
     sum2Arrays: function(array1, array2) {
         var ar_ = array1.concat(array2);
