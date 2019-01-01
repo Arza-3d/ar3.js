@@ -461,12 +461,28 @@
           </ul>
         </section>
 
-        <h3>add progress bar(4th b)</h3>
+        <h3>add progress bar (4th b)</h3>
         <section>
           <a href="https://github.com/Arza-3d/ar3.js/blob/master/modular/table-JSON/ar3-JSON-table-4-must-include.js"><code>ar3-JSON-table-4-must-include.js</code></a>
           <p>
             Display JSON key 'progress' number into progress bar inside the table
           </p>
+        </section>
+
+        <h3>wrap '_shortcut' to &lt;kbd&gt; (5th b)</h3>
+        <section>
+          <a href="https://github.com/Arza-3d/ar3.js/blob/master/modular/table-JSON/ar3-JSON-table-5-must-include.js"><code>ar3-JSON-table-5-must-include.js</code></a>
+
+          <p>
+            auto wrap JSON value of '_shortcut' key, what it does in '_shortcut':
+
+          </p>
+          <ol>
+            <li>split string into array, by separating using ' ' (space)</li>
+            <li>if the word more than 1 length and start with '_' do something special</li>
+            <li>if the word is '+' don't wrap it with &lt;kbd&gt;</li>
+            <li>other than that capitalize the first alphabet and wrap it with &lt;kbd&gt;</li>
+          </ol>
         </section>
 
         <h3>construct full table from JSON</h3>
