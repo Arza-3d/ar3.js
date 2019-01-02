@@ -75,6 +75,9 @@ https://arza-3d.github.io/ar3.js/
                                     case '_plus':
                                       _tempWords += '<kbd>+</kbd> ';
                                       break;
+                                    case '_or':
+                                      _tempWords += '<br>or<br>';
+                                      break;
                                     case '_space':
                                       _tempWords += '<kbd style="color:transparent" title="spacebar">Spacebar</kbd> ';
                                       break;
@@ -82,10 +85,10 @@ https://arza-3d.github.io/ar3.js/
                                       _tempWords += '<img src="https://i.ibb.co/7JgYJPf/l-click25.png" alt="l-click25" style="border:none" title="mouse left click"><span style="display: none">mouse left click</span> ';
                                       break;
                                     case '_rclick':
-                                      _tempWords += '<img src="https://i.ibb.co/b1yFPwh/r-click25.png" alt="r-click25" style="border:none" title="mouse right click"><span style="display: none">mouse right click</span>  ';
+                                      _tempWords += '<img src="https://i.ibb.co/b1yFPwh/r-click25.png" alt="r-click25" style="border:none" title="mouse right click"><span style="display: none">mouse right click</span> ';
                                       break;
                                     case '_mclick':
-                                      _tempWords += '<img src="https://i.ibb.co/12sxdYM/m-click25.png" alt="m-click25" style="border:none"  title="mouse middle click"><span style="display: none">mouse middle click</span>  ';
+                                      _tempWords += '<img src="https://i.ibb.co/12sxdYM/m-click25.png" alt="m-click25" style="border:none"  title="mouse middle click"><span style="display: none">mouse middle click</span> ';
                                       break;
                                     default:
                                       _tempWords += tempWords[word].substr(1) + ' ';
