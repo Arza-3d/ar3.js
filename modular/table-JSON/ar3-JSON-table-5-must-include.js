@@ -72,6 +72,8 @@ https://arza-3d.github.io/ar3.js/
                                   continue;
                                 } else if (tempWords[word].indexOf('_') == 0) {
                                   switch (tempWords[word]) {
+                                    case ' ':
+                                      break;
                                     case '_plus':
                                       _tempWords += '<kbd>+</kbd> ';
                                       break;
