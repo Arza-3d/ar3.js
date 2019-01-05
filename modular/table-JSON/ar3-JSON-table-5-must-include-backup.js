@@ -55,10 +55,8 @@ https://arza-3d.github.io/ar3.js/
 
                             // Display as progress bar
                             if (keyInJSON == '_progress') {
-                              let currentProgress = (objectInJSON[arrayInJSON][j]['_currentProgress'] == undefined) ? 0 : objectInJSON[arrayInJSON][j]['_currentProgress'];
-
-                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j]['_currentProgress'] + ' --><progress value="'+ objectInJSON[arrayInJSON][j]['_currentProgress'] +'" max="'+ objectInJSON[arrayInJSON][j]['_maxProgress'] +'" title="'+  objectInJSON[arrayInJSON][j]['_currentProgress']
-                              +'/'+ objectInJSON[arrayInJSON][j]['_maxProgress'] +'"></progress>';
+                              valueInJSON = '<!-- ' + objectInJSON[arrayInJSON][j][keyInJSON] + ' --><progress value="'+ objectInJSON[arrayInJSON][j][keyInJSON] +'" max="100" title="'+  objectInJSON[arrayInJSON][j][keyInJSON]
+                              +'%"></progress>';
                             }
                             //
 
