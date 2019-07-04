@@ -471,30 +471,55 @@ https://arza-3d.github.io/ar3.js/
         $("a[href^='http']").attr('target', '_blank');
 
         // 6.
-        let youtube = document.querySelector("iframe[src*='youtube']");
-        {
-            function youtubeResize() {
-                let maxWidth = $(youtube).parents('section').width() * 0.8,
-                    maxHeight = (9/16)*maxWidth;
+        let $youtube = $("iframe[src*='youtube']");
+        if ($youtube.length > 0) {
+            // 6.a
 
-                $("iframe[src*='youtube']").css({
-                    'width' : maxWidth + 'px',
-                    'height' : maxHeight + 'px'
-                });
+            {
+                let youtube = document.querySelector("iframe[src*='youtube']");
+                function youtubeResize() {
+                    let maxWidth = $(youtube).parents('section').width() * 0.8,
+                        maxHeight = (9/16)*maxWidth;
+
+                    $("iframe[src*='youtube']").css({
+                        'width' : maxWidth + 'px',
+                        'height' : maxHeight + 'px'
+                    });
+                }
+                youtubeResize();
+
+                window.addEventListener('resize', youtubeResize);
             }
-            youtubeResize();
 
-            window.addEventListener('resize', youtubeResize);
+            // 6.b
+            {
+                let youtubeLink;
+                for (let i = 0; i < $youtube.length; i++) {
+                    youtubeLink = $($youtube[i]).attr('src');
+
+                    if (youtubeLink.includes("?")) {
+                        $($youtube[i]).attr('src', youtubeLink + '&rel=0');
+                    } else {
+                        $($youtube[i]).attr('src', youtubeLink + '?rel=0');
+                    }
+                    youtubeLink = $($youtube[i]).attr('src');
+                    //console.log($youtube[i].outerHTML);
+                    // 6.c
+
+                    if (youtubeLink.includes("start")) {
+                        $($youtube[i]).attr('src', youtubeLink + '&controls=0');
+                    } else {
+
+                        let youtubeTag = $youtube[i].outerHTML;
+                        let endCharIndex = youtubeTag.indexOf('></iframe>');
+                        $youtube[i].outerHTML = youtubeTag.slice(0,endCharIndex) + ' allowFullScreen></iframe>';
+
+                    }
+
+                }
+            }
         }
 
-        //7.
-        {
-            let youtubeLink;
-            for (let i = 0; i < youtube.length; i++) {
-                youtubeLink = $(youtube[i]).attr('src');
-                $(youtube[i]).attr('src', youtubeLink + '&rel=0');
-            }
-        }
 
     }
 

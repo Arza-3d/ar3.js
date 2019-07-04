@@ -460,27 +460,48 @@ https://arza-3d.github.io/ar3.js/
 
     $("a[href^='http']").attr('target', '_blank'); // 6.
 
-    var youtube = document.querySelector("iframe[src*='youtube']");
-    {
-      var youtubeResize = function youtubeResize() {
-        var maxWidth = $(youtube).parents('section').width() * 0.8,
-            maxHeight = 9 / 16 * maxWidth;
-        $("iframe[src*='youtube']").css({
-          'width': maxWidth + 'px',
-          'height': maxHeight + 'px'
-        });
-      };
+    var $youtube = $("iframe[src*='youtube']");
 
-      youtubeResize();
-      window.addEventListener('resize', youtubeResize);
-    } //7.
+    if ($youtube.length > 0) {
+      // 6.a
+      {
+        var youtubeResize = function youtubeResize() {
+          var maxWidth = $(youtube).parents('section').width() * 0.8,
+              maxHeight = 9 / 16 * maxWidth;
+          $("iframe[src*='youtube']").css({
+            'width': maxWidth + 'px',
+            'height': maxHeight + 'px'
+          });
+        };
 
-    {
-      var youtubeLink;
+        var youtube = document.querySelector("iframe[src*='youtube']");
+        youtubeResize();
+        window.addEventListener('resize', youtubeResize);
+      } // 6.b
 
-      for (var _i3 = 0; _i3 < youtube.length; _i3++) {
-        youtubeLink = $(youtube[_i3]).attr('src');
-        $(youtube[_i3]).attr('src', youtubeLink + '&rel=0');
+      {
+        var youtubeLink;
+
+        for (var _i3 = 0; _i3 < $youtube.length; _i3++) {
+          youtubeLink = $($youtube[_i3]).attr('src');
+
+          if (youtubeLink.includes("?")) {
+            $($youtube[_i3]).attr('src', youtubeLink + '&rel=0');
+          } else {
+            $($youtube[_i3]).attr('src', youtubeLink + '?rel=0');
+          }
+
+          youtubeLink = $($youtube[_i3]).attr('src'); //console.log($youtube[i].outerHTML);
+          // 6.c
+
+          if (youtubeLink.includes("start")) {
+            $($youtube[_i3]).attr('src', youtubeLink + '&controls=0');
+          } else {
+            var youtubeTag = $youtube[_i3].outerHTML;
+            var endCharIndex = youtubeTag.indexOf('></iframe>');
+            $youtube[_i3].outerHTML = youtubeTag.slice(0, endCharIndex) + ' allowFullScreen></iframe>';
+          }
+        }
       }
     }
   }
