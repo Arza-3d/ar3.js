@@ -471,10 +471,10 @@ https://arza-3d.github.io/ar3.js/
         $("a[href^='http']").attr('target', '_blank');
 
         // 6.
+        let youtube = document.querySelector("iframe[src*='youtube']");
         {
             function youtubeResize() {
-                let youtube = document.querySelector("iframe[src*='youtube']"),
-                    maxWidth = $(youtube).parents('section').width() * 0.8,
+                let maxWidth = $(youtube).parents('section').width() * 0.8,
                     maxHeight = (9/16)*maxWidth;
 
                 $("iframe[src*='youtube']").css({
@@ -485,6 +485,15 @@ https://arza-3d.github.io/ar3.js/
             youtubeResize();
 
             window.addEventListener('resize', youtubeResize);
+        }
+
+        //7.
+        {
+            let youtubeLink;
+            for (let i = 0; i < youtube.length; i++) {
+                youtubeLink = $(youtube[i]).attr('src');
+                $(youtube[i]).attr('src', youtubeLink + '&rel=0');
+            }
         }
 
     }

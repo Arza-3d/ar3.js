@@ -7,7 +7,7 @@ https://arza-3d.github.io/ar3.js/
 <script src="https://raw.githack.com/Arza-3d/ar3.js/master/modular/trivial/ar3-trivial-attr.js"></script>
 --------------------------*/
 
-{  
+{
     const constructNote = 'ar3-trivial-attr_is_constructed',
         isConstructed = $('body').hasClass(constructNote);
 
@@ -34,10 +34,10 @@ https://arza-3d.github.io/ar3.js/
         $("a[href^='http']").attr('target', '_blank');
 
         // 6.
+        let youtube = document.querySelector("iframe[src*='youtube']");
         {
             function youtubeResize() {
-                let youtube = document.querySelector("iframe[src*='youtube']"),
-                    maxWidth = $(youtube).parents('section').width() * 0.8,
+                let maxWidth = $(youtube).parents('section').width() * 0.8,
                     maxHeight = (9/16)*maxWidth;
 
                 $("iframe[src*='youtube']").css({
@@ -48,6 +48,15 @@ https://arza-3d.github.io/ar3.js/
             youtubeResize();
 
             window.addEventListener('resize', youtubeResize);
+        }
+
+        //7.
+        {
+            let youtubeLink;
+            for (let i = 0; i < youtube.length; i++) {
+                youtubeLink = $(youtube[i]).attr('src');
+                $(youtube[i]).attr('src', youtubeLink + '&rel=0');
+            }
         }
 
     }
