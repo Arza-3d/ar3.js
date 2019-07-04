@@ -83,6 +83,12 @@ https://arza-3d.github.io/ar3.js/
             }
         }
 
+        // 7.
+        let $bpue = $("iframe[src*='blueprintue']");
+        if ($bpue.length > 0) {
+            $bpue.attr('scrolling', 'no');
+        }
+
 
     }
 
