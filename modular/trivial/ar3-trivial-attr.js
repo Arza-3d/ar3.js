@@ -71,6 +71,7 @@ https://arza-3d.github.io/ar3.js/
 
                     if (youtubeLink.includes("start")) {
                         $($youtube[i]).attr('src', youtubeLink + '&controls=0');
+                        $($youtube[i]).css('border-radius', '12px');
                     } else {
 
                         let youtubeTag = $youtube[i].outerHTML;
