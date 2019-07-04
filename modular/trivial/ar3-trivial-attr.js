@@ -66,7 +66,6 @@ https://arza-3d.github.io/ar3.js/
                         $($youtube[i]).attr('src', youtubeLink + '?rel=0');
                     }
                     youtubeLink = $($youtube[i]).attr('src');
-                    //console.log($youtube[i].outerHTML);
                     // 6.c
 
                     if (youtubeLink.includes("start")) {
