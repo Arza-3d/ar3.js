@@ -503,7 +503,6 @@ https://arza-3d.github.io/ar3.js/
                         $($youtube[i]).attr('src', youtubeLink + '?rel=0');
                     }
                     youtubeLink = $($youtube[i]).attr('src');
-                    //console.log($youtube[i].outerHTML);
                     // 6.c
 
                     if (youtubeLink.includes("start")) {
@@ -518,6 +517,18 @@ https://arza-3d.github.io/ar3.js/
                     }
 
                 }
+            }
+        }
+
+        // 7.
+        let $bpue = $("iframe[src*='blueprintue']");
+        if ($bpue.length > 0) {
+            $bpue.attr('scrolling', 'no');
+
+            for (let i = 0; i < $bpue.length; i++) {
+                let bpueTag = $bpue[i].outerHTML;
+                let endCharIndex = bpueTag.indexOf('></iframe>');
+                $bpue[i].outerHTML = bpueTag.slice(0,endCharIndex) + ' allowFullScreen></iframe>';
             }
         }
 

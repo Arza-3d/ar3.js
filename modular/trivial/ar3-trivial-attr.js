@@ -87,6 +87,12 @@ https://arza-3d.github.io/ar3.js/
         let $bpue = $("iframe[src*='blueprintue']");
         if ($bpue.length > 0) {
             $bpue.attr('scrolling', 'no');
+
+            for (let i = 0; i < $bpue.length; i++) {
+                let bpueTag = $bpue[i].outerHTML;
+                let endCharIndex = bpueTag.indexOf('></iframe>');
+                $bpue[i].outerHTML = bpueTag.slice(0,endCharIndex) + ' allowFullScreen></iframe>';
+            }
         }
 
 

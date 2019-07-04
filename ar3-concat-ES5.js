@@ -491,8 +491,7 @@ https://arza-3d.github.io/ar3.js/
             $($youtube[_i3]).attr('src', youtubeLink + '?rel=0');
           }
 
-          youtubeLink = $($youtube[_i3]).attr('src'); //console.log($youtube[i].outerHTML);
-          // 6.c
+          youtubeLink = $($youtube[_i3]).attr('src'); // 6.c
 
           if (youtubeLink.includes("start")) {
             $($youtube[_i3]).attr('src', youtubeLink + '&controls=0');
@@ -503,6 +502,21 @@ https://arza-3d.github.io/ar3.js/
             $youtube[_i3].outerHTML = youtubeTag.slice(0, endCharIndex) + ' allowFullScreen></iframe>';
           }
         }
+      }
+    } // 7.
+
+
+    var $bpue = $("iframe[src*='blueprintue']");
+
+    if ($bpue.length > 0) {
+      $bpue.attr('scrolling', 'no');
+
+      for (var _i4 = 0; _i4 < $bpue.length; _i4++) {
+        var bpueTag = $bpue[_i4].outerHTML;
+
+        var _endCharIndex = bpueTag.indexOf('></iframe>');
+
+        $bpue[_i4].outerHTML = bpueTag.slice(0, _endCharIndex) + ' allowFullScreen></iframe>';
       }
     }
   }
@@ -531,11 +545,11 @@ https://arza-3d.github.io/ar3.js/
     {
       var $img = $('img').not('code > img, h3 > img, img[src$=".svg"],  img[src$=".png"]');
 
-      for (var _i4 = 0; _i4 < $img.length; _i4++) {
-        if ($($img[_i4]).parent().hasClass('relative-container-r3')) {
-          $($img[_i4]).parent().css('overflow', 'auto');
+      for (var _i5 = 0; _i5 < $img.length; _i5++) {
+        if ($($img[_i5]).parent().hasClass('relative-container-r3')) {
+          $($img[_i5]).parent().css('overflow', 'auto');
         } else {
-          $($img[_i4]).wrap('<div style="overflow:auto">');
+          $($img[_i5]).wrap('<div style="overflow:auto">');
         }
       }
     } // 3.
@@ -545,8 +559,8 @@ https://arza-3d.github.io/ar3.js/
       var $h4s = $('main section > h4');
 
       if ($h4s != null) {
-        for (var _i5 = 0; _i5 < $h4s.length; _i5++) {
-          var $h4 = $($h4s[_i5]);
+        for (var _i6 = 0; _i6 < $h4s.length; _i6++) {
+          var $h4 = $($h4s[_i6]);
 
           if ($h4.prev().length != 0) {
             $h4.before('<hr>');
@@ -560,9 +574,9 @@ https://arza-3d.github.io/ar3.js/
 
       var title, _id2, $target;
 
-      for (var _i6 = 0; _i6 < $titles.length; _i6++) {
-        title = $($titles[_i6]).attr('data-title-r3');
-        _id2 = $($titles[_i6]).find('> h2:first-child').attr('id');
+      for (var _i7 = 0; _i7 < $titles.length; _i7++) {
+        title = $($titles[_i7]).attr('data-title-r3');
+        _id2 = $($titles[_i7]).find('> h2:first-child').attr('id');
         $target = $('aside > a[href="#' + _id2 + '"]');
 
         if ($target.prev('.r3-accordion-B').length > 0) {
@@ -576,18 +590,18 @@ https://arza-3d.github.io/ar3.js/
     {
       var $firstLineTableinHeader = $('header table td:first-child');
 
-      for (var _i7 = 0; _i7 < $firstLineTableinHeader.length; _i7++) {
-        var text = $($firstLineTableinHeader[_i7]).html();
-        $($firstLineTableinHeader[_i7]).html(text + '<b style="float:right">&nbsp;:</b>');
+      for (var _i8 = 0; _i8 < $firstLineTableinHeader.length; _i8++) {
+        var text = $($firstLineTableinHeader[_i8]).html();
+        $($firstLineTableinHeader[_i8]).html(text + '<b style="float:right">&nbsp;:</b>');
       }
     } // 6.
 
     {
       var $address = $('code:contains("📁")', 'main, header');
 
-      for (var _i8 = 0; _i8 < $address.length; _i8++) {
-        var addressHTML = $address[_i8].innerHTML;
-        $address[_i8].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
+      for (var _i9 = 0; _i9 < $address.length; _i9++) {
+        var addressHTML = $address[_i9].innerHTML;
+        $address[_i9].innerHTML = addressHTML.replace(/📁/g, '<span class="no-copy-r3">📁</span>');
       }
     }
   }
