@@ -13,48 +13,18 @@
 
     </div>
     <p>example</p>
-    <p>
-      <br>a
-      <br>aggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-      <br>accccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-      <br>a
-      <br>a
-      <br>a
-      <br>a
-    </p>
+    <p id="targetParagraph"></p>
+    <script type="text/javascript">
+      {
+        let text1 = "";
+        for (let i = 0; i < 1000; i++) {
+          let spaceCount = i % 100;
+          text1 += "&nbsp;".repeat(spaceCount) + i + " <br>";
+        }
+        $("#targetParagraph").html(text1);
+      }
+
+    </script>
     <script src="ar3-global-side-nav.js"></script>
   </body>
 </html>
