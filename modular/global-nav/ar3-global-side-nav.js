@@ -4,6 +4,7 @@
       <button href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</button>
       <a href="https://google.com" target="_blank">google</a>
       <a href="https://yahoo.com" target="_blank">test</a>
+      <a href="https://github.com" target="_blank">github</a>
     </nav>
 
     <button onclick="openNav()">open</button>
