@@ -1,5 +1,5 @@
 {
-  "name": "ar3.js",
+  "name": "ar3js",
   "version": "1.0.0",
   "description": "javaScript for my personal documentation",
   "main": "index.html",
@@ -17,7 +17,7 @@
     "note"
   ],
   "author": "Forest Guhareza",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Arza-3d/ar3js/issues"
   },
@@ -26,5 +26,6 @@
     "grunt": "^1.0.4",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^4.0.0"
-  }
+  },
+  "dependencies": {}
 }
